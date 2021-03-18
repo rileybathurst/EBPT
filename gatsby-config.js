@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Emerald Bay Physical Therapy",
+    siteUrl: "https://emeraldbaytahoe.net/"
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -22,6 +23,14 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
     },
   ],
 };
