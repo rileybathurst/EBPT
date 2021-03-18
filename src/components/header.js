@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-// import HeroImage from "../images/hero-image"
+import HeroImage from "../images/hero-image"
 import Veiled from "./veiled"
 import MenuList from "./menu-list"
 import MenuClose from "./menu-close"

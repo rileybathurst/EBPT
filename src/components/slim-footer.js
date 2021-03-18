@@ -1,6 +1,6 @@
 import React from "react"
 
-import FooterSocial from "./footersocial"
+import FooterSocial from "./footer-social"
 
 const SlimFooter = () => (
 
