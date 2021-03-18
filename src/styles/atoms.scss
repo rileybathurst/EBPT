@@ -1,0 +1,684 @@
+// this needs some descriptions
+
+$emerald: #6CBAAD;
+$moldavite: #046c59;
+$moss: #044338;
+
+$ember: #ff9500;
+$amber: #EA8700;
+$burnt: #a36021;
+
+$lace: #F8F8F8;
+$stone: #414141;
+$onyx: #0F0F0F;
+
+
+body {
+    font-size: 16px;
+    line-height: 1.563rem;
+}
+
+// type-scale.com
+// 1.250 Major Third
+h1 {
+    margin-top: 0;
+    font-size: 3.052rem;
+    line-height: 5.96rem;
+  }
+  
+h2 {
+    font-size: 2.441rem;
+    line-height: 4.768rem;
+}
+  
+h3 {
+    font-size: 1.953rem;
+    line-height: 3.815rem;
+}
+  
+h4 {
+        font-size: 1.563rem;
+        line-height: 3.052rem;
+}
+  
+h5 {
+    font-size: 1.25rem;
+    line-height: 2.441rem;
+}
+  
+small, .text_small {font-size: 0.8rem;}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-style: normal;
+    font-weight: 300;
+}
+
+h5.in-paragraph {
+    margin-bottom: 0;
+}
+
+.home-baselined {
+    margin-top: 0;
+
+    @media (min-width: 40rem) {
+        margin-top: 2rem; // guess and check
+        line-height: 2.3rem; // guess and check
+    }
+}
+
+.justified-40 {
+    @media (min-width: 40rem) {
+        text-align: justify;
+    }
+}
+
+html {
+  font-family: brandon-grotesque, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+p, .sofia {
+    font-family: sofia-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*
+
+I wont use all of these but just while Im designing
+
+font-family: brandon-grotesque, sans-serif;
+font-style: normal;
+
+thin:     font-weight:  100
+light:    font-weight:  300
+regular:  font-weight:  400
+medium:   font-weight:  500
+bold:     font-weight:  700
+black:    font-weight:  900
+
+*/
+
+// do some a11y on this
+.screenreader {
+    display: none;
+}
+
+body {
+    margin: 0; // reset
+    margin-bottom: -1rem; // hacky but needed I think its a gatsby thing
+}
+
+a {
+    color: $onyx;
+    // font-weight: normal; // this needs love
+}
+
+a:hover {
+    color: $moldavite;
+}
+
+#veiled.active {
+    transform: translate3d(0, 0, 0);
+}
+
+#veiled.inactive {
+    transform: translate3d(0, -100%, 0);
+    // margin-bottom: -45%; // guess and check // nope this is completly wrong I need to look at other places Ive done this
+    // this is fixable I just cant remeber it
+}
+
+// this being an id rather than a class is causing conflicts that need important to overwrite
+#veiled {
+    transition: all 1s;
+    position: absolute;
+    width: 100%;
+    margin-top: -1rem; // gatsby something
+    z-index: 99; // above any images logo etc
+
+    ul {
+        background: $emerald;
+        color: $onyx;
+        list-style: none;
+        padding: 1rem;
+        margin-top: 0;
+        margin-bottom: 0; // browser reset
+
+
+        li {
+            @extend h5;
+            margin-bottom: 1rem;
+        }
+    }
+
+/*     svg {
+        max-width: 50%; // 
+    } */
+
+    @media (min-width: 60rem) {
+        display: none;
+    }
+}
+
+.veiled__header {
+    padding-bottom: 0 !important; // overwrite #veiled ul
+
+    li {
+        margin-bottom: 0 !important; // overwrite #veiled ul li
+        // this can probably be resoleved with heirachy
+
+        a {
+            display: block;
+
+            svg {
+                max-height: 5rem;
+                max-width: 5rem;
+                fill: $moss;
+            }
+
+            svg:hover {
+                fill: $moldavite;
+            }
+        }
+    }
+}
+
+.veil-button {
+    z-index: 99;
+    position: relative; // needed for the z index
+    float: right;
+    @media (min-width: 70rem) {
+        display: none;
+    }
+}
+
+.close-button {
+    margin-top: 0;
+    background: $moss;
+    color: $emerald;
+    border: none;
+    width: 100%;
+    // text-decoration: underline;
+    text-align: left;
+    padding: 1rem;
+}
+
+#overt ul {
+    display: none;
+    @extend h3; // this is weird you cant do it inside the media query
+    padding-left: 0;
+
+    @media (min-width: 70rem) {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+         li {
+            margin: 0 1rem;
+            text-align: center;
+        } // li
+    } // @media 60rem
+} // #overt
+
+#call {
+    margin-bottom: 2.441rem; // h2
+}
+
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 20rem 1fr; // ? not sure what im doing with this
+    margin-bottom: 1rem;
+    overflow: hidden; // crop the image
+
+    @media (min-width: 42rem) {
+        grid-template-columns: 1fr 40rem 1fr; // ? not sure what im doing with this
+    }
+
+    #logo__backer {
+        grid-row: 1;
+        grid-column: 2;
+        place-self: center;
+        background: $lace;
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+        opacity: 0.5;
+    }
+
+    #logo__border {
+        grid-row: 1;
+        grid-column: 2;
+        place-self: center;
+        border: 2px $lace solid;
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+    }
+
+    #logo {
+        grid-row: 1;
+        grid-column: 2;
+        place-self: center;
+        z-index: 1; // above the backer and border
+        // even tho this is after in the html it doesnt seem to be above
+    }
+
+    .gatsby-image-wrapper {
+        grid-row: 1;
+        grid-column: 1/4;
+        z-index: -1;
+        min-height: 10rem;
+        max-height: 20vh; // guess and check
+        opacity: 0.33;
+    }
+}
+
+header a svg {
+    max-width: 6rem;
+    max-height: 6rem;
+    fill: $moss;
+    margin: 1rem;
+}
+
+header a svg:hover {
+    fill: $moldavite;
+}
+
+button,
+.buttoned {
+    border: 2px solid $emerald;
+    // border-radius: 10px;
+    background: $emerald;
+    padding: 8px 16px;
+    @extend h4;
+    // display: block; // needed to center
+    // margin: 0 auto;
+    box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+    // setting as an alpha helps for any background color
+    // rgb(15, 15, 15) is the same as #0f0f0f aka $onyx
+    text-decoration: underline;
+}
+
+.buttoned-above-40 {
+    @media (min-width: 60rem) {
+        background: $emerald;
+        padding: 8px 16px;
+        font-size: 1.563rem; // h4
+        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+        text-decoration: underline;
+        margin-left: -1rem;
+    }
+}
+
+button:hover,
+.buttoned:hover,
+.buttoned-above-40:hover {
+    // transition: 0.2s; // https://tobiasahlin.com/blog/how-to-animate-box-shadow/ this needs some love
+    // https://css-tricks.com/make-a-smooth-shadow-friend/
+    box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.4);
+    // color: $lace;
+}
+
+.buttoned a:hover,
+.buttoned-above-40:hover {
+    color: $lace;
+}
+
+// this doesn't want to be the block of the p
+.h-center {
+    text-align: center;
+}
+
+.h-center__40 {
+    @media (min-width: 60rem) { // this isnt quite right
+        // its popping before the 2 col flex
+        text-align: center;
+    }
+
+    h2 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.center-text {
+    text-align: center;
+    display: block;
+}
+
+hr {
+    // width: 3.052rem; // h1? is that a nice thing to go by?
+    border: none;
+    border-bottom: 2px solid $emerald;
+    margin: 1.25rem auto; // h5
+    // padding-right: 50vw;
+    width: 50vw;
+    margin-right: 50vw;
+}
+
+/* p {
+    // max-width: 40rem; // I kinda like this idea but causes unintended consequences
+} */
+
+// its like an alert but not quite as much
+.vigilant {
+    background: $amber;
+    padding: 0.5rem 1rem;
+}
+
+.distracted {
+    color: $stone;
+}
+
+.measured {
+    max-width: 40rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @media (min-width: 40rem) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.estimated {
+    max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.doublem {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    // @media (min-width: 60rem) {
+        max-width: 40rem;
+    // }
+
+    @media (min-width: 80rem) {
+        max-width: 80rem;
+    }
+
+
+}
+
+.two-fold {
+    max-width: 66rem; // guess and check
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+
+    > * { // I should use this more often
+        flex: 1 1 21rem;
+    }
+
+    /* p {
+        line-height: 2rem; // this needs to match the h5
+    } */
+
+    ul {
+        display: inline;
+    }
+
+    .catalog {
+        // this is to do with stacking on smaller screens
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@supports (gap: 2em) {
+    .two-fold {
+        gap: 2rem;
+    }
+}
+
+// lots of lists maybe don't use that to sort font sizes?
+.catalog {
+    list-style: none;
+    // margin-left: 0;
+    padding-left: 0; // reset
+    @extend h3;
+    color: $stone;
+
+    li {
+        margin-bottom: 1rem;
+    }
+}
+
+.inventory {
+    // list-style: none;
+    // padding-left: 0; // browser reset
+    @extend h4;
+    margin: 0; // this might need to be reinstated at larger sizes
+
+    li {
+        margin-bottom: 1rem;
+    }
+}
+
+svg {
+    width: 100%;
+}
+
+// keep these small till i deal with them
+a svg {
+    max-width: 4rem;
+    max-height: 3rem;
+    margin: 1rem;
+    fill: $lace;
+
+    @media (min-width: 40rem) {
+        max-height: 2rem;
+    }
+}
+
+a svg:hover {
+    fill: $emerald;
+}
+
+#intake-forms {
+    // this might be too heavy handed
+    // text-align: center;
+
+    ul {
+        list-style: none;
+        padding-left: 0; // reset
+
+        li {
+            margin-bottom: 1em;
+
+            h5 {
+                margin-bottom: 1rem; // specifically small
+            } // h5
+        } // li
+    } // ul
+} // #intake-forms
+
+/* footer {
+
+} */
+
+#footer-social {
+    border-top: 1rem solid $emerald;
+    background: $moss;
+
+    ul {
+        list-style: none;
+        padding-left: 0; // reset
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            padding: 0.5rem;
+
+            a {
+                // the svg to sit center
+                display: flex;
+            }
+        }
+    }
+
+    > h5 {
+        // this is a weird double thing that I think could be done better
+        margin-bottom: 0;
+        padding-bottom: 1.953rem;
+    }
+
+    > h5 > a {
+        color: $lace;
+    }
+
+    > h5 > a:hover {
+        color: $emerald;
+    }
+}
+
+.hide-below-40 {
+    display: none; // this needs to be late in the css
+
+    @media (min-width: 40rem) {
+        display: revert;
+    }
+}
+
+.slide-back {
+    margin-left: -1rem;
+    padding-left: 1rem;
+}
+
+.h-line {
+    display: inline;
+}
+
+
+.forty-h3 {
+    // i can probably do this with variables
+    font-size: 1.953rem;
+
+    @media (min-width: 40rem) {
+        font-size: revert;
+    }
+}
+
+.forty-h4 {
+    font-size: 1.563rem;
+
+    @media (min-width: 40rem) {
+        font-size: revert;
+    }
+}
+
+.over-none {
+    margin-top: 0;
+}
+
+.under-less {
+    margin-bottom: 0.8rem;
+}
+
+.emerald-backed {
+    background: $emerald;
+}
+
+footer h3 a {
+    background: $emerald;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-div {
+    // display: inline;
+    // margin-bottom: 1rem;
+}
+
+.boxed {
+    background: $emerald;
+    padding: 0.5rem 1rem;
+    margin-top: 0;
+    margin-left: -1rem;
+    padding-left: 1rem;
+    width: max-content;
+    max-width: 100%;
+}
+
+.boxed a:hover {
+    color: $lace;
+}
+
+h3.boxed {
+    @extend h4;
+
+    /* @media (min-width: 40rem) {
+        font-size: 1.953rem;
+    } */
+}
+
+.hide-above-40 {
+    @media (min-width: 40rem) {
+        display: none;
+    }
+}
+
+.as-h3 { @extend h3; }
+
+.as-h4 { @extend h4; }
+
+.as-h5 { @extend h5; }
+
+.team-heads {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    > div {
+        flex: 0 1 4rem; // guess and check
+        margin: 0.5rem 1rem;
+        text-align: center;
+
+
+        > a {
+            > .gatsby-image-wrapper {   
+                border-radius: 50%;
+                border: 2px $lace solid;
+                box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+                margin-bottom: 1rem;
+                max-height: 8rem;
+                // transition: 0.2s; // I want this but after it loads so I need to sort that
+            } // .gatsby-image-wrapper
+
+            > .gatsby-image-wrapper:hover {
+                box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.5);
+
+            }
+        } // a
+    } // div
+} // .team-heads
+
+
+.image-stack {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .gatsby-image-wrapper {
+        flex: 1 1 8rem; // guess and check
+        margin: 0.5rem 1rem;
+    }
+}
+
+.slender-image {
+    height: 8rem; // seems like it centers the image better than max-height
+    overflow: hidden;
+    display: grid;
+    // place-content: center;
+}
