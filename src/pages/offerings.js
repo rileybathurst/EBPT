@@ -1,10 +1,13 @@
 import * as React from "react"
 // import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 
-// import Kiley2 from "../images/kiley-2"
+function Kiley2() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg" alt="Kiley" />
+}
 
 // markup
 const OfferingsPage = () => {
@@ -16,7 +19,7 @@ const OfferingsPage = () => {
           <h1>Our Physical Therapy and Wellness Offerings</h1>
 
           <div className="slender-image">
-            {/* <Kiley2  /> */}
+            <Kiley2 />
           </div>
           
           <ul className="catalog">

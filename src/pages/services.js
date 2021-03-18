@@ -1,11 +1,16 @@
 import * as React from "react"
 // import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 
-/* import GymImage from "../images/gym-image"
-import PoolImage from "../images/pool-image" */
+function GymImage() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg" alt="gym" />
+}
+function PoolImage() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg" alt="pool" />
+}
 
 const ServicesPage = () => {
   return (
@@ -17,7 +22,7 @@ const ServicesPage = () => {
 
     <section className="measured">
 
-        {/* <GymImage /> */}
+        <GymImage />
 
         <h2>Physical Therapy</h2>
         <p>This service is a form of rehabilitation for those who have medical problems or other health-related conditions that may limit their ability to move and function in their daily lives. The goal is to help improve mobility and flexibility, reduce pain, restore function, and improve quality of life. With a thorough assessment by a Physical Therapist your treatment plan will be designed to prevent disability or treat ailments that prohibit functionality in everyday life.</p>
@@ -43,7 +48,7 @@ const ServicesPage = () => {
 
       <section className="measured">
 
-        {/* <PoolImage /> */}
+        <PoolImage />
 
           <h2>Aquatic Therapy</h2>
         <p>We have a wonderful indoor therapy pool with a large 4000-gallon capacity. The depth of the pool ranges from 3-5 feet to accommodate all heights. Having the therapy pool inside our facility allows us to easily incorporate aquatic exercise into your therapy program. For advanced clients the pool is large enough to comfortably allow swimming against the endless current.</p>

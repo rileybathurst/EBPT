@@ -1,12 +1,13 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import "../styles/atoms.scss"
 // are we sure this should be in the index.js?
 
 import Header from "../components/header"
 import Footer from "../components/footer"
-// import TeamHeads from "../components/team-heads"
+import TeamHeads from "../components/team-heads"
 import FormList from "../components/form-list"
 
 /* import GymImage from "../images/gym-image"
@@ -14,6 +15,22 @@ import Headshot from "../images/headshot"
 import SnowyBuildingFrontImage from "../images/snowy-building-front-image"
 import PoolImage from "../images/pool-image"
 import Kiley2 from "../images/kiley-2" */
+
+function GymImage() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg" alt="gym" />
+}
+function Headshot() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg" alt="Jessica" />
+}
+function SnowyBuildingFrontImage() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg" alt="clinic" />
+}
+function PoolImage() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg" alt="pool" />
+}
+function Kiley2() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg" alt="Kiley" />
+}
 
 // markup
 const IndexPage = () => {
@@ -30,7 +47,7 @@ const IndexPage = () => {
         <div> {/* messy way of dealing with this flex that I would like to tidy up */}
           <h4 className="doublem"><Link to="/team" className="buttoned-above-40">Meet Our Team</Link></h4>
 
-          {/* <TeamHeads /> */}
+          <TeamHeads />
         </div>
         <div>{/* stay gold */}</div>
       </section>
@@ -63,10 +80,10 @@ const IndexPage = () => {
 
       {/* when display mosaic becomes available this will be super useful */}
       <section className="doublem image-stack">
-{/*         <GymImage />
+        <GymImage />
         <Headshot />
         <SnowyBuildingFrontImage />
-        <PoolImage /> */}
+        <PoolImage />
       </section>
 
       <hr />
@@ -99,7 +116,7 @@ const IndexPage = () => {
       <div className="two-fold">
         <h3 className=""><Link to="/questions">Therapy Questions</Link></h3>
         <div className="slender-image">
-          {/* <Kiley2  /> */}
+          <Kiley2  />
         </div>
       </div>
       <hr />

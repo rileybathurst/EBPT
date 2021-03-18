@@ -1,9 +1,12 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 
-// import Kiley2 from "../images/kiley-2"
+function Kiley2() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg" alt="Kiley" />
+}
 
 const QuestionsPage = () => {
   return (
@@ -15,7 +18,7 @@ const QuestionsPage = () => {
 
 
       <div className="measured slender-image">
-        {/* <Kiley2  /> */}
+        <Kiley2  />
       </div>
 
       <title>Questions</title>
