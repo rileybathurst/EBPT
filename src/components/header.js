@@ -1,10 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
-import HeroImage from "../images/hero-image"
+// import HeroImageDepricated from "../images/hero-image-depricated"
 import Veiled from "./veiled"
 import MenuList from "./menu-list"
 import MenuClose from "./menu-close"
+
+export function HeroImage() {
+  return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/ebpt-header-first.jpg" alt="Tahoe" />
+}
 
 const Header = () => (
 <>
@@ -23,7 +28,7 @@ const Header = () => (
     <header>
       <h1 className="screenreader">Emerald Bay Physical Therapy</h1>
       <div id="hero">
-      {/* <HeroImage /> */}
+        <HeroImage />
 
       {/* I could also do these with SVG so which is maybe more or less problematic */}
       <div id="logo__backer">
