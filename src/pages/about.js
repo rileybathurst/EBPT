@@ -5,8 +5,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 import TeamHeads from "../components/team-heads"
+import SEO from "../components/seo";
 
-// import SnowyBuildingFrontImage from "../images/snowy-building-front-image"
 function SnowyBuildingFrontImage() {
   return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg" alt="Jessica" />
 }
@@ -15,9 +15,9 @@ function SnowyBuildingFrontImage() {
 const AboutPage = () => {
   return (
     <>
+    <SEO title="About Us" />
     <Header />
     <main className="measured">
-      <title>About Us</title>
       <h1>About Us</h1>
       <section className="measured">
         <SnowyBuildingFrontImage />

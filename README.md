@@ -20,4 +20,6 @@ The intake forms and images are host on S3, this needs better documentation
 - could be weird overkill but it's probably pretty easy to check the time in california and add an open or closed to the hours
 - move the logo svg to a component
 - possibly run the image on a production build for when they are offline or just not pull them constantly to myself
+- Can I take all the regular pages into a layout to remove a bunch of imports and duplications?
+- 404 page
 
