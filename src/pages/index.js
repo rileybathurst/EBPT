@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+
 import "../styles/atoms.scss"
 // are we sure this should be in the index.js?
 
@@ -9,12 +10,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import TeamHeads from "../components/team-heads"
 import FormList from "../components/form-list"
-
-/* import GymImage from "../images/gym-image"
-import Headshot from "../images/headshot"
-import SnowyBuildingFrontImage from "../images/snowy-building-front-image"
-import PoolImage from "../images/pool-image"
-import Kiley2 from "../images/kiley-2" */
+import SEO from '../components/seo';
 
 function GymImage() {
   return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg" alt="gym" />
@@ -36,19 +32,26 @@ function Kiley2() {
 const IndexPage = () => {
   return (
     <>
+
+    <SEO
+      title="Emerald Bay Physical Therapy"
+    />
+
       <Header />
 
       <main>
 
       <section id="intro" className="two-fold">
-        <h5 className="sofia">Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy.</h5>
-        <p className="justified-40 home-baselined">We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals. At EBPT, we are committed to health and wellness no matter your age, lifestyle, or athletic abilities. Our highly individualized programs are designed to promote complete recovery from injury and continue into healthy work and recreational activities. We stand out by offering aquatic therapy in our heated therapy pool, manual therapy in private treatment rooms and a multidisciplinary wellness approach. Our focus on quality time spent listening to patients, use of critical thinking to find the cause of pain, and effective manual techniques will exceed your expectations. </p>
-        
-        <div> {/* messy way of dealing with this flex that I would like to tidy up */}
-          <h4 className="doublem"><Link to="/team" className="buttoned-above-40">Meet Our Team</Link></h4>
-          <TeamHeads />
+        <div>
+          <h5 className="sofia">Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy.</h5>
+          <p className="justified-40 home-baselined">We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals. At EBPT, we are committed to health and wellness no matter your age, lifestyle, or athletic abilities. Our highly individualized programs are designed to promote complete recovery from injury and continue into healthy work and recreational activities. We stand out by offering aquatic therapy in our heated therapy pool, manual therapy in private treatment rooms and a multidisciplinary wellness approach. Our focus on quality time spent listening to patients, use of critical thinking to find the cause of pain, and effective manual techniques will exceed your expectations. </p>
+          
+          <div> {/* messy way of dealing with this flex that I would like to tidy up */}
+            <h4 className="doublem"><Link to="/team" className="buttoned-above-40">Meet Our Team</Link></h4>
+            <TeamHeads />
+          </div>
         </div>
-        <div>{/* stay gold */}</div>
+        <div><GymImage /></div>
       </section>{/* #intro */}
 
       <hr />

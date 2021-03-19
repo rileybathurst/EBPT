@@ -442,6 +442,17 @@ hr {
     }
 }
 
+@supports not (gap: 2em) {
+    .two-fold:nth-child(odd) {
+        margin-right: 1rem;
+    }
+    .two-fold:nth-child(even) {
+        margin-left: 1rem;
+    }
+}
+
+
+
 // this is to match the two-fold for things like titles
 // this should always be on a section div etc not on the content
 .single-fold {

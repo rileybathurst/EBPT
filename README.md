@@ -3,13 +3,7 @@
 Netlify build from
 https://github.com/rileybathurst/EBPT
 
-The intake forms are slightly different as I don't have them going through the gatsby build
-They are hosted on a manual deploy netlify build
-https://ebpt-pdfs.netlify.app
-Navigate to the /src/forms
-Make any changes
-On netlify https://app.netlify.com/sites/ebpt-pdfs/deploys
-drag the whole forms folder into the drag and drop area
+The intake forms and images are host on S3, this needs better documentation
 
 
 
@@ -20,3 +14,8 @@ drag the whole forms folder into the drag and drop area
 - bring some sizing down on the fonts for lists etc
 - front page section titles are too big
 - I need a lot of work on the typefaces, lets go with just Sofia Pro?
+- when the menu opens and closes it should go darker
+- safari doesn't have flex gap which is breaking two-fold
+- Im running the treating image in the gatsby-config be careful when deleating that and check on things
+- could be weird overkill but it's probably pretty easy to check the time in california and add an open or closed to the hours
+
