@@ -40,22 +40,21 @@ const IndexPage = () => {
 
       <main>
 
-      <section className="two-fold">
+      <section id="intro" className="two-fold">
         <h5 className="sofia">Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy.</h5>
         <p className="justified-40 home-baselined">We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals. At EBPT, we are committed to health and wellness no matter your age, lifestyle, or athletic abilities. Our highly individualized programs are designed to promote complete recovery from injury and continue into healthy work and recreational activities. We stand out by offering aquatic therapy in our heated therapy pool, manual therapy in private treatment rooms and a multidisciplinary wellness approach. Our focus on quality time spent listening to patients, use of critical thinking to find the cause of pain, and effective manual techniques will exceed your expectations. </p>
         
         <div> {/* messy way of dealing with this flex that I would like to tidy up */}
           <h4 className="doublem"><Link to="/team" className="buttoned-above-40">Meet Our Team</Link></h4>
-
           <TeamHeads />
         </div>
         <div>{/* stay gold */}</div>
-      </section>
+      </section>{/* #intro */}
 
       <hr />
 
-      <section className="">
-        <h2 className="doublem forty-h3"><strong>Our Physical Therapy and Wellness Offerings</strong></h2>
+      <section id="offerings">
+        <h2 className="single-fold forty-h3"><strong>Our Physical Therapy and Wellness Offerings</strong></h2>
 
         <div className="two-fold ">
           <ul className="catalog ">
@@ -74,12 +73,12 @@ const IndexPage = () => {
             <li>TENS electrical stimulation</li>
           </ul>
         </div>
-      </section>
+      </section>{/* #offerings */}
 
       <hr />
 
       {/* when display mosaic becomes available this will be super useful */}
-      <section className="doublem image-stack">
+      <section id="gallery" className="single-fold image-stack">
         <GymImage />
         <Headshot />
         <SnowyBuildingFrontImage />
@@ -88,9 +87,12 @@ const IndexPage = () => {
 
       <hr />
 
-      <section className="">
-        <h2 className="doublem forty-h3"><strong>Why We Are Different</strong></h2>
-          <h4 className="doublem">The unique blend of programs at Emerald Bay Physical Therapy provides you with:</h4>
+      <section id="differences">
+        <div class="single-fold">
+          <h2 className="forty-h3"><strong>Why We Are Different</strong></h2>
+          <h4>The unique blend of programs at Emerald Bay Physical Therapy provides you with:</h4>
+        </div>
+
         <div className="two-fold">
           <ul className="inventory">
             <li>Highly individualized care</li>
@@ -110,22 +112,31 @@ const IndexPage = () => {
             <li>Improve balance without risk of falling</li>
           </ul>
         </div>
-        <hr />
       </section>
 
-      <div className="two-fold">
-        <h3 className=""><Link to="/questions">Therapy Questions</Link></h3>
-        <div className="slender-image">
-          <Kiley2  />
+      <hr />
+
+      <section id="questions">
+        <div className="two-fold">
+          <h3><Link to="/questions">Therapy Questions</Link></h3>
+          <div className="slender-image"><Kiley2 /></div>
         </div>
-      </div>
+      </section>
+
       <hr />
       
-      <h2 className="doublem">Intake Forms</h2>
-      <section id="intake-forms" className="two-fold">
-        <FormList />
-      </section>
+      <section id="intake-forms">
+        <div class="single-fold">
+          <h2 class="doublem">Intake Forms</h2>
+        </div>
+
+        <div class="two-fold">
+          <FormList />
+        </div>
+      </section>{/* #intake-forms */}
+
         <hr />
+
       </main>
 
     <Footer />
