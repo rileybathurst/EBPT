@@ -18,4 +18,6 @@ The intake forms and images are host on S3, this needs better documentation
 - safari doesn't have flex gap which is breaking two-fold
 - Im running the treating image in the gatsby-config be careful when deleating that and check on things
 - could be weird overkill but it's probably pretty easy to check the time in california and add an open or closed to the hours
+- move the logo svg to a component
+- possibly run the image on a production build for when they are offline or just not pull them constantly to myself
 

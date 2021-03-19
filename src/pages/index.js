@@ -34,7 +34,7 @@ const IndexPage = () => {
     <>
 
     <SEO
-      title="Emerald Bay Physical Therapy"
+      title=""
     />
 
       <Header />
