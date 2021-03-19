@@ -56,7 +56,7 @@ function Kiley2() {
 const IndexPage = () => {
   return (
     <>
-      <SEO title="404" />
+      <SEO title="Welcome" />
 
       <Header />
 
@@ -138,14 +138,15 @@ const IndexPage = () => {
         <hr />
 
         <section id="differences">
-          <div class="single-fold">
+          <div className="single-fold">
             <h2 className="forty-h3">
               <strong>Why We Are Different</strong>
             </h2>
-            <h4>
+            {/* sequentially-descending order */}
+            <h3 className="h4">
               The unique blend of programs at Emerald Bay Physical Therapy
               provides you with:
-            </h4>
+            </h3>
           </div>
 
           <div className="two-fold">
@@ -199,11 +200,11 @@ const IndexPage = () => {
         <hr />
 
         <section id="intake-forms">
-          <div class="single-fold">
-            <h2 class="doublem">Intake Forms</h2>
+          <div className="single-fold">
+            <h2 className="doublem">Intake Forms</h2>
           </div>
 
-          <div class="two-fold">
+          <div className="two-fold">
             <FormList />
           </div>
         </section>

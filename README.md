@@ -22,4 +22,5 @@ The intake forms and images are host on S3, this needs better documentation
 - possibly run the image on a production build for when they are offline or just not pull them constantly to myself
 - Can I take all the regular pages into a layout to remove a bunch of imports and duplications?
 - 404 page
+- the year in the footer is hard coded
 

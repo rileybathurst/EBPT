@@ -19,15 +19,16 @@ const Footer = () => (
 
     <section id="contact">
 
-      <h3  >Contact</h3>
+      <h3>Contact</h3>
         {/* this needs better html structure */}
-        <h5 className="boxed">
+        {/* sequentially-descending order */}
+        <h4 className="boxed h5">
           <a href="https://goo.gl/maps/893KML9M4KnYykEP7">
             Emerald Bay Physical Therapy<br />
             812 Emerald Bay Road<br />
             South Lake Tahoe CA 96150
           </a>
-        </h5>
+        </h4>
 
         <div className="box-div"> {/* additional divs to deal with width issues */}
           <h3 className="boxed">Phone: <a href="tel:5305422662">(530) 542 2662</a></h3>

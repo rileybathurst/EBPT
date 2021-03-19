@@ -39,7 +39,7 @@ const FooterSocial = () => (
       </ul>
 
       {/* I need to add this to an auto update */}
-      <h5 className="h-center"><Link to="/">Emerald Bay Physical Therapy 2021</Link></h5>
+      <h4 className="h5 h-center"><Link to="/">Emerald Bay Physical Therapy 2021</Link></h4>
   </section>
 )
 

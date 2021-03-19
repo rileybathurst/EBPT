@@ -20,28 +20,28 @@ body {
 
 // type-scale.com
 // 1.250 Major Third
-h1 {
+h1, .h1 {
     margin-top: 0;
     font-size: 3.052rem;
     line-height: 5.96rem;
   }
   
-h2 {
+h2, .h2 {
     font-size: 2.441rem;
     line-height: 4.768rem;
 }
   
-h3 {
+h3, .h3 {
     font-size: 1.953rem;
     line-height: 3.815rem;
 }
   
-h4 {
-        font-size: 1.563rem;
-        line-height: 3.052rem;
+h4, .h4 {
+    font-size: 1.563rem;
+    line-height: 3.052rem;
 }
   
-h5 {
+h5, .h5 {
     font-size: 1.25rem;
     line-height: 2.441rem;
 }
@@ -432,24 +432,33 @@ hr {
     }
 }
 
-// The question is ho many places can I use flex but not supports or flex gap
+// this is slightly confusing syntax but it's kinda doing the thing
+.two-fold >*:nth-child(odd) {
+    margin-right: 1rem;
+}
+.two-fold >*:nth-child(even) {
+    margin-left: 1rem;
+}
+
 // https://caniuse.com/flexbox-gap
 // https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
 // still kinda low numbers I need a fallback
+// except gap is part of grid so this doesnt work in safari
+
 @supports (gap: 2em) {
     .two-fold {
         gap: 2rem;
     }
-}
 
-@supports not (gap: 2em) {
     .two-fold:nth-child(odd) {
-        margin-right: 1rem;
+        margin: 0 auto;
     }
     .two-fold:nth-child(even) {
-        margin-left: 1rem;
+        margin: 0 auto;
     }
 }
+
+
 
 
 
@@ -559,18 +568,21 @@ a svg:hover {
         }
     }
 
-    > h5 {
-        // this is a weird double thing that I think could be done better
-        margin-bottom: 0;
-        padding-bottom: 1.953rem;
-    }
+    // interesting little variable for all <h>
+    @for $i from 1 through 6 {
+        > h#{$i} {
+            // this is a weird double thing that I think could be done better
+            margin-bottom: 0;
+            padding-bottom: 1.953rem;
+        }
 
-    > h5 > a {
-        color: $lace;
-    }
+        > h#{$i} > a {
+            color: $lace;
+        }
 
-    > h5 > a:hover {
-        color: $emerald;
+        > h#{$i} > a:hover {
+            color: $emerald;
+        }
     }
 }
 
