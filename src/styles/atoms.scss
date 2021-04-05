@@ -450,11 +450,20 @@ hr {
         gap: 2rem;
     }
 
+    // fallback as we have the gap
     .two-fold:nth-child(odd) {
         margin: 0 auto;
     }
     .two-fold:nth-child(even) {
         margin: 0 auto;
+    }
+}
+
+// how much of above is just to do this
+.two-fold > .catalog {
+    @media (min-width: 40rem) { // 📣 guess and check but I need to tidy this up
+        columns: 2;
+        column-gap: 2rem;
     }
 }
 

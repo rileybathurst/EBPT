@@ -61,39 +61,38 @@ const IndexPage = () => {
       <Header />
 
       <main>
-        <section id="intro" className="two-fold">
-          <div>
-            <h5 className="sofia">
-              Emerald Bay Physical Therapy is a comprehensive center for
-              orthopedic and manual physical therapy.
-            </h5>
-            <p className="justified-40 home-baselined">
-              We specialize in hands-on, one-on-one treatments that are specific
-              to each patient’s goals. At EBPT, we are committed to health and
-              wellness no matter your age, lifestyle, or athletic abilities. Our
-              highly individualized programs are designed to promote complete
-              recovery from injury and continue into healthy work and
-              recreational activities. We stand out by offering aquatic therapy
-              in our heated therapy pool, manual therapy in private treatment
-              rooms and a multidisciplinary wellness approach. Our focus on
-              quality time spent listening to patients, use of critical thinking
-              to find the cause of pain, and effective manual techniques will
-              exceed your expectations.{" "}
-            </p>
-
+        <section id="intro">
+          <div className="two-fold">
             <div>
-              {/* messy way of dealing with this flex that I would like to tidy up */}
-              <h4 className="doublem">
+              <h5 className="sofia">
+                Emerald Bay Physical Therapy is a comprehensive center for
+                orthopedic and manual physical therapy.
+              </h5>
+              <p className="justified-40 home-baselined">
+                We specialize in hands-on, one-on-one treatments that are specific
+                to each patient’s goals. At EBPT, we are committed to health and
+                wellness no matter your age, lifestyle, or athletic abilities. Our
+                highly individualized programs are designed to promote complete
+                recovery from injury and continue into healthy work and
+                recreational activities. We stand out by offering aquatic therapy
+                in our heated therapy pool, manual therapy in private treatment
+                rooms and a multidisciplinary wellness approach. Our focus on
+                quality time spent listening to patients, use of critical thinking
+                to find the cause of pain, and effective manual techniques will
+                exceed your expectations.
+              </p>
+
+              <h5>
                 <Link to="/team" className="buttoned-above-40">
                   Meet Our Team
                 </Link>
-              </h4>
+              </h5>
               <TeamHeads />
             </div>
-          </div>
-          <div>
-            <GymImage />
-          </div>
+            <div>
+              <GymImage />
+            </div>
+          </div> {/* .two-fold */}
         </section>
         {/* #intro */}
 
@@ -112,9 +111,6 @@ const IndexPage = () => {
               <li>Instrument-assisted soft tissue mobilization</li>
               <li>Myofascial release</li>
               <li>Cupping</li>
-            </ul>{" "}
-            {/* needed for the 2 col layout */}
-            <ul className="catalog ">
               <li>Kinesio taping (Rock Tape)</li>
               <li>Cervical mechanical traction</li>
               <li>TRX training</li>
