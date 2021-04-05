@@ -1,79 +1,136 @@
 // https://www.gatsbyjs.com/docs/add-seo-component/
-// building on snowledge
 
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  )
+// Im not sure what the rules on what goes here vs in the array?
+const SEO = ({ title, description, image, lang }) => {
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(query)
+  const {
+    defaultTitle,
+    titleTemplate,
+    siteUrl,
+    defaultDescription,
+    defaultImage,
+    telephone,
+    openingHours,
+    faxNumber,
+    areaServed,
+    paymentAccepted,
+    location,
+    slogan,
+    // can't have .anything secondary level
+  } = site.siteMetadata
 
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image || defaultImage}`,
+    url: `${siteUrl}${pathname}`,
+    openingHours: `${openingHours}`,
+    telephone: telephone,
+    faxNumber: faxNumber,
+    areaServed: areaServed,
+    paymentAccepted: paymentAccepted,
+    streetAddress: location.address.streetAddress,
+    addressLocality: location.address.addressLocality,
+    addressRegion: location.address.addressRegion,
+    postalCode: location.address.postalCode,
+    slogan: slogan,
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      {seo.url && <meta property="og:url" content={seo.url} />}
+      {/* {(article ? true : null) && <meta property="og:type" content="article" />} */}
+      {seo.title && <meta property="og:title" content={seo.title} />}
+      {seo.description && (
+        <meta property="og:description" content={seo.description} />
+      )}
+      {seo.image && <meta property="og:image" content={seo.image} />}
+      <meta name="twitter:card" content="summary_large_image" />
+
+      {seo.title && <meta name="twitter:title" content={seo.title} />}
+      {seo.description && (
+        <meta name="twitter:description" content={seo.description} />
+      )}
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
+
+      {seo.openingHours && <meta name="openingHours" content={seo.openingHours} />}
+      {seo.telephone && <meta name="telephone" content={seo.telephone} />}
+      {seo.faxNumber && <meta name="faxNumber" content={seo.faxNumber} />}
+      {seo.areaServed && <meta name="areaServed" content={seo.areaServed} />}
+      {seo.paymentAccepted && <meta name="paymentAccepted" content={seo.paymentAccepted} />}
+      {/* {seo.location && <meta name="location" content={seo.streetAddress + ', ' + seo.addressLocality + ', ' + seo.addressRegion + ', ' + seo.postalCode} />} */}
+      {/* the layer down version of this didn't want to work so remove the wrapper */}
+      <meta name="location" content={seo.streetAddress + ', ' + seo.addressLocality + ', ' + seo.addressRegion + ', ' + seo.postalCode} />
+      {seo.slogan && <meta name="slogan" content={seo.slogan} />}
+
+    </Helmet>
   )
+}
+
+export default SEO
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  article: PropTypes.bool,
+  openingHours: PropTypes.string,
+  telephone: PropTypes.string,
+  faxNumber: PropTypes.string,
+  areaServed: PropTypes.string,
+  paymentAccepted: PropTypes.string,
+  location: PropTypes.string,
+  slogan: PropTypes.string,
 }
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
-  description: ``,
+  title: null,
+  description: null,
+  image: null,
+  article: false,
+  openingHours: null,
+  telephone: null,
+  faxNumber: null,
+  areaServed: null,
+  paymentAccepted: null,
+  location: null,
+  slogan: null,
 }
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+const query = graphql`
+query SEO {
+  site {
+    siteMetadata {
+      defaultTitle: title
+      defaultDescription: description
+      siteUrl: url
+      defaultImage: image
+      openingHours
+      telephone
+      faxNumber
+      areaServed
+      paymentAccepted
+      location {
+        address {
+          _type
+          addressLocality
+          addressRegion
+          postalCode
+          streetAddress
+        }
+      }
+      slogan
+    }
+  }
 }
-
-export default SEO
+`

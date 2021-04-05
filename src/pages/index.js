@@ -56,7 +56,7 @@ function Kiley2() {
 const IndexPage = () => {
   return (
     <>
-      <SEO title="Welcome" />
+      <SEO title="Emerald Bay Physical Therapy" />
 
       <Header />
 
