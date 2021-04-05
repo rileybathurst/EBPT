@@ -30,7 +30,7 @@ const Footer = () => (
           </a>
         </h4>
 
-        <div className="box-div"> {/* additional divs to deal with width issues */}
+{/*         <div className="box-div"> * additional divs to deal with width issues *
           <h3 className="boxed">Phone: <a href="tel:5305422662">(530) 542 2662</a></h3>
         </div>
 
@@ -40,7 +40,11 @@ const Footer = () => (
 
         <div>
           <h3 className="boxed">Email: <a href="mailto:ebpt.laketahoe@gmail.com">ebpt.laketahoe@gmail.com</a></h3>
-        </div>
+        </div> */}
+      
+        <h4>Phone: <a href="tel:5305422662">(530) 542 2662</a></h4>
+        <h4>Fax: <span className="maybe-fake-a">(530) 542 2661</span></h4>
+        <h4>Email: <a href="mailto:ebpt.laketahoe@gmail.com">ebpt.laketahoe@gmail.com</a></h4>
       </section>{/* #contact */}
   </div>{/* .two-fold */}
 

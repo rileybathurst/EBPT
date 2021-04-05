@@ -23,27 +23,27 @@ body {
 h1, .h1 {
     margin-top: 0;
     font-size: 3.052rem;
-    line-height: 5.96rem;
+    line-height: 4.578rem; // *1.5
   }
   
 h2, .h2 {
     font-size: 2.441rem;
-    line-height: 4.768rem;
+    line-height: 3.6615rem;
 }
   
 h3, .h3 {
     font-size: 1.953rem;
-    line-height: 3.815rem;
+    line-height: 2.9295rem;
 }
   
 h4, .h4 {
     font-size: 1.563rem;
-    line-height: 3.052rem;
+    line-height: 2.3445rem;
 }
   
 h5, .h5 {
     font-size: 1.25rem;
-    line-height: 2.441rem;
+    line-height: 1.875rem;
 }
   
 small, .text_small {font-size: 0.8rem;}
@@ -67,6 +67,8 @@ h5.in-paragraph {
     }
 }
 
+// this has problems when it's in the .two-fold the smallest gets a lot of stretch
+// container queries would be the way to fix that but it's never happened
 .justified-40 {
     @media (min-width: 40rem) {
         text-align: justify;
@@ -189,7 +191,7 @@ a:hover {
     z-index: 99;
     position: relative; // needed for the z index
     float: right;
-    @media (min-width: 70rem) {
+    @media (min-width: 70rem) { // this has to match #overt ul
         display: none;
     }
 }
@@ -263,6 +265,11 @@ a:hover {
         place-self: center;
         z-index: 1; // above the backer and border
         // even tho this is after in the html it doesnt seem to be above
+
+        a {
+            display: grid;
+            // keeps the icon centered in the backer
+        }
     }
 
     .gatsby-image-wrapper {
@@ -312,24 +319,20 @@ button:hover,
 }
 
 a[href^="tel:"]:before {
-    content: "\260E";
+    content: "\1F4DE";
     margin-right: 0.5em;
+    text-decoration: none;
+    display:inline-block; // needed for the text-decoration
+    
+    @media (min-width: 20rem) {
+        content: "\260E"; // this is an emoji on a phone and nice on desktop
+    }
 }
 
 /* I dont think this is in the right place
 #call {
     margin-bottom: 2.441rem; // h2
 } */
-
-// should this just be a right button?
-.veil-button {
-    z-index: 99;
-    position: relative; // needed for the z index
-    float: right;
-    @media (min-width: 65rem) {
-        display: none;
-    }
-}
 
 // this doesn't want to be the block of the p
 .h-center {
@@ -394,23 +397,6 @@ hr {
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-.doublem {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    // @media (min-width: 60rem) {
-        max-width: 40rem;
-    // }
-
-    @media (min-width: 80rem) {
-        max-width: 80rem;
-    }
-
-
 }
 
 /*------------------------------------*\
@@ -500,18 +486,27 @@ hr {
     color: $stone;
 
     li {
-        margin-bottom: 1rem;
+        margin-bottom: 2.9295rem; // line-height of h3
     }
 }
 
 .inventory {
     // list-style: none;
     // padding-left: 0; // browser reset
-    @extend h4;
+    @extend h4; // thinking about dropping this down so more fits on each line
     margin: 0; // this might need to be reinstated at larger sizes
 
     li {
-        margin-bottom: 1rem;
+        margin-bottom: 2.3445rem; // this is the line height of the text
+        // keeps the vertical rythm
+    }
+}
+
+.two-fold > .inventory {
+    @media (min-width: 60rem) { // guess and check
+        // has to be pretty wide for this large text
+        columns: 2;
+        column-gap: 2rem;
     }
 }
 
@@ -546,9 +541,15 @@ a svg:hover {
         li {
             margin-bottom: 1em;
 
+            h4 {
+                margin-bottom: 0.8rem; // specifically small
+            } // h5
             h5 {
                 margin-bottom: 1rem; // specifically small
             } // h5
+            p {
+                margin-top: 0; // I might take this site wide it's currently running default
+            }
         } // li
     } // ul
 } // #intake-forms
@@ -560,6 +561,29 @@ a svg:hover {
 #footer-social {
     border-top: 1rem solid $emerald;
     background: $moss;
+    color: $lace;
+    padding: 1.953rem; // why this number
+
+    a {
+        color: $lace;
+    }
+
+    a:hover {
+        color: $emerald;
+    }
+
+    // slightly specific targeting but thats ok
+    > h5 {
+        text-align: center;
+    } // h5
+
+    // interesting little variable for all <h>
+    @for $i from 1 through 6 {
+        > h#{$i} {
+            // this is a weird double thing that I think could be done better
+            text-align: center;
+        } // h
+    } // @for
 
     ul {
         list-style: none;
@@ -573,27 +597,10 @@ a svg:hover {
             a {
                 // the svg to sit center
                 display: flex;
-            }
-        }
-    }
-
-    // interesting little variable for all <h>
-    @for $i from 1 through 6 {
-        > h#{$i} {
-            // this is a weird double thing that I think could be done better
-            margin-bottom: 0;
-            padding-bottom: 1.953rem;
-        }
-
-        > h#{$i} > a {
-            color: $lace;
-        }
-
-        > h#{$i} > a:hover {
-            color: $emerald;
-        }
-    }
-}
+            } // a
+        } // li
+    } // ul
+} // #footer-social
 
 .hide-below-40 {
     display: none; // this needs to be late in the css
@@ -601,11 +608,6 @@ a svg:hover {
     @media (min-width: 40rem) {
         display: revert;
     }
-}
-
-.slide-back {
-    margin-left: -1rem;
-    padding-left: 1rem;
 }
 
 .h-line {
@@ -646,17 +648,20 @@ footer h3 a {
     background: $emerald;
 }
 
-#contact {
-    display: flex;
-    flex-direction: column;
+// this naming is kinda terrible
+#contact > h4 {
+    background: $emerald;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    width: max-content; // less line-breaks
 }
 
-.box-div {
+/* .box-div {
     // display: inline;
     // margin-bottom: 1rem;
-}
+} */
 
-.boxed {
+/* .boxed {
     background: $emerald;
     padding: 0.5rem 1rem;
     margin-top: 0;
@@ -673,10 +678,10 @@ footer h3 a {
 h3.boxed {
     @extend h4;
 
-    /* @media (min-width: 40rem) {
+    * @media (min-width: 40rem) {
         font-size: 1.953rem;
-    } */
-}
+    } *
+} */
 
 .hide-above-40 {
     @media (min-width: 40rem) {

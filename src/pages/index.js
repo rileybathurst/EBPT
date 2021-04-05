@@ -68,7 +68,7 @@ const IndexPage = () => {
                 Emerald Bay Physical Therapy is a comprehensive center for
                 orthopedic and manual physical therapy.
               </h5>
-              <p className="justified-40 home-baselined">
+              <p className="home-baselined">
                 We specialize in hands-on, one-on-one treatments that are specific
                 to each patient’s goals. At EBPT, we are committed to health and
                 wellness no matter your age, lifestyle, or athletic abilities. Our
@@ -160,8 +160,6 @@ const IndexPage = () => {
                 Transition from rehabilitation to an exercise-based fitness
                 program
               </li>
-            </ul>
-            <ul className="inventory">
               <li>
                 Comprehensive approach to fitness to meet the complex demands of
                 daily life, athletic pursuits and high-level performance
@@ -197,7 +195,7 @@ const IndexPage = () => {
 
         <section id="intake-forms">
           <div className="single-fold">
-            <h2 className="doublem">Intake Forms</h2>
+            <h2>Intake Forms</h2>
           </div>
 
           <div className="two-fold">
