@@ -5,7 +5,25 @@ module.exports = {
     url: "https://emeraldbay.physio", // No trailing slash allowed!
     description:
       "Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy.",
-    image: "/images/treating.jpg" // Path to your image you placed in the 'static' folder
+    image: '/images/treating.jpg', // Path to your image you placed in the 'static' folder
+    openingHours: 'Mo, Tu, We, Th, Fr 08:00-18:00',
+    telephone: '(530)542-2662',
+    faxNumber: '(530)542-2661',
+    logo: '/images/icon.png',
+    areaServed: 'South Lake Tahoe, California',
+    author: 'Emerald Bay Physical Therapy',
+    paymentAccepted: 'Cash, deductibles, co-pays, co-insurance',
+    location: {
+      '@type': 'Place',
+      'address': {
+        "@type": "PostalAddress",
+        "addressLocality": "South Lake Tahoe",
+        "addressRegion": "CA",
+        "postalCode": "96150",
+        "streetAddress": "812 Emerald Bay Road"
+      }
+    },
+    slogan: 'Private, safe, and effective one-on-one treatments to help you live your best life!'
   },
   plugins: [
     "gatsby-plugin-sass",
