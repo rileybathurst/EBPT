@@ -23,7 +23,8 @@ module.exports = {
         "postalCode": "96150",
       }
     },
-    slogan: 'Private, safe, and effective one-on-one treatments to help you live your best life!'
+    slogan: 'Private, safe, and effective one-on-one treatments to help you live your best life!',
+    gsv: 't-GHhCwvq1SjOG3qV4JFNZpOo_6c5og1i1UlH_WvIOw'
   },
   plugins: [
     "gatsby-plugin-sass",

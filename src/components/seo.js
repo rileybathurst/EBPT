@@ -23,6 +23,7 @@ const SEO = ({ title, description, image, lang }) => {
     paymentAccepted,
     location,
     slogan,
+    gsv,
     // can't have .anything secondary level
   } = site.siteMetadata
 
@@ -41,6 +42,7 @@ const SEO = ({ title, description, image, lang }) => {
     addressRegion: location.address.addressRegion,
     postalCode: location.address.postalCode,
     slogan: slogan,
+    gsv: gsv
   }
 
   return (
@@ -71,7 +73,7 @@ const SEO = ({ title, description, image, lang }) => {
       {/* the layer down version of this didn't want to work so remove the wrapper */}
       <meta name="location" content={seo.streetAddress + ', ' + seo.addressLocality + ', ' + seo.addressRegion + ', ' + seo.postalCode} />
       {seo.slogan && <meta name="slogan" content={seo.slogan} />}
-
+      <meta name="google-site-verification" content={seo.gsv} />
     </Helmet>
   )
 }
@@ -90,6 +92,7 @@ SEO.propTypes = {
   paymentAccepted: PropTypes.string,
   location: PropTypes.string,
   slogan: PropTypes.string,
+  gsv: PropTypes.string,
 }
 
 SEO.defaultProps = {
@@ -105,6 +108,7 @@ SEO.defaultProps = {
   paymentAccepted: null,
   location: null,
   slogan: null,
+  gsv: null,
 }
 
 const query = graphql`
@@ -130,6 +134,7 @@ query SEO {
         }
       }
       slogan
+      gsv
     }
   }
 }
