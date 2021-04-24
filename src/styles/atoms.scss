@@ -225,6 +225,23 @@ a:hover {
   #hero
 \*------------------------------------*/
 
+#overt ul {
+  display: none;
+  @extend h5; // this is weird you cant do it inside the media query
+  padding-left: 0;
+
+  @media (min-width: 70rem) {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+       li {
+          margin: 0 1rem;
+          text-align: center;
+      } // li
+  } // @media 60rem
+} // #overt
+
 #hero {
   display: grid;
   grid-template-columns: 1fr 20rem 1fr; // ? not sure what im doing with this
