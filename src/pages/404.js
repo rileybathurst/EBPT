@@ -24,7 +24,7 @@ const NotFoundPage = () => {
             </>
           ) : null}
           <br />
-          <Link to="/">Go home</Link>.
+          <Link to="/" title="to the front page">Go home</Link>.
         </p>
       </main>
       <hr />

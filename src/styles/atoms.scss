@@ -2,25 +2,36 @@
   #variables
 \*------------------------------------*/
 
-$emerald: #6cbaad;
-$moldavite: #046c59;
-$moss: #044338;
+$emerald: #499E8F;
+$moldavite: #3D7E69;
+$moss: #2E5D58;
+$ember: #EA6A00;
 
-$ember: #ff9500;
-$amber: #ea8700;
-$burnt: #a36021;
-
-$lace: #f8f8f8;
-$stone: #414141;
+$pearl: #f8f8f8;
+$hematite: #909090;
+$stone: #5f5f5f;
 $onyx: #0f0f0f;
+
+// #variables
 
 /*------------------------------------*\
   #typography
 \*------------------------------------*/
 
+html {
+  font-family: "brandon-grotesque", sans-serif;
+  // https://fonts.adobe.com/fonts/brandon-grotesque
+
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+  -ms-text-size-adjust: 100%; // Am I sure scss isnt doing this?
+  -webkit-text-size-adjust: 100%; // do I need this?
+}
+
 body {
   font-size: 16px;
-  line-height: 1.563rem;
+  line-height: 1.563rem; // why is this not the same as h tags
+  font-style: normal;
+  font-weight: 400; // regular weight brandon grotesque
 }
 
 // type-scale.com
@@ -29,7 +40,7 @@ h1,
 .h1 {
   margin-top: 0;
   font-size: 3.052rem;
-  line-height: 4.578rem; // *1.5
+  line-height: 4.578rem; // *1.5 // should this be *1.25
 }
 
 h2,
@@ -56,20 +67,59 @@ h5,
   line-height: 1.875rem;
 }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 300; // light weight brandon grotesque
+}
+
+// these are double ups of above
+.as-h3 {
+  @extend h3;
+}
+
+.as-h4 {
+  @extend h4;
+}
+
+.as-h5 {
+  @extend h5;
+}
+
 small,
 .text_small {
   font-size: 0.8rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  font-style: normal;
-  font-weight: 300; // document this
+::selection {
+  background-color: $emerald; // 3:1 contrast ratio on pearl is fine fo UI
+}
+
+a {
+  color: $moldavite;
+}
+
+a:hover {
+  color: $moss;
+}
+
+// https://webaim.org/techniques/css/invisiblecontent/
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 
 h5.in-paragraph {
@@ -91,260 +141,6 @@ h5.in-paragraph {
   @media (min-width: 40rem) {
     text-align: justify;
   }
-}
-
-html {
-  font-family: "brandon-grotesque", sans-serif;
-  // document this as an adobe font
-  -ms-text-size-adjust: 100%; // Am I sure scss isnt doing this?
-  -webkit-text-size-adjust: 100%; // do I need this?
-}
-
-p,
-.sofia {
-  font-family: "sofia-pro", sans-serif;
-  // document this as an adobe font
-  font-weight: 400;
-  font-style: normal;
-}
-
-::selection {
-  background-color: $emerald;
-}
-
-// do some a11y on this
-.screenreader {
-  display: none;
-}
-
-body {
-  margin: 0; // reset
-  margin-bottom: -1rem; // hacky but needed I think its a gatsby thing
-}
-
-a {
-  color: $onyx;
-}
-
-a:hover {
-  color: $moldavite;
-}
-
-/*------------------------------------*\
-  #veiled
-\*------------------------------------*/
-
-#veiled.active {
-  // theres something about transle3d thats fastest IO should document that
-  transform: translate3d(0, 0, 0);
-}
-
-#veiled.inactive {
-  transform: translate3d(0, -100%, 0);
-  // margin-bottom: -45%;
-  // guess and check // nope this is completly wrong I need to look at other places Ive done this
-  // this is fixable I just cant remeber it
-}
-
-// this being an id rather than a class is causing conflicts that need important to overwrite
-#veiled {
-  transition: all 1s; // this should probably be a variable
-  position: absolute;
-  width: 100%;
-  margin-top: -1rem; // gatsby something
-  z-index: 99; // above any images logo etc
-
-  ul {
-    background: $emerald;
-    color: $onyx;
-    list-style: none;
-    padding: 1rem;
-    margin-top: 0;
-    margin-bottom: 0; // browser reset
-
-    li {
-      @extend h5;
-      margin-bottom: 1rem;
-    }
-  }
-
-  /*     svg {
-        max-width: 50%; // 
-    } */
-
-  @media (min-width: 60rem) {
-    display: none;
-  }
-}
-
-.veiled__header {
-  padding-bottom: 0 !important; // overwrite #veiled ul
-
-  li {
-    margin-bottom: 0 !important; // overwrite #veiled ul li
-    // this can probably be resoleved with heirachy
-
-    a {
-      display: block;
-
-      svg {
-        max-height: 5rem;
-        max-width: 5rem;
-        fill: $moss;
-      }
-
-      svg:hover {
-        fill: $moldavite;
-      }
-    }
-  }
-}
-
-.veil-button {
-  z-index: 99;
-  position: relative; // needed for the z index
-  float: right;
-  @media (min-width: 70rem) {
-    // this has to match #overt ul
-    display: none;
-  }
-}
-
-.close-button {
-  margin-top: 0;
-  background: $moss;
-  color: $emerald;
-  border: none;
-  width: 100%;
-  // text-decoration: underline;
-  text-align: left;
-  padding: 1rem;
-}
-
-/*------------------------------------*\
-  #hero
-\*------------------------------------*/
-
-#overt ul {
-  display: none;
-  @extend h5; // this is weird you cant do it inside the media query
-  padding-left: 0;
-
-  @media (min-width: 70rem) {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-
-       li {
-          margin: 0 1rem;
-          text-align: center;
-      } // li
-  } // @media 60rem
-} // #overt
-
-#hero {
-  display: grid;
-  grid-template-columns: 1fr 20rem 1fr; // ? not sure what im doing with this
-  margin-bottom: 1rem;
-  overflow: hidden; // crop the image
-
-  @media (min-width: 42rem) {
-    grid-template-columns: 1fr 40rem 1fr; // ? not sure what im doing with this
-  }
-
-  #logo__backer {
-    grid-row: 1;
-    grid-column: 2;
-    place-self: center;
-    background: $lace;
-    border-radius: 50%;
-    width: 8rem; // guess and check
-    height: 8rem; // guess and check
-    opacity: 0.5;
-  }
-
-  #logo__border {
-    grid-row: 1;
-    grid-column: 2;
-    place-self: center;
-    border: 2px $lace solid;
-    border-radius: 50%;
-    width: 8rem;
-    height: 8rem;
-  }
-
-  #logo {
-    grid-row: 1;
-    grid-column: 2;
-    place-self: center;
-    z-index: 1; // above the backer and border
-    // even tho this is after in the html it doesnt seem to be above
-
-    a {
-      display: grid;
-      // keeps the icon centered in the backer
-    }
-  }
-
-  .gatsby-image-wrapper {
-    grid-row: 1;
-    grid-column: 1/4;
-    z-index: -1;
-    min-height: 10rem;
-    max-height: 20vh; // guess and check
-    opacity: 0.33;
-  }
-}
-
-header a svg {
-  max-width: 6rem;
-  max-height: 6rem;
-  fill: $moss;
-  margin: 1rem;
-}
-
-header a svg:hover {
-  fill: $moldavite;
-}
-
-button,
-.buttoned {
-  display: block;
-  margin-top: 1rem;
-}
-
-button,
-.buttoned a {
-  width: auto;
-  cursor: pointer;
-  background: $emerald;
-  border: none; // browser reset
-  color: $stone;
-  padding: 8px 16px;
-  box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
-  text-decoration: none; // its obvious its a button
-}
-
-button:hover,
-.buttoned a:hover {
-  background: $moldavite;
-  color: $onyx;
-  box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.4);
-}
-
-a[href^="tel:"]:before {
-  content: "\1F4DE";
-  margin-right: 0.5em;
-  text-decoration: none;
-  display: inline-block; // needed for the text-decoration
-
-  @media (min-width: 20rem) {
-    content: "\260E"; // this is an emoji on a phone and nice on desktop
-  }
-}
-
-#call {
-    margin-bottom: 2.441rem; // h2
 }
 
 // this doesn't want to be the block of the p
@@ -380,18 +176,176 @@ hr {
   margin-right: 50vw;
 }
 
-/* p {
-    // max-width: 40rem; // I kinda like this idea but causes unintended consequences
-} */
+.hide-above-40 {
+  @media (min-width: 40rem) {
+    display: none;
+  }
+}
 
-// its like an alert but not quite as much
-.vigilant {
-  background: $amber;
-  padding: 0.5rem 1rem;
+.forty-h3 {
+  // i can probably do this with variables
+  font-size: 1.953rem;
+
+  @media (min-width: 40rem) {
+    font-size: revert; // w3c validation issue
+    // 4/27/21 88.56% supported
+  }
+}
+
+.forty-h4 {
+  font-size: 1.563rem;
+
+  @media (min-width: 40rem) {
+    font-size: revert;  // w3c validation issue
+  }
+}
+
+.over-none {
+  margin-top: 0;
+}
+
+.under-less {
+  margin-bottom: 0.8rem;
+}
+
+.h-line {
+  display: inline;
 }
 
 .distracted {
   color: $stone;
+}
+
+// #typography
+
+/*------------------------------------*\
+  #buttons
+\*------------------------------------*/
+
+button,
+.buttoned {
+  display: block;
+  margin-top: 1rem;
+}
+
+button,
+.buttoned a {
+  width: auto;
+  cursor: pointer;
+  background: $moldavite;
+  border: none; // browser reset
+  color: $pearl;
+  padding: 8px 16px;
+  box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+  text-decoration: none; // its obvious its a button
+}
+
+button:hover,
+.buttoned a:hover {
+  background: $moss;
+  color: darken($pearl, 20%); // custom color
+  box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.4);
+}
+
+a[href^="tel:"]:before {
+  content: "\1F4DE";
+  margin-right: 0.5em;
+  text-decoration: none;
+  display: inline-block; // needed for the text-decoration
+
+  @media (min-width: 20rem) {
+    content: "\260E"; // this is an emoji on a phone and nice on desktop
+  }
+}
+
+#call {
+  margin-bottom: 2.441rem; // h2
+}
+
+// #buttons
+
+/*------------------------------------*\
+  #images
+\*------------------------------------*/
+
+svg {
+  width: 100%;
+}
+
+// keep these small till i deal with them
+a svg {
+  max-width: 4rem;
+  max-height: 3rem;
+  margin: 1rem;
+  fill: $pearl;
+
+  @media (min-width: 40rem) {
+    max-height: 2rem;
+  }
+}
+
+a svg:hover {
+  fill: darken($pearl, 20%);
+}
+
+.team-heads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  > div {
+    flex: 0 1 4rem; // guess and check
+    margin: 0.5rem 1rem;
+    text-align: center;
+
+    > a {
+      > .gatsby-image-wrapper {
+        border-radius: 50%;
+        border: 2px $pearl solid;
+        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+        margin-bottom: 1rem;
+        max-height: 8rem;
+        // transition: 0.2s; // I want this but after it loads so I need to sort that
+
+        // this is needed for safari and possibly others
+        > picture {
+          border-radius: 50%;
+        }
+      } // .gatsby-image-wrapper
+
+      > .gatsby-image-wrapper:hover {
+        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.5);
+      }
+    } // a
+  } // div
+} // .team-heads
+
+.image-stack {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .gatsby-image-wrapper {
+    flex: 1 1 8rem; // guess and check
+    margin: 0.5rem 1rem;
+  }
+}
+
+.slender-image {
+  height: 8rem; // seems like it centers the image better than max-height
+  overflow: hidden;
+  display: grid;
+  // ppearl-content: center;
+}
+
+// #images
+
+/*------------------------------------*\
+  #layout
+\*------------------------------------*/
+
+body {
+  margin: 0; // reset
+  margin-bottom: -1rem; // hacky but needed I think its a gatsby thing
 }
 
 .measured {
@@ -405,17 +359,13 @@ hr {
   }
 }
 
-.estimated {
+.estimated { // naming
   max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
-/*------------------------------------*\
-    #GRID
-\*------------------------------------*/
 
 // this should always be on a section div etc not on the content
 .two-fold {
@@ -523,26 +473,6 @@ hr {
   }
 }
 
-svg {
-  width: 100%;
-}
-
-// keep these small till i deal with them
-a svg {
-  max-width: 4rem;
-  max-height: 3rem;
-  margin: 1rem;
-  fill: $lace;
-
-  @media (min-width: 40rem) {
-    max-height: 2rem;
-  }
-}
-
-a svg:hover {
-  fill: $emerald;
-}
-
 #intake-forms {
   // this might be too heavy handed
   // text-align: center;
@@ -567,28 +497,259 @@ a svg:hover {
   } // ul
 } // #intake-forms
 
-/* footer {
+// #layout
 
-} */
+/*------------------------------------*\
+  #veiled
+\*------------------------------------*/
+
+#veiled.active {
+  // theres something about transle3d thats fastest IO should document that
+  transform: translate3d(0, 0, 0);
+}
+
+#veiled.inactive {
+  transform: translate3d(0, -100%, 0);
+}
+
+// this being an id rather than a class is causing conflicts that need important to overwrite
+#veiled {
+  transition: all 1s; // this should probably be a variable
+  position: absolute;
+  width: 100%;
+  margin-top: -1rem; // gatsby something
+  z-index: 99; // above any images logo etc
+
+  ul {
+    background: $emerald;
+    color: $onyx;
+    list-style: none;
+    padding: 1rem;
+    margin-top: 0;
+    margin-bottom: 0; // browser reset
+
+    li {
+      @extend h5;
+      margin-bottom: 1rem;
+
+      a {
+        color: $pearl;
+      }
+
+      a:hover {
+        color: darken($pearl, 20%);
+      }
+    }
+  }
+
+  @media (min-width: 60rem) {
+    display: none;
+  }
+}
+
+.veiled__header {
+  padding-bottom: 0 !important; // overwrite #veiled ul
+
+  li {
+    margin-bottom: 0 !important; // overwrite #veiled ul li
+    // this can probably be resoleved with heirachy
+
+    a {
+      display: block;
+
+      svg {
+        max-height: 5rem;
+        max-width: 5rem;
+        fill: $moss;
+      }
+
+      svg:hover {
+        fill: $moldavite;
+      }
+    }
+  }
+}
+
+.veil-button {
+  z-index: 99;
+  position: relative; // needed for the z index
+  float: right;
+  @media (min-width: 70rem) {
+    // this has to match #overt ul
+    display: none;
+  }
+}
+
+.close-button {
+  margin-top: 0;
+  background: $moss;
+  color: $pearl;
+  border: none;
+  width: 100%;
+  // text-decoration: underline;
+  text-align: left;
+  padding: 1rem;
+}
+
+// #veiled
+
+/*------------------------------------*\
+  #hero
+\*------------------------------------*/
+
+#overt ul {
+  display: none;
+  @extend h5; // this is weird you cant do it inside the media query
+  padding-left: 0;
+
+  @media (min-width: 70rem) {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+       li {
+          margin: 0 1rem;
+          text-align: center;
+      } // li
+  } // @media 60rem
+} // #overt
+
+#hero {
+  display: grid;
+  grid-template-columns: 1fr 20rem 1fr; // ? not sure what im doing with this
+  margin-bottom: 1rem;
+  overflow: hidden; // crop the image
+
+  @media (min-width: 42rem) {
+    grid-template-columns: 1fr 40rem 1fr; // ? not sure what im doing with this
+  }
+
+  #logo__backer {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+    background: $pearl;
+    border-radius: 50%;
+    width: 8rem; // guess and check
+    height: 8rem; // guess and check
+    opacity: 0.5;
+  }
+
+  #logo__border {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+    border: 2px $pearl solid;
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #logo {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+    z-index: 1; // above the backer and border
+    // even tho this is after in the html it doesnt seem to be above
+
+    a {
+      display: grid;
+      // keeps the icon centered in the backer
+    }
+  }
+
+  .gatsby-image-wrapper {
+    grid-row: 1;
+    grid-column: 1/4;
+    z-index: -1;
+    min-height: 10rem;
+    max-height: 20vh; // guess and check
+    opacity: 0.33;
+  }
+}
+
+header a svg {
+  max-width: 6rem;
+  max-height: 6rem;
+  fill: $moss;
+  margin: 1rem;
+}
+
+header a svg:hover {
+  fill: $moldavite;
+}
+
+// #hero
+
+/*------------------------------------*\
+  #backgrounds
+\*------------------------------------*/
+
+// its like an alert but not quite as much
+.vigilant {
+  background: $ember;
+  padding: 0.5rem 1rem;
+}
+
+// this doesnt work nested
+.vigilant::selection {
+  background-color: darken($ember, 20%);
+}
+
+.emerald-backed {
+  background: $emerald;
+  color: $pearl;
+
+  a {
+    color: $pearl;
+  }
+
+  a:hover {
+    color: darken($pearl, 20%);
+  }
+}
+
+.emerald-backed::selection {
+  background-color: $moldavite;
+}
+
+#contact > h4, // this naming is kinda terrible
+footer h3 a {
+  @extend .emerald-backed;
+}
+
+// #backgrounds
+
+/*------------------------------------*\
+  #contact
+\*------------------------------------*/
+
+#contact > h4 {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: max-content; // less line-breaks
+}
+
+// #contact
+
+/*------------------------------------*\
+  #footer
+\*------------------------------------*/
 
 #footer-social {
   border-top: 1rem solid $emerald;
   background: $moss;
-  color: $lace;
+  color: $pearl;
   padding: 1.953rem; // why this number
 
   a {
-    color: $lace;
+    color: $pearl; // conflicts with text color
+    // has background tho
   }
 
   a:hover {
-    color: $emerald;
+    color: $hematite;
   }
-
-  // slightly specific targeting but thats ok
-  > h5 {
-    text-align: center;
-  } // h5
 
   // interesting little variable for all <h>
   @for $i from 1 through 6 {
@@ -610,154 +771,19 @@ a svg:hover {
       a {
         // the svg to sit center
         display: flex;
+
+        svg {
+          margin: 0;
+          padding: 1rem;
+        }
       } // a
+
+      a:hover {
+        background: darken($moss, 20%);
+        border-radius: 0.25rem; // match all icons having a rounded edge
+      } // a:hover
     } // li
   } // ul
 } // #footer-social
 
-.hide-below-40 {
-  display: none; // this needs to be late in the css
-
-  @media (min-width: 40rem) {
-    display: revert;
-  }
-}
-
-.h-line {
-  display: inline;
-}
-
-.forty-h3 {
-  // i can probably do this with variables
-  font-size: 1.953rem;
-
-  @media (min-width: 40rem) {
-    font-size: revert;
-  }
-}
-
-.forty-h4 {
-  font-size: 1.563rem;
-
-  @media (min-width: 40rem) {
-    font-size: revert;
-  }
-}
-
-.over-none {
-  margin-top: 0;
-}
-
-.under-less {
-  margin-bottom: 0.8rem;
-}
-
-.emerald-backed {
-  background: $emerald;
-}
-
-footer h3 a {
-  background: $emerald;
-}
-
-// this naming is kinda terrible
-#contact > h4 {
-  background: $emerald;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  width: max-content; // less line-breaks
-}
-
-/* .box-div {
-    // display: inline;
-    // margin-bottom: 1rem;
-} */
-
-/* .boxed {
-    background: $emerald;
-    padding: 0.5rem 1rem;
-    margin-top: 0;
-    margin-left: -1rem;
-    padding-left: 1rem;
-    width: max-content;
-    max-width: 100%;
-}
-
-.boxed a:hover {
-    color: $lace;
-}
-
-h3.boxed {
-    @extend h4;
-
-    * @media (min-width: 40rem) {
-        font-size: 1.953rem;
-    } *
-} */
-
-.hide-above-40 {
-  @media (min-width: 40rem) {
-    display: none;
-  }
-}
-
-.as-h3 {
-  @extend h3;
-}
-
-.as-h4 {
-  @extend h4;
-}
-
-.as-h5 {
-  @extend h5;
-}
-
-.team-heads {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  > div {
-    flex: 0 1 4rem; // guess and check
-    margin: 0.5rem 1rem;
-    text-align: center;
-
-    > a {
-      > .gatsby-image-wrapper {
-        border-radius: 50%;
-        border: 2px $lace solid;
-        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
-        margin-bottom: 1rem;
-        max-height: 8rem;
-        // transition: 0.2s; // I want this but after it loads so I need to sort that
-
-        // this is needed for safari and possibly others
-        > picture {
-          border-radius: 50%;
-        }
-      } // .gatsby-image-wrapper
-
-      > .gatsby-image-wrapper:hover {
-        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.5);
-      }
-    } // a
-  } // div
-} // .team-heads
-
-.image-stack {
-  display: flex;
-  flex-wrap: wrap;
-
-  > .gatsby-image-wrapper {
-    flex: 1 1 8rem; // guess and check
-    margin: 0.5rem 1rem;
-  }
-}
-
-.slender-image {
-  height: 8rem; // seems like it centers the image better than max-height
-  overflow: hidden;
-  display: grid;
-  // place-content: center;
-}
+// #footer
