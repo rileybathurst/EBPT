@@ -58,7 +58,7 @@ const SEO = ({ title, description, image, lang }) => {
       }}
     >
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+      <meta name="image" content={seo.ogImage} />
       <meta property="og:type" content="website" />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {/* {(article ? true : null) && <meta property="og:type" content="article" />} */}
@@ -66,13 +66,14 @@ const SEO = ({ title, description, image, lang }) => {
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
-      <meta name="twitter:card" content="summary_large_image" />
+      {seo.image && <meta property="og:image" content={seo.ogImage} />}
 
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
+
+      <meta name="twitter:card" content="summary_large_image" />
       {seo.image && <meta name="twitter:image" content={seo.twitterImage} />}
 
       {seo.openingHours && (
