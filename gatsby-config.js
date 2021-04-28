@@ -61,6 +61,8 @@ module.exports = {
     {
     resolve: `gatsby-plugin-csp`,
       options: {
+        mergeStyleHashes: false, // you can disable styles sha256 hashes
+        mergeScriptHashes: false,
         directives: {
           "style-src": "'self' 'unsafe-inline'",
           "script-src": "'self' 'unsafe-inline'",
