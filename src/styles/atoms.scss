@@ -82,19 +82,6 @@ h6,
   font-weight: 300; // light weight brandon grotesque
 }
 
-// these are double ups of above
-.as-h3 {
-  @extend h3;
-}
-
-.as-h4 {
-  @extend h4;
-}
-
-.as-h5 {
-  @extend h5;
-}
-
 small,
 .text_small {
   font-size: 0.8rem;
@@ -109,7 +96,7 @@ a {
 }
 
 a:hover {
-  color: $moss;
+  color: $moldavite;
 }
 
 // https://webaim.org/techniques/css/invisiblecontent/
@@ -120,10 +107,6 @@ a:hover {
   width:1px;
   height:1px;
   overflow:hidden;
-}
-
-h5.in-paragraph {
-  margin-bottom: 0; // am I sure it's zero?
 }
 
 .home-baselined {
@@ -148,30 +131,10 @@ h5.in-paragraph {
   text-align: center;
 }
 
-.h-center__40 {
-  @media (min-width: 60rem) {
-    // this isnt quite right
-    // its popping before the 2 col flex
-    text-align: center;
-  }
-
-  h2 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-.center-text {
-  text-align: center;
-  display: block;
-}
-
 hr {
-  // width: 3.052rem; // h1? is that a nice thing to go by?
   border: none;
   border-bottom: 2px solid $emerald;
   margin: 1.25rem auto; // h5
-  // padding-right: 50vw;
   width: 50vw;
   margin-right: 50vw;
 }
@@ -189,14 +152,6 @@ hr {
   @media (min-width: 40rem) {
     font-size: revert; // w3c validation issue
     // 4/27/21 88.56% supported
-  }
-}
-
-.forty-h4 {
-  font-size: 1.563rem;
-
-  @media (min-width: 40rem) {
-    font-size: revert;  // w3c validation issue
   }
 }
 
@@ -243,7 +198,7 @@ button,
 button:hover,
 .buttoned a:hover {
   background: $moss;
-  color: darken($pearl, 20%); // custom color
+  color: lighten($pearl, 20%); // custom color
   box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.4);
 }
 
@@ -270,18 +225,18 @@ a[href^="tel:"]:before {
 
 svg {
   width: 100%;
-}
-
-// keep these small till i deal with them
-a svg {
   max-width: 4rem;
   max-height: 3rem;
   margin: 1rem;
-  fill: $pearl;
 
   @media (min-width: 40rem) {
     max-height: 2rem;
   }
+}
+
+// keep these small till i deal with them
+a svg {
+  fill: $pearl;
 }
 
 a svg:hover {
@@ -335,6 +290,7 @@ a svg:hover {
   overflow: hidden;
   display: grid;
   // ppearl-content: center;
+  margin-bottom: 2.9295rem;
 }
 
 // #images
@@ -350,6 +306,7 @@ body {
 
 .measured {
   max-width: 40rem;
+  // lets the top and bottom be defaults
   margin-left: 1rem;
   margin-right: 1rem;
 
@@ -357,14 +314,6 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.estimated { // naming
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 // this should always be on a section div etc not on the content
@@ -377,45 +326,18 @@ body {
   flex-wrap: wrap;
   padding: 0 1rem;
 
-  > * {
-    // I should use this more often
-    flex: 1 1 21rem;
+  > * { // I should use this more often
+      flex: 1 1 21rem;
   }
 }
 
-// this is slightly confusing syntax but it's kinda doing the thing
-.two-fold > *:nth-child(odd) {
-  margin-right: 1rem;
-}
-.two-fold > *:nth-child(even) {
-  margin-left: 1rem;
-}
-
+// The question is ho many places can I use flex but not supports or flex gap
 // https://caniuse.com/flexbox-gap
 // https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
 // still kinda low numbers I need a fallback
-// except gap is part of grid so this doesnt work in safari
-
 @supports (gap: 2em) {
   .two-fold {
-    gap: 2rem;
-  }
-
-  // fallback as we have the gap
-  .two-fold:nth-child(odd) {
-    margin: 0 auto;
-  }
-  .two-fold:nth-child(even) {
-    margin: 0 auto;
-  }
-}
-
-// how much of above is just to do this
-.two-fold > .catalog {
-  @media (min-width: 40rem) {
-    // 📣 guess and check but I need to tidy this up
-    columns: 2;
-    column-gap: 2rem;
+      gap: 2rem;
   }
 }
 
@@ -427,50 +349,26 @@ body {
   padding: 0 1rem;
 }
 
-.measured {
-  max-width: 40rem;
-  // lets the top and bottom be defaults
-  margin-left: 1rem;
-  margin-right: 1rem;
-
-  @media (min-width: 40rem) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-// lots of lists maybe don't use that to sort font sizes?
-.catalog {
-  list-style: none;
-  // margin-left: 0;
-  padding-left: 0; // reset
-  @extend h3;
-  color: $stone;
-
-  li {
-    margin-bottom: 2.9295rem; // line-height of h3
-  }
-}
-
 .inventory {
-  // list-style: none;
-  // padding-left: 0; // browser reset
+  color: $stone;
   @extend h4; // thinking about dropping this down so more fits on each line
   margin: 0; // this might need to be reinstated at larger sizes
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
 
   li {
-    margin-bottom: 2.3445rem; // this is the line height of the text
+    margin-bottom: 1.563rem; // this is the line height of the text
     // keeps the vertical rythm
+    flex: 1 1 23rem; // guess and check
   }
 }
 
-.two-fold > .inventory {
-  @media (min-width: 60rem) {
-    // guess and check
-    // has to be pretty wide for this large text
-    columns: 2;
-    column-gap: 2rem;
-  }
+// the difference is the list-style
+.catalog {
+  @extend .inventory;
+  list-style: none;
+  padding-left: 0; // reset
 }
 
 #intake-forms {
@@ -675,6 +573,7 @@ header a svg {
   margin: 1rem;
 }
 
+// this isnt working
 header a svg:hover {
   fill: $moldavite;
 }
@@ -691,7 +590,7 @@ header a svg:hover {
   padding: 0.5rem 1rem;
 }
 
-// this doesnt work nested
+// nesting this doesnt work
 .vigilant::selection {
   background-color: darken($ember, 20%);
 }
@@ -702,10 +601,14 @@ header a svg:hover {
 
   a {
     color: $pearl;
+    background: $emerald;
+    display: inline-block;
+    padding: 0.5rem 1rem;
   }
 
   a:hover {
-    color: darken($pearl, 20%);
+    color: lighten($pearl, 20%);
+    background: $moldavite;
   }
 }
 
@@ -725,9 +628,15 @@ footer h3 a {
 \*------------------------------------*/
 
 #contact > h4 {
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
   width: max-content; // less line-breaks
+}
+
+.space-start {
+  padding-left: 0.5rem;
+}
+
+.space-end {
+  padding: 0.5rem 1rem;
 }
 
 // #contact
@@ -748,7 +657,7 @@ footer h3 a {
   }
 
   a:hover {
-    color: $hematite;
+    color: darken($pearl, 20%);
   }
 
   // interesting little variable for all <h>

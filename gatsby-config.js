@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: "Emerald Bay Physical Therapy",
@@ -52,14 +54,7 @@ module.exports = {
       },
       __key: "images",
     },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID,
-        },
-      },
-    },
+    // getting a C- on mozilla scroes so this needs work
     {
     resolve: `gatsby-plugin-csp`,
       options: {

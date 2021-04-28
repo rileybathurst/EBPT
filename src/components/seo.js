@@ -101,6 +101,9 @@ const SEO = ({ title, description, image, lang }) => {
       />
       {seo.slogan && <meta name="slogan" content={seo.slogan} />}
       <meta name="google-site-verification" content={seo.gsv} />
+
+      
+      <link rel="stylesheet" href="https://use.typekit.net/vgk8lss.css"></link>
     </Helmet>
   );
 };

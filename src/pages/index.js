@@ -103,8 +103,8 @@ const IndexPage = () => {
             <strong>Our Physical Therapy and Wellness Offerings</strong>
           </h2>
 
-          <div className="two-fold ">
-            <ul className="catalog ">
+          <div className="two-fold">
+            <ul className="catalog">
               <li>Aquatic therapy</li>
               <li>Post-surgical rehabilitation</li>
               <li>Injury prevention assessments</li>
