@@ -64,10 +64,10 @@ const IndexPage = () => {
         <section id="intro">
           <div className="two-fold">
             <div>
-              <h5 className="sofia">
+              <h2 className="h5"> {/* skipping levels this needs to be done with class */}
                 Emerald Bay Physical Therapy is a comprehensive center for
                 orthopedic and manual physical therapy.
-              </h5>
+              </h2>
               <p className="home-baselined">
                 We specialize in hands-on, one-on-one treatments that are specific
                 to each patient’s goals. At EBPT, we are committed to health and
