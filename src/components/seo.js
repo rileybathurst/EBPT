@@ -1,15 +1,15 @@
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
+import { useStaticQuery, graphql } from "gatsby";
 
 // Im not sure what the rules on what goes here vs in the array?
 const SEO = ({ title, description, image, lang }) => {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+  const { pathname } = useLocation();
+  const { site } = useStaticQuery(query);
   const {
     defaultTitle,
     titleTemplate,
@@ -25,7 +25,7 @@ const SEO = ({ title, description, image, lang }) => {
     slogan,
     gsv,
     // can't have .anything secondary level
-  } = site.siteMetadata
+  } = site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -42,11 +42,17 @@ const SEO = ({ title, description, image, lang }) => {
     addressRegion: location.address.addressRegion,
     postalCode: location.address.postalCode,
     slogan: slogan,
-    gsv: gsv
-  }
+    gsv: gsv,
+  };
 
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    <Helmet
+      title={seo.title}
+      titleTemplate={titleTemplate}
+      htmlAttributes={{
+        lang: 'en-US',
+      }}
+    >
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
@@ -64,21 +70,36 @@ const SEO = ({ title, description, image, lang }) => {
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
 
-      {seo.openingHours && <meta name="openingHours" content={seo.openingHours} />}
+      {seo.openingHours && (
+        <meta name="openingHours" content={seo.openingHours} />
+      )}
       {seo.telephone && <meta name="telephone" content={seo.telephone} />}
       {seo.faxNumber && <meta name="faxNumber" content={seo.faxNumber} />}
       {seo.areaServed && <meta name="areaServed" content={seo.areaServed} />}
-      {seo.paymentAccepted && <meta name="paymentAccepted" content={seo.paymentAccepted} />}
+      {seo.paymentAccepted && (
+        <meta name="paymentAccepted" content={seo.paymentAccepted} />
+      )}
       {/* {seo.location && <meta name="location" content={seo.streetAddress + ', ' + seo.addressLocality + ', ' + seo.addressRegion + ', ' + seo.postalCode} />} */}
       {/* the layer down version of this didn't want to work so remove the wrapper */}
-      <meta name="location" content={seo.streetAddress + ', ' + seo.addressLocality + ', ' + seo.addressRegion + ', ' + seo.postalCode} />
+      <meta
+        name="location"
+        content={
+          seo.streetAddress +
+          ", " +
+          seo.addressLocality +
+          ", " +
+          seo.addressRegion +
+          ", " +
+          seo.postalCode
+        }
+      />
       {seo.slogan && <meta name="slogan" content={seo.slogan} />}
       <meta name="google-site-verification" content={seo.gsv} />
     </Helmet>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;
 
 SEO.propTypes = {
   title: PropTypes.string,
@@ -93,7 +114,7 @@ SEO.propTypes = {
   location: PropTypes.string,
   slogan: PropTypes.string,
   gsv: PropTypes.string,
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,
@@ -109,33 +130,33 @@ SEO.defaultProps = {
   location: null,
   slogan: null,
   gsv: null,
-}
+};
 
 const query = graphql`
-query SEO {
-  site {
-    siteMetadata {
-      defaultTitle: title
-      defaultDescription: description
-      siteUrl: url
-      defaultImage: image
-      openingHours
-      telephone
-      faxNumber
-      areaServed
-      paymentAccepted
-      location {
-        address {
-          _type
-          addressLocality
-          addressRegion
-          postalCode
-          streetAddress
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+        openingHours
+        telephone
+        faxNumber
+        areaServed
+        paymentAccepted
+        location {
+          address {
+            _type
+            addressLocality
+            addressRegion
+            postalCode
+            streetAddress
+          }
         }
+        slogan
+        gsv
       }
-      slogan
-      gsv
     }
   }
-}
-`
+`;
