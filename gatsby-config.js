@@ -7,6 +7,7 @@ module.exports = {
       "Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy.",
     image: 'https://ebpt.s3-us-west-1.amazonaws.com/images/emerald-bay-pt-og_image.jpg', // Path to your image you placed in the 'static' folder
     ogImage: 'https://ebpt.s3-us-west-1.amazonaws.com/images/emerald_bay_physical_therapy-og_image.jpg',
+    twitterImage: 'https://ebpt.s3-us-west-1.amazonaws.com/images/emerald_bay_physical_therapy-twitter_image.jpg',
     openingHours: 'Mo, Tu, We, Th, Fr 08:00-18:00',
     telephone: '(530)542-2662',
     faxNumber: '(530)542-2661',

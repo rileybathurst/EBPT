@@ -17,6 +17,7 @@ const SEO = ({ title, description, image, lang }) => {
     defaultDescription,
     defaultImage,
     ogImage,
+    twitterImage,
     telephone,
     openingHours,
     faxNumber,
@@ -33,6 +34,7 @@ const SEO = ({ title, description, image, lang }) => {
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     ogImage: ogImage,
+    twitterImage: twitterImage,
     url: `${siteUrl}${pathname}`,
     openingHours: `${openingHours}`,
     telephone: telephone,
@@ -71,7 +73,7 @@ const SEO = ({ title, description, image, lang }) => {
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
+      {seo.image && <meta name="twitter:image" content={seo.twitterImage} />}
 
       {seo.openingHours && (
         <meta name="openingHours" content={seo.openingHours} />
@@ -109,6 +111,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   ogImage: PropTypes.string,
+  twitterImage: PropTypes.string,
   article: PropTypes.bool,
   openingHours: PropTypes.string,
   telephone: PropTypes.string,
@@ -126,6 +129,7 @@ SEO.defaultProps = {
   description: null,
   image: null,
   ogImage: null,
+  twitterImage: null,
   article: false,
   openingHours: null,
   telephone: null,
@@ -146,6 +150,7 @@ const query = graphql`
         siteUrl: url
         defaultImage: image
         ogImage: image
+        twitterImage: image
         openingHours
         telephone
         faxNumber
