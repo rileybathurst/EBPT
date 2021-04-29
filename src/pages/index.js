@@ -82,11 +82,11 @@ const IndexPage = () => {
                 exceed your expectations.
               </p>
 
-              <h5>
+              <h3 className="h5">
                 <Link to="/team" className="buttoned-above-40">
                   Meet Our Team
                 </Link>
-              </h5>
+              </h3>
               <TeamHeads />
             </div>
             <div>

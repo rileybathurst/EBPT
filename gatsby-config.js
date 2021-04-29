@@ -61,7 +61,7 @@ module.exports = {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeScriptHashes: false,
         directives: {
-          "style-src": "'self' 'unsafe-inline'",
+          "style-src": "'self' 'unsafe-inline' 'https://use.typekit.net/vgk8lss.css'",
           "script-src": "'self' 'unsafe-inline'",
         }
       }
