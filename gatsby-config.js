@@ -63,8 +63,8 @@ module.exports = {
         directives: {
           "style-src": "'self' 'unsafe-inline' use.typekit.net",
           "script-src": "'self' 'unsafe-inline' use.typekit.net",
-          "font-src": "'self' data://* use.typekit.net",
-          "img-src": "'self' p.typekit.net",
+          // "font-src": "'self' data://* use.typekit.net",
+          // "img-src": "'self' p.typekit.net",
         }
       }
     }
