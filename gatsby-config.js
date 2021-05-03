@@ -67,8 +67,11 @@ module.exports = {
           "font-src": "'self' 'unsafe-inline' use.typekit.net",
           // "img-src": "'self' p.typekit.net",
           
-          "frame-ancestors": "none",
-          "X-Frame-Options": "DENY",
+          // these don't work as they can't got through the meta tag
+          // "frame-ancestors": "none",
+          // "X-Frame-Options": "DENY",
+          // this is really odd tho it logs errors to the console saying its not working
+          // but ups my score on observatory for fixing this problem
         }
       }
     }
