@@ -66,8 +66,15 @@ module.exports = {
           // the unsafe-inline on script-src is a problem for https://observatory.mozilla.org but without it the images break
           "font-src": "'self' 'unsafe-inline' use.typekit.net",
           // "img-src": "'self' p.typekit.net",
+          
+          // these don't work as they can't got through the meta tag
+          // "frame-ancestors": "none",
+          // "X-Frame-Options": "DENY",
+          // this is really odd tho it logs errors to the console saying its not working
+          // but ups my score on observatory for fixing this problem
         }
       }
-    }
+    },
+    "gatsby-plugin-netlify"
   ],
 };
