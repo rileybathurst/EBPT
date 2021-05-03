@@ -61,7 +61,7 @@ module.exports = {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeScriptHashes: false,
         directives: {
-          "style-src": "'self' 'unsafe-inline' use.typekit.net",
+          "style-src": "'self' 'unsafe-inline' use.typekit.net p.typekit.net",
           "script-src": "'self' 'unsafe-inline' use.typekit.net",
           // "font-src": "'self' data://* use.typekit.net",
           // "img-src": "'self' p.typekit.net",
