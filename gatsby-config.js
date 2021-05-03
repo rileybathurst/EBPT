@@ -62,7 +62,8 @@ module.exports = {
         mergeScriptHashes: false,
         directives: {
           "style-src": "'self' 'unsafe-inline' use.typekit.net p.typekit.net",
-          "script-src": "'self' use.typekit.net",
+          "script-src": "'self' 'unsafe-inline' use.typekit.net",
+          // the unsafe-inline on script-src is a problem for https://observatory.mozilla.org but without it the images break
           "font-src": "'self' 'unsafe-inline' use.typekit.net",
           // "img-src": "'self' p.typekit.net",
         }
