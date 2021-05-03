@@ -66,6 +66,9 @@ module.exports = {
           // the unsafe-inline on script-src is a problem for https://observatory.mozilla.org but without it the images break
           "font-src": "'self' 'unsafe-inline' use.typekit.net",
           // "img-src": "'self' p.typekit.net",
+          
+          "frame-ancestors": "none",
+          "X-Frame-Options": "DENY",
         }
       }
     }
