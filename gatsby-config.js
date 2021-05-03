@@ -74,6 +74,7 @@ module.exports = {
           // but ups my score on observatory for fixing this problem
         }
       }
-    }
+    },
+    "gatsby-plugin-netlify"
   ],
 };
