@@ -17,7 +17,7 @@ The intake forms and images are hosted on S3, this needs better documentation
 - 404 page
 - the year in the footer is hard coded
 - Some of the back pages are feeling hard to read in brandon grotesque, I think I should simplify
-- offerings title spans two rows that is probably fixable
+- the offerings page title spans two rows that is probably fixable
 
 ## Notes
 

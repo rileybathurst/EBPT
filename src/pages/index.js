@@ -65,12 +65,11 @@ const IndexPage = () => {
           <div className="two-fold">
             <div>
               <h2 className="h5">
-                {" "}
                 {/* skipping levels this needs to be done with class */}
                 Emerald Bay Physical Therapy is a comprehensive center for
                 orthopedic and manual physical therapy.
               </h2>
-              <p className="home-baselined">
+              <p>
                 We specialize in hands-on, one-on-one treatments that are
                 specific to each patient’s goals. At EBPT, we are committed to
                 health and wellness no matter your age, lifestyle, or athletic
@@ -102,9 +101,11 @@ const IndexPage = () => {
         <hr />
 
         <section id="offerings">
-          <h2 className="single-fold forty-h3">
-            <strong>Our Physical Therapy and Wellness Offerings</strong>
-          </h2>
+          <div className="single-fold"> {/* seperation of vertical and horizontal spacing */}
+            <h2 className="forty-h3">
+              <strong>Our Physical Therapy and Wellness Offerings</strong>
+            </h2>
+          </div>
 
           <div className="two-fold">
             <ul className="catalog">
@@ -149,16 +150,16 @@ const IndexPage = () => {
           </div>
 
           <div className="two-fold">
-            <ul className="inventory">
+            <ul className="plaque">
               <li>
-                Highly individualized care
+                <h4>Highly individualized care</h4>
                 <ul>
                   <li>Specific interventions over generalized remedies</li>
                 </ul>
               </li>
 
               <li>
-                Detailed evaluations and personalized program development
+                <h4>Detailed evaluations and personalized program development</h4>
                 <ul>
                   <li>
                     Definite goals designed to maximize performance and exceed
@@ -168,8 +169,8 @@ const IndexPage = () => {
               </li>
 
               <li>
-                Comprehensive approach to fitness to meet the complex demands of
-                daily life, athletic pursuits and high-level performance
+                <h4>Comprehensive approach to fitness to meet the complex demands of
+                daily life, athletic pursuits and high-level performance</h4>
                 <ul>
                   <li>
                     Transition from rehabilitation to an exercise-based fitness
@@ -179,10 +180,10 @@ const IndexPage = () => {
               </li>
 
               <li>
-                Our clinic is home to a 4000-gallon indoor therapy pool
+                <h4>Our clinic is home to a 4000-gallon indoor therapy pool
                 featuring an adjustable current, a depth of 3-5 feet to
                 accommodate all heights, and is comfortably heated all year
-                round
+                round</h4>
                 <ul>
                   <li>
                     Decompress joints while increasing strength, flexibility

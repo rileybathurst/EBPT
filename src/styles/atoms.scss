@@ -2,15 +2,22 @@
   #variables
 \*------------------------------------*/
 
-$emerald: #499E8F;
-$moldavite: #3D7E69;
-$moss: #2E5D58;
-$ember: #EA6A00;
+$emerald: #499e8f;
+$moldavite: #3d7e69;
+$moss: #2e5d58;
+$ember: #ea6a00;
 
 $pearl: #f8f8f8;
 $hematite: #909090;
 $stone: #5f5f5f;
 $onyx: #0f0f0f;
+
+$chamfer: 3px;
+
+$shade: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+// rgb 15,15,15 is $onyx
+$shade-hover: 3px 3px 5px 1px rgba(46, 93, 88, 0.4);
+// rgb 46, 93, 88 is $moss
 
 // #variables
 
@@ -18,16 +25,17 @@ $onyx: #0f0f0f;
   #typography
 \*------------------------------------*/
 
+// does this count as a variable or an abbreviation?
+// this is way cleaner than the scss for loop even if it needs #{$headings-a} {
+$headings-a: "h1 a, h2 a, h3 a, h4 a, h5 a, h6 a";
+$headings-hover: "h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover";
+
 html {
   font-family: "brandon-grotesque", sans-serif;
   // https://fonts.adobe.com/fonts/brandon-grotesque
-
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
-  -ms-text-size-adjust: 100%; // Am I sure scss isnt doing this?
-  -webkit-text-size-adjust: 100%; // do I need this?
 }
 
-// type-scale.com
+// type-scale.com // this is giving me problems im fixing
 // 1.250 Major Third
 body {
   font-size: 16px;
@@ -37,35 +45,59 @@ body {
   color: $onyx;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 0.625rem; // 10px
+}
+
 h1,
 .h1 {
-  margin-top: 0;
-  font-size: 3.052rem;
-  line-height: 4.578rem; // *1.5 // should this be *1.25
+  margin-top: 0; // browser reset
+  font-size: 3rem; // 48px and were back to classical
+  line-height: 3.75rem; // 60px
+  margin-bottom: 2rem;
 }
 
 h2,
 .h2 {
-  font-size: 2.441rem;
-  line-height: 3.6615rem;
+  font-size: 2.5rem; // 40px
+  line-height: 3rem; // 48px
+  margin-bottom: 2.5rem; // 40px
 }
 
 h3,
 .h3 {
-  font-size: 1.953rem;
-  line-height: 2.9295rem;
+  font-size: 2rem; // 32
+  line-height: 2.5rem; // 40px
+  margin-bottom: 1.875rem; // 30px
 }
 
 h4,
 .h4 {
-  font-size: 1.563rem;
-  line-height: 2.3445rem;
+  font-size: 1.5rem; // 24px
+  line-height: 2rem;
+  margin-bottom: 1.25rem; // 20px
 }
 
 h5,
 .h5 {
-  font-size: 1.25rem;
-  line-height: 1.875rem;
+  font-size: 1.25rem; // 20px
+  line-height: 1.875rem; // 30px
+  margin-bottom: 0.625rem; // 10px
+}
+
+h6,
+.h6 {
+  font-size: 1rem; // 16px
+  line-height: 1.25rem; // 20px this becomes the vertical rythym
+  margin-bottom: 0.625rem; // 10px skips some of the lines
+}
+
+small,
+.text_small {
+  font-size: 0.75rem; // 12px
+  line-height: 1rem; // 16px
+  margin-bottom: 0.5rem; // 8px
 }
 
 h1,
@@ -81,6 +113,17 @@ h5,
 h6,
 .h6 {
   font-weight: 300; // light weight brandon grotesque
+}
+
+// interesting little variable for all <h>
+#{$headings-a} {
+  margin-left: -0.25rem; // take back the spacing
+  padding: 0.25rem 0.5rem;
+  border-radius: $chamfer;
+}
+
+#{$headings-hover} {
+  background: darken($pearl, 5%);
 }
 
 small,
@@ -102,21 +145,12 @@ a:hover {
 
 // https://webaim.org/techniques/css/invisiblecontent/
 .sr-only {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-}
-
-.home-baselined {
-  margin-top: 0;
-
-  @media (min-width: 40rem) {
-    margin-top: 2rem; // guess and check
-    line-height: 2.3rem; // guess and check
-  }
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 // this has problems when it's in the .two-fold the smallest gets a lot of stretch
@@ -138,6 +172,7 @@ hr {
   margin: 1.25rem auto; // h5
   width: 50vw;
   margin-right: 50vw;
+  border-radius: $chamfer; // check its working by sizing up the border
 }
 
 .hide-above-40 {
@@ -191,15 +226,16 @@ button,
   border: none; // browser reset
   color: $pearl;
   padding: 8px 16px;
-  box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
+  box-shadow: $shade;
   text-decoration: none; // its obvious its a button
+  border-radius: $chamfer;
 }
 
 button:hover,
 .buttoned a:hover {
   background: $moss;
   color: lighten($pearl, 20%); // custom color
-  box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.4);
+  box-shadow: $shade-hover;
 }
 
 a[href^="tel:"]:before {
@@ -257,8 +293,7 @@ a svg:hover {
       > .gatsby-image-wrapper {
         border-radius: 50%;
         border: 2px $pearl solid;
-        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
-        margin-bottom: 1rem;
+        box-shadow: $shade;
         max-height: 8rem;
         // transition: 0.2s; // I want this but after it loads so I need to sort that
 
@@ -269,7 +304,7 @@ a svg:hover {
       } // .gatsby-image-wrapper
 
       > .gatsby-image-wrapper:hover {
-        box-shadow: 3px 3px 5px 1px rgba(15, 15, 15, 0.5);
+        box-shadow: $shade-hover;
       }
     } // a
   } // div
@@ -291,6 +326,10 @@ a svg:hover {
   display: grid;
   // ppearl-content: center;
   margin-bottom: 2.9295rem;
+}
+
+.gatsby-image-wrapper {
+  border-radius: $chamfer;
 }
 
 // #images
@@ -326,8 +365,9 @@ body {
   flex-wrap: wrap;
   padding: 0 1rem;
 
-  > * { // I should use this more often
-      flex: 1 1 21rem;
+  > * {
+    // I should use this more often
+    flex: 1 1 21rem;
   }
 }
 
@@ -337,7 +377,7 @@ body {
 // still kinda low numbers I need a fallback
 @supports (gap: 2em) {
   .two-fold {
-      gap: 2rem;
+    gap: 2rem;
   }
 }
 
@@ -349,6 +389,54 @@ body {
   padding: 0 1rem;
 }
 
+
+.plaque {
+  color: $stone;
+  @extend h4; // thinking about dropping this down so more fits on each line
+  margin: 0; // this might need to be reinstated at larger sizes
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  padding-left: 0; // browser rest
+
+  > li {
+    background: darken($pearl, 7.5%); // guess and check
+    margin-bottom: 1.563rem; // this is the line height of the text // now can be done with column gap
+    // keeps the vertical rythm
+    flex: 1 1 23rem; // guess and check
+    list-style: none;
+    border-radius: $chamfer;
+    border: 2px solid $pearl;
+    box-shadow: $shade;
+
+    > h4 {
+      background: $moss;
+      color: $pearl;
+      border-top-left-radius: $chamfer;
+      border-top-right-radius: $chamfer;
+      padding: 0.5rem;
+      margin-top: 0;
+      margin-bottom: 00.5rem;
+    }
+
+    > ul {
+      margin-top: 0.5rem; // 🚨 I dont like this but quick fix
+      margin-bottom: 0.5rem; // 🚨 I dont like this but quick fix
+      padding-left: 2rem;
+      padding-right: 0.25rem;
+
+      > li {
+        font-size: 1.25rem; // h5
+        list-style: square;
+        color: $onyx;
+      }
+    }
+  }
+}
+
+
+
+
 .inventory {
   color: $stone;
   @extend h4; // thinking about dropping this down so more fits on each line
@@ -357,10 +445,21 @@ body {
   flex-wrap: wrap;
   column-gap: 2rem;
 
-  li {
+  > li {
     margin-bottom: 1.563rem; // this is the line height of the text
     // keeps the vertical rythm
     flex: 1 1 23rem; // guess and check
+
+    > ul {
+      padding-left: 0; // reset
+      margin-top: 0.5rem; // 🚨 I dont like this but quick fix
+
+      > li {
+        font-size: 1.25rem; // h5
+        list-style: none;
+        color: $onyx;
+      }
+    }
   }
 }
 
@@ -496,14 +595,26 @@ body {
   padding-left: 0;
 
   @media (min-width: 70rem) {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
 
-       li {
-          margin: 0 1rem;
-          text-align: center;
-      } // li
+    li {
+      margin: 1rem; // 🚨 this is wrong but its better than not having a drop
+      text-align: center;
+
+      a {
+        padding: 0.25rem 0.5rem; // 🚨 making this up
+        border-radius: $chamfer;
+      }
+
+      a:hover {
+        background: darken(
+          $pearl,
+          5%
+        ); // its pretty subtle but i do like it maybe it should be more there
+      }
+    } // li
   } // @media 60rem
 } // #overt
 
@@ -583,6 +694,7 @@ header a svg:hover {
 .vigilant {
   background: $ember;
   padding: 0.5rem 1rem;
+  border-radius: $chamfer;
 }
 
 // nesting this doesnt work
@@ -599,6 +711,7 @@ header a svg:hover {
     background: $emerald;
     display: inline-block;
     padding: 0.5rem 1rem;
+    border-radius: $chamfer;
   }
 
   a:hover {
@@ -652,16 +765,9 @@ footer h3 a {
   }
 
   a:hover {
-    color: darken($pearl, 20%);
+    color: lighten($pearl, 20%);
+    background: darken($moss, 10%);
   }
-
-  // interesting little variable for all <h>
-  @for $i from 1 through 6 {
-    > h#{$i} {
-      // this is a weird double thing that I think could be done better
-      text-align: center;
-    } // h
-  } // @for
 
   ul {
     list-style: none;
@@ -678,13 +784,17 @@ footer h3 a {
 
         svg {
           margin: 0;
-          padding: 1rem;
+          padding: 0.5rem;
+        }
+
+        svg:hover {
+          fill: lighten($pearl, 20%);
         }
       } // a
 
       a:hover {
-        background: darken($moss, 20%);
-        border-radius: 0.25rem; // match all icons having a rounded edge
+        background: darken($moss, 10%);
+        border-radius: $chamfer; // match all icons having a rounded edge
       } // a:hover
     } // li
   } // ul
