@@ -22,11 +22,9 @@ const QuestionsPage = () => {
       <main>
         <h1 className="measured">Questions</h1>
         {/* <hr /> */}
-
         <div className="measured slender-image">
           <Kiley2 />
         </div>
-
         <h2 className="measured">Therapy Questions</h2>
         <section id="therapy-questions" className="measured">
           <h3>
@@ -43,7 +41,7 @@ const QuestionsPage = () => {
               first), a doctor must sign off on any further treatment.
             </li>
             <li>
-              <b>NOTE:</b>While we can see you without a prescription or
+              <b>NOTE:</b> While we can see you without a prescription or
               referral, your insurance network may still require a referral to
               cover the costs of your visits. Please contact your insurance
               provider prior to your first visit to determine whether your
@@ -111,12 +109,11 @@ const QuestionsPage = () => {
             exercise, and modalities. Exercises can include stretching,
             strengthening, core stabilization, and postural reeducation. Your
             exercise program will be individually tailored to address your
-            functional limitations and goals. Modalities may include ultrasound,
-            electrical stimulation, iontophoresis, moist heat, ice, paraffin
-            bath, and traction. If you are scheduled for aquatic therapy, you
-            will perform a series of stretching and strengthening exercises in
-            the pool, possibly using the current, handheld paddles, water
-            weights, or other tools.
+            functional limitations and goals. Modalities may include electrical
+            stimulation, moist heat, ice, and traction. If you are scheduled for
+            aquatic therapy, you will perform a series of stretching and
+            strengthening exercises in the pool, possibly using the current,
+            handheld paddles, water weights, or other tools.
           </p>
 
           <h3>
@@ -142,10 +139,9 @@ const QuestionsPage = () => {
             A typical appointment will last approximately 1 hour. This varies
             per patient and per injury.
           </p>
-        </section> {/* #therapy-questions */}
-
+        </section>{" "}
+        {/* #therapy-questions */}
         <hr />
-
         <section id="insurance-questions" className="measured">
           <h2>Insurance Questions</h2>
 
@@ -194,10 +190,9 @@ const QuestionsPage = () => {
             phone, or by coming in to the office. If your insurance plan
             requires a co-pay, we ask that you pay those on each visit.
           </p>
-        </section> {/* #insurance-questions */}
-
+        </section>{" "}
+        {/* #insurance-questions */}
         <hr />
-
         <section id="cash-pricing" className="measured">
           <h2>Cash Pricing</h2>
           <p>For those without or not wanting to use insurance.</p>
@@ -205,10 +200,9 @@ const QuestionsPage = () => {
             <li>Evaluation (first appointment) $125</li>
             <li>follow up appointments $100</li>
           </ul>
-        </section>{/* #cash-pricing */}
-
+        </section>
+        {/* #cash-pricing */}
         <hr />
-
         <section id="other-questions" className="measured">
           <h2>Other Questions</h2>
 
@@ -221,8 +215,8 @@ const QuestionsPage = () => {
             <li>Water Exercise Classes</li>
             <li>Swim Lessons</li>
           </ul>
-        </section>{/* #other-questions */}
-
+        </section>
+        {/* #other-questions */}
         <hr />
       </main>
 

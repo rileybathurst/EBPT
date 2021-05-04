@@ -3,9 +3,7 @@
 Netlify build from
 https://github.com/rileybathurst/EBPT
 
-The intake forms and images are host on S3, this needs better documentation
-
-
+The intake forms and images are hosted on S3, this needs better documentation
 
 # Updates changes and thoughts
 
@@ -18,7 +16,8 @@ The intake forms and images are host on S3, this needs better documentation
 - Can I take all the regular pages into a layout to remove a bunch of imports and duplications?
 - 404 page
 - the year in the footer is hard coded
-- Do all the A11y checks
+- Some of the back pages are feeling hard to read in brandon grotesque, I think I should simplify
+- offerings title spans two rows that is probably fixable
 
 ## Notes
 

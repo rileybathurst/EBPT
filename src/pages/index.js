@@ -19,14 +19,6 @@ function GymImage() {
     />
   );
 }
-function Headshot() {
-  return (
-    <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
-      alt="Jessica"
-    />
-  );
-}
 function SnowyBuildingFrontImage() {
   return (
     <StaticImage
@@ -51,6 +43,14 @@ function Kiley2() {
     />
   );
 }
+function Treating() {
+  return (
+    <StaticImage
+      src="https://ebpt.s3-us-west-1.amazonaws.com/images/treating.jpg"
+      alt="Jessica providing treatment to a patient"
+    />
+  );
+}
 
 // markup
 const IndexPage = () => {
@@ -64,22 +64,24 @@ const IndexPage = () => {
         <section id="intro">
           <div className="two-fold">
             <div>
-              <h2 className="h5"> {/* skipping levels this needs to be done with class */}
+              <h2 className="h5">
+                {" "}
+                {/* skipping levels this needs to be done with class */}
                 Emerald Bay Physical Therapy is a comprehensive center for
                 orthopedic and manual physical therapy.
               </h2>
               <p className="home-baselined">
-                We specialize in hands-on, one-on-one treatments that are specific
-                to each patient’s goals. At EBPT, we are committed to health and
-                wellness no matter your age, lifestyle, or athletic abilities. Our
-                highly individualized programs are designed to promote complete
-                recovery from injury and continue into healthy work and
-                recreational activities. We stand out by offering aquatic therapy
-                in our heated therapy pool, manual therapy in private treatment
-                rooms and a multidisciplinary wellness approach. Our focus on
-                quality time spent listening to patients, use of critical thinking
-                to find the cause of pain, and effective manual techniques will
-                exceed your expectations.
+                We specialize in hands-on, one-on-one treatments that are
+                specific to each patient’s goals. At EBPT, we are committed to
+                health and wellness no matter your age, lifestyle, or athletic
+                abilities. Our highly individualized programs are designed to
+                promote complete recovery from injury and continue into healthy
+                work and recreational activities. We stand out by offering
+                aquatic therapy in our heated therapy pool, manual therapy in
+                private treatment rooms and a multidisciplinary wellness
+                approach. Our focus on quality time spent listening to patients,
+                use of critical thinking to find the cause of pain, and
+                effective manual techniques will exceed your expectations.
               </p>
 
               <h3 className="h5">
@@ -92,7 +94,8 @@ const IndexPage = () => {
             <div>
               <GymImage />
             </div>
-          </div> {/* .two-fold */}
+          </div>{" "}
+          {/* .two-fold */}
         </section>
         {/* #intro */}
 
@@ -126,7 +129,7 @@ const IndexPage = () => {
         {/* when display mosaic becomes available this will be super useful */}
         <section id="gallery" className="single-fold image-stack">
           <GymImage />
-          <Headshot />
+          <Treating />
           <SnowyBuildingFrontImage />
           <PoolImage />
         </section>
@@ -147,33 +150,50 @@ const IndexPage = () => {
 
           <div className="two-fold">
             <ul className="inventory">
-              <li>Highly individualized care</li>
-              <li>Specific interventions over generalized remedies</li>
-              <li>Detailed evaluations and personalized program development</li>
-              <li>Personal appointments over high volume</li>
+              <li>
+                Highly individualized care
+                <ul>
+                  <li>Specific interventions over generalized remedies</li>
+                </ul>
+              </li>
 
               <li>
-                Definite goals designed to maximize performance and exceed
-                expectations
+                Detailed evaluations and personalized program development
+                <ul>
+                  <li>
+                    Definite goals designed to maximize performance and exceed
+                    expectations
+                  </li>
+                </ul>
               </li>
-              <li>
-                Transition from rehabilitation to an exercise-based fitness
-                program
-              </li>
+
               <li>
                 Comprehensive approach to fitness to meet the complex demands of
                 daily life, athletic pursuits and high-level performance
+                <ul>
+                  <li>
+                    Transition from rehabilitation to an exercise-based fitness
+                    program
+                  </li>
+                </ul>
               </li>
-              <li>Aquatic physical therapy</li>
+
               <li>
                 Our clinic is home to a 4000-gallon indoor therapy pool
                 featuring an adjustable current, a depth of 3-5 feet to
                 accommodate all heights, and is comfortably heated all year
                 round
+                <ul>
+                  <li>
+                    Decompress joints while increasing strength, flexibility
+                  </li>
+                  <li>Improve balance without risk of falling</li>
+                  <li>Whole body workout</li>
+                </ul>
               </li>
-              <li>Decompress joints while increasing strength, flexibility</li>
-              <li>Whole body workout</li>
-              <li>Improve balance without risk of falling</li>
+
+              {/* <li>Personal appointments over high volume</li>
+              <li>Aquatic physical therapy</li> */}
             </ul>
           </div>
         </section>
