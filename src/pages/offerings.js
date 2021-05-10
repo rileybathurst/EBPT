@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 function Kiley2() {
   return (
@@ -20,7 +20,7 @@ const OfferingsPage = () => {
   return (
     <>
       <Header />
-      <SEO title="Offerings" />
+      <Seo title="Offerings" />
       <main className="measured">
         <h1>Our Physical Therapy and Wellness Offerings</h1>
 

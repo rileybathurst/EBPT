@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 function JessicaImage() {
   return (
@@ -35,7 +35,7 @@ const TeamPage = () => {
   return (
     <>
       <Header />
-      <SEO title="Meet our team" />
+      <Seo title="Meet our team" />
       <main>
         <h1 className="measured">Team</h1>
 

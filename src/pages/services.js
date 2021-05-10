@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 function GymImage() {
   return (
@@ -26,7 +26,7 @@ const ServicesPage = () => {
   return (
     <>
       <Header />
-      <SEO title="Services" />
+      <Seo title="Services" />
       <main>
         <h1 className="measured">Services</h1>
 

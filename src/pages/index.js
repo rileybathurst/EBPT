@@ -9,7 +9,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
 import FormList from "../components/form-list";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 function GymImage() {
   return (
@@ -56,7 +56,7 @@ function Treating() {
 const IndexPage = () => {
   return (
     <>
-      <SEO title="Emerald Bay Physical Therapy" />
+      <Seo title="Emerald Bay Physical Therapy" />
 
       <Header />
 

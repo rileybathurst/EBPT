@@ -3,14 +3,14 @@ import { Link } from "gatsby";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 // markup
 const NotFoundPage = () => {
   return (
     <>
       <Header />
-      <SEO title="404" />
+      <Seo title="404" />
       <main className="measured">
         <h1>Page not found</h1>
         <p className="justified-40">

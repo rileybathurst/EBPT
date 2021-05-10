@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
@@ -18,7 +18,7 @@ const QuestionsPage = () => {
   return (
     <>
       <Header />
-      <SEO title="Questions" />
+      <Seo title="Questions" />
       <main>
         <h1 className="measured">Questions</h1>
         {/* <hr /> */}
