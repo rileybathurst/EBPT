@@ -25,9 +25,10 @@ $shade-hover: 3px 3px 5px 1px rgba(46, 93, 88, 0.4);
   #typography
 \*------------------------------------*/
 
-// does this count as a variable or an abbreviation?
+// https://css-tricks.com/snippets/sass/use-sass-variable-selector/
 // this is way cleaner than the scss for loop even if it needs #{$headings-a} {
 $headings-a: "h1 a, h2 a, h3 a, h4 a, h5 a, h6 a";
+// same as :is(h1, h2, h3, h4, h5, h6) a";
 $headings-hover: "h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover";
 
 html {
