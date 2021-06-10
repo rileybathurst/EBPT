@@ -8,12 +8,22 @@ import MenuList from "./menu-list";
 import MenuClose from "./menu-close";
 
 export function HeroImage() {
-  return (
-    <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/ebpt-header-first.jpg"
-      alt="Tahoe"
-    />
-  );
+  var darkimage = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (darkimage) {
+    return (
+      <StaticImage
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/levi-bare-jdIb2v4L2Sg-unsplash.jpg"
+        alt="emerald bay at night"
+      />
+    );
+  } else {
+    return (
+      <StaticImage
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/parker-ulry-qxLl7yfxReM-unsplash.jpg"
+        alt="emerald bay during the day"
+      />
+    )
+  }
 }
 
 const Header = () => (
