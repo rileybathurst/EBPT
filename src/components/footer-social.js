@@ -1,6 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 
+function ThisYear() {
+  let today = new Date().getFullYear();
+  // console.log(today);
+  return (
+    <>
+      {today}
+    </>
+  );
+}
+
 const FooterSocial = () => (
   <section id="footer-social">
     <ul className="measured">
@@ -111,7 +121,7 @@ const FooterSocial = () => (
     {/* I need to add this to an auto update */}
     <h4 className="h5 h-center">
       <Link to="/" title="to the front page">
-        Emerald Bay Physical Therapy 2021
+        Emerald Bay Physical Therapy <ThisYear />
       </Link>
     </h4>
   </section>
