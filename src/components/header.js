@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";import { Link } from "gatsby";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -7,27 +8,47 @@ import Veiled from "./veiled";
 import MenuList from "./menu-list";
 import MenuClose from "./menu-close";
 
-export function HeroImage() {
-  var darkimage = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (darkimage) {
-    return (
-      <StaticImage
-        src="https://ebpt.s3.us-west-1.amazonaws.com/images/levi-bare-jdIb2v4L2Sg-unsplash.jpg"
-        alt="emerald bay at night"
-      />
-    );
-  } else {
-    return (
-      <StaticImage
-        src="https://ebpt.s3.us-west-1.amazonaws.com/images/parker-ulry-qxLl7yfxReM-unsplash.jpg"
-        alt="emerald bay during the day"
-      />
-    )
-  }
+function DarkHero() {
+  return <StaticImage
+    src="https://ebpt.s3.us-west-1.amazonaws.com/images/levi-bare-jdIb2v4L2Sg-unsplash.jpg"
+    alt="emerald bay at night"
+  />;
+}
+
+function LightHero() {
+  return <StaticImage
+    src="https://ebpt.s3.us-west-1.amazonaws.com/images/parker-ulry-qxLl7yfxReM-unsplash.jpg"
+    alt="emerald bay during the day"
+  />;
+}
+
+export function useMediaQuery(query) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+  }, [matches, query]);
+
+  return matches;
+}
+
+function HeroImage() {
+  let isSiteDark = useMediaQuery("(prefers-color-scheme: dark)");
+
+  return (
+    <>
+      {isSiteDark && <DarkHero />}
+      {isSiteDark || <LightHero />}
+    </>
+  );
 }
 
 const Header = () => (
   <>
+
     <nav id="veiled" className="inactive">
       <ul className="veiled__header">
         <li>
