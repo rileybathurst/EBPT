@@ -341,7 +341,7 @@ a svg:hover {
         }
 
         // this is needed for safari and possibly others
-        > picture {
+        img {
           border-radius: 50%;
         }
       } // .gatsby-image-wrapper
