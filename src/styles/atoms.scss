@@ -438,36 +438,24 @@ body {
   margin: 0; // this might need to be reinstated at larger sizes
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2rem;
+  gap: 1.563rem;
   padding-left: 0; // browser rest
-  color: $stone;
-  @media (prefers-color-scheme: dark) {
-    color: var(--hematite);
-  }
 
   > li {
-    margin-bottom: 1.563rem; // this is the line height of the text // now can be done with column gap
-    // keeps the vertical rythm
     flex: 1 1 23rem; // guess and check
     list-style: none;
-    border-radius: $chamfer;
-    background: darken($pearl, 7.5%); // guess and check
-    border: 2px solid $pearl;
-    box-shadow: $shade;
+    padding: 1.563rem;
+    border-radius: $chamfer * 2;
+    background: $emerald;
+    color: $onyx;
+
     @media (prefers-color-scheme: dark) {
-      background: hsl(0, 0%, 15.9%);
-      border-color: var(--onyx);
-      box-shadow: var(--dark-shade);
+      background: $moss;
+      color: $pearl;
     }
 
     > h4 {
-      background: $moss;
-      color: $pearl;
-      border-top-left-radius: $chamfer;
-      border-top-right-radius: $chamfer;
-      padding: 0.5rem;
       margin-top: 0;
-      margin-bottom: 00.5rem;
     }
 
     > ul {
@@ -478,11 +466,7 @@ body {
 
       > li {
         font-size: 1.25rem; // h5
-        list-style: square;
-        color: $onyx;
-        @media (prefers-color-scheme: dark) {
-          color: var(--pearl);
-        }
+        list-style: disc;
       }
     }
   }
