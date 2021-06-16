@@ -288,9 +288,9 @@ a[href^="tel:"]:before {
   }
 }
 
-#call {
-  margin-bottom: 2.441rem; // h2
-}
+/* #call {
+  // margin-bottom: 2.441rem; // h2
+} */
 
 // #buttons
 
@@ -345,11 +345,16 @@ a svg:hover {
           border-radius: 50%;
         }
       } // .gatsby-image-wrapper
-
-      > .gatsby-image-wrapper:hover {
-        box-shadow: $shade-hover;
-      }
     } // a
+    
+    > a:hover > .gatsby-image-wrapper {
+      box-shadow: $shade-hover;
+      border-color: var(--emerald);
+      @media (prefers-color-scheme: dark) {
+        border-color: var(--moldavite);
+      }
+    }
+
   } // div
 } // .team-heads
 
@@ -411,6 +416,7 @@ body {
   > * {
     // I should use this more often
     flex: 1 1 21rem;
+    max-width: 100%;
   }
 }
 
@@ -585,7 +591,7 @@ body {
     }
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 70rem) {
     display: none;
   }
 }
@@ -627,6 +633,8 @@ body {
   // text-decoration: underline;
   text-align: left;
   padding: 1rem;
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 0 0 3px 3px;
 }
 
 // #veiled
@@ -639,6 +647,7 @@ body {
   display: none;
   @extend h5; // this is weird you cant do it inside the media query
   padding-left: 0;
+  margin-block: 0;
 
   @media (min-width: 70rem) {
     display: flex;
@@ -761,6 +770,7 @@ header a svg:hover {
 
 .emerald-backed {
   background: $emerald;
+  border-radius: $chamfer;
   color: $pearl;
 
   a {
@@ -858,3 +868,53 @@ footer h3 a {
 } // #footer-social
 
 // #footer
+
+
+.associate {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    font-size: 1rem;
+    line-height: 1.563rem;
+    padding: 8px 16px;
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 3px 0 0 3px;
+    margin: 0;
+  }
+
+  .buttoned {
+    margin: 0;
+    
+    > a {
+      /* top-left | top-right | bottom-right | bottom-left */
+      border-radius: 0 3px 3px 0;
+      display: inline-block;
+    }
+  }
+}
+
+.menu-lines {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  align-content: stretch;
+
+  @media (min-width: 70rem) {
+      align-content: stretch;
+  }
+  > nav {
+    display: none;
+
+    @media (min-width: 70rem) {
+      display: block;
+      flex: 2;
+    }
+  }
+}
+
+.two-fold__hr {
+  margin-left: -1rem;
+}

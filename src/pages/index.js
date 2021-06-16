@@ -75,7 +75,8 @@ const IndexPage = () => {
                 health and wellness no matter your age, lifestyle, or athletic
                 abilities. Our highly individualized programs are designed to
                 promote complete recovery from injury and continue into healthy
-                work and recreational activities. We stand out by offering
+                work and recreational activities.</p>
+              <p>We stand out by offering
                 aquatic therapy in our heated therapy pool, manual therapy in
                 private treatment rooms and a multidisciplinary wellness
                 approach. Our focus on quality time spent listening to patients,

@@ -26,9 +26,11 @@ const FormList = () => (
           <p>Please read.</p>
         </li>
 
-        <li>
+
+
+        {/* <li>
           <h4 className="h5">
-            {/* date 6/15/21 */}
+            date 6/15/21
             <a href="https://ebpt.s3-us-west-1.amazonaws.com/forms/HIPAA-Acknowledgement-15_6_21.pdf">
               HIPAA Acknowledgement
             </a>
@@ -38,13 +40,13 @@ const FormList = () => (
 
         <li>
           <h4 className="h5">
-            {/* date 6/15/21 */}
+            date 6/15/21
             <a href="https://ebpt.s3-us-west-1.amazonaws.com/forms/HIPAA-Release-of-Information-15_6_21.pdf">
               HIPAA Release of Information
             </a>
           </h4>
           <p>Authorization to use/disclose records if necessary.</p>
-        </li>
+        </li> */}
       </ul>
     </section>
 

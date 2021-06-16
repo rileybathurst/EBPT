@@ -12,8 +12,8 @@ const Footer = () => (
           <br />
           Saturday - Sunday - Closed
         </h4>
-        <hr className="hide-above-40" />
         {/* section it so the .two-fold doesnt get messy */}
+        <hr className="hide-above-40 two-fold__hr" />
       </section>
 
       <section id="contact">
