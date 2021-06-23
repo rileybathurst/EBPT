@@ -104,6 +104,9 @@ const SEO = ({ title, description, image, lang }) => {
 
       
       <link rel="stylesheet" href="https://use.typekit.net/vgk8lss.css"></link>
+
+      <meta name="theme-color" content="#499e8f" /> {/* emerald */}
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e5d58" /> {/* moss */}
     </Helmet>
   );
 };
