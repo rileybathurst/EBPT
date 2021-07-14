@@ -581,7 +581,7 @@ body {
       }
 
       a:hover {
-        color: darken($pearl, 20%);
+        color: white;
       }
     }
   }
@@ -616,6 +616,14 @@ body {
   @media (min-width: 70rem) {
     // this has to match #overt ul
     display: none;
+  }
+}
+
+.veiled__call {
+  background: #2e5d58;
+
+  @media (min-width: 70rem) {
+    display: none !important;
   }
 }
 
@@ -912,4 +920,34 @@ footer h3 a {
 
 .two-fold__hr {
   margin-left: -1rem;
+}
+
+/*------------------------------------*/
+//  #IO TEST
+/*------------------------------------*/
+
+#box {
+  background-color: rgba(40, 40, 190, 255);
+  border: 4px solid rgb(20, 20, 120);
+  transition: background-color 1s, border 1s;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vertical {
+  color: white;
+  font: 32px "Arial";
+}
+
+.extra {
+  width: 350px;
+  height: 350px;
+  margin-top: 10px;
+  border: 4px solid rgb(20, 20, 120);
+  text-align: center;
+  padding: 20px;
 }

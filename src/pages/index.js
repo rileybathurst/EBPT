@@ -10,6 +10,7 @@ import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
 import FormList from "../components/form-list";
 import Seo from "../components/seo";
+import IntersectionObserver from "../components/io";
 
 function GymImage() {
   return (
@@ -59,6 +60,9 @@ const IndexPage = () => {
       <Seo title="Emerald Bay Physical Therapy" />
 
       <Header />
+
+      
+      <IntersectionObserver />
 
       <main>
         <section id="intro">

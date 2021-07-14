@@ -92,8 +92,8 @@ const Header = () => (
       </div>
       {/* #hero */}
 
-      <div className="associate">
-        <hr />
+      <div id="scrollarea" className="associate">
+        <hr className="io-line" />
         <div className="menu-lines">
           <section id="call">
             <div className="buttoned">
