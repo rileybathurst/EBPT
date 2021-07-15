@@ -939,7 +939,7 @@ footer h3 a {
 #kiley.hidden {
   @media (min-width: 30rem) {
     transform: translate3d(2rem, 0, 0);
-    opacity: 0.75;
+    opacity: 0.95;
     @media (prefers-reduced-motion) {
       transform: translate3d(0.2rem, 0, 0)
     }
