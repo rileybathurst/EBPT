@@ -10,9 +10,14 @@ import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
 import FormList from "../components/form-list";
 import Seo from "../components/seo";
-import IntersectionObserver from "../components/io";
 
-function GymImage() {
+import Kiley2 from "../components/kiley2io";
+import GymImage from "../components/gymImageIo";
+import Treating from "../components/treating";
+import SnowyBuildingFrontImage from "../components/snowyImage";
+import PoolImage from "../components/poolImage";
+
+function GymIm() {
   return (
     <StaticImage
       src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg"
@@ -20,38 +25,8 @@ function GymImage() {
     />
   );
 }
-function SnowyBuildingFrontImage() {
-  return (
-    <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg"
-      alt="clinic"
-    />
-  );
-}
-function PoolImage() {
-  return (
-    <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg"
-      alt="pool"
-    />
-  );
-}
-function Kiley2() {
-  return (
-    <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg"
-      alt="Kiley"
-    />
-  );
-}
-function Treating() {
-  return (
-    <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/treating.jpg"
-      alt="Jessica providing treatment to a patient"
-    />
-  );
-}
+
+
 
 // markup
 const IndexPage = () => {
@@ -60,9 +35,6 @@ const IndexPage = () => {
       <Seo title="Emerald Bay Physical Therapy" />
 
       <Header />
-
-      
-      <IntersectionObserver />
 
       <main>
         <section id="intro">
@@ -98,7 +70,7 @@ const IndexPage = () => {
             <div>
               <GymImage />
             </div>
-          </div>{" "}
+          </div>
           {/* .two-fold */}
         </section>
         {/* #intro */}
@@ -134,7 +106,7 @@ const IndexPage = () => {
 
         {/* when display mosaic becomes available this will be super useful */}
         <section id="gallery" className="single-fold image-stack">
-          <GymImage />
+          <GymIm />
           <Treating />
           <SnowyBuildingFrontImage />
           <PoolImage />
@@ -175,7 +147,7 @@ const IndexPage = () => {
 
               <li>
                 <h4>Comprehensive approach to fitness to meet the complex demands of
-                daily life, athletic pursuits and high-level performance</h4>
+                  daily life, athletic pursuits and high-level performance</h4>
                 <ul>
                   <li>
                     Transition from rehabilitation to an exercise-based fitness
@@ -186,9 +158,9 @@ const IndexPage = () => {
 
               <li>
                 <h4>Our clinic is home to a 4000-gallon indoor therapy pool
-                featuring an adjustable current, a depth of 3-5 feet to
-                accommodate all heights, and is comfortably heated all year
-                round</h4>
+                  featuring an adjustable current, a depth of 3-5 feet to
+                  accommodate all heights, and is comfortably heated all year
+                  round</h4>
                 <ul>
                   <li>
                     Decompress joints while increasing strength, flexibility

@@ -356,10 +356,14 @@ a svg:hover {
 .image-stack {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 
-  > .gatsby-image-wrapper {
+  > .gatsby-image-wrapper, div {
     flex: 1 1 8rem; // guess and check
-    margin: 0.5rem 1rem;
+  }
+
+  > div > .gatsby-image-wrapper {
+    height: 100%;
   }
 }
 
@@ -926,28 +930,62 @@ footer h3 a {
 //  #IO TEST
 /*------------------------------------*/
 
-#box {
-  background-color: rgba(40, 40, 190, 255);
-  border: 4px solid rgb(20, 20, 120);
-  transition: background-color 1s, border 1s;
-  width: 350px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+#kiley {
+  margin-block-start: -50%;
+  transition: 2s;
+  height: 8rem;
 }
 
-.vertical {
-  color: white;
-  font: 32px "Arial";
+#kiley.hidden {
+  @media (min-width: 30rem) {
+    transform: translate3d(2rem, 0, 0);
+    opacity: 0.75;
+    @media (prefers-reduced-motion) {
+      transform: translate3d(0.2rem, 0, 0)
+    }
+  }
 }
 
-.extra {
-  width: 350px;
-  height: 350px;
-  margin-top: 10px;
-  border: 4px solid rgb(20, 20, 120);
-  text-align: center;
-  padding: 20px;
+#gymImage {
+  transition: 2s;
+}
+#gymImage.hidden {
+  transform: translate3d(2rem, 0, 0);
+  opacity: 0.95;
+  @media (prefers-reduced-motion) {
+    transform: translate3d(0.2rem, 0, 0);
+  }
+}
+
+#treating {
+  transition: 2s;
+}
+#treating.hidden {
+  transform: translate3d(0, -1rem, 0);
+  opacity: 0.95;
+  @media (prefers-reduced-motion) {
+    transform: translate3d(0, -0.2rem, 0);
+  }
+}
+
+#snowyImage {
+  transition: 2s;
+}
+#snowyImage.hidden {
+  transform: translate3d(0, 0.2rem, 0);
+  opacity: 0.95;
+  @media (prefers-reduced-motion) {
+    transform: translate3d(0, 0.2rem, 0);
+  }
+}
+
+#poolImage {
+  transition: 2s;
+}
+#poolImage.hidden {
+  transform: translate3d(0, -1rem, 0);
+  opacity: 0.95;
+  @media (prefers-reduced-motion) {
+    transform: translate3d(0, 0.2rem, 0);
+  }
 }

@@ -139,7 +139,7 @@ const QuestionsPage = () => {
             A typical appointment will last approximately 1 hour. This varies
             per patient and per injury.
           </p>
-        </section>{" "}
+        </section>
         {/* #therapy-questions */}
         <hr />
         <section id="insurance-questions" className="measured">
@@ -156,11 +156,11 @@ const QuestionsPage = () => {
           <h3>What will my insurance cover?</h3>
           <p>
             This will vary per insurance plan. Three common terms you will hear
-            in relation to your insurance coverage are{" "}
-            <b>deductibles, co-pays</b>, and <b>co-insurance</b>. A{" "}
+            in relation to your insurance coverage are
+            <b>deductibles, co-pays</b>, and <b>co-insurance</b>. A
             <b>deductible</b> is a sum which the insurance company requires you
-            to pay out of pocket before they will begin coverage. A{" "}
-            <b>co-pay</b> is a set amount you pay for each visit. A{" "}
+            to pay out of pocket before they will begin coverage. A
+            <b>co-pay</b> is a set amount you pay for each visit. A
             <b>co-insurance</b> payment is a percentage of the charges for which
             you are responsible after the insurance company has paid their
             portion. One or two of these terms will probably apply to your
@@ -190,7 +190,7 @@ const QuestionsPage = () => {
             phone, or by coming in to the office. If your insurance plan
             requires a co-pay, we ask that you pay those on each visit.
           </p>
-        </section>{" "}
+        </section>
         {/* #insurance-questions */}
         <hr />
         <section id="cash-pricing" className="measured">
