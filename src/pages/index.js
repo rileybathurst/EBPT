@@ -12,7 +12,7 @@ import FormList from "../components/form-list";
 import Seo from "../components/seo";
 
 import Kiley2 from "../components/kiley2io";
-import GymImage from "../components/gymImageIo";
+import GymImage from "../components/gymImageVanilla";
 import Treating from "../components/treating";
 import SnowyBuildingFrontImage from "../components/snowyImage";
 import PoolImage from "../components/poolImage";
@@ -26,9 +26,6 @@ function GymIm() {
   );
 }
 
-
-
-// markup
 const IndexPage = () => {
   return (
     <>
