@@ -18,7 +18,10 @@ const QuestionsPage = () => {
   return (
     <>
       <Header />
-      <Seo title="Questions" />
+      <Seo
+        title="Questions"
+        description="Frequently asked questions."
+      />
       <main>
         <h1 className="measured">Questions</h1>
         {/* <hr /> */}

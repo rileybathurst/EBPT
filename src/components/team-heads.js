@@ -33,21 +33,21 @@ const TeamHeads = () => (
     <div>
       <Link to="/team#jessica">
         <JessicaProfile />
-        Jessica, PT.
+        <p>Jessica, PT.</p>
       </Link>
     </div>
 
     <div>
       <Link to="/team#kiley">
         <KileyProfile />
-        Kiley
+        <p>Kiley</p>
       </Link>
     </div>
 
     <div>
       <Link to="/team#rachael">
         <RachaelProfile />
-        Rachael
+        <p>Rachael</p>
       </Link>
     </div>
   </div>

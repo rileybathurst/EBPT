@@ -21,7 +21,10 @@ const NotFoundPage = () => {
   return (
     <>
       <Header />
-      <Seo title="Patient Intake Forms" />
+      <Seo
+        title="Patient Intake Forms"
+        description="Fill in forms online"
+      />
       <main className="measured">
         <h2 className="">Intake Forms</h2>
 

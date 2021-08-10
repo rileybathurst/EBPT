@@ -2,43 +2,39 @@
   #variables
 \*------------------------------------*/
 
-$emerald: #499e8f;
-$moldavite: #3d7e69;
-$moss: #2e5d58;
-$ember: #ea6a00;
-
-$pearl: #f8f8f8;
-$hematite: #909090;
-$stone: #5f5f5f;
-$onyx: #0f0f0f;
-
 :root {
   // Brand Colors
     --emerald: hsl(169.4, 36.8%, 45.3%);
     --moldavite: hsl(160.6, 34.8%, 36.7%);
     --moss: hsl(173.6, 33.8%, 27.3%);
     --ember: hsl(27.2, 100%, 45.9%);
+
+    --moss-hs: 173.6, 33.8%;
+    --moss-l: 27.3%;
+
+    --ember-hs: 27.2, 100%;
+    --ember-l: 45.9%;
+
   // Neutral Colors
     --pearl: hsl(0, 0%, 97.3%);
     --hematite: hsl(0, 0%, 56.5%);
     --stone: hsl(0, 0%, 37.3%);
     --onyx: hsl(0, 0%, 5.9%);
 
+    --pearl-l: 97.3%;
+
     --shade: hsla(0, 0%, 5.9%, 0.2);
-    --dark-shade: 3px 3px 5px 1px hsla(0, 0%, 95%, 0.2);
+    --dark-shade: hsla(0, 0%, 90%, 0.2);
+
+    --shade-hover: hsla(0, 0%, 5.9%, 0.4);
+    --dark-shade-hover: hsla(0, 0%, 90%, 0.4);
+
+    // utilities
+    --chamfer: 0.25rem;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    --shadow-depth: 2px 2px 2px 0;
 }
 
-$chamfer: 3px;
-
-$shade: 3px 3px 5px 1px rgba(15, 15, 15, 0.2);
-// rgb 15,15,15 is $onyx
-// hsla(0, 0%, 5.9%, 0.2);
-
-
-$shade-hover: 3px 3px 5px 1px rgba(46, 93, 88, 0.4);
-// rgb 46, 93, 88 is $moss
-
-// #variables
 
 /*------------------------------------*\
   #typography
@@ -63,7 +59,7 @@ body {
   font-style: normal;
   font-weight: 400; // regular weight brandon grotesque
   background: var(--pearl);
-  color: $onyx;
+  color: var(--onyx);
   @media (prefers-color-scheme: dark) {
     background: var(--onyx);
     color: var(--pearl);
@@ -140,33 +136,32 @@ h6,
   font-weight: 300; // light weight brandon grotesque
 }
 
-// interesting little variable for all <h>
-#{$headings-a} {
+:is(h1, h2, h3, h4, h5, h6)a {
   margin-left: -0.25rem; // take back the spacing
   padding: 0.25rem 0.5rem;
-  border-radius: $chamfer;
+  border-radius: var(--chamfer);
 }
 
-#{$headings-hover} {
-  background: darken($pearl, 5%);
+:is(h1, h2, h3, h4, h5, h6)a:hover {
+  background: hsl(0, 0%, calc(var(--pearl) - 5%));
   @media (prefers-color-scheme: dark) {
     background: hsl(0, 0%, 15%);
   }
 }
 
 ::selection {
-  background-color: $emerald; // 3:1 contrast ratio on pearl is fine fo UI
+  background-color: var(--emerald); // 3:1 contrast ratio on pearl is fine fo UI
 }
 
 a {
-  color: $stone;
+  color: var(--stone);
   @media (prefers-color-scheme: dark) {
     color: var(--hematite);
   }
 }
 
 a:hover {
-  color: $moldavite;
+  color: var(--moldavite);
 }
 
 // https://webaim.org/techniques/css/invisiblecontent/
@@ -197,7 +192,7 @@ hr {
   margin: 1.25rem auto; // h5
   width: 50vw;
   margin-right: 50vw;
-  border-radius: $chamfer; // check its working by sizing up the border
+  border-radius: var(--chamfer); // check its working by sizing up the border
   border-bottom: 2px solid var(--emerald);
   @media (prefers-color-scheme: dark) {
     border-color: var(--moss);
@@ -232,7 +227,7 @@ hr {
 }
 
 .distracted {
-  color: $stone;
+  color: var(--stone);
   @media (prefers-color-scheme: dark) {
     color: var(--hematite);
   }
@@ -254,20 +249,20 @@ button,
 .buttoned a {
   width: auto;
   cursor: pointer;
-  background: $moldavite;
+  background: var(--moldavite);
   border: none; // browser reset
-  color: $pearl;
+  color: var(--pearl);
   padding: 8px 16px;
-  box-shadow: $shade;
+  box-shadow: var(--shade);
   text-decoration: none; // its obvious its a button
-  border-radius: $chamfer;
+  border-radius: var(--chamfer);
 }
 
 button:hover,
 .buttoned a:hover {
-  background: $moss;
-  color: lighten($pearl, 20%); // custom color
-  box-shadow: $shade-hover;
+  background: var(--moss);
+  color: hsl(0, 0%, calc(var(--pearl) + 20%));
+  box-shadow: var(--shade-hover);
 
 
 }
@@ -306,11 +301,11 @@ svg {
 
 // keep these small till i deal with them
 a svg {
-  fill: $pearl;
+  fill: var(--pearl);
 }
 
 a svg:hover {
-  fill: darken($pearl, 20%);
+  fill: hsl(0, 0%, calc(var(--pearl) - 20%));
 }
 
 .team-heads {
@@ -322,17 +317,19 @@ a svg:hover {
     flex: 0 1 4rem; // guess and check
     margin: 0.5rem 1rem;
     text-align: center;
+    display: block;
 
     > a {
       > .gatsby-image-wrapper {
         border-radius: 50%;
         max-height: 8rem;
         // transition: 0.2s; // I want this but after it loads so I need to sort that
-        border: 2px var(--pearl) solid;
-        box-shadow: $shade;
+        border: 2px white solid;
+        box-shadow: var(--shadow-depth) var(--shade);
+        margin-block-end: 0.5rem;
         @media (prefers-color-scheme: dark) {
           border-color: var(--onyx);
-          box-shadow: var(--dark-shade);
+          box-shadow: var(--shadow-depth) var(--dark-shade);
         }
 
         // this is needed for safari and possibly others
@@ -341,11 +338,21 @@ a svg:hover {
         }
       } // .gatsby-image-wrapper
     } // a
+
+    > a:hover p {
+      border-radius: var(--chamfer);
+      background:  hsl(0, 0%, 92.5);
+    
+      @media (prefers-color-scheme: dark) {
+        background: hsl(0, 0%, 17.5);
+      }
+    }
     
     > a:hover > .gatsby-image-wrapper {
-      box-shadow: $shade-hover;
+      box-shadow: var(--shadow-depth) var(--shade-hover);
       border-color: var(--emerald);
       @media (prefers-color-scheme: dark) {
+        box-shadow: var(--shadow-depth) var(--dark-shade-hover);
         border-color: var(--moldavite);
       }
     }
@@ -376,7 +383,7 @@ a svg:hover {
 }
 
 .gatsby-image-wrapper {
-  border-radius: $chamfer;
+  border-radius: var(--chamfer);
 }
 
 // #images
@@ -450,13 +457,13 @@ body {
     flex: 1 1 23rem; // guess and check
     list-style: none;
     padding: 1.563rem;
-    border-radius: $chamfer * 2;
-    background: $emerald;
-    color: $onyx;
+    border-radius: calc(var(--chamfer) * 2);
+    background: var(--emerald);
+    color: var(--onyx);
 
     @media (prefers-color-scheme: dark) {
-      background: $moss;
-      color: $pearl;
+      background: var(--moss);
+      color: var(--pearl);
     }
 
     > h4 {
@@ -486,7 +493,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   column-gap: 2rem;
-  color: $stone;
+  color: var(--stone);
   @media (prefers-color-scheme: dark) {
     color: var(--hematite);
 
@@ -508,7 +515,7 @@ body {
       > li {
         font-size: 1.25rem; // h5
         list-style: none;
-        color: $onyx;
+        color: var(--onyx);
       }
     }
   }
@@ -569,8 +576,8 @@ body {
   z-index: 99; // above any images logo etc
 
   ul {
-    background: $moldavite;
-    color: $onyx;
+    background: var(--moldavite);
+    color: var(--onyx);
     list-style: none;
     padding: 1rem;
     margin-top: 0;
@@ -581,7 +588,7 @@ body {
       margin-bottom: 1rem;
 
       a {
-        color: $pearl;
+        color: var(--pearl);
       }
 
       a:hover {
@@ -633,8 +640,8 @@ body {
 
 .close-button {
   margin-top: 0;
-  background: $moss;
-  color: $pearl;
+  background: var(--moss);
+  color: var(--pearl);
   border: none;
   width: 100%;
   // text-decoration: underline;
@@ -667,12 +674,11 @@ body {
 
       a {
         padding: 0.25rem 0.5rem; // 🚨 making this up
-        border-radius: $chamfer;
+        border-radius: var(--chamfer);
       }
 
       a:hover {
-        // background: darken($pearl, 5%); // its pretty subtle but i do like it maybe it should be more there
-        background: hsl(0, 0%, 92.5%); // its pretty subtle but i do like it maybe it should be more there
+        background: hsl(0, 0%, calc(var(--pearl) - 5%)); // its pretty subtle but i do like it maybe it should be more there
         @media (prefers-color-scheme: dark) {
           background: hsl(0, 0%, 15%);
         }
@@ -699,7 +705,7 @@ body {
     width: 8rem; // guess and check
     height: 8rem; // guess and check
     opacity: 0.5;
-    background: $pearl;
+    background: var(--pearl);
     @media (prefers-color-scheme: dark) {
       background: var(--onyx);
     }
@@ -712,7 +718,7 @@ body {
     border-radius: 50%;
     width: 8rem;
     height: 8rem;
-    border: 2px $pearl solid;
+    border: 2px var(--pearl) solid;
     @media (prefers-color-scheme: dark) {
       border-color: var(--onyx);
     }
@@ -745,7 +751,7 @@ header a svg {
   max-width: 6rem;
   max-height: 6rem;
   margin: 1rem;
-  fill: $moss;
+  fill: var(--moss);
 
   @media (prefers-color-scheme: dark) {
     fill: var(--emerald);
@@ -754,7 +760,7 @@ header a svg {
 
 // this isnt working
 header a svg:hover {
-  fill: $moldavite;
+  fill: var(--moldavite);
 }
 
 // #hero
@@ -765,37 +771,37 @@ header a svg:hover {
 
 // its like an alert but not quite as much
 .vigilant {
-  background: $ember;
+  background: var(--ember);
   padding: 0.5rem 1rem;
-  border-radius: $chamfer;
+  border-radius: var(--chamfer);
 }
 
 // nesting this doesnt work
 .vigilant::selection {
-  background-color: darken($ember, 20%);
+  background-color: hsl(var(--ember-hs), calc(var(--ember-l) - 20%));
 }
 
 .emerald-backed {
-  background: $emerald;
-  border-radius: $chamfer;
-  color: $pearl;
+  background: var(--emerald);
+  border-radius: var(--chamfer);
+  color: var(--pearl);
 
   a {
-    color: $pearl;
-    background: $emerald;
+    color: var(--pearl);
+    background: var(--emerald);
     display: inline-block;
     padding: 0.5rem 1rem;
-    border-radius: $chamfer;
+    border-radius: var(--chamfer);
   }
 
   a:hover {
-    color: lighten($pearl, 20%);
-    background: $moldavite;
+    color: hsl(0, 0%, calc(var(--pearl) + 20%));
+    background: var(--moldavite);
   }
 }
 
 .emerald-backed::selection {
-  background-color: $moldavite;
+  background-color: var(--moldavite);
 }
 
 #contact > h4, // this naming is kinda terrible
@@ -828,19 +834,19 @@ footer h3 a {
 \*------------------------------------*/
 
 #footer-social {
-  border-top: 1rem solid $emerald;
-  background: $moss;
-  color: $pearl;
+  border-top: 1rem solid var(--emerald);
+  background: var(--moss);
+  color: var(--pearl);
   padding: 1.953rem; // why this number
 
   a {
-    color: $pearl; // conflicts with text color
+    color: var(--pearl); // conflicts with text color
     // has background tho
   }
 
   a:hover {
-    color: lighten($pearl, 20%);
-    background: darken($moss, 10%);
+    color: hsl(0, 0%, calc(var(--pearl) + 20%));
+    background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%));
   }
 
   ul {
@@ -862,13 +868,13 @@ footer h3 a {
         }
 
         svg:hover {
-          fill: lighten($pearl, 20%);
+          fill: hsl(0, 0%, calc(var(--pearl) + 20%));
         }
       } // a
 
       a:hover {
-        background: darken($moss, 10%);
-        border-radius: $chamfer; // match all icons having a rounded edge
+        background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%));
+        border-radius: var(--chamfer); // match all icons having a rounded edge
       } // a:hover
     } // li
   } // ul
@@ -987,5 +993,19 @@ footer h3 a {
   opacity: 0.95;
   @media (prefers-reduced-motion) {
     transform: translate3d(0, 0.2rem, 0);
+  }
+}
+
+/*------------------------------------*/
+//  #BORDERBLOCK
+/*------------------------------------*/
+
+.borderblock {
+  border-radius: var(--chamfer);
+  border: 2px solid var(--emerald);
+  padding: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--moss);
   }
 }

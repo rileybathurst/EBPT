@@ -20,7 +20,10 @@ const OfferingsPage = () => {
   return (
     <>
       <Header />
-      <Seo title="Offerings" />
+      <Seo
+        title="Offerings"
+        description="Our Physical Therapy and Wellness Offerings"
+      />
       <main className="measured">
         <h1>Our Physical Therapy and Wellness Offerings</h1>
 

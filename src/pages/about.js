@@ -15,7 +15,9 @@ function SnowyBuildingFrontImage() {
 const AboutPage = () => {
   return (
     <>
-    <Seo title="About Us" />
+    <Seo
+      title="About Us"
+    />
     <Header />
     <main className="measured">
       <h1>About Us</h1>

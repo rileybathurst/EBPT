@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import Seo from "../components/seo";
+import Liz from "../components/liz";
 
 function GymImage() {
   return (
@@ -26,7 +27,12 @@ const ServicesPage = () => {
   return (
     <>
       <Header />
-      <Seo title="Services" />
+      <Seo
+        title="Services"
+        description="This service is a form of rehabilitation for those who have medical
+        problems or other health-related conditions that may limit their
+        ability to move and function in their daily lives."
+      />
       <main>
         <h1 className="measured">Services</h1>
 
@@ -80,45 +86,47 @@ const ServicesPage = () => {
             supervising Physical Therapist is within audible reach.
           </p>
 
-          <p>
-            {/* this is a prettier formatting */}
-            From{" "}
-            <a
-              href="https://www.ptbc.ca.gov/consumers/consumer_info_faq.shtml"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Physical Therapy Board of California
-            </a>
-            .
-          </p>
-
-          <p>For more information, click on any of the following websites:</p>
-          <ul>
-            <li>
+          <section className="borderblock">
+            <p>
+              {/* this is a prettier formatting */}
+              From{" "}
               <a
-                href="https://www.ptbc.ca.gov/"
+                href="https://www.ptbc.ca.gov/consumers/consumer_info_faq.shtml"
                 target="_blank"
                 rel="noreferrer"
               >
                 Physical Therapy Board of California
               </a>
-            </li>
-            <li>
-              <a href="https://www.apta.org/" target="_blank" rel="noreferrer">
-                American Physical Therapy Association
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.ccapta.org/default.aspx"
-                target="_blank"
-                rel="noreferrer"
-              >
-                California Physical Therapy Association
-              </a>
-            </li>
-          </ul>
+              .
+            </p>
+
+            <p>For more information, click on any of the following websites:</p>
+            <ul>
+              <li>
+                <a
+                  href="https://www.ptbc.ca.gov/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Physical Therapy Board of California
+                </a>
+              </li>
+              <li>
+                <a href="https://www.apta.org/" target="_blank" rel="noreferrer">
+                  American Physical Therapy Association
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.ccapta.org/default.aspx"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  California Physical Therapy Association
+                </a>
+              </li>
+            </ul>
+          </section>
         </section>
         <hr />
 
@@ -228,13 +236,7 @@ const ServicesPage = () => {
             <li>Balance Problems</li>
           </ul>
 
-          <h3>
-            For more information or to schedule swim lessons / aquatic exercise,
-            please contact Liz Terzian at 530-721-5481 or{" "}
-            <a href="mailto:iswim@gmail.com?cc=ebpt.laketahoe@gmail.com?subject=Swim Inquiry from Emerald Bay Physio Therapy">
-              iswim@gmail.com
-            </a>
-          </h3>
+          <Liz />
         </section>
 
         <hr />
@@ -257,13 +259,7 @@ const ServicesPage = () => {
             <li>Classes are by appointment only – no drop-ins</li>
           </ul>
 
-          <h3>
-            For more information or to schedule swim lessons / aquatic exercise,
-            please contact Liz Terzian at 530-721-5481 or{" "}
-            <a href="mailto:iswim@gmail.com?cc=ebpt.laketahoe@gmail.com?subject=Swim Inquiry from Emerald Bay Physio Therapy">
-              iswim@gmail.com
-            </a>
-          </h3>
+          <Liz />
         </section>
 
         <hr />

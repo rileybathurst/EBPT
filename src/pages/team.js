@@ -35,7 +35,10 @@ const TeamPage = () => {
   return (
     <>
       <Header />
-      <Seo title="Meet our team" />
+      <Seo
+        title="Meet our team"
+        description="We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals."
+      />
       <main>
         <h1 className="measured">Team</h1>
 
