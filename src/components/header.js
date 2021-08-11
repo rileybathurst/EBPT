@@ -1,13 +1,63 @@
-// import React from "react";import { Link } from "gatsby";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-// import HeroImageDepricated from "../images/hero-image-depricated"
-import Veiled from "./veiled";
 import MenuList from "./menu-list";
-import MenuClose from "./menu-close";
 import Logo from "./logo";
+
+const ThemeContext = createContext(null);
+
+function Menu() {
+  const { menu, toggleMenu } = useContext(
+    ThemeContext
+  );
+
+  if (menu === 'open') {
+    return (
+      <nav id="veiled" className="active">
+        <ul className="veiled__header">
+          <li>
+            <Link to="/" title="to the front page">
+              <Logo />
+            </Link>
+          </li>
+        </ul>
+        <MenuList />
+        <button onClick={toggleMenu} className="close-button">Close Menu</button>
+      </nav>
+    );
+  } else {
+    // return null;
+    // were doing more to get a slide
+    return (
+      <nav id="veiled" className="inactive">
+        <ul className="veiled__header">
+          <li>
+            <Link to="/" title="to the front page">
+              <Logo />
+            </Link>
+          </li>
+        </ul>
+        <MenuList />
+        <button onClick={toggleMenu} className="close-button">Close Menu</button>
+      </nav>
+    );
+  }
+}
+
+function MenuChanger() {
+  const { menu, toggleMenu } = useContext(ThemeContext);
+
+  return (
+    <div id="menu__toggle" className={menu}>
+      <button onClick={toggleMenu} className={`veil-button small_menu--opener ${menu}`}>Menu</button>
+      <div className="small_menu--icon">
+        <span className="small_menu--icon-topline"></span>
+        <span className="small_menu--icon-bottomline"></span>
+      </div>
+    </div>
+  );
+}
 
 function DarkHero() {
   return <StaticImage
@@ -48,69 +98,62 @@ function HeroImage() {
   );
 }
 
-const Header = () => (
-  <>
+function Header() {
 
-    <nav id="veiled" className="inactive">
-      <ul className="veiled__header">
-        <li>
-          <Link to="/" title="to the front page">
-            <Logo />
-          </Link>
-        </li>
-      </ul>
-      <MenuList />
-      <MenuClose />
-    </nav>
+  const [menu, setmenu] = useState("closed");
 
-    <header>
-      <h1 className="sr-only">Emerald Bay Physical Therapy</h1>
-      <div id="hero">
-        <HeroImage />
+  function toggleMenu() {
+    setmenu(menu => (menu === "closed" ? "open" : "closed"));
+  }
 
-        {/* I could also do these with SVG so which is maybe more or less problematic */}
-        <div id="logo__backer">
-          {/* I think I should have an svg here even if its less neccesary it will make it more readable */}
-          {/* circle */}
+  return (
+    <ThemeContext.Provider
+      value={{ menu, toggleMenu }}
+    >
+      <Menu />
+
+      <header>
+        <h1 className="sr-only">Emerald Bay Physical Therapy</h1>
+        <div id="hero">
+          <HeroImage />
+
+          <div id="logo__backer">{/* stay gold */}</div>
+
+          <div id="logo__border">{/* stay gold */}</div>
+
+          <div id="logo">
+            <Link to="/" title="to the front page">
+              <Logo />
+            </Link>
+          </div>
+
+          {/* I think this is needed for the site map but testing that */}
+          <title>Emerald Bay Physical Therapy</title>
+          <link rel="canonical" href="https://emeraldbay.physio" />
         </div>
+        {/* #hero */}
 
-        <div id="logo__border">
-          {/* I think I should have an svg here even if its less neccesary it will make it more readable */}
-          {/* circle */}
+        <div id="scrollarea" className="associate">
+          <hr className="io-line" />
+          <div className="menu-lines">
+            <section id="call">
+              <div className="buttoned">
+                <a href="tel:530542-2662" className="">
+                  (530) 542-2662
+                </a>
+              </div> {/* .buttoned */}
+            </section>
+
+            <nav id="overt">
+              <MenuList />
+            </nav>
+            <MenuChanger />
+          </div>
+          <hr />
         </div>
-
-        <div id="logo">
-          <Link to="/" title="to the front page">
-            <Logo />
-          </Link>
-        </div>
-        {/* logo */}
-
-        {/* I think this is needed for the site map but testing that */}
-        <title>Emerald Bay Physical Therapy</title>
-        <link rel="canonical" href="https://emeraldbay.physio" />
-      </div>
-      {/* #hero */}
-
-      <div id="scrollarea" className="associate">
-        <hr className="io-line" />
-        <div className="menu-lines">
-          <section id="call">
-            <div className="buttoned">
-              <a href="tel:530542-2662" className="">
-                (530) 542-2662
-              </a>
-            </div> {/* .buttoned */}
-          </section>
-          <Veiled />
-          <nav id="overt">
-            <MenuList />
-          </nav>
-        </div>
-        <hr />
-      </div>
-    </header>
-  </>
-);
+      </header>
+    </ThemeContext.Provider>
+  );
+}
 
 export default Header;
