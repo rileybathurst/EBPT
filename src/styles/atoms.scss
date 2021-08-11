@@ -341,10 +341,10 @@ a svg:hover {
 
     > a:hover p {
       border-radius: var(--chamfer);
-      background:  hsl(0, 0%, 92.5);
+      background:  hsl(0, 0%, 92.5%);
     
       @media (prefers-color-scheme: dark) {
-        background: hsl(0, 0%, 17.5);
+        background: hsl(0, 0%, 17.5%);
       }
     }
     
