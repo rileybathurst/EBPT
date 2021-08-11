@@ -37,6 +37,7 @@ function GymImage(props) {
 
     function handleIntersect(entries, observer) {
       entries.forEach((entry) => {
+        // when going out fo frame
         if (entry.intersectionRatio > prevRatio) {
           setRatio(entry.intersectionRatio);
           setLess(0.8 + entry.intersectionRatio * 0.2);
@@ -62,6 +63,7 @@ function GymImage(props) {
   const gymStyle = {
     transform: `translate3d(${ratio}rem, 0, 0)`,
     opacity: `${less}`,
+    transition: `2s`,
   }
 
   return (

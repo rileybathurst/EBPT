@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 
-function Kiley2(props) {
+function PoolImage(props) {
 
   function vanilla() {
-    let kileyImage;
-    kileyImage = document.querySelector("#kileyImage");
+    let poolImage;
+    poolImage = document.querySelector("#poolImage");
     createObserver();
 
     let prevRatio = 0.0;
@@ -18,7 +18,7 @@ function Kiley2(props) {
       };
     
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(kileyImage);
+      observer.observe(poolImage);
     }
 
     // trust the math
@@ -39,7 +39,7 @@ function Kiley2(props) {
       entries.forEach((entry) => {
         // when going out fo frame
         if (entry.intersectionRatio > prevRatio) {
-          setRatio(entry.intersectionRatio);
+          setRatio(1 - entry.intersectionRatio);
           setLess(0.8 + entry.intersectionRatio * 0.2);
 
         } else {
@@ -61,20 +61,19 @@ function Kiley2(props) {
 
   // starting style
   const gymStyle = {
-    transform: `translate3d(${ratio}rem, 0, 0)`,
+    transform: `translate3d(0, ${ratio}rem, 0)`,
     opacity: `${less}`,
     transition: `2s`,
-    // marginBlockStart: `-50%`,
   }
 
   return (
-      <div id="kileyImage" style={gymStyle}> {/* needs this to load quick enough */}
+      <div id="poolImage" style={gymStyle}> {/* needs this to load quick enough */}
         <StaticImage
-          src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg"
-          alt="Kiley"
+          src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg"
+          alt="pool"
         />
       </div>
   );
 }
 
-export default Kiley2;
+export default PoolImage;

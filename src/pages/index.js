@@ -13,9 +13,9 @@ import Seo from "../components/seo";
 
 import Kiley2 from "../components/kiley2io";
 import GymImage from "../components/gymImageVanilla";
-import Treating from "../components/treating";
-import SnowyBuildingFrontImage from "../components/snowyImage";
-import PoolImage from "../components/poolImage";
+import Treating from "../components/treating-io";
+import SnowyBuildingFrontImage from "../components/snowyImage-io";
+import PoolImage from "../components/poolImage-io";
 
 function GymIm() {
   return (

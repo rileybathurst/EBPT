@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 
-function Kiley2(props) {
+function Treating(props) {
 
   function vanilla() {
-    let kileyImage;
-    kileyImage = document.querySelector("#kileyImage");
+    let treatingImage;
+    treatingImage = document.querySelector("#treatingImage");
     createObserver();
 
     let prevRatio = 0.0;
@@ -16,36 +16,37 @@ function Kiley2(props) {
       let options = {
         threshold: buildThresholdList()
       };
-    
+
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(kileyImage);
+      observer.observe(treatingImage);
     }
 
     // trust the math
     function buildThresholdList() {
       let thresholds = [];
       let numSteps = 20;
-    
-      for (let i=1.0; i<=numSteps; i++) {
-        let ratito = i/numSteps;
+
+      for (let i = 1.0; i <= numSteps; i++) {
+        let ratito = i / numSteps;
         thresholds.push(ratito);
       }
-    
+
       thresholds.push(0);
       return thresholds;
     }
 
     function handleIntersect(entries, observer) {
       entries.forEach((entry) => {
-        // when going out fo frame
+
         if (entry.intersectionRatio > prevRatio) {
-          setRatio(entry.intersectionRatio);
+          setRatio(1 - entry.intersectionRatio);
+          // 
           setLess(0.8 + entry.intersectionRatio * 0.2);
 
         } else {
           setRatio(entry.intersectionRatio);
         }
-    
+
         prevRatio = entry.intersectionRatio;
       });
     }
@@ -54,27 +55,26 @@ function Kiley2(props) {
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
 
-  // after render // dont use vanialla js in here put that in its own function
+
   useEffect(() => {
     vanilla();
   });
 
-  // starting style
-  const gymStyle = {
-    transform: `translate3d(${ratio}rem, 0, 0)`,
+
+  const treatingStyle = {
+    transform: `translate3d(0, ${ratio}rem, 0)`,
     opacity: `${less}`,
     transition: `2s`,
-    // marginBlockStart: `-50%`,
   }
 
   return (
-      <div id="kileyImage" style={gymStyle}> {/* needs this to load quick enough */}
-        <StaticImage
-          src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg"
-          alt="Kiley"
-        />
-      </div>
+    <div id="treatingImage" style={treatingStyle}> {/* needs this to load quick enough */}
+      <StaticImage
+        src="https://ebpt.s3-us-west-1.amazonaws.com/images/treating.jpg"
+        alt="Jessica providing treatment to a patient"
+      />
+    </div>
   );
 }
 
-export default Kiley2;
+export default Treating;
