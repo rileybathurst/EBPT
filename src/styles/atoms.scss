@@ -146,7 +146,7 @@ h6,
 }
 
 :is(h1, h2, h3, h4, h5, h6)a:hover {
-  background: hsl(0, 0%, calc(var(--pearl) - 5%));
+  background: hsl(0, 0%, calc(var(--pearl-l) - 5%));
   @media (prefers-color-scheme: dark) {
     background: hsl(0, 0%, 15%);
   }
@@ -264,7 +264,7 @@ button,
 button:hover,
 .buttoned a:hover {
   background: var(--moss);
-  color: hsl(0, 0%, calc(var(--pearl) + 20%));
+  color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
   box-shadow: var(--shade-hover);
 
 
@@ -308,7 +308,7 @@ a svg {
 }
 
 a svg:hover {
-  fill: hsl(0, 0%, calc(var(--pearl) - 20%));
+  fill: hsl(0, 0%, calc(var(--pearl-l) - 20%));
 }
 
 .team-heads {
@@ -686,7 +686,7 @@ body {
       }
 
       a:hover {
-        background: hsl(0, 0%, calc(var(--pearl) - 5%)); // its pretty subtle but i do like it maybe it should be more there
+        background: hsl(0, 0%, calc(var(--pearl-l) - 5%)); // its pretty subtle but i do like it maybe it should be more there
         @media (prefers-color-scheme: dark) {
           background: hsl(0, 0%, 15%);
         }
@@ -804,8 +804,8 @@ header a svg:hover {
   }
 
   a:hover {
-    color: hsl(0, 0%, calc(var(--pearl) + 20%));
-    background: var(--moldavite);
+    color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+    background: var(--moldavite) !important; // over the regular, I don't love this
   }
 }
 
@@ -854,7 +854,7 @@ footer h3 a {
   }
 
   a:hover {
-    color: hsl(0, 0%, calc(var(--pearl) + 20%));
+    color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
     background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%));
   }
 
@@ -877,7 +877,7 @@ footer h3 a {
         }
 
         svg:hover {
-          fill: hsl(0, 0%, calc(var(--pearl) + 20%));
+          fill: hsl(0, 0%, calc(var(--pearl-l) + 20%));
         }
       } // a
 
@@ -1099,8 +1099,8 @@ footer h3 a {
 }
 
 .small_menu--opener:hover {
-  color: var(--light-gray); // 📣
-  background: hsl(var(--secondary-color-b), calc(var(--secondary-color-l) - 10%));
+  color: hsl(0, 0%, 92.3%);
+  background: hsl(var(--moldavite-hs), calc(var(--moldavite-l) - 10%));
 }
 
 .small_menu--icon span {
