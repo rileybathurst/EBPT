@@ -28,7 +28,7 @@ function RachaelProfile() {
 }
 
 const TeamHeads = () => (
-  <div className="team-heads">
+  <div className="team-heads spin">
     {/* depending on the CSS I might just make square images for here */}
     <div>
       <Link to="/team#jessica">
@@ -50,6 +50,8 @@ const TeamHeads = () => (
         <p>Rachael</p>
       </Link>
     </div>
+
+    {/* <button class="spin">Spin Circle</button> */}
   </div>
 );
 

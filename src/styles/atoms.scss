@@ -43,12 +43,6 @@
   #typography
 \*------------------------------------*/
 
-// https://css-tricks.com/snippets/sass/use-sass-variable-selector/
-// this is way cleaner than the scss for loop even if it needs #{$headings-a} {
-$headings-a: "h1 a, h2 a, h3 a, h4 a, h5 a, h6 a";
-// same as :is(h1, h2, h3, h4, h5, h6) a";
-$headings-hover: "h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover";
-
 html {
   font-family: "brandon-grotesque", sans-serif;
   // https://fonts.adobe.com/fonts/brandon-grotesque
@@ -353,7 +347,7 @@ a svg:hover {
     
     > a:hover > .gatsby-image-wrapper {
       box-shadow: var(--shadow-depth) var(--shade-hover);
-      border-color: var(--emerald);
+      // border-color: var(--emerald);
       @media (prefers-color-scheme: dark) {
         box-shadow: var(--shadow-depth) var(--dark-shade-hover);
         border-color: var(--moldavite);
@@ -1120,4 +1114,61 @@ footer h3 a {
 
 .small_menu--icon-bottomline {
   margin-top: 0.5rem;
+}
+
+
+/*------------------------------------*/
+//  #SPIN
+/*------------------------------------*/
+
+// built upon https://codepen.io/giana/pen/yYBpVY
+
+.spin .gatsby-image-wrapper {
+  border: 0;
+  border-radius: 100%;
+  box-shadow: none;
+  overflow: unset;
+
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+  &::before {
+    transition:
+      border-top-color 0.15s linear, // Stagger border appearances
+      border-right-color 0.15s linear 0.10s,
+      border-bottom-color 0.15s linear 0.20s;
+  }
+
+  &::after {
+    transition:
+      transform 0.4s linear 0s,
+      border-left-width 0s linear 0.35s; // Solid edge post-rotation
+  }
+
+  &::before,
+  &::after {
+    transition: 0.5s;
+    top: -2px; // opposite to the border-width
+    left: -2px;
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+  }
+
+  &:hover::before {
+    border-color: var(--emerald);
+    border-left-color: transparent;
+  }
+
+  &:hover::after {
+    border-top: 2px solid var(--emerald); // Shows border
+    border-left-width: 2px; // Solid edges, invisible borders
+    border-right-width: 2px; // Solid edges, invisible borders
+    transform: rotate(270deg); // Rotate around circle
+  }
 }
