@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 function MenuClose() {
 
     function openUp() {
-        var veiled = document.getElementById('veiled');
+        var veiled = useRef();
 
         if (veiled.className === 'active'){
             veiled.className = 'inactive';
@@ -12,7 +12,7 @@ function MenuClose() {
         }
     }
     return (
-        <button onClick={openUp} className="close-button">Close Menu</button>
+        <button onClick={openUp} className="close-button" ref={veiled}>Close Menu</button>
     );
 }
 

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 
 function PoolImage(props) {
+  const image = useRef();
 
-  function vanilla() {
-    let poolImage;
-    poolImage = document.querySelector("#poolImage");
+  useEffect(() => {
+    const img = image.current;
     createObserver();
 
     let prevRatio = 0.0;
@@ -18,7 +18,7 @@ function PoolImage(props) {
       };
     
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(poolImage);
+      observer.observe(img);
     }
 
     // trust the math
@@ -49,15 +49,10 @@ function PoolImage(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  }
+  });
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
-
-  // after render // dont use vanialla js in here put that in its own function
-  useEffect(() => {
-    vanilla();
-  });
 
   // starting style
   const gymStyle = {
@@ -67,7 +62,7 @@ function PoolImage(props) {
   }
 
   return (
-      <div id="poolImage" style={gymStyle}> {/* needs this to load quick enough */}
+      <div id="poolImage" style={gymStyle} ref={image}> {/* needs this to load quick enough */}
         <StaticImage
           src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg"
           alt="pool"

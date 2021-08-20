@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 
 function SnowyBuildingFrontImage(props) {
 
-  function vanilla() {
-    let snowyImage;
-    snowyImage = document.querySelector("#snowyImage");
+  const image = useRef();
+
+  useEffect(() => {
+    const img = image.current;
     createObserver();
 
     let prevRatio = 0.0;
@@ -18,7 +19,7 @@ function SnowyBuildingFrontImage(props) {
       };
 
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(snowyImage);
+      observer.observe(img);
     }
 
     // trust the math
@@ -50,16 +51,10 @@ function SnowyBuildingFrontImage(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  }
+  });
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
-
-
-  useEffect(() => {
-    vanilla();
-  });
-
 
   const treatingStyle = {
     transform: `translate3d(0, ${ratio}rem, 0)`,
@@ -68,7 +63,7 @@ function SnowyBuildingFrontImage(props) {
   }
 
   return (
-    <div id="snowyImage" style={treatingStyle}> {/* needs this to load quick enough */}
+    <div id="snowyImage" style={treatingStyle} ref={image}> {/* needs this to load quick enough */}
       <StaticImage
         src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg"
         alt="clinic"

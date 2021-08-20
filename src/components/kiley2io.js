@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 
 function Kiley2(props) {
+  const image = useRef();
 
-  function vanilla() {
-    let kileyImage;
-    kileyImage = document.querySelector("#kileyImage");
+  useEffect(() => {
+    const img = image.current;
     createObserver();
 
     let prevRatio = 0.0;
@@ -18,7 +18,7 @@ function Kiley2(props) {
       };
     
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(kileyImage);
+      observer.observe(img);
     }
 
     // trust the math
@@ -49,15 +49,10 @@ function Kiley2(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  }
+  });
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
-
-  // after render // dont use vanialla js in here put that in its own function
-  useEffect(() => {
-    vanilla();
-  });
 
   // starting style
   const gymStyle = {
@@ -68,7 +63,7 @@ function Kiley2(props) {
   }
 
   return (
-      <div id="kileyImage" style={gymStyle}> {/* needs this to load quick enough */}
+      <div id="kileyImage" style={gymStyle} ref={image}> {/* needs this to load quick enough */}
         <StaticImage
           src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg"
           alt="Kiley"
