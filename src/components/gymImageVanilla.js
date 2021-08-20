@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StaticImage } from "gatsby-plugin-image";
 
 function GymImage(props) {
+  const gymImage = useRef();
+  console.log(gymImage);
 
-  function vanilla() {
-    let gymImage;
-    gymImage = document.querySelector("#gymImage");
+  useEffect(() => {
+    const gym = gymImage.current;
     createObserver();
 
     let prevRatio = 0.0;
@@ -18,7 +19,7 @@ function GymImage(props) {
       };
     
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(gymImage);
+      observer.observe(gym);
     }
 
     // trust the math
@@ -35,7 +36,7 @@ function GymImage(props) {
       return thresholds;
     }
 
-    function handleIntersect(entries, observer) {
+    function handleIntersect(entries) {
       entries.forEach((entry) => {
         // when going out fo frame
         if (entry.intersectionRatio > prevRatio) {
@@ -49,15 +50,10 @@ function GymImage(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  }
+  });
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
-
-  // after render // dont use vanialla js in here put that in its own function
-  useEffect(() => {
-    vanilla();
-  });
 
   // starting style
   const gymStyle = {
@@ -67,7 +63,7 @@ function GymImage(props) {
   }
 
   return (
-      <div id="gymImage" style={gymStyle}> {/* needs this to load quick enough */}
+      <div id="gymImage" style={gymStyle} ref={gymImage}> {/* needs this to load quick enough */}
         <StaticImage
           src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg"
           alt="gym"

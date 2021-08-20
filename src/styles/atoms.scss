@@ -1123,6 +1123,12 @@ footer h3 a {
 
 // built upon https://codepen.io/giana/pen/yYBpVY
 
+// I still dont undestand how the first quarter is drawn in
+// what I think is happenin or how I would do it is.
+// light the :after is the last piece, spin that
+// have ::before be the trail
+// at exactly the point the two overlap the trail comes in
+
 .spin .gatsby-image-wrapper {
   border: 0;
   border-radius: 100%;
