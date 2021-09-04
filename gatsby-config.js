@@ -65,7 +65,7 @@ module.exports = {
           "style-src": "'self' 'unsafe-inline' use.typekit.net p.typekit.net",
           "script-src": "'self' 'unsafe-inline' use.typekit.net",
           // the unsafe-inline on script-src is a problem for https://observatory.mozilla.org but without it the images break
-          "font-src": "'self' use.typekit.net", // 'unsafe-inline'
+          "font-src": "'self' use.typekit.net",
         }
       }
     },

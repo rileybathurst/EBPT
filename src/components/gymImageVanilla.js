@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 function GymImage(props) {
   const gymImage = useRef();
-  console.log(gymImage);
+  // console.log(gymImage);
 
   useEffect(() => {
     const gym = gymImage.current;
