@@ -939,7 +939,7 @@ footer h3 a {
 //  #IO TEST
 /*------------------------------------*/
 
-#kiley {
+/* #kiley {
   margin-block-start: -50%;
   transition: 2s;
   height: 8rem;
@@ -953,7 +953,7 @@ footer h3 a {
       transform: translate3d(0.2rem, 0, 0)
     }
   }
-}
+} */
 
 #gymImage {
   transition: 2s;
@@ -1010,6 +1010,11 @@ footer h3 a {
 
   @media (prefers-color-scheme: dark) {
     border-color: var(--moss);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-block: 0; // theres a padding on the border
   }
 }
 
