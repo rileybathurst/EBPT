@@ -1,0 +1,45 @@
+/*------------------------------------*\
+  #backgrounds
+\*------------------------------------*/
+
+// its like an alert but not quite as much
+.vigilant {
+  background: var(--ember);
+  padding: 0.5rem 1rem;
+  border-radius: var(--chamfer);
+}
+
+// nesting this doesnt work
+.vigilant::selection {
+  background-color: hsl(var(--ember-hs), calc(var(--ember-l) - 20%));
+}
+
+.emerald-backed {
+  background: var(--emerald);
+  border-radius: var(--chamfer);
+  color: var(--pearl);
+
+  a {
+    color: var(--pearl);
+    background: var(--emerald);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--chamfer);
+  }
+
+  a:hover {
+    color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+    background: var(--moldavite) !important; // over the regular, I don't love this
+  }
+}
+
+.emerald-backed::selection {
+  background-color: var(--moldavite);
+}
+
+#contact > h4, // this naming is kinda terrible
+footer h3 a {
+  @extend .emerald-backed;
+}
+
+// #backgrounds

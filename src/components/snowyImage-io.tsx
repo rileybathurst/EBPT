@@ -40,7 +40,7 @@ function SnowyBuildingFrontImage(props) {
       entries.forEach((entry) => {
 
         if (entry.intersectionRatio > prevRatio) {
-          setRatio(entry.intersectionRatio);
+          setRatio(entry.intersectionRatio - 1);
           // 
           setLess(0.8 + entry.intersectionRatio * 0.2);
 

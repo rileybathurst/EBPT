@@ -1,0 +1,39 @@
+/*------------------------------------*\
+  #variables
+\*------------------------------------*/
+
+:root {
+  // Brand Colors
+    --emerald: hsl(169.4, 36.8%, 45.3%);
+    --moldavite: hsl(160.6, 34.8%, 36.7%);
+    --moss: hsl(173.6, 33.8%, 27.3%);
+    --ember: hsl(27.2, 100%, 45.9%);
+
+    --moldavite-hs: 160.6, 34.8%;
+    --moldavite-l: 36.7%;
+
+    --moss-hs: 173.6, 33.8%;
+    --moss-l: 27.3%;
+
+    --ember-hs: 27.2, 100%;
+    --ember-l: 45.9%;
+
+  // Neutral Colors
+    --pearl: hsl(0, 0%, 97.3%);
+    --hematite: hsl(0, 0%, 56.5%);
+    --stone: hsl(0, 0%, 37.3%);
+    --onyx: hsl(0, 0%, 5.9%);
+
+    --pearl-l: 97.3%;
+
+    --shade: hsla(0, 0%, 5.9%, 0.2);
+    --dark-shade: hsla(0, 0%, 90%, 0.2);
+
+    --shade-hover: hsla(0, 0%, 5.9%, 0.4);
+    --dark-shade-hover: hsla(0, 0%, 90%, 0.4);
+
+    // utilities
+    --chamfer: 0.25rem;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    --shadow-depth: 2px 2px 2px 0;
+}

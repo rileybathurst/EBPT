@@ -1,0 +1,53 @@
+a {
+  color: var(--stone);
+  @media (prefers-color-scheme: dark) {
+    color: var(--hematite);
+  }
+}
+
+a:hover {
+  color: var(--moldavite);
+}
+
+/*------------------------------------*\
+  #buttons
+\*------------------------------------*/
+
+button,
+.buttoned {
+  display: block;
+  margin-top: 1rem;
+}
+
+button,
+.buttoned a {
+  width: auto;
+  cursor: pointer;
+  background: var(--moldavite);
+  border: none; // browser reset
+  color: var(--pearl);
+  padding: 8px 16px;
+  box-shadow: var(--shade);
+  text-decoration: none; // its obvious its a button
+  border-radius: var(--chamfer);
+}
+
+button:hover,
+.buttoned a:hover {
+  background: var(--moss);
+  color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+  box-shadow: var(--shade-hover);
+
+
+}
+
+a[href^="tel:"]:before {
+  content: "\1F4DE";
+  margin-right: 0.5em;
+  text-decoration: none;
+  display: inline-block; // needed for the text-decoration
+
+  @media (min-width: 20rem) {
+    content: "\260E"; // this is an emoji on a phone and nice on desktop
+  }
+}

@@ -2,8 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-import "../styles/atoms.scss";
-// are we sure this should be in the index.js?
+import "../styles/app.scss";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
