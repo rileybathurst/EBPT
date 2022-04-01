@@ -18,11 +18,11 @@ function KileyProfile() {
     />
   );
 }
-function RachaelProfile() {
+function TinaHead() {
   return (
     <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/rachael-profile.jpg"
-      alt="Rachael"
+      src="https://ebpt.s3.us-west-1.amazonaws.com/images/tina-team_head.jpg"
+      alt="tina"
     />
   );
 }
@@ -45,9 +45,9 @@ const TeamHeads = () => (
     </div>
 
     <div>
-      <Link to="/team#rachael">
-        <RachaelProfile />
-        <p>Rachael</p>
+      <Link to="/team#tina">
+        <TinaHead />
+        <p>Tina</p>
       </Link>
     </div>
 

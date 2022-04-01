@@ -1,4 +1,4 @@
-require("dotenv").config()
+// require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
@@ -55,9 +55,9 @@ module.exports = {
       },
       __key: "images",
     },
-    // getting a C- on mozilla scroes so this needs work
+    // TODO getting a C- on mozilla scroes so this needs work
     {
-    resolve: `gatsby-plugin-csp`,
+      resolve: `gatsby-plugin-csp`,
       options: {
         mergeStyleHashes: false, // you can disable styles sha256 hashes
         mergeScriptHashes: false,

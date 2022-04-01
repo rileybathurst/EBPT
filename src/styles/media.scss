@@ -22,6 +22,29 @@ a svg:hover {
   fill: hsl(0, 0%, calc(var(--pearl-l) - 20%));
 }
 
+/*------------------*/
+//  #SPECIFICS
+/*------------------*/
+
+@media (max-width: 40rem) {
+  .team-page .two-fold .gatsby-image-wrapper {
+    aspect-ratio: 1;
+  }
+
+  // custom for this shot to reframe
+  .team-page .jessica img {
+    object-position: 100% 25%;
+  }
+}
+
+.team-page__square {
+  aspect-ratio: 1;
+}
+
+/*------------------*/
+//  #TEAMHEADS
+/*------------------*/
+
 .team-heads {
   display: flex;
   flex-wrap: wrap;
@@ -55,13 +78,13 @@ a svg:hover {
 
     > a:hover p {
       border-radius: var(--chamfer);
-      background:  hsl(0, 0%, 92.5%);
-    
+      background: hsl(0, 0%, 92.5%);
+
       @media (prefers-color-scheme: dark) {
         background: hsl(0, 0%, 17.5%);
       }
     }
-    
+
     > a:hover > .gatsby-image-wrapper {
       box-shadow: var(--shadow-depth) var(--shade-hover);
       // border-color: var(--emerald);
@@ -70,7 +93,6 @@ a svg:hover {
         border-color: var(--moldavite);
       }
     }
-
   } // div
 } // .team-heads
 
@@ -79,7 +101,8 @@ a svg:hover {
   flex-wrap: wrap;
   gap: 1rem;
 
-  > .gatsby-image-wrapper, div {
+  > .gatsby-image-wrapper,
+  div {
     flex: 1 1 8rem; // guess and check
   }
 
@@ -182,16 +205,14 @@ header a svg:hover {
   vertical-align: middle;
 
   &::before {
-    transition:
-      border-top-color 0.15s linear, // Stagger border appearances
-      border-right-color 0.15s linear 0.10s,
-      border-bottom-color 0.15s linear 0.20s;
+    transition: border-top-color 0.15s linear,
+      // Stagger border appearances
+      border-right-color 0.15s linear 0.1s,
+      border-bottom-color 0.15s linear 0.2s;
   }
 
   &::after {
-    transition:
-      transform 0.4s linear 0s,
-      border-left-width 0s linear 0.35s; // Solid edge post-rotation
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s; // Solid edge post-rotation
   }
 
   &::before,
@@ -200,7 +221,7 @@ header a svg:hover {
     top: -2px; // opposite to the border-width
     left: -2px;
     box-sizing: inherit;
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;

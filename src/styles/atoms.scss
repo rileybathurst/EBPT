@@ -33,8 +33,6 @@ hr {
   }
 }
 
-
-
 .over-none {
   margin-top: 0;
 }
@@ -54,8 +52,6 @@ hr {
   }
 }
 
-
-
 header a svg {
   max-width: 6rem;
   max-height: 6rem;
@@ -66,13 +62,6 @@ header a svg {
     fill: var(--emerald);
   }
 }
-
-
-
-
-
-
-
 
 .associate {
   display: flex;
@@ -89,11 +78,21 @@ header a svg {
 
   .buttoned {
     margin: 0;
-    
+
     > a {
       /* top-left | top-right | bottom-right | bottom-left */
       border-radius: 0 3px 3px 0;
       display: inline-block;
+      box-shadow: var(--penumbra);
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    > a:where(:hover, :focus) {
+      box-shadow: var(--antumbra);
+    }
+
+    > a:focus {
+      box-shadow: var(--umbra);
     }
   }
 }
@@ -107,7 +106,7 @@ header a svg {
   align-content: stretch;
 
   @media (min-width: 70rem) {
-      align-content: stretch;
+    align-content: stretch;
   }
   > nav {
     display: none;
