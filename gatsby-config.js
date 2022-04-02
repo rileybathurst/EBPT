@@ -28,7 +28,8 @@ module.exports = {
       }
     },
     slogan: 'Private, safe, and effective one-on-one treatments to help you live your best life!',
-    gsv: 't-GHhCwvq1SjOG3qV4JFNZpOo_6c5og1i1UlH_WvIOw'
+    gsv: 't-GHhCwvq1SjOG3qV4JFNZpOo_6c5og1i1UlH_WvIOw',
+    itemType: 'LocalBusiness',
   },
   plugins: [
     "gatsby-plugin-sass",

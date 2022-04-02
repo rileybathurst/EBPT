@@ -7,7 +7,14 @@ import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 
 // Im not sure what the rules on what goes here vs in the array?
-const SEO = ({ title, description, image, lang }) => {
+const SEO = ({
+  title,
+  description,
+  image,
+  lang,
+  itemScope,
+  itemType,
+}) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
   const {
@@ -47,6 +54,8 @@ const SEO = ({ title, description, image, lang }) => {
     postalCode: location.address.postalCode,
     slogan: slogan,
     gsv: gsv,
+    itemScope: itemScope,
+    itemType: itemType,
   };
 
   return (
@@ -55,8 +64,14 @@ const SEO = ({ title, description, image, lang }) => {
       titleTemplate={titleTemplate}
       htmlAttributes={{
         lang: 'en-US',
+        itemScope: `${seo.itemScope}`, // this seems to be working
+        itemType: `${seo.itemType}`,
       }}
     >
+
+      {/* // TODO make this a variable */}
+      <meta itemProp="name" content="Emerald Bay Physical Therapy" />
+
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.ogImage} />
       <meta property="og:type" content="website" />
@@ -102,7 +117,7 @@ const SEO = ({ title, description, image, lang }) => {
       {seo.slogan && <meta name="slogan" content={seo.slogan} />}
       <meta name="google-site-verification" content={seo.gsv} />
 
-      
+
       <link rel="stylesheet" href="https://use.typekit.net/vgk8lss.css"></link>
 
       <meta name="theme-color" content="#499e8f" /> {/* emerald */}
@@ -128,6 +143,8 @@ SEO.propTypes = {
   location: PropTypes.string,
   slogan: PropTypes.string,
   gsv: PropTypes.string,
+  itemScope: PropTypes.bool,
+  itemType: PropTypes.string,
 };
 
 SEO.defaultProps = {
@@ -145,6 +162,8 @@ SEO.defaultProps = {
   paymentAccepted: null,
   location: null,
   slogan: null,
+  itemType: `https://schema.org/LocalBusiness`,
+  itemScope: false,
   gsv: null,
 };
 
