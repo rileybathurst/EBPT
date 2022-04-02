@@ -46,10 +46,17 @@ const TeamPage = () => {
         <h1 className="two-fold">Team</h1>
         <hr />
 
-        <article id="jessica" className="two-fold">
-          <JessicaImage />
+        <article
+          id="jessica"
+          className="two-fold"
+          itemScope itemType="https://schema.org/Person"
+        >
+          <div itemProp="image"><JessicaImage /></div>
           <div className="content">
-            <h2>Jessica, PT.</h2>
+            <h2>
+              <span itemProp="name">Jessica</span>,
+              <span itemProp="jobTitle">PT.</span>
+            </h2>
             {/*this doesnt seem to be a problem with line breaks on prettier */}
             <p className="justified-40">
               I first became interested in physical therapy after observing my

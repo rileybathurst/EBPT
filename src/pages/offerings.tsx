@@ -32,17 +32,39 @@ const OfferingsPage = () => {
         </div>
 
         <ul className="catalog">
-          <li>Aquatic therapy</li>
-          <li>Post-surgical rehabilitation</li>
-          <li>Injury prevention assessments</li>
-          <li>Instrument-assisted soft tissue mobilization</li>
-          <li>Myofascial release</li>
-          <li>Cupping</li>
-          <li>Kinesio taping (Rock Tape)</li>
-          <li>Cervical mechanical traction</li>
-          <li>TRX training</li>
-          <li>Pilates reformer instruction</li>
-          <li>TENS electrical stimulation</li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Aquatic therapy</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Post-surgical rehabilitation</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Injury prevention assessments</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Instrument-assisted soft tissue mobilization</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Myofascial release</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Cupping</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Kinesio taping (Rock Tape)</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Cervical mechanical traction</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">TRX training</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">Pilates reformer instruction</span>
+          </li>
+          <li itemScope itemType="https://schema.org/Service">
+            <span itemProp="name">TENS electrical stimulation</span>
+          </li>
         </ul>
       </main>
 

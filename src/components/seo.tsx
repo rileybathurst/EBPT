@@ -69,23 +69,32 @@ const SEO = ({
       }}
     >
 
-      {/* <meta itemProp="medicalSpecialty" content="Physiotherapy" />, */}
+      <meta itemProp="medicalSpecialty" content="Physiotherapy" />,
 
-      {/* // TODO make this a variable */}
+      {/* // TODO make this a variable 
+      logo
+
+      */}
       <meta itemProp="name" content="Emerald Bay Physical Therapy" />
 
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.ogImage} />
-      <meta property="og:type" content="website" />
-      {seo.url && <meta property="og:url" content={seo.url} />}
+      <meta name="description" itemProp="description" content={seo.description} />
+      <meta name="image" itemProp="image" content={seo.ogImage} />
+
+      {seo.url && <meta property="og:url" itemProp="url" content={seo.url} />}
       {/* {(article ? true : null) && <meta property="og:type" content="article" />} */}
+
+      {/* // ? can this use an itemProp? */}
       {seo.title && <meta property="og:title" content={seo.title} />}
+
+      {/* // ? can I combine the descriptions? */}
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
+
       {seo.image && <meta property="og:image" content={seo.ogImage} />}
 
       {seo.title && <meta name="twitter:title" content={seo.title} />}
+
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
@@ -96,19 +105,19 @@ const SEO = ({
       {seo.openingHours && (
         <meta name="openingHours" itemProp="openingHours" content={seo.openingHours} />
       )}
-      {seo.telephone && <meta name="telephone" content={seo.telephone} />}
-      {seo.faxNumber && <meta name="faxNumber" content={seo.faxNumber} />}
-      {seo.areaServed && <meta name="areaServed" content={seo.areaServed} />}
+      {seo.telephone && <meta name="telephone" itemProp="telephone" content={seo.telephone} />}
+      {seo.faxNumber && <meta name="faxNumber" itemProp="faxNumber" content={seo.faxNumber} />}
+      {seo.areaServed && <meta name="areaServed" itemProp="areaServed" content={seo.areaServed} />}
 
       <meta itemProp="currenciesAccepted" content="USD" />
 
       {seo.paymentAccepted && (
-        <meta name="paymentAccepted" content={seo.paymentAccepted} />
+        <meta name="paymentAccepted" itemProp="paymentAccepted" content={seo.paymentAccepted} />
       )}
       {/* {seo.location && <meta name="location" content={seo.streetAddress + ', ' + seo.addressLocality + ', ' + seo.addressRegion + ', ' + seo.postalCode} />} */}
       {/* the layer down version of this didn't want to work so remove the wrapper */}
       <meta
-        name="location"
+        name="location" itemProp="address"
         content={
           seo.streetAddress +
           ", " +
@@ -119,9 +128,10 @@ const SEO = ({
           seo.postalCode
         }
       />
-      {seo.slogan && <meta name="slogan" content={seo.slogan} />}
+      {seo.slogan && <meta name="slogan" itemProp="slogan" content={seo.slogan} />}
       <meta name="google-site-verification" content={seo.gsv} />
 
+      <meta itemProp="numberOfEmployees" content="3" />
 
       <link rel="stylesheet" href="https://use.typekit.net/vgk8lss.css"></link>
 
@@ -167,7 +177,7 @@ SEO.defaultProps = {
   paymentAccepted: null,
   location: null,
   slogan: null,
-  itemType: `https://schema.org/MedicalBusiness::Physiotherapy`,
+  itemType: `https://schema.org/MedicalBusiness`,
   itemScope: false,
   gsv: null,
 };
