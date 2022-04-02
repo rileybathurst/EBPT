@@ -92,11 +92,14 @@ const SEO = ({
       {seo.image && <meta name="twitter:image" content={seo.twitterImage} />}
 
       {seo.openingHours && (
-        <meta name="openingHours" content={seo.openingHours} />
+        <meta name="openingHours" itemProp="openingHours" content={seo.openingHours} />
       )}
       {seo.telephone && <meta name="telephone" content={seo.telephone} />}
       {seo.faxNumber && <meta name="faxNumber" content={seo.faxNumber} />}
       {seo.areaServed && <meta name="areaServed" content={seo.areaServed} />}
+
+      <meta itemProp="currenciesAccepted" content="USD" />
+
       {seo.paymentAccepted && (
         <meta name="paymentAccepted" content={seo.paymentAccepted} />
       )}
@@ -162,7 +165,7 @@ SEO.defaultProps = {
   paymentAccepted: null,
   location: null,
   slogan: null,
-  itemType: `https://schema.org/LocalBusiness`,
+  itemType: `https://schema.org/Physiotherapy`,
   itemScope: false,
   gsv: null,
 };
