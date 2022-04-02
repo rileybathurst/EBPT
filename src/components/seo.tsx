@@ -66,9 +66,10 @@ const SEO = ({
         lang: 'en-US',
         itemScope: `${seo.itemScope}`, // this seems to be working
         itemType: `${seo.itemType}`,
-        medicalSpecialty: `Physiotherapy`,
       }}
     >
+
+      <meta itemProp="medicalSpecialty" content="Physiotherapy" />,
 
       {/* // TODO make this a variable */}
       <meta itemProp="name" content="Emerald Bay Physical Therapy" />
