@@ -69,7 +69,7 @@ const SEO = ({
       }}
     >
 
-      <meta itemProp="medicalSpecialty" content="Physiotherapy" />,
+      {/* <meta itemProp="medicalSpecialty" content="Physiotherapy" />, */}
 
       {/* // TODO make this a variable */}
       <meta itemProp="name" content="Emerald Bay Physical Therapy" />
@@ -167,7 +167,7 @@ SEO.defaultProps = {
   paymentAccepted: null,
   location: null,
   slogan: null,
-  itemType: `https://schema.org/MedicalBusiness`,
+  itemType: `https://schema.org/MedicalBusiness::Physiotherapy`,
   itemScope: false,
   gsv: null,
 };
