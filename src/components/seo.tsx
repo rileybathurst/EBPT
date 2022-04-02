@@ -66,6 +66,7 @@ const SEO = ({
         lang: 'en-US',
         itemScope: `${seo.itemScope}`, // this seems to be working
         itemType: `${seo.itemType}`,
+        medicalSpecialty: `Physiotherapy`,
       }}
     >
 
@@ -165,7 +166,7 @@ SEO.defaultProps = {
   paymentAccepted: null,
   location: null,
   slogan: null,
-  itemType: `https://schema.org/Physiotherapy`,
+  itemType: `https://schema.org/MedicalBusiness`,
   itemScope: false,
   gsv: null,
 };
