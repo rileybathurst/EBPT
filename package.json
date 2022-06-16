@@ -3,9 +3,17 @@
   "version": "1.0.1",
   "private": true,
   "description": "Emerald Bay Physical Therapy",
+  "homepage": "https://emeraldbay.physio",
+  "repository": "github:rileybathurst/ebpt",
   "keywords": [
     "gatsby"
   ],
+  "license": "MIT",
+  "author": { 
+    "name": "Riley",
+    "email": "riley@rileybathurst.com",
+    "url": "https://rileybathurst.com"
+  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
