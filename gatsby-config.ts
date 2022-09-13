@@ -1,6 +1,7 @@
-// require("dotenv").config()
+import type { GatsbyConfig } from "gatsby"
+require("dotenv").config()
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: "Emerald Bay Physical Therapy",
     siteUrl: "https://emeraldbay.physio",
@@ -31,6 +32,7 @@ module.exports = {
     gsv: 't-GHhCwvq1SjOG3qV4JFNZpOo_6c5og1i1UlH_WvIOw',
     itemType: 'LocalBusiness',
   },
+  graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
@@ -71,6 +73,16 @@ module.exports = {
       }
     },
     // helps with the CSP in a substatial way
-    "gatsby-plugin-netlify"
+    "gatsby-plugin-netlify",
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
+    },
   ],
 };
+
+export default config

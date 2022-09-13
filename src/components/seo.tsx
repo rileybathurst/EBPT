@@ -133,7 +133,7 @@ const SEO = ({
 
       <meta itemProp="numberOfEmployees" content="3" />
 
-      <link rel="stylesheet" href="https://use.typekit.net/vgk8lss.css"></link>
+      <link rel="stylesheet" href="https://use.typekit.net/vgk8lss.css"></link> {/* // ! this should be in gatsby-browser */}
 
       <meta name="theme-color" content="#499e8f" /> {/* emerald */}
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2e5d58" /> {/* moss */}
