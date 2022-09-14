@@ -6,13 +6,13 @@ import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
 import Title from "../../components/title"
 
-// todo: change the image out
-function SnowyBuildingFrontImage() {
+function PelvicTherapyImage() {
   return <StaticImage
     src="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt-Nt5eeIKH-512.webp"
     alt="Jessica"
     objectFit="scale-down"
     objectPosition="top"
+    itemProp="image"
   />
 }
 
@@ -21,12 +21,29 @@ const AboutPage = () => {
   return (
     <>
       <Header />
-      <main >
+
+      <div className="single-fold">
+        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link itemProp="item" to="/">
+              <span itemProp="name">Home</span>
+            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
+            <meta itemProp="position" content="1" />
+          </li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="name">Pelvic Floor Rehabilitation</span>
+            <meta itemProp="position" content="2" />
+          </li>
+        </ol>
+        <hr />
+      </div>
+
+      <main itemScope itemType="https://schema.org/Article">
         <div className="two-fold">
-          <SnowyBuildingFrontImage />
+          <PelvicTherapyImage />
           <div className="two-fold-content">
-            <h1 className="h1__clamped">Outpatient: Pelvic Floor Rehabilitation</h1>
-            <section>
+            <h1 className="h1__clamped" itemProp="name">Outpatient: Pelvic Floor Rehabilitation</h1>
+            <section itemProp="description">
               <h2 className="h4">Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?</h2>
               <p>Do you suffer from pelvic pain or incontinence?</p>
               <p>Have you experienced leaking of urine or feces when coughing, sneezing, or laughing?</p>
@@ -77,7 +94,6 @@ const AboutPage = () => {
           </div>
         </div>
 
-
       </main>
 
       <hr />
@@ -90,8 +106,13 @@ const AboutPage = () => {
 export default AboutPage
 
 export const Head = () => {
-  return <title>Pelvic Health <Title /></title>; // TODO: Make this everywhere // it possibly needs variables etc
+  return (
+    <>
+      <title>Pelvic Health <Title /></title>
+      <meta name="description" content="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?" />
+      <meta name="image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" />
+      <meta property="og:image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" />
+    </>
+  ); // TODO: Make this everywhere // it possibly needs variables etc
   // TODO add the rest of this
 }
-
-// https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp // todo // og:image this

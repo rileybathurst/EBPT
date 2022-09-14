@@ -86,6 +86,7 @@ header a svg {
       display: inline-block;
       box-shadow: var(--penumbra);
       transition: box-shadow 0.2s ease-in-out;
+      // text-underline-offset: 1rem; // ! safari 16 is having issues something like this might be needed
     }
 
     > a:where(:hover, :focus) {

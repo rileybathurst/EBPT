@@ -1,0 +1,12 @@
+.breadcrumbs {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding-inline-start: 0;
+  justify-content: flex-start;
+
+  > li {
+    padding-inline-start: 0;
+    // flex: 1 1 auto;
+  }
+}

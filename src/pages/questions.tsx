@@ -34,9 +34,6 @@ const QuestionsPage = () => {
         <section
           id="therapy-questions"
           className="measured"
-          itemScope
-          itemProp="mainEntity"
-          itemType="https://schema.org/Question"
         >
           <article
             itemScope
