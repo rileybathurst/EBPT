@@ -31,12 +31,19 @@ const AboutPage = () => {
             <meta itemProp="position" content="1" />
           </li>
           <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <span itemProp="name">Pelvic Floor Rehabilitation</span>
+            <Link itemProp="item" to="/offerings/">
+              <span itemProp="name">Offerings</span>
+            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
             <meta itemProp="position" content="2" />
           </li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="name">Pelvic Floor Rehabilitation</span>
+            <meta itemProp="position" content="3" />
+          </li>
         </ol>
-        <hr />
       </div>
+
+      <hr />
 
       <main itemScope itemType="https://schema.org/Article">
         <div className="two-fold">
