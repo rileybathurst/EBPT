@@ -3,14 +3,14 @@ import { Link } from "gatsby";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import Seo from "../components/seo";
+import { SEO } from "../components/seo";
 
 // markup
 const NotFoundPage = () => {
   return (
     <>
       <Header />
-      <Seo title="404" />
+      {/* <Seo title="404" /> */}
       <main className="measured">
         <h1>Page not found</h1>
         <p className="justified-40">
@@ -35,3 +35,18 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="404 - Emerald bay Physical Therapy"
+      description="Sorry we couldn’t find what you were looking for"
+      itemScope='true'
+      pathname=''
+    >
+      <script type="application/ld+json">{JSON.stringify({})}</script>
+    </SEO>
+  ); // TODO: Make this everywhere // it possibly needs variables etc
+  // TODO add the rest of this
+}
+

@@ -17,7 +17,7 @@ function GymImage(props) {
       let options = {
         threshold: buildThresholdList()
       };
-    
+
       observer = new IntersectionObserver(handleIntersect, options);
       observer.observe(gym);
     }
@@ -26,12 +26,12 @@ function GymImage(props) {
     function buildThresholdList() {
       let thresholds = [];
       let numSteps = 20;
-    
-      for (let i=1.0; i<=numSteps; i++) {
-        let ratito = i/numSteps;
+
+      for (let i = 1.0; i <= numSteps; i++) {
+        let ratito = i / numSteps;
         thresholds.push(ratito);
       }
-    
+
       thresholds.push(0);
       return thresholds;
     }
@@ -46,7 +46,7 @@ function GymImage(props) {
         } else {
           setRatio(entry.intersectionRatio);
         }
-    
+
         prevRatio = entry.intersectionRatio;
       });
     }
@@ -63,12 +63,12 @@ function GymImage(props) {
   }
 
   return (
-      <div id="gymImage" style={gymStyle} ref={gymImage}> {/* needs this to load quick enough */}
-        <StaticImage
-          src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg"
-          alt="gym"
-        />
-      </div>
+    <div id="gymImage" style={gymStyle} ref={gymImage}> {/* needs this to load quick enough */}
+      <StaticImage
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/emerald_bay_physcal_therapy-in_action-crop.jpg"
+        alt="emerald bay physical therapy gym in action"
+      />
+    </div>
   );
 }
 

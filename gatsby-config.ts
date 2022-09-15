@@ -4,6 +4,7 @@ require("dotenv").config()
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "Emerald Bay Physical Therapy",
+    defaultTitle: "test Emerald Bay Physical Therapy",
     siteUrl: "https://emeraldbay.physio",
     url: "https://emeraldbay.physio", // No trailing slash allowed!
     description:
@@ -31,6 +32,7 @@ const config: GatsbyConfig = {
     slogan: 'Private, safe, and effective one-on-one treatments to help you live your best life!',
     gsv: 't-GHhCwvq1SjOG3qV4JFNZpOo_6c5og1i1UlH_WvIOw',
     itemType: 'LocalBusiness',
+    itemScope: false,
   },
   graphqlTypegen: true,
   plugins: [
@@ -44,8 +46,7 @@ const config: GatsbyConfig = {
         name: `Emerald Bay Physical Therapy`,
         short_name: `EBPT`,
         start_url: `/`,
-        icon: "src/images/logo.svg",
-        // icon: "src/images/icon.png",
+        icon: "src/images/icon.png"
       },
     },
     "gatsby-plugin-sharp",

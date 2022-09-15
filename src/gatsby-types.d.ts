@@ -2170,10 +2170,12 @@ type SiteFieldsEnum =
   | 'port'
   | 'siteMetadata.areaServed'
   | 'siteMetadata.author'
+  | 'siteMetadata.defaultTitle'
   | 'siteMetadata.description'
   | 'siteMetadata.faxNumber'
   | 'siteMetadata.gsv'
   | 'siteMetadata.image'
+  | 'siteMetadata.itemScope'
   | 'siteMetadata.itemType'
   | 'siteMetadata.location._type'
   | 'siteMetadata.location.address._type'
@@ -2981,10 +2983,12 @@ type SitePluginSortInput = {
 type SiteSiteMetadata = {
   readonly areaServed: Maybe<Scalars['String']>;
   readonly author: Maybe<Scalars['String']>;
+  readonly defaultTitle: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly faxNumber: Maybe<Scalars['String']>;
   readonly gsv: Maybe<Scalars['String']>;
   readonly image: Maybe<Scalars['String']>;
+  readonly itemScope: Maybe<Scalars['Boolean']>;
   readonly itemType: Maybe<Scalars['String']>;
   readonly location: Maybe<SiteSiteMetadataLocation>;
   readonly logo: Maybe<Scalars['String']>;
@@ -3002,10 +3006,12 @@ type SiteSiteMetadata = {
 type SiteSiteMetadataFilterInput = {
   readonly areaServed: InputMaybe<StringQueryOperatorInput>;
   readonly author: InputMaybe<StringQueryOperatorInput>;
+  readonly defaultTitle: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly faxNumber: InputMaybe<StringQueryOperatorInput>;
   readonly gsv: InputMaybe<StringQueryOperatorInput>;
   readonly image: InputMaybe<StringQueryOperatorInput>;
+  readonly itemScope: InputMaybe<BooleanQueryOperatorInput>;
   readonly itemType: InputMaybe<StringQueryOperatorInput>;
   readonly location: InputMaybe<SiteSiteMetadataLocationFilterInput>;
   readonly logo: InputMaybe<StringQueryOperatorInput>;
@@ -3102,11 +3108,6 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
-
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: { readonly siteMetadata: { readonly openingHours: string | null, readonly telephone: string | null, readonly faxNumber: string | null, readonly areaServed: string | null, readonly paymentAccepted: string | null, readonly slogan: string | null, readonly gsv: string | null, readonly defaultTitle: string | null, readonly defaultDescription: string | null, readonly siteUrl: string | null, readonly defaultImage: string | null, readonly ogImage: string | null, readonly twitterImage: string | null, readonly location: { readonly address: { readonly _type: string | null, readonly addressLocality: string | null, readonly addressRegion: string | null, readonly postalCode: string | null, readonly streetAddress: string | null } | null } | null } | null } | null };
 
 
 }

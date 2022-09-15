@@ -2,9 +2,14 @@ import * as React from "react"
 import { Link, HeadFC } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+import { SEO } from "../../components/seo";
 import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
 import Title from "../../components/title"
+import Scope from "../../components/scope"
+
+// import Us from "../../components/us"; // testing
+// import En from "../../components/en"; // testing
 
 function PelvicTherapyImage() {
   return <StaticImage
@@ -16,10 +21,12 @@ function PelvicTherapyImage() {
   />
 }
 
-// markup
-const AboutPage = () => {
+const PelvicHealthPage = () => {
   return (
     <>
+
+      {/* <En /> */}
+
       <Header />
 
       <div className="single-fold">
@@ -110,16 +117,29 @@ const AboutPage = () => {
   )
 }
 
-export default AboutPage
+export default PelvicHealthPage
 
 export const Head = () => {
   return (
-    <>
-      <title>Pelvic Health <Title /></title>
-      <meta name="description" content="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?" />
-      <meta name="image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" />
-      <meta property="og:image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" />
-    </>
+    <SEO
+      title="Pelvic Health - Emerald Bay Physical Therapy"
+      description="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?"
+      itemScope='true'
+      pathname=''
+      lang='en-US'
+    >
+      {/* // <meta name="description" content="" /> */}
+      {/* // <meta name="image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" /> */}
+      {/* // <meta property="og:image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" /> */}
+      <script type="application/ld+json">{JSON.stringify({})}</script>
+    </SEO>
   ); // TODO: Make this everywhere // it possibly needs variables etc
   // TODO add the rest of this
 }
+/* 
+had a rough idea to build a secondary export but that doesnt really seem the way to go
+export const Scope = () => {
+  return (
+    <Scope scope='true' />
+  )
+} */

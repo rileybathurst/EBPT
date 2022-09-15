@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import FormList from "../components/form-list";
-import Seo from "../components/seo";
+// import Seo from "../components/seo";
 
 // import Kiley2 from "../images/kiley-2"
 function Kiley2() {
@@ -21,10 +21,10 @@ const NotFoundPage = () => {
   return (
     <>
       <Header />
-      <Seo
+      {/*       <Seo
         title="Patient Intake Forms"
         description="Fill in forms online"
-      />
+      /> */}
       <main className="measured">
         <h2 className="">Intake Forms</h2>
 

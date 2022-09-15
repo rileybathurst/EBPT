@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import Seo from "../components/seo";
+// import Seo from "../components/seo";
 import Liz from "../components/liz";
 
 function GymImage() {
@@ -27,12 +27,12 @@ const ServicesPage = () => {
   return (
     <>
       <Header />
-      <Seo
+      {/*       <Seo
         title="Services"
         description="This service is a form of rehabilitation for those who have medical
         problems or other health-related conditions that may limit their
         ability to move and function in their daily lives."
-      />
+      /> */}
       <main>
         <h1 className="measured">Services</h1>
 

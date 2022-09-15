@@ -8,7 +8,8 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
 import FormList from "../components/form-list";
-import Seo from "../components/seo";
+// import Seo from "../components/seo";
+import Offerings from "../components/offerings";
 
 import Kiley2 from "../components/kiley2io";
 import GymImage from "../components/gymImageVanilla";
@@ -19,8 +20,8 @@ import PoolImage from "../components/poolImage-io";
 function GymIm() {
   return (
     <StaticImage
-      src="https://ebpt.s3-us-west-1.amazonaws.com/images/gym.jpg"
-      alt="gym"
+      src="https://ebpt.s3.us-west-1.amazonaws.com/images/gym.jpg"
+      alt="the emerald bay physical therapy gym in south lake tahoe california"
     />
   );
 }
@@ -28,7 +29,7 @@ function GymIm() {
 const IndexPage = () => {
   return (
     <>
-      <Seo title="Emerald Bay Physical Therapy" />
+      {/* <Seo title="Emerald Bay Physical Therapy" /> */}
 
       <Header />
 
@@ -39,7 +40,7 @@ const IndexPage = () => {
               <h2 className="h5">
                 {/* skipping levels this needs to be done with class */}
                 Emerald Bay Physical Therapy is a comprehensive center for
-                orthopedic and manual physical therapy.
+                orthopedic and manual physical therapy in South Lake Tahoe.
               </h2>
               <p>
                 We specialize in hands-on, one-on-one treatments that are
@@ -81,19 +82,7 @@ const IndexPage = () => {
           </div>
 
           <div className="two-fold">
-            <ul className="catalog">
-              <li>Aquatic therapy</li>
-              <li>Post-surgical rehabilitation</li>
-              <li>Injury prevention assessments</li>
-              <li>Instrument-assisted soft tissue mobilization</li>
-              <li>Myofascial release</li>
-              <li>Cupping</li>
-              <li>Kinesio taping (Rock Tape)</li>
-              <li>Cervical mechanical traction</li>
-              <li>TRX training</li>
-              <li>Pilates reformer instruction</li>
-              <li>TENS electrical stimulation</li>
-            </ul>
+            <Offerings />
           </div>
         </section>
         {/* #offerings */}

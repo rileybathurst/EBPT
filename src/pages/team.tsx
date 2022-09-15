@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-import Seo from "../components/seo";
+// import Seo from "../components/seo";
 
 function JessicaImage() {
   return (
@@ -38,10 +38,10 @@ const TeamPage = () => {
   return (
     <>
       <Header />
-      <Seo
+      {/*       <Seo
         title="Meet our team"
         description="We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals."
-      />
+      /> */}
       <main className="team-page">
         <h1 className="two-fold">Team</h1>
         <hr />

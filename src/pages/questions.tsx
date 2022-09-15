@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import Seo from "../components/seo";
+import { SEO } from "../components/seo";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
@@ -18,12 +18,12 @@ const QuestionsPage = () => {
   return (
     <>
       <Header />
-      <Seo
+      {/*       <Seo
         title="Questions"
         description="Frequently asked questions."
         itemType="https://schema.org/FAQPage"
         itemScope={true}
-      />
+      /> */}
       <main>
         <h1 className="measured">Questions</h1>
         {/* <hr /> */}
@@ -339,3 +339,16 @@ const QuestionsPage = () => {
 };
 
 export default QuestionsPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="Pelvic Health - Emerald Bay Physical Therapy"
+      description="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?"
+    >
+      <script type="application/ld+json">{JSON.stringify({})}</script>
+    </SEO>
+  ); // TODO: Make this everywhere // it possibly needs variables etc
+  // TODO add the rest of this
+}
+
