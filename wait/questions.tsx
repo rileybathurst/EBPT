@@ -59,20 +59,16 @@ const QuestionsPage = () => {
           className="measured"
         >
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">
               How do I begin physical therapy treatment? Do you require a referral
               and/or a prescription?
             </h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
-              <ul
-              // itemProp="text"
-              >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+              <ul itemProp="text">
                 <li>
                   California law allows licensed physical therapists to treat you
                   without obtaining a referral from your doctor.
@@ -101,16 +97,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
-            <h3
-            // itemProp="name"
-            >What if my referral is to a different therapist/ clinic?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <h3 itemProp="name">What if my referral is to a different therapist/ clinic?</h3>
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 We can accept any prescription for physical therapy. We recommend
                 communicating with your doctor regarding your preference for Emerald
@@ -120,14 +112,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">What do I wear?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <ul itemProp="text">
                 <li>
                   We suggest that you wear loose fitting clothing like something you
@@ -148,14 +138,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">What should I bring to my first visit?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p>Please bring the following to your 1st appointment:</p>
               <ul itemProp="text">
                 <li>
@@ -168,14 +156,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">What should I expect during my first visit?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 During your first appointment you will meet your physical therapist
                 and speak with them regarding your symptoms, functional limitations,
@@ -189,14 +175,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">What might my treatment involve?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 Your treatment will typically involve hands-on manual therapy,
                 exercise, and modalities. Exercises can include stretching,
@@ -208,21 +192,19 @@ const QuestionsPage = () => {
                 strengthening exercises in the pool, possibly using the current,
                 handheld paddles, water weights, or other tools.
               </p>
-            </divitemScope>
+            </div>
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">
               What can I do to speed up my recovery time? Will I be given a home
               exercise program?
             </h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 Patients are typically given a home exercise program on one of their
                 first visits. It is important to follow your program on the days
@@ -233,16 +215,14 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">
               How frequently will I be going? How long will my appointments take?
             </h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 Your doctor and your therapist determine the frequency of your
                 therapy. It is common for patients to come 2 or 3 times per week for
@@ -261,14 +241,12 @@ const QuestionsPage = () => {
           <h2>Insurance Questions</h2>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">Is my insurance accepted?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 We accept most PPO insurance plans, Medicare, and most Medicare
                 Secondary Insurance plans. We <b>DO NOT</b> accept Medi-Cal or most
@@ -279,14 +257,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">What will my insurance cover?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 This will vary per insurance plan. Three common terms you will hear
                 in relation to your insurance coverage are&nbsp;
@@ -305,14 +281,12 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">How do I use my work compensation insurance?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 Your adjuster and/ or nurse case manager will coordinate with us and
                 with you to determine your physical therapy treatment. We will
@@ -323,17 +297,15 @@ const QuestionsPage = () => {
           </article>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">
               How do I make payments? Will you accept payment plans? Is a payment
               required at each visit?
             </h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p itemProp="text">
                 This depends on your insurance coverage. If you have a deductible
                 that has not yet been satisfied, we will request you to pay up to
@@ -363,14 +335,12 @@ const QuestionsPage = () => {
           <h2>Other Questions</h2>
 
           <article
-          // itemScope
-          // itemProp="mainEntity"
-          // itemType="https://schema.org/Question"
+            itemScope
+            itemProp="mainEntity"
+            itemType="https://schema.org/Question"
           >
             <h3 itemProp="name">Do you offer other services?</h3>
-            <div
-            // itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"
-            >
+            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p>
                 Yes! For more information, please click on any of the following
                 links: {/* // ! literally says links which is not a link */}
@@ -406,10 +376,11 @@ export const Head = () => {
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "What is the return policy?",
+        "name": "How do I begin physical therapy treatment? Do you require a referral
+        and/or a prescription?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "<p>Most unopened items in new condition and returned within <b>90 days</b> will receive a refund or exchange. Some items have a modified return policy noted on the receipt or packing slip. Items that are opened or damaged or do not have a receipt may be denied a refund or exchange. Items purchased online or in-store may be returned to any store.</p><p>Online purchases may be returned via a major parcel carrier. <a href=http://example.com/returns> Click here </a> to initiate a return.</p>"
+          "text": "<p>California law allows licensed physical therapists to treat you without obtaining a referral from your doctor.</p>"
         }
       }
     }

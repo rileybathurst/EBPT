@@ -2,23 +2,22 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+// TODO move this back to the old version
+import { SEO } from "../components/seo";
+
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 import TeamHeads from "../components/team-heads"
-// import Seo from "../components/seo";
 
 function SnowyBuildingFrontImage() {
   return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg"
-    alt="Winter at the Emerald Bay Physicaal Therapy Offices in South Lake Tahoe, California" />
+    alt="Winter at the Emerald Bay Physical Therapy Offices in South Lake Tahoe, California" />
 }
 
 // markup
 const AboutPage = () => {
   return (
     <>
-      {/*       <Seo
-        title="About Us"
-      /> */}
       <Header />
 
       <div className="single-fold">
@@ -65,3 +64,12 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
+export const Head = () => {
+  return (
+    <SEO
+      title="About Us | Emerald Bay Physical Therapy"
+    >
+    </SEO>
+  );
+}

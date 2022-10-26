@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
@@ -17,15 +18,10 @@ function Kiley2() {
   );
 }
 
-// markup
-const NotFoundPage = () => {
+const FormsPage = () => {
   return (
     <>
       <Header />
-      {/*       <Seo
-        title="Patient Intake Forms"
-        description="Fill in forms online"
-      /> */}
 
       <div className="single-fold">
         <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
@@ -64,4 +60,19 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default FormsPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="Patient Intake Forms | Emerald Bay Physical Therapy"
+      description="Fill in forms online"
+    >
+      {/* this needs more understanding */}
+      <Script type="application/ld+json">
+        {JSON.stringify({})}
+
+      </Script>
+    </SEO>
+  );
+}

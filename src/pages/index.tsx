@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 import "../styles/app.scss";
 
@@ -8,7 +9,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
 import FormList from "../components/form-list";
-// import Seo from "../components/seo";
+
 import OfferingsList from "../components/offerings-list";
 
 import Kiley2 from "../components/kiley2io";
@@ -44,7 +45,7 @@ const IndexPage = () => {
               </h2>
               <p>
                 We specialize in hands-on, one-on-one treatments that are
-                specific to each patient’s goals. At EBPT, we are committed to
+                specific to each patient&apos;s goals. At EBPT, we are committed to
                 health and wellness no matter your age, lifestyle, or athletic
                 abilities. Our highly individualized programs are designed to
                 promote complete recovery from injury and continue into healthy
@@ -196,3 +197,25 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="Emerald Bay Physical Therapy"
+    >
+      {/* // ? I guess this is more readable than spanning through a bunch of content? */}
+      {/* // also can be pulled from a cms in a very particular way */}
+
+      <Script type="application/ld+json">
+        {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://emeraldbay.physio",
+      "name": "Emerald Bay Physical Therapy",
+    }
+  `}
+      </Script>
+    </SEO>
+  );
+}

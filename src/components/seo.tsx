@@ -1,4 +1,5 @@
 // https://www.gatsbyjs.com/docs/add-seo-component/
+// I am moving everything on this site away from microdata
 
 import React from "react";
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -33,7 +34,7 @@ export const SEO = ({
       {lang}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+      <meta name="image" content={seo.image} />{/* // ! this is broken */} }
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
