@@ -1,8 +1,8 @@
 import * as React from "react"
-import { Link, HeadFC } from "gatsby"
+import { Link, Script } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import { SEO } from "../../components/seo";
+
 import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
 import Title from "../../components/title"
@@ -18,30 +18,18 @@ function OrthoticsImage() {
   />
 }
 
-// markup
+
 const AboutPage = () => {
   return (
     <>
       <Header />
 
       <div className="single-fold">
-        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/">
-              <span itemProp="name">Home</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="1" />
+        <ol className="breadcrumbs">
+          <li>
+            <Link to="/offerings/">Offerings</Link>&nbsp;&nbsp;/&nbsp;&nbsp;
           </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/offerings/">
-              <span itemProp="name">Offerings</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="2" />
-          </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <span itemProp="name">Orthotics</span>
-            <meta itemProp="position" content="3" />
-          </li>
+          <li>Orthotics</li>
         </ol>
       </div>
 
@@ -85,24 +73,28 @@ export default AboutPage
 export const Head = () => {
   return (
     <SEO
-      // can I add the end of the title as a variable from somewhere else
       title="Orthotics - Emerald Bay Physical Therapy"
-      description="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?"
-      itemScope='true'
-      pathname=''
+      description="Suffer from foot, knee, or hip pain? Custom orthotics might be right for you!"
     >
-      {/* // <meta name="description" content="" /> */}
-      {/* // <meta name="image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" /> */}
-      {/* // <meta property="og:image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" /> */}
-      <script type="application/ld+json">{JSON.stringify({})}</script>
+      <Script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Offerings",
+              "item": "https://example.com/offerings"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Orthotics",
+              "item": "https://example.com/offerings/orthotics"
+            }]
+          }
+        `}
+      </Script>
     </SEO>
-  ); // TODO: Make this everywhere // it possibly needs variables etc
-  // TODO add the rest of this
+  );
 }
-/* 
-had a rough idea to build a secondary export but that doesnt really seem the way to go
-export const Scope = () => {
-  return (
-    <Scope scope='true' />
-  )
-} */

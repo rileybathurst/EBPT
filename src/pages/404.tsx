@@ -5,7 +5,6 @@ import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import { SEO } from "../components/seo";
 
-// markup
 const NotFoundPage = () => {
   return (
     <>

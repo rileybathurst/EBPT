@@ -1,15 +1,10 @@
 import * as React from "react"
-import { Link, HeadFC } from "gatsby"
+import { Link, Script } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
 import { SEO } from "../../components/seo";
+
 import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
-import Title from "../../components/title"
-import Scope from "../../components/scope"
-
-// import Us from "../../components/us"; // testing
-// import En from "../../components/en"; // testing
 
 function PelvicTherapyImage() {
   return <StaticImage
@@ -25,29 +20,14 @@ const PelvicHealthPage = () => {
   return (
     <>
 
-      {/* testing */}
-      {/* <En /> */}
-
       <Header />
 
       <div className="single-fold">
-        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/">
-              <span itemProp="name">Home</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="1" />
+        <ol className="breadcrumbs">
+          <li itemProp="itemListElement">
+            <Link to="/offerings/">Offerings</Link>&nbsp;&nbsp;/&nbsp;&nbsp;
           </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/offerings/">
-              <span itemProp="name">Offerings</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="2" />
-          </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <span itemProp="name">Pelvic Floor Rehabilitation</span>
-            <meta itemProp="position" content="3" />
-          </li>
+          <li>Pelvic Floor Rehabilitation</li>
         </ol>
       </div>
 
@@ -104,11 +84,11 @@ const PelvicHealthPage = () => {
             </section>
 
             <section>
-              <h2 className="h4">If the pelvic floor isn’t functioning optimally, the result may be urinary/fecal incontinence, pelvic prolapse, or pain.</h2>
+              <h2 className="h4">If the pelvic floor isn&apos;t functioning optimally, the result may be urinary/fecal incontinence, pelvic prolapse, or pain.</h2>
               <p><i>52% of female athletes experience incontinence.</i></p>
               <p><i>49% of chronic low back pain patients have urinary incontinence.</i></p>
               <p><i>43% of women and 31% of men experience sexual dysfunction or pain with intercourse.</i></p>
-              <p><i>Kegels aren’t always the best choice!</i></p>
+              <p><i>Kegels aren&apos;t always the best choice!</i></p>
             </section>
           </div>
         </div>
@@ -129,22 +109,26 @@ export const Head = () => {
     <SEO
       title="Pelvic Health - Emerald Bay Physical Therapy"
       description="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?"
-      itemScope='true'
-      pathname=''
-      lang='en-US'
     >
-      {/* // <meta name="description" content="" /> */}
-      {/* // <meta name="image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" /> */}
-      {/* // <meta property="og:image" itemProp="image" content="https://ebpt.s3.us-west-1.amazonaws.com/images/annie-spratt--l-eemJU0vE-og_image.webp" /> */}
-      <script type="application/ld+json">{JSON.stringify({})}</script>
+      <Script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Offerings",
+              "item": "https://example.com/offerings"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Outpatient: Pelvic Floor Rehabilitation",
+              "item": "https://example.com/offerings/pelvic-health"
+            }]
+          }
+        `}
+      </Script>
     </SEO>
-  ); // TODO: Make this everywhere // it possibly needs variables etc
-  // TODO add the rest of this
+  );
 }
-/* 
-had a rough idea to build a secondary export but that doesnt really seem the way to go
-export const Scope = () => {
-  return (
-    <Scope scope='true' />
-  )
-} */

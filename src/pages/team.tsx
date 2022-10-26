@@ -1,10 +1,10 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-// import Seo from "../components/seo";
 
 function JessicaImage() {
   return (
@@ -34,35 +34,10 @@ function TinaImage() {
   );
 }
 
-// markup
 const TeamPage = () => {
   return (
     <>
       <Header />
-      {/*       <Seo
-        title="Meet our team"
-        description="We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals."
-      /> */}
-
-      {/* // TODO: this has a lot of lines, probably too many */}
-
-      <div className="single-fold">
-        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/">
-              <span itemProp="name">Home</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="1" />
-          </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <span itemProp="item">
-              <span itemProp="name">Team</span>
-            </span>
-            <meta itemProp="position" content="2" />
-          </li>
-        </ol>
-        <hr />
-      </div>
 
       <main className="team-page">
         <h1 className="two-fold">Team</h1>
@@ -71,20 +46,16 @@ const TeamPage = () => {
         <article
           id="jessica"
           className="two-fold"
-          itemScope itemType="https://schema.org/Person"
         >
-          <div itemProp="image"><JessicaImage /></div>
+          <div><JessicaImage /></div>
           <div className="content">
-            <h2>
-              <span itemProp="name">Jessica</span>,
-              <span itemProp="jobTitle">PT.</span>
-            </h2>
+            <h2>Jessica, PT.</h2>
             {/*this doesnt seem to be a problem with line breaks on prettier */}
             <p className="justified-40">
               I first became interested in physical therapy after observing my
-              dad’s treatments following knee surgery. I was intrigued by physical
-              therapy’s use of exercise to help improve overall function. I began
-              working as a physical therapy aide and later received my Master’s
+              dad&apos;s treatments following knee surgery. I was intrigued by physical
+              therapy&apos;s use of exercise to help improve overall function. I began
+              working as a physical therapy aide and later received my Master&apos;s
               degree in Physical Therapy from Northern Illinois University in
               2011.
             </p>
@@ -175,3 +146,23 @@ const TeamPage = () => {
 };
 
 export default TeamPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="Team | Emerald Bay Physical Therapy"
+      description="Meet Our Team"
+    >
+      <Script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Jessica Jones",
+            image: "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
+          }
+        `}
+      </Script>
+    </SEO>
+  );
+}

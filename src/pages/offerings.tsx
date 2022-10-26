@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
@@ -15,33 +15,11 @@ function Kiley2() {
   );
 }
 
-// markup
+
 const OfferingsPage = () => {
   return (
     <>
       <Header />
-      {/*       <Seo
-        title="Offerings"
-        description="Our Physical Therapy and Wellness Offerings"
-      /> */}
-
-      <div className="single-fold">
-        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/">
-              <span itemProp="name">Home</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="1" />
-          </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <span itemProp="item">
-              <span itemProp="name">Offerings</span>
-            </span>
-            <meta itemProp="position" content="2" />
-          </li>
-        </ol>
-        <hr />
-      </div>
 
       <main className="measured">
         <h1>Our Physical Therapy and Wellness Offerings</h1>
@@ -60,3 +38,12 @@ const OfferingsPage = () => {
 };
 
 export default OfferingsPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="Offerings | Emerald Bay Physical Therapy"
+      description="Our Physical Therapy and Wellness Offerings."
+    />
+  )
+};

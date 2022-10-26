@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
-// import Seo from "../components/seo";
 import Liz from "../components/liz";
 
 function GymImage() {
@@ -28,33 +27,7 @@ const ServicesPage = () => {
   return (
     <>
       <Header />
-      {/*       <Seo
-        title="Services"
-        description="This service is a form of rehabilitation for those who have medical
-        problems or other health-related conditions that may limit their
-        ability to move and function in their daily lives."
-      /> */}
-
-      <div className="single-fold">
-        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <Link itemProp="item" to="/">
-              <span itemProp="name">Home</span>
-            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
-            <meta itemProp="position" content="1" />
-          </li>
-          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-            <span itemProp="item">
-              <span itemProp="name">Services</span>
-            </span>
-            <meta itemProp="position" content="2" />
-          </li>
-        </ol>
-        <hr />
-      </div>
-
       {/* // TODO: this should be designed like the about page */}
-
       <main>
         <h1 className="measured">Services</h1>
 
@@ -293,3 +266,14 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
+
+export const Head = () => {
+  return (
+    <SEO
+      title="Services | Emerald Bay Physical Therapy"
+      description="This service is a form of rehabilitation for those who have medical
+      problems or other health-related conditions that may limit their
+      ability to move and function in their daily lives."
+    />
+  )
+};
