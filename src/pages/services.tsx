@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
@@ -33,6 +34,27 @@ const ServicesPage = () => {
         problems or other health-related conditions that may limit their
         ability to move and function in their daily lives."
       /> */}
+
+      <div className="single-fold">
+        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link itemProp="item" to="/">
+              <span itemProp="name">Home</span>
+            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
+            <meta itemProp="position" content="1" />
+          </li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="item">
+              <span itemProp="name">Services</span>
+            </span>
+            <meta itemProp="position" content="2" />
+          </li>
+        </ol>
+        <hr />
+      </div>
+
+      {/* // TODO: this should be designed like the about page */}
+
       <main>
         <h1 className="measured">Services</h1>
 
@@ -66,10 +88,10 @@ const ServicesPage = () => {
 
           <p>
             A <b>Physical Therapist</b> (PT) is a licensed health care
-            professional who evaluates a patient’s physical status, establishes
+            professional who evaluates a patient&apos;s physical status, establishes
             a plan of care and goals, then administers treatments to promote
             optimal health. Physical Therapists seek to relieve pain, improve
-            the body’s movement and function, maintain cardiopulmonary function,
+            the body&apos;s movement and function, maintain cardiopulmonary function,
             and limit disabilities resulting from injury or disease.
           </p>
 
@@ -93,7 +115,7 @@ const ServicesPage = () => {
               <a
                 href="https://www.ptbc.ca.gov/consumers/consumer_info_faq.shtml"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
               >
                 Physical Therapy Board of California
               </a>
@@ -106,13 +128,13 @@ const ServicesPage = () => {
                 <a
                   href="https://www.ptbc.ca.gov/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                 >
                   Physical Therapy Board of California
                 </a>
               </li>
               <li>
-                <a href="https://www.apta.org/" target="_blank" rel="noreferrer">
+                <a href="https://www.apta.org/" target="_blank" rel="noreferrer noopener">
                   American Physical Therapy Association
                 </a>
               </li>
@@ -120,7 +142,7 @@ const ServicesPage = () => {
                 <a
                   href="https://www.ccapta.org/default.aspx"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                 >
                   California Physical Therapy Association
                 </a>
@@ -176,7 +198,7 @@ const ServicesPage = () => {
 
             <li>
               We ask you to rinse off with soap and warm water in our shower
-              prior to getting in the water. Removing the day’s accumulation of
+              prior to getting in the water. Removing the day&apos;s accumulation of
               lotions, skin oils, etc. helps to keep our pool clean.
             </li>
 
@@ -187,7 +209,7 @@ const ServicesPage = () => {
 
             <li>
               Before getting into the pool, please wait until a staff member is
-              in the pool room and has let you know it’s okay to get in.
+              in the pool room and has let you know it&apos;s okay to get in.
             </li>
 
             <li>
@@ -242,21 +264,21 @@ const ServicesPage = () => {
         <hr />
 
         <section className="measured">
-          <h2>Kid’s Swim Lessons</h2>
+          <h2>Kid&apos;s Swim Lessons</h2>
           <p>
             Emerald Bay Physical Therapy is the place to be when introducing
-            your child to the water. The 90 degree pool makes your child’s
+            your child to the water. The 90 degree pool makes your child&apos;s
             swimming experience a warm and welcoming one. Swim lessons are by
             appointment only and open to children from 6 months to 12 years.
             Spaces do fill up fast so make sure to call ahead when scheduling
-            your child’s swim lessons.
+            your child&apos;s swim lessons.
           </p>
 
           <ul>
             <li>Individual private lessons and semi-private lessons.</li>
             <li>Each lesson is 30 minutes long</li>
-            <li>6 months – 12 years old</li>
-            <li>Classes are by appointment only – no drop-ins</li>
+            <li>6 months &ndash; 12 years old</li>
+            <li>Classes are by appointment only &ndash; no drop-ins</li>
           </ul>
 
           <Liz />

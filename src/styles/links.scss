@@ -30,6 +30,9 @@ button,
   box-shadow: var(--shade);
   text-decoration: none; // its obvious its a button
   border-radius: var(--chamfer);
+
+  // transition: all 0.2s ease-in-out; // TODO this isnt working: should subtly bring the background in
+  // transition: all 2s ease-in-out; // test:
 }
 
 button:hover,
@@ -37,8 +40,7 @@ button:hover,
   background: var(--moss);
   color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
   box-shadow: var(--shade-hover);
-
-
+  // TODO: a subtle border could be nice
 }
 
 a[href^="tel:"]:before {

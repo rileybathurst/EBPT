@@ -3109,5 +3109,10 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: st
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
 
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: { readonly siteMetadata: { readonly openingHours: string | null, readonly telephone: string | null, readonly areaServed: string | null, readonly paymentAccepted: string | null, readonly itemType: string | null, readonly defaultTitle: string | null, readonly defaultDescription: string | null, readonly siteUrl: string | null, readonly defaultImage: string | null, readonly ogImage: string | null, readonly twitterImage: string | null } | null } | null };
+
 
 }

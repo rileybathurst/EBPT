@@ -67,7 +67,9 @@ body {
     list-style: none;
     padding: 1.563rem;
     border-radius: calc(var(--chamfer) * 2);
-    background: var(--emerald);
+    background: var(
+      --emerald
+    ); // TODO: this could be a touch softer with the new way I am doing color variations
     color: var(--onyx);
 
     @media (prefers-color-scheme: dark) {
@@ -174,7 +176,7 @@ body {
     justify-content: space-around;
     list-style: none;
 
-    li {
+    > li {
       margin: 1rem; // 🚨 this is wrong but its better than not having a drop
       text-align: center;
 
@@ -184,6 +186,7 @@ body {
         transition: 0.25s ease;
       }
 
+      // todo this is wrong on small sizes
       a:hover {
         background: hsl(
           0,
@@ -196,8 +199,15 @@ body {
         // box-shadow: var(--penumbra); // I dont think this is right here
       }
     } // li
-  } // @media 60rem
-} // #overt
+  }
+
+  // TODO this just removes the secondary menu layer
+  @media (min-width: 70rem) {
+    .menu-list {
+      display: none;
+    }
+  }
+}
 
 #hero {
   display: grid;

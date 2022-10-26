@@ -9,7 +9,7 @@ import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
 import FormList from "../components/form-list";
 // import Seo from "../components/seo";
-import Offerings from "../components/offerings";
+import OfferingsList from "../components/offerings-list";
 
 import Kiley2 from "../components/kiley2io";
 import GymImage from "../components/gymImageVanilla";
@@ -82,7 +82,7 @@ const IndexPage = () => {
           </div>
 
           <div className="two-fold">
-            <Offerings />
+            <OfferingsList />
           </div>
         </section>
         {/* #offerings */}

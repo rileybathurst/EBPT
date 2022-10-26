@@ -13,6 +13,7 @@ function ThisYear() {
 
 const FooterSocial = () => (
   <section id="footer-social">
+    {/* // TODO fix the hovers to square  */}
     <ul className="measured">
       {/* yelp */}
       <li>
@@ -54,8 +55,8 @@ const FooterSocial = () => (
       {/* f */}
       <li>
         <a
-            href="https://www.facebook.com/emeraldbaypt"
-            title="emerald bay physical therapy facebook"
+          href="https://www.facebook.com/emeraldbaypt"
+          title="emerald bay physical therapy facebook"
         >
           <svg
             enableBackground="new 0 0 1024 1024"
@@ -71,8 +72,8 @@ const FooterSocial = () => (
       {/* instagram */}
       <li>
         <a
-            href="https://www.instagram.com/emeraldbayphysicaltherapy/"
-            title="emerald bay physical therapy instagram"
+          href="https://www.instagram.com/emeraldbayphysicaltherapy/"
+          title="emerald bay physical therapy instagram"
         >
           <svg
             id="Logo"
@@ -96,8 +97,8 @@ const FooterSocial = () => (
       {/* nextdoor */}
       <li>
         <a
-            href="https://nextdoor.com/pages/emerald-bay-physical-therapy-south-lake-tahoe-ca/"
-            title="emerald bay physical therapy nextdoor"
+          href="https://nextdoor.com/pages/emerald-bay-physical-therapy-south-lake-tahoe-ca/"
+          title="emerald bay physical therapy nextdoor"
         >
           <svg
             id="Layer_1"
@@ -120,6 +121,7 @@ const FooterSocial = () => (
 
     {/* I need to add this to an auto update */}
     <h4 className="h5 h-center">
+      {/* // ! fix the hover */}
       <Link to="/" title="to the front page">
         Emerald Bay Physical Therapy <ThisYear />
       </Link>

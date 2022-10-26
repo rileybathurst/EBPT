@@ -51,7 +51,11 @@ const AboutPage = () => {
         <div className="two-fold">
           <OrthoticsImage />
           <div className="two-fold-content">
-            <h1 className="h1__clamped" itemProp="name">Orthotics</h1>
+            <hgroup>
+              {/* // TODO needs flex organization */}
+              <h4>Offerings</h4>
+              <h1 className="h1__clamped" itemProp="name">Orthotics</h1>
+            </hgroup>
             <section itemProp="description">
               <h2 className="h4">Suffer from foot, knee, or hip pain? Custom orthotics might be right for you!</h2>
 

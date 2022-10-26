@@ -1,10 +1,12 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { SEO } from "../components/seo";
 
+import SeoOld from "../components/seo-old"; // this syntax changes on the new one
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 
+// TODO I think this is other places as well?
 function Kiley2() {
   return (
     <StaticImage
@@ -18,12 +20,31 @@ const QuestionsPage = () => {
   return (
     <>
       <Header />
-      {/*       <Seo
+      <SeoOld
         title="Questions"
         description="Frequently asked questions."
         itemType="https://schema.org/FAQPage"
         itemScope={true}
-      /> */}
+      />
+
+      <div className="single-fold">
+        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link itemProp="item" to="/">
+              <span itemProp="name">Home</span>
+            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
+            <meta itemProp="position" content="1" />
+          </li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="item">
+              <span itemProp="name">Questions</span>
+            </span>
+            <meta itemProp="position" content="2" />
+          </li>
+        </ol>
+        <hr />
+      </div>
+
       <main>
         <h1 className="measured">Questions</h1>
         {/* <hr /> */}
@@ -320,8 +341,9 @@ const QuestionsPage = () => {
             <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
               <p>
                 Yes! For more information, please click on any of the following
-                links:
+                links: {/* // ! literally says links which is not a link */}
               </p>
+              {/* // TODO: liz box? */}
               <ul itemProp="text">
                 <li>Water Exercise Classes</li>
                 <li>Swim Lessons</li>
@@ -340,7 +362,7 @@ const QuestionsPage = () => {
 
 export default QuestionsPage;
 
-export const Head = () => {
+/* export const Head = () => {
   return (
     <SEO
       title="Pelvic Health - Emerald Bay Physical Therapy"
@@ -351,4 +373,4 @@ export const Head = () => {
   ); // TODO: Make this everywhere // it possibly needs variables etc
   // TODO add the rest of this
 }
-
+ */

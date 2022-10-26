@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Header from "../components/header";
@@ -42,6 +43,27 @@ const TeamPage = () => {
         title="Meet our team"
         description="We specialize in hands-on, one-on-one treatments that are specific to each patient’s goals."
       /> */}
+
+      {/* // TODO: this has a lot of lines, probably too many */}
+
+      <div className="single-fold">
+        <ol className="breadcrumbs" itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <Link itemProp="item" to="/">
+              <span itemProp="name">Home</span>
+            </Link>&nbsp;&nbsp;/&nbsp;&nbsp;
+            <meta itemProp="position" content="1" />
+          </li>
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <span itemProp="item">
+              <span itemProp="name">Team</span>
+            </span>
+            <meta itemProp="position" content="2" />
+          </li>
+        </ol>
+        <hr />
+      </div>
+
       <main className="team-page">
         <h1 className="two-fold">Team</h1>
         <hr />

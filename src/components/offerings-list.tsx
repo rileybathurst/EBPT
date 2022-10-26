@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 
-const Offerings = () => (
+const OfferingsList = () => (
   <ul className="catalog" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
     <li itemProp="itemListElement" itemScope itemType="https://schema.org/OfferCatalog">
       <span itemProp="name">Aquatic therapy</span>
@@ -40,7 +40,10 @@ const Offerings = () => (
     <li itemProp="itemListElement" itemScope itemType="https://schema.org/OfferCatalog">
       <Link to="/offerings/pelvic-health"><span itemProp="name">Pelvic Floor Rehabilitation</span></Link>
     </li>
+    <li itemProp="itemListElement" itemScope itemType="https://schema.org/OfferCatalog">
+      <Link to="/offerings/orthotics"><span itemProp="name">Orthotics</span></Link>
+    </li>
   </ul>
 );
 
-export default Offerings;
+export default OfferingsList;

@@ -25,6 +25,7 @@ const PelvicHealthPage = () => {
   return (
     <>
 
+      {/* testing */}
       {/* <En /> */}
 
       <Header />
@@ -56,7 +57,11 @@ const PelvicHealthPage = () => {
         <div className="two-fold">
           <PelvicTherapyImage />
           <div className="two-fold-content">
-            <h1 className="h1__clamped" itemProp="name">Outpatient: Pelvic Floor Rehabilitation</h1>
+            <hgroup>
+              {/* // TODO needs flex organization */}
+              <h4>Offerings</h4>
+              <h1 className="h1__clamped" itemProp="name">Outpatient: Pelvic Floor Rehabilitation</h1>
+            </hgroup>
             <section itemProp="description">
               <h2 className="h4">Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?</h2>
               <p>Do you suffer from pelvic pain or incontinence?</p>

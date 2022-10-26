@@ -29,7 +29,7 @@ const Footer = () => (
             South Lake Tahoe CA 96150
           </a>
         </h4>
-
+        {/* // ! fix the way this hovers */}
         <h4>
           <span className="space-start">Phone: </span><a href="tel:5305422662">(530) 542 2662</a>
         </h4>

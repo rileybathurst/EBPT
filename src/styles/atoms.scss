@@ -1,5 +1,7 @@
 ::selection {
+  // TODO look at taking this to orange
   background-color: var(--emerald); // 3:1 contrast ratio on pearl is fine fo UI
+  border-radius: 1rem;
 }
 
 // this has problems when it's in the .two-fold the smallest gets a lot of stretch
