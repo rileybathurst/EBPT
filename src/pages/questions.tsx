@@ -208,7 +208,7 @@ const QuestionsPage = () => {
                 strengthening exercises in the pool, possibly using the current,
                 handheld paddles, water weights, or other tools.
               </p>
-            </divitemScope>
+            </div>
           </article>
 
           <article
