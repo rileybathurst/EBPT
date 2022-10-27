@@ -64,8 +64,8 @@ export const SEO = ({
     url: `${siteUrl}${pathname || ``}`,
   }
 
-  console.log('seo', seo);
-  console.log('location', location);
+  // console.log('seo', seo);
+  // console.log('location', location);
 
   // this is whats given back
   return (
@@ -78,7 +78,7 @@ export const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:descr iption" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
 
 
