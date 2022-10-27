@@ -102,34 +102,34 @@ export const SEO = ({
             "@type": "Physiotherapy",
             "name": "${name}",
             "telephone": "${telephone}",
-            "faxNumber": ${faxNumber},
-            "openingHours": ${openingHours},
-            "areaServed": ${areaServed},
+            "faxNumber": "${faxNumber}",
+            "openingHours": "${openingHours}",
+            "areaServed": "${areaServed}",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": ${location.address.streetAddress},
-              "addressLocality": ${location.address.addressLocality},
-              "addressRegion": ${location.address.addressRegion},
-              "streetAddress": ${location.address.postalCode}
+              "streetAddress": "${location.address.streetAddress}",
+              "addressLocality": "${location.address.addressLocality}",
+              "addressRegion": "${location.address.addressRegion}",
+              "streetAddress": "${location.address.postalCode}"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": 38.91744984104439,
-              "longitude": -120.01076773004415
+              "latitude": "38.91744984104439",
+              "longitude": "-120.01076773004415"
             },
             
             "areaServed": {
               "@type": "GeoCircle",
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": 38.91744984104439,
-                "longitude": -120.01076773004415
+                "latitude": "38.91744984104439",
+                "longitude": "-120.01076773004415"
               },
-              "geoRadius": 80470
+              "geoRadius": "80470"
             },
       
-            "paymentAccepted": ${paymentAccepted},
-            "slogan": ${slogan},
+            "paymentAccepted": "${paymentAccepted}",
+            "slogan": "${slogan}",
           }
         `}
       </Script>
