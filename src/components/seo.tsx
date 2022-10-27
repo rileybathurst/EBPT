@@ -3,6 +3,7 @@
 // https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-head/src/components/seo.tsx
 
 import React from "react";
+import { Script } from "gatsby";
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 // this is in the github example, but I don't understand it
@@ -71,6 +72,8 @@ export const SEO = ({
   return (
     <>
 
+      {/* // TODO make this json-ld */}
+
       {/* variables */}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
@@ -94,6 +97,24 @@ export const SEO = ({
       <meta name="paymentAccepted" content={paymentAccepted} />
 
       <meta name="location" content={`${location.address.streetAddress}, ${location.address.addressLocality}, ${location.address.addressRegion}, ${location.address.postalCode}`} />
+
+
+      <Script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "Party Coffee Cake",
+        "author": {
+          "@type": "Person",
+        "name": "Mary Stone"
+      },
+        "datePublished": "2018-03-10",
+        "description": "This coffee cake is awesome and perfect for parties.",
+        "prepTime": "PT20M"
+    }
+    `}
+      </Script>
 
 
       <meta name="slogan" content={slogan} />
