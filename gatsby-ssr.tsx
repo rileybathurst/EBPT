@@ -8,8 +8,6 @@
 
 exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({
-    lang: "en",
-    itemType: "https://schema.org/LocalBusiness",
-    itemScope: true,
+    lang: "en"
   })
 }
