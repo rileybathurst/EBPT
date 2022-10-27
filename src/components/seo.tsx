@@ -104,7 +104,6 @@ export const SEO = ({
             "telephone": "${telephone}",
             "faxNumber": "${faxNumber}",
             "openingHours": "${openingHours}",
-            "areaServed": "${areaServed}",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "${location.address.streetAddress}",
