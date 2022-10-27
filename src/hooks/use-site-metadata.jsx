@@ -30,8 +30,6 @@ export const useSiteMetadata = () => {
           }
           slogan
           gsv
-          itemType
-          itemScope
         }
       }
     }
