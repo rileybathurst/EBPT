@@ -92,12 +92,15 @@ export const SEO = ({
       <meta name="" content={areaServed} />
       <meta name="author" content={author} />
 
-      {/* // working locally this shows up in <body> <script data-strategy... at the end of the file */}
+      {/* this shows up in <body> <script data-strategy... at the end of the file */}
+
+      {/* the type is the best I can do with schema but also working with google rich with Physiotherapy */}
+      {/* there may be more ways to include how this works in the other versions of how Physiotherapy is in https://schema.org/Physiotherapy but all have :: which google doesnt seem to except */}
       <Script type="application/ld+json">
         {`
           {
             "@context": "https://schema.org/",
-            "@type": "Physiotherapy",
+            "@type": ["LocalBusiness", "MedicalBusiness", "MedicalBusiness :: Physiotherapy"],
             "name": "${name}",
             "telephone": "${telephone}",
             "faxNumber": "${faxNumber}",
@@ -126,7 +129,8 @@ export const SEO = ({
             },
       
             "paymentAccepted": "${paymentAccepted}",
-            "slogan": "${slogan}"
+            "slogan": "${slogan}",
+            "image": "${image}",
           }
         `}
       </Script>
