@@ -87,40 +87,56 @@ export const SEO = ({
 
       {/* static */}
       {/* // ? i guess this is because they dont want name="name" */}
-      <meta itemProp="name" content={name} />
-      <meta name="openingHours" content={openingHours} />
-      <meta name="telephone" content={telephone} />
-      <meta name="fax" content={telephone} />
+
+      {/* //https://developers.google.com/search/docs/appearance/structured-data/local-business */}
+
       <meta name="logo" content={logo} />
-      <meta name="areaServed" content={areaServed} />
+      <meta name="" content={areaServed} />
       <meta name="author" content={author} />
-      <meta name="paymentAccepted" content={paymentAccepted} />
 
-      <meta name="location" content={`${location.address.streetAddress}, ${location.address.addressLocality}, ${location.address.addressRegion}, ${location.address.postalCode}`} />
-
-
+      {/* // working locally this shows up in <body> <script data-strategy... at the end of the file */}
       <Script type="application/ld+json">
         {`
-        {
-          "@context": "https://schema.org/",
-        "@type": "Recipe",
-        "name": "Party Coffee Cake",
-        "author": {
-          "@type": "Person",
-        "name": "Mary Stone"
-      },
-        "datePublished": "2018-03-10",
-        "description": "This coffee cake is awesome and perfect for parties.",
-        "prepTime": "PT20M"
-    }
-    `}
+          {
+            "@context": "https://schema.org/",
+            "@type": "LocalBusiness",
+            "name"${name},
+            "telephone": ${telephone},
+            "faxNumber": ${faxNumber},
+            "openingHours": ${openingHours},
+            "areaServed": ${areaServed},
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": ${location.address.streetAddress},
+              "addressLocality": ${location.address.addressLocality},
+              "addressRegion": ${location.address.addressRegion},
+              "streetAddress": ${location.address.postalCode}
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 38.91744984104439,
+              "longitude": -120.01076773004415
+            },
+            
+            "areaServed": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 38.91744984104439,
+                "longitude": -120.01076773004415
+              },
+              "geoRadius": 80470
+            },
+      
+            "paymentAccepted": ${paymentAccepted},
+            "slogan": ${slogan},
+          },
+        `}
       </Script>
 
-
-      <meta name="slogan" content={slogan} />
       <meta name="google-site-verification" content={gsv} />
 
-      {/* // ? why is this in this file not in gatsby-config.ts it never changes */}
+      {/* // ? is this in this file not in gatsby-config.ts it never changes but its also a weird complex syntax so maybe its fine here? */}
       {/* to fill with a hex code use %23 its the escaped # */}
       <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
 	viewBox='0 0 160 160' style='enable-background:new 0 0 160 160;' xml:space='preserve'>
