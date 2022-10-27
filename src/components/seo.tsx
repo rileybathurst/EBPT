@@ -99,9 +99,9 @@ export const SEO = ({
         {`
           {
             "@context": "https://schema.org/",
-            "@type": "LocalBusiness",
-            "name"${name},
-            "telephone": ${telephone},
+            "@type": "Physiotherapy",
+            "name": "${name}",
+            "telephone": "${telephone}",
             "faxNumber": ${faxNumber},
             "openingHours": ${openingHours},
             "areaServed": ${areaServed},
@@ -130,7 +130,7 @@ export const SEO = ({
       
             "paymentAccepted": ${paymentAccepted},
             "slogan": ${slogan},
-          },
+          }
         `}
       </Script>
 
