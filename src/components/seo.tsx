@@ -1,5 +1,6 @@
 // https://www.gatsbyjs.com/docs/add-seo-component/
-// I am moving everything on this site away from microdata
+
+// https://github.com/gatsbyjs/gatsby/blob/master/examples/using-gatsby-head/src/components/seo.tsx
 
 import React from "react";
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -10,7 +11,6 @@ export const SEO = ({
   pathname,
   children,
   itemScope,
-  lang
 }) => {
   const {
     title: defaultTitle,
@@ -31,7 +31,6 @@ export const SEO = ({
 
   return (
     <>
-      {lang}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />{/* // ! this is broken */} }

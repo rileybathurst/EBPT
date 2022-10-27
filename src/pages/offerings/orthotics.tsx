@@ -85,12 +85,12 @@ export const Head = () => {
               "@type": "ListItem",
               "position": 1,
               "name": "Offerings",
-              "item": "https://example.com/offerings"
+              "item": "https://emeraldbay.physio/offerings"
             },{
               "@type": "ListItem",
               "position": 2,
               "name": "Orthotics",
-              "item": "https://example.com/offerings/orthotics"
+              "item": "https://emeraldbay.physio/offerings/orthotics"
             }]
           }
         `}
