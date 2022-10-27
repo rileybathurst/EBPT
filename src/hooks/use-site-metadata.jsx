@@ -7,9 +7,31 @@ export const useSiteMetadata = () => {
         siteMetadata {
           title
           defaultTitle
+          name
+          siteUrl
           description
           image
-          siteUrl
+          ogImage
+          twitterImage
+          openingHours
+          telephone
+          faxNumber
+          logo
+          areaServed
+          author
+          paymentAccepted
+          location {
+            address {
+              streetAddress
+              addressLocality
+              addressRegion
+              postalCode
+            }
+          }
+          slogan
+          gsv
+          itemType
+          itemScope
         }
       }
     }
@@ -17,3 +39,5 @@ export const useSiteMetadata = () => {
 
   return data.site.siteMetadata
 }
+
+// ? do i need itemType and itemScope

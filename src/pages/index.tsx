@@ -30,8 +30,6 @@ function GymIm() {
 const IndexPage = () => {
   return (
     <>
-      {/* <Seo title="Emerald Bay Physical Therapy" /> */}
-
       <Header />
 
       <main>
@@ -201,21 +199,7 @@ export default IndexPage;
 export const Head = () => {
   return (
     <SEO
-      title="Emerald Bay Physical Therapy"
-    >
-      {/* // ? I guess this is more readable than spanning through a bunch of content? */}
-      {/* // also can be pulled from a cms in a very particular way */}
-
-      <Script type="application/ld+json">
-        {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "url": "https://emeraldbay.physio",
-      "name": "Emerald Bay Physical Therapy",
-    }
-  `}
-      </Script>
-    </SEO>
+    // title="Emerald Bay Physical Therapy" // I think I can just keep this the default
+    />
   );
 }

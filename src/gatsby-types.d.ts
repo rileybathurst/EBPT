@@ -2184,6 +2184,7 @@ type SiteFieldsEnum =
   | 'siteMetadata.location.address.postalCode'
   | 'siteMetadata.location.address.streetAddress'
   | 'siteMetadata.logo'
+  | 'siteMetadata.name'
   | 'siteMetadata.ogImage'
   | 'siteMetadata.openingHours'
   | 'siteMetadata.paymentAccepted'
@@ -2992,6 +2993,7 @@ type SiteSiteMetadata = {
   readonly itemType: Maybe<Scalars['String']>;
   readonly location: Maybe<SiteSiteMetadataLocation>;
   readonly logo: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
   readonly ogImage: Maybe<Scalars['String']>;
   readonly openingHours: Maybe<Scalars['String']>;
   readonly paymentAccepted: Maybe<Scalars['String']>;
@@ -3015,6 +3017,7 @@ type SiteSiteMetadataFilterInput = {
   readonly itemType: InputMaybe<StringQueryOperatorInput>;
   readonly location: InputMaybe<SiteSiteMetadataLocationFilterInput>;
   readonly logo: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly ogImage: InputMaybe<StringQueryOperatorInput>;
   readonly openingHours: InputMaybe<StringQueryOperatorInput>;
   readonly paymentAccepted: InputMaybe<StringQueryOperatorInput>;

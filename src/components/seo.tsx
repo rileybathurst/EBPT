@@ -5,32 +5,73 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
+// this is in the github example, but I don't understand it
+// https://spin.atomicobject.com/2022/01/04/think-twice-react-fc/
+// React.FC provides an implicit definition of children.
+// export const SEO: React.FC<React.PropsWithChildren<SEOProps>> = (
+// { title, description, pathname, children }
+// ) => {
+
+// https://developers.google.com/search/docs/crawling-indexing/special-tags
+
+// these are what change
 export const SEO = ({
   title,
   description,
   pathname,
-  children,
-  itemScope,
+  children
 }) => {
+
+  // these are what I grab from the siteMetadata
+  // remeber to pull them through the hook /hooks/use-site-metadata.jsx
   const {
     title: defaultTitle,
     description: defaultDescription,
-    image,
+    name,
     siteUrl,
-    twitterUsername
+    image,
+    ogImage,
+    twitterImage,
+    openingHours,
+    telephone,
+    faxNumber,
+    logo,
+    areaServed,
+    author,
+    paymentAccepted,
+    location,
+    /* // ? these might be needed Ive done something with them before
+     {
+      address {
+        streetAddress
+        addressLocality
+        addressRegion
+        postalCode
+      }
+    } */
+    slogan,
+    gsv,
+    itemType,
+    itemScope,
+
   } = useSiteMetadata()
 
+  // these are how they are used
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
-    twitterUsername,
-    itemScope,
   }
 
+  console.log('seo', seo);
+  console.log('location', location);
+
+  // this is whats given back
   return (
     <>
+
+      {/* variables */}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />{/* // ! this is broken */} }
@@ -39,7 +80,26 @@ export const SEO = ({
       <meta name="twitter:url" content={seo.url} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
-      <meta name="twitter:creator" content={seo.twitterUsername} />
+
+
+      {/* static */}
+      {/* // ? i guess this is because they dont want name="name" */}
+      <meta itemProp="name" content={name} />
+      <meta name="openingHours" content={openingHours} />
+      <meta name="telephone" content={telephone} />
+      <meta name="fax" content={telephone} />
+      <meta name="logo" content={logo} />
+      <meta name="areaServed" content={areaServed} />
+      <meta name="author" content={author} />
+      <meta name="paymentAccepted" content={paymentAccepted} />
+
+      <meta name="location" content={`${location.address.streetAddress}, ${location.address.addressLocality}, ${location.address.addressRegion}, ${location.address.postalCode}`} />
+
+
+      <meta name="slogan" content={slogan} />
+      <meta name="google-site-verification" content={gsv} />
+
+      {/* // ? why is this in this file not in gatsby-config.ts it never changes */}
       {/* to fill with a hex code use %23 its the escaped # */}
       <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
 	viewBox='0 0 160 160' style='enable-background:new 0 0 160 160;' xml:space='preserve'>

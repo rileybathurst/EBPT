@@ -4,7 +4,8 @@ require("dotenv").config()
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "Emerald Bay Physical Therapy",
-    defaultTitle: "test Emerald Bay Physical Therapy",
+    defaultTitle: "Emerald Bay Physical Therapy",
+    name: "Emerald Bay Physical Therapy",
     siteUrl: "https://emeraldbay.physio",
     url: "https://emeraldbay.physio", // No trailing slash allowed!
     description:
