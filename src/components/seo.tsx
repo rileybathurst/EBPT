@@ -110,7 +110,7 @@ export const SEO = ({
               "streetAddress": "${location.address.streetAddress}",
               "addressLocality": "${location.address.addressLocality}",
               "addressRegion": "${location.address.addressRegion}",
-              "streetAddress": "${location.address.postalCode}"
+              "postalCode": "${location.address.postalCode}"
             },
             "geo": {
               "@type": "GeoCoordinates",
