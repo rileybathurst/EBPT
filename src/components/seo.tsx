@@ -42,7 +42,7 @@ export const SEO = ({
     paymentAccepted,
     location,
     /* // ? these might be needed Ive done something with them before
-     {
+    {
       address {
         streetAddress
         addressLocality
@@ -51,9 +51,7 @@ export const SEO = ({
       }
     } */
     slogan,
-    gsv,
-    itemType,
-    itemScope,
+    gsv
 
   } = useSiteMetadata()
 
