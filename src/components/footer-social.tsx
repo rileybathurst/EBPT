@@ -121,7 +121,6 @@ const FooterSocial = () => (
 
     {/* I need to add this to an auto update */}
     <h4 className="h5 h-center">
-      {/* // ! fix the hover */}
       <Link to="/" title="to the front page">
         Emerald Bay Physical Therapy <ThisYear />
       </Link>

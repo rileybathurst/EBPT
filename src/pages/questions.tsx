@@ -266,12 +266,11 @@ const QuestionsPage = () => {
             <div>
               <p>
                 Yes! For more information, please click on any of the following
-                links: {/* // ! literally says links which is not a link */}
+                links:
               </p>
-              {/* // TODO: liz box? */}
               <ul>
-                <li>Water Exercise Classes</li>
-                <li>Swim Lessons</li>
+                <li><Link to="/services#water">Water Exercise Classes</Link></li>
+                <li><Link to="/services#kids-swim">Swim Lessons</Link></li>
               </ul>
             </div>
           </article>

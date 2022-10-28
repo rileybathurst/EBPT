@@ -31,7 +31,7 @@ const ServicesPage = () => {
       <main>
         <h1 className="measured">Services</h1>
 
-        <section className="measured">
+        <section id="pt" className="measured">
           <GymImage />
 
           <h2>Physical Therapy</h2>
@@ -125,7 +125,7 @@ const ServicesPage = () => {
         </section>
         <hr />
 
-        <section className="measured">
+        <section id="aquatic" className="measured">
           <PoolImage />
 
           <h2>Aquatic Therapy</h2>
@@ -197,7 +197,7 @@ const ServicesPage = () => {
 
         <hr />
 
-        <section className="measured">
+        <section id="water" className="measured">
           <h2>Water Exercise</h2>
 
           <p>
@@ -236,7 +236,7 @@ const ServicesPage = () => {
 
         <hr />
 
-        <section className="measured">
+        <section id="kids-swim" className="measured">
           <h2>Kid&apos;s Swim Lessons</h2>
           <p>
             Emerald Bay Physical Therapy is the place to be when introducing

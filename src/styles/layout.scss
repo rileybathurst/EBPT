@@ -200,12 +200,14 @@ body {
       }
     } // li
   }
+}
 
-  // TODO this just removes the secondary menu layer
+// TODO this just removes the secondary menu layer
+.menu-list {
+  padding-block-end: 0 !important;
+
   @media (min-width: 70rem) {
-    .menu-list {
-      display: none;
-    }
+    display: none !important;
   }
 }
 
@@ -274,8 +276,14 @@ body {
   #contact
 \*------------------------------------*/
 
-#contact > h4 {
-  width: max-content; // less line-breaks
+#contact {
+  > h4 {
+    width: max-content; // less line-breaks
+  }
+
+  .faux-link {
+    padding: 0.25rem 0.5rem;
+  }
 }
 
 .space-start {
@@ -301,11 +309,6 @@ body {
   a {
     color: var(--pearl); // conflicts with text color
     // has background tho
-  }
-
-  a:hover {
-    color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
-    background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%));
   }
 
   ul {
@@ -339,7 +342,17 @@ body {
   } // ul
 } // #footer-social
 
-// #footer
+// moving this changes the specificity high enough to override
+// :is(h1, h2, h3, h4, h5, h6)a:hover {
+#footer-social a:hover {
+  color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+  background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%)) !important;
+}
+
+#footer-social a:focus {
+  color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+  background: hsl(var(--emerald__base), var(--pitch));
+}
 
 /*------------------------------------*/
 //  #BORDERBLOCK

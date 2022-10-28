@@ -3,8 +3,6 @@ import { Link, Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { SEO } from "../components/seo";
 
-import "../styles/app.scss";
-
 import Header from "../components/header";
 import Footer from "../components/footer";
 import TeamHeads from "../components/team-heads";
