@@ -58,7 +58,7 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
-    // TODO getting a C- on mozilla scroes so this needs work
+
     {
       resolve: `gatsby-plugin-csp`,
       options: {
@@ -69,6 +69,7 @@ const config: GatsbyConfig = {
           "script-src": "'self' 'unsafe-inline' use.typekit.net",
           // the unsafe-inline on script-src is a problem for https://observatory.mozilla.org but without it the images break
           "font-src": "'self' use.typekit.net",
+          "img-src": "'self' 'unsafe-inline' https://p.typekit.net"
         }
       }
     },
