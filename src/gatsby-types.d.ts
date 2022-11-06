@@ -2173,6 +2173,10 @@ type SiteFieldsEnum =
   | 'siteMetadata.defaultTitle'
   | 'siteMetadata.description'
   | 'siteMetadata.faxNumber'
+  | 'siteMetadata.geo._type'
+  | 'siteMetadata.geo.geoRadius'
+  | 'siteMetadata.geo.latitude'
+  | 'siteMetadata.geo.longitude'
   | 'siteMetadata.gsv'
   | 'siteMetadata.image'
   | 'siteMetadata.location._type'
@@ -2182,6 +2186,7 @@ type SiteFieldsEnum =
   | 'siteMetadata.location.address.postalCode'
   | 'siteMetadata.location.address.streetAddress'
   | 'siteMetadata.logo'
+  | 'siteMetadata.logoSVG'
   | 'siteMetadata.name'
   | 'siteMetadata.ogImage'
   | 'siteMetadata.openingHours'
@@ -2985,10 +2990,12 @@ type SiteSiteMetadata = {
   readonly defaultTitle: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly faxNumber: Maybe<Scalars['String']>;
+  readonly geo: Maybe<SiteSiteMetadataGeo>;
   readonly gsv: Maybe<Scalars['String']>;
   readonly image: Maybe<Scalars['String']>;
   readonly location: Maybe<SiteSiteMetadataLocation>;
   readonly logo: Maybe<Scalars['String']>;
+  readonly logoSVG: Maybe<Scalars['String']>;
   readonly name: Maybe<Scalars['String']>;
   readonly ogImage: Maybe<Scalars['String']>;
   readonly openingHours: Maybe<Scalars['String']>;
@@ -3007,10 +3014,12 @@ type SiteSiteMetadataFilterInput = {
   readonly defaultTitle: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly faxNumber: InputMaybe<StringQueryOperatorInput>;
+  readonly geo: InputMaybe<SiteSiteMetadataGeoFilterInput>;
   readonly gsv: InputMaybe<StringQueryOperatorInput>;
   readonly image: InputMaybe<StringQueryOperatorInput>;
   readonly location: InputMaybe<SiteSiteMetadataLocationFilterInput>;
   readonly logo: InputMaybe<StringQueryOperatorInput>;
+  readonly logoSVG: InputMaybe<StringQueryOperatorInput>;
   readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly ogImage: InputMaybe<StringQueryOperatorInput>;
   readonly openingHours: InputMaybe<StringQueryOperatorInput>;
@@ -3021,6 +3030,20 @@ type SiteSiteMetadataFilterInput = {
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly twitterImage: InputMaybe<StringQueryOperatorInput>;
   readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataGeo = {
+  readonly _type: Maybe<Scalars['String']>;
+  readonly geoRadius: Maybe<Scalars['String']>;
+  readonly latitude: Maybe<Scalars['String']>;
+  readonly longitude: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataGeoFilterInput = {
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly geoRadius: InputMaybe<StringQueryOperatorInput>;
+  readonly latitude: InputMaybe<StringQueryOperatorInput>;
+  readonly longitude: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSiteMetadataLocation = {

@@ -31,25 +31,17 @@ export const SEO = ({
     name,
     siteUrl,
     image,
-    ogImage,
+    ogImage, // check fb is showing the image with text overlay
     twitterImage,
     openingHours,
     telephone,
     faxNumber,
-    logo,
-    areaServed,
+    // logo,
+    logoSVG,
     author,
     paymentAccepted,
     location,
-    /* // ? these might be needed Ive done something with them before
-    {
-      address {
-        streetAddress
-        addressLocality
-        addressRegion
-        postalCode
-      }
-    } */
+    geo,
     slogan,
     gsv
 
@@ -63,8 +55,8 @@ export const SEO = ({
     url: `${siteUrl}${pathname || ``}`,
   }
 
-  // console.log('seo', seo);
   // console.log('location', location);
+  // console.log('logoSVG', logoSVG);
 
   // this is whats given back
   return (
@@ -79,21 +71,17 @@ export const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:descr iption" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.twitterImage} />
 
 
       {/* static */}
       {/* // ? i guess this is because they dont want name="name" */}
 
       {/* //https://developers.google.com/search/docs/appearance/structured-data/local-business */}
-
-      <meta name="logo" content={logo} />
-      <meta name="" content={areaServed} />
-      <meta name="author" content={author} />
+      {/* <meta name="author" content={author} /> */}
 
       {/* this shows up in <body> <script data-strategy... at the end of the file */}
-
       {/* the type is the best I can do with schema but also working with google rich with Physiotherapy */}
       {/* there may be more ways to include how this works in the other versions of how Physiotherapy is in https://schema.org/Physiotherapy but all have :: which google doesnt seem to except */}
       <Script type="application/ld+json">
@@ -114,23 +102,24 @@ export const SEO = ({
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "38.91744984104439",
-              "longitude": "-120.01076773004415"
+              "latitude": "${geo.latitude}",
+              "longitude": "${geo.longitude}",
             },
             
             "areaServed": {
               "@type": "GeoCircle",
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": "38.91744984104439",
-                "longitude": "-120.01076773004415"
+                "latitude": "${geo.latitude}",
+                "longitude": "${geo.longitude}",
               },
-              "geoRadius": "80470"
+              "geoRadius": "${geo.geoRadius}"
             },
       
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
             "image": "${image}"
+            "logo": "${logoSVG}"
           }
         `}
       </Script>

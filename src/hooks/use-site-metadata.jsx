@@ -17,6 +17,7 @@ export const useSiteMetadata = () => {
           telephone
           faxNumber
           logo
+          logoSVG
           areaServed
           author
           paymentAccepted
@@ -27,6 +28,11 @@ export const useSiteMetadata = () => {
               addressRegion
               postalCode
             }
+          }
+          geo {
+            latitude
+            longitude
+            geoRadius
           }
           slogan
           gsv
