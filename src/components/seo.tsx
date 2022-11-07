@@ -132,6 +132,7 @@ export const SEO = ({
       {/* putting has offer catalog here broke things in google */}
 
       <meta name="google-site-verification" content={gsv} />
+      <meta name="msvalidate.01" content={bing} />
 
       {/* // ? is this in this file not in gatsby-config.ts it never changes but its also a weird complex syntax so maybe its fine here? */}
       {/* to fill with a hex code use %23 its the escaped # */}

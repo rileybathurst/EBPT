@@ -37,6 +37,7 @@ export const useSiteMetadata = () => {
           }
           slogan
           gsv
+          bing
         }
       }
     }
