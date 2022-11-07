@@ -29,6 +29,7 @@ export const SEO = ({
     title: defaultTitle,
     description: defaultDescription,
     name,
+    url,
     siteUrl,
     image,
     ogImage, // check fb is showing the image with text overlay
@@ -93,6 +94,7 @@ export const SEO = ({
             "@context": "https://schema.org/",
             "@type": ["LocalBusiness", "MedicalBusiness", "MedicalBusiness :: Physiotherapy"],
             "name": "${name}",
+            "url": "${url}",
             "telephone": "${telephone}",
             "faxNumber": "${faxNumber}",
             "openingHours": "${openingHours}",
