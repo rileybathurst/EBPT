@@ -37,7 +37,7 @@ export const SEO = ({
     openingHours,
     telephone,
     faxNumber,
-    // logo,
+    logo,
     logoSVG,
     author,
     paymentAccepted,
@@ -124,7 +124,7 @@ export const SEO = ({
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
             "image": "${image}",
-            "logo": "/icon.png"
+            "logo": "${siteUrl}${logo}"
           }
         `}
       </Script>
