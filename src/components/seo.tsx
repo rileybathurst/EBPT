@@ -124,7 +124,30 @@ export const SEO = ({
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
             "image": "${image}",
-            "logo": "${siteUrl}${logo}"
+            "logo": "${siteUrl}${logo}",
+
+
+
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Physical Therapy",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Aquatic therapy"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Post-surgical rehabilitation"
+                  }
+                },
+              ]
+            }
           }
         `}
       </Script>

@@ -392,7 +392,7 @@ export const Head = () => {
                   "@type": "Answer",
                   "text": "<p>This depends on your insurance coverage. If you have a deductible that has not yet been satisfied, we will request you to pay up to the amount of the deductible as the charges are accrued. For co-insurance payments, you will receive a bill after your insurance has paid its portion. These can be paid through the mail, over the phone, or by coming in to the office. If your insurance plan requires a co-pay, we ask that you pay those on each visit.</p>"
                 }
-              },
+              }
             ]
           }
         `}
