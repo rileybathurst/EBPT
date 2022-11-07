@@ -2170,6 +2170,7 @@ type SiteFieldsEnum =
   | 'port'
   | 'siteMetadata.areaServed'
   | 'siteMetadata.author'
+  | 'siteMetadata.bing'
   | 'siteMetadata.defaultTitle'
   | 'siteMetadata.description'
   | 'siteMetadata.faxNumber'
@@ -2987,6 +2988,7 @@ type SitePluginSortInput = {
 type SiteSiteMetadata = {
   readonly areaServed: Maybe<Scalars['String']>;
   readonly author: Maybe<Scalars['String']>;
+  readonly bing: Maybe<Scalars['String']>;
   readonly defaultTitle: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly faxNumber: Maybe<Scalars['String']>;
@@ -3011,6 +3013,7 @@ type SiteSiteMetadata = {
 type SiteSiteMetadataFilterInput = {
   readonly areaServed: InputMaybe<StringQueryOperatorInput>;
   readonly author: InputMaybe<StringQueryOperatorInput>;
+  readonly bing: InputMaybe<StringQueryOperatorInput>;
   readonly defaultTitle: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly faxNumber: InputMaybe<StringQueryOperatorInput>;

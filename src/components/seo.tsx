@@ -32,7 +32,7 @@ export const SEO = ({
     url,
     siteUrl,
     image,
-    ogImage, // check fb is showing the image with text overlay
+    ogImage,
     twitterImage,
     openingHours,
     telephone,
@@ -54,6 +54,7 @@ export const SEO = ({
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
+    twitterImage: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
   }
 
