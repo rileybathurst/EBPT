@@ -124,7 +124,7 @@ export const SEO = ({
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
             "image": "${image}",
-            "logo": "${siteUrl}${logo}",
+            "logo": "${siteUrl}${logo}"
           }
         `}
       </Script>
