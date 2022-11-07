@@ -44,7 +44,8 @@ export const SEO = ({
     location,
     geo,
     slogan,
-    gsv
+    gsv,
+    bing
 
   } = useSiteMetadata()
 
