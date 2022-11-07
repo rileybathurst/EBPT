@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     title: "Emerald Bay Physical Therapy",
     defaultTitle: "Emerald Bay Physical Therapy",
     name: "Emerald Bay Physical Therapy",
-    siteUrl: "https://emeraldbay.physio",
+    siteUrl: "https://emeraldbay.physio/",
     url: "https://emeraldbay.physio", // No trailing slash allowed!
     description:
       "Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy.",

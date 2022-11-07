@@ -123,13 +123,13 @@ export const SEO = ({
       
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
-            "image": "${image}"
+            "image": "${image}",
+            "logo": "${siteUrl}${logo}"
           }
         `}
       </Script>
 
-      {/* ,
-            "logo": "${siteUrl}${logo}" */}
+      {/*  */}
 
       <meta name="google-site-verification" content={gsv} />
 
