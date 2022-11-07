@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://emeraldbay.physio/sitemap/sitemap-index.xml
