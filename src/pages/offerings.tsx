@@ -44,6 +44,38 @@ export const Head = () => {
     <SEO
       title="Offerings | Emerald Bay Physical Therapy"
       description="Our Physical Therapy and Wellness Offerings."
-    />
+    >
+      <script type="application/ld+json">
+        {`
+        "@context": "https://schema.org/",
+        "@type": "Service",
+        "serviceType": "Physical Therapy",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Emerald Bay Physical Therapy"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Physical Therapy",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Aquatic therapy"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Post-surgical rehabilitation"
+              }
+            },
+          ]
+        }
+      `}
+      </script>
+    </SEO>
   )
 };

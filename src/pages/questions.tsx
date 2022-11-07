@@ -382,10 +382,7 @@ export const Head = () => {
                 "name": "How do I use my work compensation insurance?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "<p>Your adjuster and/ or nurse case manager will coordinate with us and
-                  with you to determine your physical therapy treatment. We will
-                  contact the insurance company for authorization to begin and
-                  continue your therapy.</p>"
+                  "text": "<p>Your adjuster and/ or nurse case manager will coordinate with us and with you to determine your physical therapy treatment. We will contact the insurance company for authorization to begin and continue your therapy.</p>"
                 }
               },
               {
