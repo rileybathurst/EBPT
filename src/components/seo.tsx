@@ -84,6 +84,9 @@ export const SEO = ({
       {/* this shows up in <body> <script data-strategy... at the end of the file */}
       {/* the type is the best I can do with schema but also working with google rich with Physiotherapy */}
       {/* there may be more ways to include how this works in the other versions of how Physiotherapy is in https://schema.org/Physiotherapy but all have :: which google doesnt seem to except */}
+
+      {/* you cant have comma where they are before a closing bracket */}
+
       <Script type="application/ld+json">
         {`
           {
@@ -103,7 +106,7 @@ export const SEO = ({
             "geo": {
               "@type": "GeoCoordinates",
               "latitude": "${geo.latitude}",
-              "longitude": "${geo.longitude}",
+              "longitude": "${geo.longitude}"
             },
             
             "areaServed": {
@@ -111,14 +114,14 @@ export const SEO = ({
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
                 "latitude": "${geo.latitude}",
-                "longitude": "${geo.longitude}",
+                "longitude": "${geo.longitude}"
               },
               "geoRadius": "${geo.geoRadius}"
             },
       
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
-            "image": "${image}"
+            "image": "${image}",
             "logo": "${logoSVG}"
           }
         `}
