@@ -125,34 +125,11 @@ export const SEO = ({
             "slogan": "${slogan}",
             "image": "${image}",
             "logo": "${siteUrl}${logo}",
-
-
-
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Physical Therapy",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Aquatic therapy"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Post-surgical rehabilitation"
-                  }
-                },
-              ]
-            }
           }
         `}
       </Script>
 
-      {/*  */}
+      {/* putting has offer catalog here broke things in google */}
 
       <meta name="google-site-verification" content={gsv} />
 
