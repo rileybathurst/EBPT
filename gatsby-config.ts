@@ -38,6 +38,13 @@ const config: GatsbyConfig = {
       'geoRadius': '80470',
     },
     slogan: 'Private, safe, and effective one-on-one treatments to help you live your best life!',
+    employees: {
+      '@type': 'Person',
+      "name1": "Jessica Jones",
+      "image1": "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
+    },
+
+    
     gsv: 't-GHhCwvq1SjOG3qV4JFNZpOo_6c5og1i1UlH_WvIOw',
     bing: 'E5A782AB43609C82DDB8A36BA607AB08',
   },

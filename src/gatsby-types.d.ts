@@ -2173,6 +2173,9 @@ type SiteFieldsEnum =
   | 'siteMetadata.bing'
   | 'siteMetadata.defaultTitle'
   | 'siteMetadata.description'
+  | 'siteMetadata.employees._type'
+  | 'siteMetadata.employees.image1'
+  | 'siteMetadata.employees.name1'
   | 'siteMetadata.faxNumber'
   | 'siteMetadata.geo._type'
   | 'siteMetadata.geo.geoRadius'
@@ -2991,6 +2994,7 @@ type SiteSiteMetadata = {
   readonly bing: Maybe<Scalars['String']>;
   readonly defaultTitle: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly employees: Maybe<SiteSiteMetadataEmployees>;
   readonly faxNumber: Maybe<Scalars['String']>;
   readonly geo: Maybe<SiteSiteMetadataGeo>;
   readonly gsv: Maybe<Scalars['String']>;
@@ -3010,12 +3014,25 @@ type SiteSiteMetadata = {
   readonly url: Maybe<Scalars['String']>;
 };
 
+type SiteSiteMetadataEmployees = {
+  readonly _type: Maybe<Scalars['String']>;
+  readonly image1: Maybe<Scalars['String']>;
+  readonly name1: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataEmployeesFilterInput = {
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly image1: InputMaybe<StringQueryOperatorInput>;
+  readonly name1: InputMaybe<StringQueryOperatorInput>;
+};
+
 type SiteSiteMetadataFilterInput = {
   readonly areaServed: InputMaybe<StringQueryOperatorInput>;
   readonly author: InputMaybe<StringQueryOperatorInput>;
   readonly bing: InputMaybe<StringQueryOperatorInput>;
   readonly defaultTitle: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly employees: InputMaybe<SiteSiteMetadataEmployeesFilterInput>;
   readonly faxNumber: InputMaybe<StringQueryOperatorInput>;
   readonly geo: InputMaybe<SiteSiteMetadataGeoFilterInput>;
   readonly gsv: InputMaybe<StringQueryOperatorInput>;

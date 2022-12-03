@@ -147,26 +147,13 @@ const TeamPage = () => {
 
 export default TeamPage;
 
+// TODO this isnt the way to do it making a new local business not working on the usual either add it to all or not at all?
+
 export const Head = () => {
   return (
     <SEO
       title="Team | Emerald Bay Physical Therapy"
       description="Meet Our Team"
-    >
-      <Script type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Emerald Bay Physical Therapy",
-            "employee": {
-              "@type": "Person",
-              "name": "Jessica Jones",
-              "image": "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
-            }
-          }
-        `}
-      </Script>
-    </SEO>
+    />
   );
 }

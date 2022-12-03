@@ -44,6 +44,7 @@ export const SEO = ({
     location,
     geo,
     slogan,
+    employees,
     gsv,
     bing
 
@@ -119,7 +120,13 @@ export const SEO = ({
             "paymentAccepted": "${paymentAccepted}",
             "slogan": "${slogan}",
             "image": "${image}",
-            "logo": "${siteUrl}${logo}"
+            "logo": "${siteUrl}${logo}",
+
+            "employees": {
+              "@type": "Person",
+              "name": "${employees.name1}",
+              "image": "${employees.image1}"
+            }
           }
         `}
       </Script>

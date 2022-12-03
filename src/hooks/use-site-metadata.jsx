@@ -36,6 +36,10 @@ export const useSiteMetadata = () => {
             geoRadius
           }
           slogan
+          employees {
+            name1
+            image1
+          }
           gsv
           bing
         }
