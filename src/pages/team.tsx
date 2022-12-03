@@ -157,9 +157,13 @@ export const Head = () => {
         {`
           {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Jessica Jones",
-            "image": "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
+            "@type": "LocalBusiness",
+            "name": "Emerald Bay Physical Therapy",
+            "employee": {
+              "@type": "Person",
+              "name": "Jessica Jones",
+              "image": "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
+            }
           }
         `}
       </Script>
