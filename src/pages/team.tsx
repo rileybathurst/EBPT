@@ -159,7 +159,7 @@ export const Head = () => {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Jessica Jones",
-            image: "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
+            "image": "https://ebpt.s3-us-west-1.amazonaws.com/images/headshot.jpg"
           }
         `}
       </Script>

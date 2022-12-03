@@ -64,10 +64,7 @@ export const SEO = ({
   // this is whats given back
   return (
     <>
-
-      {/* // TODO make this json-ld */}
-
-      {/* variables */}
+      {/* // TODO I think I can do more moving these away from meta tags */}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -76,10 +73,6 @@ export const SEO = ({
       <meta name="twitter:url" content={seo.url} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.twitterImage} />
-
-
-      {/* static */}
-      {/* // ? i guess this is because they dont want name="name" */}
 
       {/* //https://developers.google.com/search/docs/appearance/structured-data/local-business */}
       {/* <meta name="author" content={author} /> */}
