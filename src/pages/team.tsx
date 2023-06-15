@@ -34,6 +34,16 @@ function TinaImage() {
   );
 }
 
+function NancyImage() {
+  return (
+    <StaticImage
+      src="https://ebpt.s3.us-west-1.amazonaws.com/images/nancy-working.jpg"
+      alt="nancy"
+    // className="team-page__square"
+    />
+  );
+}
+
 const TeamPage = () => {
   return (
     <>
@@ -130,13 +140,37 @@ const TeamPage = () => {
           <TinaImage />
           <div className="content">
             <h2>Tina</h2>
-
             <p className="justified-40">
               South shore local since 2005, I have had the great pleasure of joining the EBPT team. In 2007, I was on the South Tahoe high tennis team, when I tore my meniscus during a match. I was terrified about surgery and didn’t know I had any other options, until I was introduced to physical therapy. Learning what I could do to heal my body through exercises and stretching was life changing. Physical therapy was a success and prevented me from having to undergo knee surgery. After that I became fascinated learning about all the things the human body is capable of. I received my education in nutrition and personal training at LTCC, and I enjoy helping people in the community through local gyms and private consultations for nutrition. I am a bodybuilding enthusiast and have competed in a few regional competitions since 2019. I love teaching others how to move the body and teaching them what’s possible. Healing can be a difficult process which is best overcome by education, encouragement, communication and engagement. EBPT is the perfect place to regain lost mobility and function because we care about getting you back to what you love; no matter the age, lifestyle, or activity level.
             </p>
+
+
           </div>
         </article>
-      </main>
+
+        <hr />
+
+        <article id="nancy" className="two-fold">
+          <NancyImage />
+
+          <div className="content">
+            <h2>Nancy</h2>
+
+            <p className="justified-40">
+              I have been a resident of South Lake Tahoe since 1998, one of those who “came for a winter” and never left. I had an interest in PT toward the end of high school, but chose architecture as my major in college and worked in the field for several years before realizing it was not for me. Being a PT patient through several injuries in the early 2000s renewed my interest in becoming a PT, and I decided to follow through by working as a PT Tech at Emerald Bay PT while taking prerequisite classes at LTCC. I completed my Doctorate in Physical Therapy at Emory University in 2014 and have been practicing in the Tahoe area ever since.</p>
+
+            <p className="justified-40">
+              With a background in high school soccer, gymnastics, swimming, and diving as well as competitive snowboarding and snowboard instruction, I understand the fundamentals of a wide variety of sports. I currently spend as much time as possible outdoors snowboarding, hiking, backpacking, climbing, and paddle boarding.</p>
+
+            <p className="justified-40">
+              I am grateful for the chance to be part of the team here at Emerald Bay PT, as I subscribe to the philosophy of quality time, hands on treatment, and individualized care that is the norm in this clinic. I make a concerted effort to get to know each patient and seek to set goals and align treatment to help an individual return to their usual activities rather than achieving standardized measurements.</p>
+
+            <p className="justified-40">
+              I have obtained certification in Vestibular Rehabilitation to address dizziness and balance disorders, in addition to certification in LSVT BIG treatment for Parkinson’s Disease. I am certified with RockTape for basic and advanced kinesiology taping, RockBlades, RockPods, and RockFloss for manual treatments, and am a certified Clinical Instructor for Student Physical Therapists.
+            </p>
+          </div>
+        </article>
+      </main >
 
       <hr />
 

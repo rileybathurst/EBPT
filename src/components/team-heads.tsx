@@ -27,6 +27,15 @@ function TinaHead() {
   );
 }
 
+function NancyHead() {
+  return (
+    <StaticImage
+      src="https://ebpt.s3.us-west-1.amazonaws.com/images/nancy-team.jpg"
+      alt="nancy"
+    />
+  );
+}
+
 const TeamHeads = () => (
   <div className="team-heads spin">
     {/* depending on the CSS I might just make square images for here */}
@@ -48,6 +57,13 @@ const TeamHeads = () => (
       <Link to="/team#tina">
         <TinaHead />
         <p>Tina</p>
+      </Link>
+    </div>
+
+    <div>
+      <Link to="/team#nancy">
+        <NancyHead />
+        <p>Nancy</p>
       </Link>
     </div>
 

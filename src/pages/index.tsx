@@ -65,14 +65,12 @@ const IndexPage = () => {
               <GymImage />
             </div>
           </div>
-          {/* .two-fold */}
         </section>
-        {/* #intro */}
 
         <hr />
 
         <section id="offerings">
-          <div className="single-fold"> {/* seperation of vertical and horizontal spacing */}
+          <div className="single-fold">{/* seperation of vertical and horizontal spacing */}
             <h2 className="forty-h3">
               <strong>Our Physical Therapy and Wellness Offerings</strong>
             </h2>
@@ -82,11 +80,10 @@ const IndexPage = () => {
             <OfferingsList />
           </div>
         </section>
-        {/* #offerings */}
 
         <hr />
 
-        {/* when display mosaic becomes available this will be super useful */}
+        {/* // TODO: when display mosaic becomes available this will be super useful */}
         <section id="gallery" className="single-fold image-stack">
           <GymIm />
           <Treating />
@@ -182,7 +179,6 @@ const IndexPage = () => {
             <FormList />
           </div>
         </section>
-        {/* #intake-forms */}
 
         <hr />
       </main>
@@ -197,7 +193,7 @@ export default IndexPage;
 export const Head = () => {
   return (
     <SEO
-    // title="Emerald Bay Physical Therapy" // I think I can just keep this the default
+    // stay gold
     />
   );
 }
