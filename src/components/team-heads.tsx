@@ -47,6 +47,13 @@ const TeamHeads = () => (
     </div>
 
     <div>
+      <Link to="/team#nancy">
+        <NancyHead />
+        <p>Nancy, DPT.</p>
+      </Link>
+    </div>
+
+    <div>
       <Link to="/team#kiley">
         <KileyProfile />
         <p>Kiley</p>
@@ -57,13 +64,6 @@ const TeamHeads = () => (
       <Link to="/team#tina">
         <TinaHead />
         <p>Tina</p>
-      </Link>
-    </div>
-
-    <div>
-      <Link to="/team#nancy">
-        <NancyHead />
-        <p>Nancy</p>
       </Link>
     </div>
 

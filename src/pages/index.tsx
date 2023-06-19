@@ -13,7 +13,7 @@ import OfferingsList from "../components/offerings-list";
 import Kiley2 from "../components/kiley2io";
 import GymImage from "../components/gymImageVanilla";
 import Treating from "../components/treating-io";
-import SnowyBuildingFrontImage from "../components/snowyImage-io";
+import NancyImage from "../components/nancyImage-io";
 import PoolImage from "../components/poolImage-io";
 
 function GymIm() {
@@ -87,8 +87,8 @@ const IndexPage = () => {
         <section id="gallery" className="single-fold image-stack">
           <GymIm />
           <Treating />
-          <SnowyBuildingFrontImage />
           <PoolImage />
+          <NancyImage />
         </section>
 
         <hr />
