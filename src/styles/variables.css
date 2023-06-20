@@ -1,9 +1,9 @@
 /*------------------------------------*\
-  #variables
-\*------------------------------------*/
+  /* #variables */
+/*------------------------------------*/
 
 :root {
-  // Brand Colors
+  /* Brand Colors */
   --emerald: hsl(169.4, 36.8%, 45.3%);
   --moldavite: hsl(160.6, 34.8%, 36.7%);
   --moss: hsl(173.6, 33.8%, 27.3%);
@@ -20,7 +20,7 @@
   --ember-hs: 27.2, 100%;
   --ember-l: 45.9%;
 
-  // Neutral Colors
+  /* Neutral Colors */
   --pearl: hsl(0, 0%, 97.3%);
   --hematite: hsl(0, 0%, 56.5%);
   --stone: hsl(0, 0%, 37.3%);
@@ -44,7 +44,7 @@
   --pelican: 60rem;
   --albatross: 80rem;
 
-  // Color Bases
+  /* Color Bases */
   --pitch: 2.5%;
   --dark: 12.5%;
   --dull: 25%;
@@ -57,16 +57,16 @@
 
   --pearl-l: 97.3%;
 
-  // shadows
+  /* shadows */
   --shade: hsla(0, 0%, 5.9%, 0.2);
   --dark-shade: hsla(0, 0%, 90%, 0.2);
 
   --shade-hover: hsla(0, 0%, 5.9%, 0.4);
   --dark-shade-hover: hsla(0, 0%, 90%, 0.4);
 
-  // this might still need work
-  // Umbra, penumbra and antumbra
-  // https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra
+  /* TODO: this might still need work */
+  /* Umbra, penumbra and antumbra */
+  /* https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra */
   --umbra: 0 5px 12px hsla(0, 0%, 0%, 0.4), 0 18px 32px hsla(0, 0%, 0%, 0.16);
 
   --antumbra: 0 14px 24px hsla(0, 0%, 0%, 0.16),
@@ -74,7 +74,7 @@
 
   --penumbra: 0 3px 6px hsla(0, 0%, 0%, 0.12), 0 2px 4px hsla(0, 0%, 0%, 0.1);
 
-  // utilities
+  /* utilities */
   --chamfer: 0.25rem;
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   --shadow-depth: 2px 2px 2px 0;

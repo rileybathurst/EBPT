@@ -1,15 +1,15 @@
 /*------------------------------------*\
-  #backgrounds
-\*------------------------------------*/
+  /* #BACKGROUNDS */
+/*------------------------------------*/
 
-// its like an alert but not quite as much
+/* its like an alert but not quite as much */
 .vigilant {
   background: var(--ember);
   padding: 0.5rem 1rem;
   border-radius: var(--chamfer);
 }
 
-// nesting this doesnt work
+/* nesting this doesnt work */
 .vigilant::selection {
   background-color: hsl(var(--ember-hs), calc(var(--ember-l) - 20%));
 }
@@ -19,7 +19,7 @@
   border-radius: var(--chamfer);
   color: var(--pearl);
 
-  a {
+  & a {
     color: var(--pearl);
     background: var(--emerald);
     display: inline-block;
@@ -27,9 +27,10 @@
     border-radius: var(--chamfer);
   }
 
-  a:hover {
+  & a:hover {
     color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
-    background: var(--moldavite) !important; // over the regular, I don't love this
+    /* over the regular, I don't love this */
+    background: var(--moldavite) !important;
   }
 }
 
@@ -37,9 +38,9 @@
   background-color: var(--moldavite);
 }
 
-#contact > h4, // this naming is kinda terrible
+/* this naming is kinda terrible */
+#contact > h4,
 footer h3 a {
-  @extend .emerald-backed;
+  /* ! this was sass */
+  /* @extend .emerald-backed; */
 }
-
-// #backgrounds

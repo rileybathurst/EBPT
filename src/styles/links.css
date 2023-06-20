@@ -1,3 +1,7 @@
+/*------------------------------------*/
+  /* #LINKS */
+/*------------------------------------*/
+
 a {
   color: var(--stone);
   @media (prefers-color-scheme: dark) {
@@ -9,9 +13,9 @@ a:hover {
   color: var(--moldavite);
 }
 
-/*------------------------------------*\
-  #buttons
-\*------------------------------------*/
+/*------------------------------------*/
+  /* #BUTTONS */
+/*------------------------------------*/
 
 button,
 .buttoned {
@@ -24,15 +28,13 @@ button,
   width: auto;
   cursor: pointer;
   background: var(--moldavite);
-  border: none; // browser reset
+  /* browser reset */
+  border: none;
   color: var(--pearl);
   padding: 8px 16px;
   box-shadow: var(--shade);
-  text-decoration: none; // its obvious its a button
+  text-decoration: none;
   border-radius: var(--chamfer);
-
-  // transition: all 0.2s ease-in-out; // TODO this isnt working: should subtly bring the background in
-  // transition: all 2s ease-in-out; // test:
 }
 
 button:hover,
@@ -40,16 +42,18 @@ button:hover,
   background: var(--moss);
   color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
   box-shadow: var(--shade-hover);
-  // TODO: a subtle border could be nice
+  /* TODO: a subtle border could be nice */
 }
 
 a[href^="tel:"]:before {
   content: "\1F4DE";
   margin-right: 0.5em;
   text-decoration: none;
-  display: inline-block; // needed for the text-decoration
+  /* needed for the text-decoration */
+  display: inline-block;
 
   @media (min-width: 20rem) {
-    content: "\260E"; // this is an emoji on a phone and nice on desktop
+    /* ☎️ */
+    content: "\260E";
   }
 }

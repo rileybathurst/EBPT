@@ -50,7 +50,17 @@ const config: GatsbyConfig = {
   },
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        // syntax: 'postcss-scss',
+        postCssPlugins: [
+          require(`postcss-import`),
+          require('autoprefixer'),
+          require('postcss-nested'),
+        ],
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {

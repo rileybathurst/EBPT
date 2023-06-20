@@ -1,3 +1,7 @@
+/*------------------------------------*/
+  /* #LISTS */
+/*------------------------------------*/
+
 .breadcrumbs {
   display: flex;
   flex-flow: row wrap;
@@ -7,6 +11,5 @@
 
   > li {
     padding-inline-start: 0;
-    // flex: 1 1 auto;
   }
 }

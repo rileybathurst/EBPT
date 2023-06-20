@@ -1,0 +1,132 @@
+/*------------------------------------*\
+  /* #typography */
+/*------------------------------------*/
+
+html {
+  font-family: "brandon-grotesque", sans-serif;
+  /* https://fonts.adobe.com/fonts/brandon-grotesque */
+}
+
+/* * type-scale.com */
+/* this is giving me problems im fixing */
+/* 1.250 Major Third */
+body {
+  font-size: 16px;
+  /* ? why is this not the same as h tags */
+  line-height: 1.563rem;
+  font-style: normal;
+  /* regular weight brandon grotesque */
+  font-weight: 400;
+  background: var(--pearl);
+  color: var(--onyx);
+  @media (prefers-color-scheme: dark) {
+    background: var(--onyx);
+    color: var(--pearl);
+  }
+}
+
+p {
+  margin-top: 0;
+  /* 10px */
+  margin-bottom: 0.625rem;
+}
+
+h1,
+.h1 {
+  /* browser reset */
+  margin-top: 0;
+  /* 48px and were back to classical */
+  font-size: 3rem;
+  /* 60px */
+  line-height: 3.75rem;
+  margin-bottom: 2rem;
+}
+
+.h1__clamped {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  line-height: clamp(3rem, 5vw, 3.75rem);
+}
+
+h2,
+.h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+h3,
+.h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.875rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  margin-bottom: 0.625rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+small,
+.text_small {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  /* light weight brandon grotesque */
+  font-weight: 300;
+}
+
+:is(h1, h2, h3, h4, h5, h6)a {
+  /* take back the spacing */
+  margin-left: -0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--chamfer);
+}
+
+:is(h1, h2, h3, h4, h5, h6)a:hover {
+  background: hsl(0, 0%, calc(var(--pearl-l) - 5%));
+  @media (prefers-color-scheme: dark) {
+    background: hsl(0, 0%, 15%);
+  }
+}
+
+/* TODO: this is only used on h2 that needs to be documented */
+.forty-h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.875rem;
+
+  @media (min-width: 40rem) {
+    /* h2 */
+    font-size: 2.441rem;
+  }
+}

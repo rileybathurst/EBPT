@@ -1,0 +1,459 @@
+/*------------------------------------*\
+  /* #LAYOUT */
+/*------------------------------------*/
+
+body {
+  /* reset */
+  margin: 0;
+  /* hacky but needed I think its a gatsby thing */
+  margin-bottom: -1rem;
+}
+
+.measured {
+  max-width: 40rem;
+  /* lets the top and bottom be defaults */
+  margin-inline: 1rem;
+
+  @media (min-width: 40rem) {
+    margin-inline: auto;
+  }
+}
+
+/* this should always be on a section div etc not on the content */
+.two-fold {
+  /* guess and check */
+  max-width: 66rem;
+  /* this is a major design piece so detemines a lot of the site */
+  /* TODO: needs to be a variable */
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+
+  /* original doesnt nest > * { */
+  > * {
+    /* I should use this more often */
+    flex: 1 1 21rem;
+    max-width: 100%;
+  }
+}
+
+/* The question is ho many places can I use flex but not supports or flex gap */
+/* https://caniuse.com/flexbox-gap */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports */
+/* still kinda low numbers I need a fallback */
+/* TODO Baseline check */
+@supports (gap: 2em) {
+  .two-fold {
+    gap: 2rem;
+  }
+}
+
+/* this is to match the two-fold for things like titles */
+/* this should always be on a section div etc not on the content */
+.single-fold {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.plaque {
+  /* thinking about dropping this down so more fits on each line */
+  /* H4 */
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.25rem;
+  /* this might need to be reinstated at larger sizes */
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.563rem;
+  /* browser rest */
+  padding-left: 0;
+
+  > li {
+    /* guess and check */
+    flex: 1 1 23rem;
+    list-style: none;
+    padding: 1.563rem;
+    border-radius: calc(var(--chamfer) * 2);
+    /* TODO: this could be a touch softer with the new way I am doing color variations */
+    background: var(
+      --emerald
+    );
+    color: var(--onyx);
+
+    @media (prefers-color-scheme: dark) {
+      background: var(--moss);
+      color: var(--pearl);
+    }
+
+    > h4 {
+      margin-top: 0;
+    }
+
+    > ul {
+      /* TODO I dont like this but quick fix */
+      margin-block: 0.5rem;
+      padding-left: 2rem;
+      padding-right: 0.25rem;
+
+      > li {
+        /* h5 */
+        font-size: 1.25rem;
+        list-style: disc;
+      }
+    }
+  }
+}
+
+.inventory {
+  /* thinking about dropping this down so more fits on each line */
+  /* H4 */
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.25rem;
+  /* this might need to be reinstated at larger sizes */
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  color: var(--stone);
+  @media (prefers-color-scheme: dark) {
+    color: var(--hematite);
+
+    ::selection {
+      background: var(--moss);
+    }
+  }
+
+  > li {
+    /* this is the line height of the text */
+    margin-bottom: 1.563rem;
+    /* keeps the vertical rythm */
+    /* guess and check */
+    flex: 1 1 23rem;
+
+    > ul {
+      /* reset */
+      padding-left: 0;
+      /* TODO: I dont like this but quick fix */
+      margin-top: 0.5rem;
+
+      > li {
+        /* h5 */
+        font-size: 1.25rem;
+        list-style: none;
+        color: var(--onyx);
+      }
+    }
+  }
+}
+
+/* the difference is the list-style */
+.catalog {
+  /* H4 */
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.25rem;
+  /* this might need to be reinstated at larger sizes */
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  color: var(--stone);
+  
+  @media (prefers-color-scheme: dark) {
+    color: var(--hematite);
+
+    ::selection {
+      background: var(--moss);
+    }
+  }
+  
+  list-style: none;
+  /* reset */
+  padding-left: 0;
+
+  > li {
+    /* this is the line height of the text */
+    margin-bottom: 1.563rem;
+    /* keeps the vertical rythm */
+    /* guess and check */
+    flex: 1 1 23rem;
+
+    > ul {
+      /* reset */
+      padding-left: 0;
+      /* TODO: I dont like this but quick fix */
+      margin-top: 0.5rem;
+
+      > li {
+        /* h5 */
+        font-size: 1.25rem;
+        list-style: none;
+        color: var(--onyx);
+      }
+    }
+  }
+}
+
+#intake-forms {
+  /* this might be too heavy handed */
+
+  & ul {
+    list-style: none;
+    /* reset */
+    padding-left: 0;
+
+    & li {
+      margin-bottom: 1em;
+
+      & h4 {
+        /* specifically small */
+        margin-bottom: 0.8rem;
+      }
+      
+      & h5 {
+        /* specifically small */
+        margin-bottom: 1rem;
+      }
+      
+      & p {
+        /* I might take this site wide it's currently running default */
+        margin-top: 0; 
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+  /* #HERO */
+/*------------------------------------*/
+
+#overt ul {
+  display: none;
+  /* this is weird you cant do it inside the media query */
+  /* H5 */
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  margin-bottom: 0.625rem;
+  padding-left: 0;
+  margin-block: 0;
+
+  /* TODO: variable */
+  @media (min-width: 70rem) {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+    > li {
+      /* ! this is wrong but its better than not having a drop */
+      margin: 1rem;
+      text-align: center;
+
+      & a {
+        /* ! making this up */
+        padding: 0.25rem 0.5rem; 
+        border-radius: var(--chamfer);
+        transition: 0.25s ease;
+      }
+
+      /* ! this is wrong on small sizes */
+      & a:hover {
+        /* its pretty subtle but i do like it maybe it should be more there */
+        background: hsl(
+          0,
+          0%,
+          calc(var(--pearl-l) - 5%)
+        );
+        @media (prefers-color-scheme: dark) {
+          background: hsl(0, 0%, 15%);
+        }
+      }
+    }
+  }
+}
+
+/* TODO this just removes the secondary menu layer */
+.menu-list {
+  padding-block-end: 0 !important;
+
+  @media (min-width: 70rem) {
+    display: none !important;
+  }
+}
+
+#hero {
+  display: grid;
+  /* ? not sure what im doing with this */
+  grid-template-columns: 1fr 20rem 1fr;
+  margin-bottom: 1rem;
+  /* crop the image */
+  overflow: hidden;
+
+  @media (min-width: 42rem) {
+    /* ? not sure what im doing with this */
+    grid-template-columns: 1fr 40rem 1fr;
+  }
+
+  #logo__backer {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+    border-radius: 50%;
+    /* guess and check */
+    width: 8rem;
+    /* guess and check */
+    height: 8rem;
+    opacity: 0.5;
+    background: var(--pearl);
+    
+    @media (prefers-color-scheme: dark) {
+      background: var(--onyx);
+    }
+  }
+
+  #logo__border {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    border: 2px var(--pearl) solid;
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--onyx);
+    }
+  }
+
+  #logo {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+    /* above the backer and border */
+    z-index: 1;
+    /* even tho this is after in the html it doesnt seem to be above */
+
+    & a {
+      display: grid;
+      /* keeps the icon centered in the backer */
+    }
+  }
+
+  .gatsby-image-wrapper {
+    grid-row: 1;
+    grid-column: 1/4;
+    z-index: -1;
+    min-height: 10rem;
+    /* guess and check */
+    max-height: 20vh;
+    opacity: 0.33;
+    border-start-start-radius: 0;
+  }
+}
+
+/*------------------------------------*\
+  /* #CONTACT */
+/*------------------------------------*/
+
+#contact {
+  > h4 {
+    /* less line-breaks */
+    width: max-content;
+  }
+
+  .faux-link {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.space-start {
+  padding-left: 0.5rem;
+}
+
+.space-end {
+  padding: 0.5rem 1rem;
+}
+
+/*------------------------------------*\
+  /* #footer */
+/*------------------------------------*/
+
+#footer-social {
+  border-top: 1rem solid var(--emerald);
+  background: var(--moss);
+  color: var(--pearl);
+  /* ! why this number */
+  padding: 1.953rem;
+
+  & a {
+    /* conflicts with text color */
+    color: var(--pearl);
+    /* has background tho */
+  }
+
+  & ul {
+    list-style: none;
+    /* reset */
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+
+    & li {
+      padding: 0.5rem;
+
+      & a {
+        /* the svg to sit center */
+        display: flex;
+
+        & svg {
+          margin: 0;
+          padding: 0.5rem;
+        }
+
+        & svg:hover {
+          fill: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+        }
+      }
+
+      & a:hover {
+        background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%));
+        /* match all icons having a rounded edge */
+        border-radius: var(--chamfer);
+      }
+    }
+  }
+}
+
+/* moving this changes the specificity high enough to override */
+/* :is(h1, h2, h3, h4, h5, h6)a:hover { */
+#footer-social a:hover {
+  color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+  background: hsl(var(--moss-hs), calc(var(--moss-l) - 10%)) !important;
+}
+
+#footer-social a:focus {
+  color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+  background: hsl(var(--emerald__base), var(--pitch));
+}
+
+/*------------------------------------*/
+  /* #BORDERBLOCK */
+/*------------------------------------*/
+
+.borderblock {
+  border-radius: var(--chamfer);
+  border: 2px solid var(--emerald);
+  padding: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--moss);
+  }
+
+  & h3 {
+    font-size: 1.5rem;
+    /* theres a padding on the border */
+    margin-block: 0;
+  }
+}

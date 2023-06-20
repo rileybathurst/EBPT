@@ -1,6 +1,6 @@
 /*------------------------------------*\
-  #images
-\*------------------------------------*/
+  /* #IMAGES */
+/*------------------------------------*/
 
 svg {
   width: 100%;
@@ -13,7 +13,7 @@ svg {
   }
 }
 
-// keep these small till i deal with them
+/* keep these small till i deal with them */
 a svg {
   fill: var(--pearl);
 }
@@ -23,7 +23,7 @@ a svg:hover {
 }
 
 /*------------------*/
-//  #SPECIFICS
+  /* #SPECIFICS */
 /*------------------*/
 
 @media (max-width: 40rem) {
@@ -31,7 +31,7 @@ a svg:hover {
     aspect-ratio: 1;
   }
 
-  // custom for this shot to reframe
+  /* custom for this shot to reframe */
   .team-page .jessica img {
     object-position: 100% 25%;
   }
@@ -42,7 +42,7 @@ a svg:hover {
 }
 
 /*------------------*/
-//  #TEAMHEADS
+  /* #TEAMHEADS */
 /*------------------*/
 
 .team-heads {
@@ -51,7 +51,8 @@ a svg:hover {
   justify-content: space-evenly;
 
   > div {
-    flex: 0 1 4rem; // guess and check
+    /* guess and check */
+    flex: 0 1 4rem;
     margin: 0.5rem 1rem;
     text-align: center;
     display: block;
@@ -60,7 +61,6 @@ a svg:hover {
       > .gatsby-image-wrapper {
         border-radius: 50%;
         max-height: 8rem;
-        // transition: 0.2s; // I want this but after it loads so I need to sort that
         border: 2px white solid;
         box-shadow: var(--shadow-depth) var(--shade);
         margin-block-end: 0.5rem;
@@ -69,32 +69,33 @@ a svg:hover {
           box-shadow: var(--shadow-depth) var(--dark-shade);
         }
 
-        // this is needed for safari and possibly others
+        /* this is needed for safari and possibly others */
         img {
           border-radius: 50%;
         }
-      } // .gatsby-image-wrapper
-    } // a
+      }
+    }
 
     > a:hover p {
       border-radius: var(--chamfer);
+      /* TODO: variable */
       background: hsl(0, 0%, 92.5%);
 
       @media (prefers-color-scheme: dark) {
+        /* TODO: variable */
         background: hsl(0, 0%, 17.5%);
       }
     }
 
     > a:hover > .gatsby-image-wrapper {
       box-shadow: var(--shadow-depth) var(--shade-hover);
-      // border-color: var(--emerald);
       @media (prefers-color-scheme: dark) {
         box-shadow: var(--shadow-depth) var(--dark-shade-hover);
         border-color: var(--moldavite);
       }
     }
-  } // div
-} // .team-heads
+  }
+}
 
 .image-stack {
   display: flex;
@@ -102,8 +103,9 @@ a svg:hover {
   gap: 1rem;
 
   > .gatsby-image-wrapper,
-  div {
-    flex: 1 1 8rem; // guess and check
+  & div {
+    /* guess and check */
+    flex: 1 1 8rem;
   }
 
   > div > .gatsby-image-wrapper {
@@ -112,10 +114,11 @@ a svg:hover {
 }
 
 .slender-image {
-  height: 8rem; // seems like it centers the image better than max-height
+  /* seems like it centers the image better than max-height */
+  height: 8rem;
   overflow: hidden;
   display: grid;
-  // ppearl-content: center;
+  /* TODO Variable */
   margin-bottom: 2.9295rem;
 }
 
@@ -123,15 +126,13 @@ a svg:hover {
   border-radius: var(--chamfer);
 }
 
-// #images
-
-// this isnt working
+/* TODO: this isnt working */
 header a svg:hover {
   fill: var(--moldavite);
 }
 
 /*------------------------------------*/
-//  #INTERSECTIONOBSERVER
+  /* #INTERSECTIONOBSERVER */
 /*------------------------------------*/
 
 #gymImage {
@@ -148,6 +149,7 @@ header a svg:hover {
 #treating {
   transition: 2s;
 }
+
 #treating.hidden {
   transform: translate3d(0, -1rem, 0);
   opacity: 0.95;
@@ -170,6 +172,7 @@ header a svg:hover {
 #poolImage {
   transition: 2s;
 }
+
 #poolImage.hidden {
   transform: translate3d(0, -1rem, 0);
   opacity: 0.95;
@@ -179,7 +182,7 @@ header a svg:hover {
 }
 
 /*------------------------------------*/
-//  #KILEY IMAGE
+  /* #KILEY IMAGE */
 /*------------------------------------*/
 
 #kileyImage {
@@ -187,12 +190,11 @@ header a svg:hover {
 }
 
 /*------------------------------------*/
-//  #SPIN
+  /* #SPIN */
 /*------------------------------------*/
 
-// built upon https://codepen.io/giana/pen/yYBpVY
-
-// the first quarter is cheating but its fast enough you don't see it
+/* built upon https://codepen.io/giana/pen/yYBpVY */
+/* the first quarter is cheating but its fast enough you don't see it */
 
 .spin .gatsby-image-wrapper {
   border: 0;
@@ -200,25 +202,27 @@ header a svg:hover {
   box-shadow: none;
   overflow: unset;
 
-  // Required, since we're setting absolute on pseudo-elements
+  /* Required, since we're setting absolute on pseudo-elements */
   position: relative;
   vertical-align: middle;
 
   &::before {
     transition: border-top-color 0.15s linear,
-      // Stagger border appearances
+      /* Stagger border appearances */
       border-right-color 0.15s linear 0.1s,
       border-bottom-color 0.15s linear 0.2s;
   }
 
   &::after {
-    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s; // Solid edge post-rotation
+    /* Solid edge post-rotation */
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
   }
 
   &::before,
   &::after {
     transition: 0.5s;
-    top: -2px; // opposite to the border-width
+    /* opposite to the border-width */
+    top: -2px;
     left: -2px;
     box-sizing: inherit;
     content: "";
@@ -235,9 +239,13 @@ header a svg:hover {
   }
 
   &:hover::after {
-    border-top: 2px solid var(--emerald); // Shows border
-    border-left-width: 2px; // Solid edges, invisible borders
-    border-right-width: 2px; // Solid edges, invisible borders
-    transform: rotate(270deg); // Rotate around circle
+    /* Shows border */
+    border-top: 2px solid var(--emerald);
+    /* Solid edges, invisible borders */
+    border-left-width: 2px;
+    /* Solid edges, invisible borders */
+    border-right-width: 2px;
+    /* Rotate around circle */
+    transform: rotate(270deg);
   }
 }
