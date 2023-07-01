@@ -13,7 +13,7 @@ html {
 body {
   font-size: 16px;
   /* ? why is this not the same as h tags */
-  line-height: 1.563rem;
+  line-height: 1.563rem; /* 25px */
   font-style: normal;
   /* regular weight brandon grotesque */
   font-weight: 400;

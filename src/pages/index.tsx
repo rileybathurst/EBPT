@@ -84,11 +84,18 @@ const IndexPage = () => {
         <hr />
 
         {/* // TODO: when display mosaic becomes available this will be super useful */}
+        {/* https://codepen.io/jensimmons/full/QWjqbJj */}
+        {/* https://caniuse.com/mdn-css_properties_grid-template-rows_masonry */}
         <section id="gallery" className="single-fold image-stack">
-          <GymIm />
-          <Treating />
-          <PoolImage />
-          <NancyImage />
+          <div>
+            <GymIm />
+            <Treating />
+          </div>
+
+          <div>
+            <PoolImage />
+            <NancyImage />
+          </div>
         </section>
 
         <hr />

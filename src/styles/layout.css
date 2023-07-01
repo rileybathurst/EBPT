@@ -78,9 +78,7 @@ body {
     padding: 1.563rem;
     border-radius: calc(var(--chamfer) * 2);
     /* TODO: this could be a touch softer with the new way I am doing color variations */
-    background: var(
-      --emerald
-    );
+    background: var(--emerald);
     color: var(--onyx);
 
     @media (prefers-color-scheme: dark) {
@@ -104,6 +102,10 @@ body {
         list-style: disc;
       }
     }
+  }
+
+  *::selection {
+    background: var(--ember);
   }
 }
 

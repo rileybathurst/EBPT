@@ -36,7 +36,24 @@
   --kingly-cloud: hsl(0, 0%, 87.5%);
   --brilliance: hsl(0, 0%, 97.5%);
 
-  /* https://en.wikipedia.org/wiki/Largest_living_flying_birds_by_wingspan */
+    /* Color Bases */
+    --pitch: 2.5%;
+    --dark: 12.5%;
+    --dull: 25%;
+    --dim: 37.5%;
+    --mid: 50%;
+    --glow: 62.5%;
+    --light: 75%;
+    --bright: 87.5%;
+    --brilliant: 97.5%;
+  
+    --pearl-l: 97.3%;
+
+  /*------------------------------------*/
+    /* #WIDTHS */
+    /* https://en.wikipedia.org/wiki/Largest_living_flying_birds_by_wingspan */
+  /*------------------------------------*/
+  
   --swan: 20rem;
   --vulture: 30rem;
   --stork: 40rem;
@@ -44,20 +61,10 @@
   --pelican: 60rem;
   --albatross: 80rem;
 
-  /* Color Bases */
-  --pitch: 2.5%;
-  --dark: 12.5%;
-  --dull: 25%;
-  --dim: 37.5%;
-  --mid: 50%;
-  --glow: 62.5%;
-  --light: 75%;
-  --bright: 87.5%;
-  --brilliant: 97.5%;
-
-  --pearl-l: 97.3%;
-
-  /* shadows */
+  /*------------------------------------*/
+    /* #SHADOWS */
+  /*------------------------------------*/
+  
   --shade: hsla(0, 0%, 5.9%, 0.2);
   --dark-shade: hsla(0, 0%, 90%, 0.2);
 
@@ -74,7 +81,10 @@
 
   --penumbra: 0 3px 6px hsla(0, 0%, 0%, 0.12), 0 2px 4px hsla(0, 0%, 0%, 0.1);
 
-  /* utilities */
+  /*------------------------------------*/
+    /* #UTILITIES */
+  /*------------------------------------*/
+
   --chamfer: 0.25rem;
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   --shadow-depth: 2px 2px 2px 0;
