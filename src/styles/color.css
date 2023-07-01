@@ -41,6 +41,21 @@
 /* this naming is kinda terrible */
 #contact > h4,
 footer h3 a {
-  /* ! this was sass */
-  /* @extend .emerald-backed; */
+  background: var(--emerald);
+  border-radius: var(--chamfer);
+  color: var(--pearl);
+
+  & a {
+    color: var(--pearl);
+    background: var(--emerald);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--chamfer);
+  }
+
+  & a:hover {
+    color: hsl(0, 0%, calc(var(--pearl-l) + 20%));
+    /* over the regular, I don't love this */
+    background: var(--moldavite) !important;
+  }
 }
