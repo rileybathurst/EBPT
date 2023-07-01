@@ -38,9 +38,7 @@ const Footer = () => (
           <a href="mailto:ebpt.laketahoe@gmail.com">Email: ebpt.laketahoe@gmail.com</a>
         </h4>
       </section>
-      {/* #contact */}
     </div>
-    {/* .two-fold */}
 
     <FooterSocial />
   </footer>
