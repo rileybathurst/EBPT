@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, Script } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { SEO } from "../../components/seo";
-
+import { useSiteMetadata } from "../../hooks/use-site-metadata"
 import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
 
@@ -107,7 +107,7 @@ export default PelvicHealthPage
 export const Head = () => {
   return (
     <SEO
-      title="Pelvic Health - Emerald Bay Physical Therapy"
+      title={`Pelvic Health | ${useSiteMetadata().title}`}
       description="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?"
     >
       <Script type="application/ld+json">
@@ -129,6 +129,6 @@ export const Head = () => {
           }
         `}
       </Script>
-    </SEO>
+    </SEO >
   );
 }

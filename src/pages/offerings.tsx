@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { SEO } from "../components/seo";
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import OfferingsList from "../components/offerings-list";
@@ -42,7 +42,7 @@ export default OfferingsPage;
 export const Head = () => {
   return (
     <SEO
-      title="Offerings | Emerald Bay Physical Therapy"
+      title={`Offerings | ${useSiteMetadata().title}`}
       description="Our Physical Therapy and Wellness Offerings."
     >
       <script type="application/ld+json">
@@ -76,6 +76,6 @@ export const Head = () => {
         }
       `}
       </script>
-    </SEO>
+    </SEO >
   )
 };

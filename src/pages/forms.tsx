@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { SEO } from "../components/seo";
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import FormList from "../components/form-list";
@@ -46,7 +46,7 @@ export default FormsPage;
 export const Head = () => {
   return (
     <SEO
-      title="Patient Intake Forms | Emerald Bay Physical Therapy"
+      title={`Patient Intake Forms | ${useSiteMetadata().title}`}
       description="Fill in forms online"
     />
   );

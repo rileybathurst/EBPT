@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { SEO } from "../components/seo";
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 import TeamHeads from "../components/team-heads"
@@ -47,7 +47,7 @@ export default AboutPage
 export const Head = () => {
   return (
     <SEO
-      title="About Us | Emerald Bay Physical Therapy"
+      title={`About Us | ${useSiteMetadata().title}`}
       description="Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy"
     />
   );

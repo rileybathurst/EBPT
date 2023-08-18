@@ -1,0 +1,24 @@
+/*------------------------------------*/
+/* #CARDS */
+/*------------------------------------*/
+
+.deck {
+  display: grid;
+  max-width: 66rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin: 0; /* browser reset */
+  margin-inline: 1rem;
+  padding: 0; /* browser reset */
+  gap: 1rem;
+  list-style: none; /* browser reset */
+
+  @media (min-width: 20rem) {
+    margin-inline: auto;
+  }
+
+  .card {
+    background-color: var(--kingly-cloud);
+    border-radius: var(--chamfer);
+    padding: 0.5rem;
+  }
+}

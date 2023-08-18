@@ -1,6 +1,8 @@
+// TODO: add the link to where this is for anlytics
+
 import * as React from "react";
 import { Link } from "gatsby";
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import { SEO } from "../components/seo";
@@ -38,13 +40,13 @@ export default NotFoundPage;
 export const Head = () => {
   return (
     <SEO
-      title="404 - Emerald bay Physical Therapy"
+      title={`404 | ${useSiteMetadata().title}`}
       description="Sorry we couldn’t find what you were looking for"
-      itemScope='true'
-      pathname=''
+    // itemScope='true'
+    // pathname=''
     >
-      <script type="application/ld+json">{JSON.stringify({})}</script>
-    </SEO>
+      {/* <script type="application/ld+json">{JSON.stringify({})}</script> */}
+    </SEO >
   ); // TODO: Make this everywhere // it possibly needs variables etc
   // TODO add the rest of this
 }

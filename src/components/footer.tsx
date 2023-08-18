@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import FooterSocial from "./footer-social";
+import News from "./news";
 
 const Footer = () => (
   <footer>
@@ -14,6 +16,13 @@ const Footer = () => (
         </h4>
         {/* // TODO: section it so the .two-fold doesnt get messy */}
         <hr className="hide-above-40 two-fold__hr" />
+
+        <h5>
+          <Link to="/news">
+            News
+          </Link>
+        </h5>
+        <News />
       </section>
 
       <section id="contact">

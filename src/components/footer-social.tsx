@@ -1,16 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 
-function ThisYear() {
-  let today = new Date().getFullYear();
-  // console.log(today);
-  return (
-    <>
-      {today}
-    </>
-  );
-}
-
 const FooterSocial = () => (
   <section id="footer-social">
     {/* // TODO fix the hovers to square  */}
@@ -122,7 +112,7 @@ const FooterSocial = () => (
     {/* I need to add this to an auto update */}
     <h4 className="h5 h-center">
       <Link to="/" title="to the front page">
-        Emerald Bay Physical Therapy <ThisYear />
+        Emerald Bay Physical Therapy {Date().slice(11, 15)}
       </Link>
     </h4>
   </section>

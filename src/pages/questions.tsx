@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { SEO } from "../components/seo";
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 // import SeoOld from "../components/seo-old"; // this syntax changes on the new one
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
@@ -289,10 +289,11 @@ export default QuestionsPage;
 export const Head = () => {
   return (
     <SEO
-      title="Questions | Emerald Bay Physical Therapy"
+      title={`Questions | ${useSiteMetadata().title}`}
     >
-      <Script type="application/ld+json">
-        {`
+      <Script type="application /ld + json">
+        {
+          `
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -396,7 +397,7 @@ export const Head = () => {
             ]
           }
         `}
-      </Script>
-    </SEO>
+      </Script >
+    </SEO >
   );
 }

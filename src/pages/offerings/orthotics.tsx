@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, Script } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { SEO } from "../../components/seo";
-
+import { useSiteMetadata } from "../../hooks/use-site-metadata"
 import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
 import Title from "../../components/title"
@@ -73,8 +73,8 @@ export default AboutPage
 export const Head = () => {
   return (
     <SEO
-      title="Orthotics - Emerald Bay Physical Therapy"
-      description="Suffer from foot, knee, or hip pain? Custom orthotics might be right for you!"
+      title={`Orthotics | ${useSiteMetadata().title}`}
+      description="Suffer from foot, knee, or hip pain?Custom orthotics might be right for you!"
     >
       <Script type="application/ld+json">
         {`
@@ -95,6 +95,6 @@ export const Head = () => {
           }
         `}
       </Script>
-    </SEO>
+    </SEO >
   );
 }

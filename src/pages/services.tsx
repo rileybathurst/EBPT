@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { SEO } from "../components/seo";
-
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "../components/header";
 import SlimFooter from "../components/slim-footer";
 import Liz from "../components/liz";
@@ -270,7 +270,7 @@ export default ServicesPage;
 export const Head = () => {
   return (
     <SEO
-      title="Services | Emerald Bay Physical Therapy"
+      title={`Services | ${useSiteMetadata().title}`}
       description="This service is a form of rehabilitation for those who have medical
       problems or other health-related conditions that may limit their
       ability to move and function in their daily lives."
