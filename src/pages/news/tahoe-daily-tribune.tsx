@@ -86,9 +86,11 @@ export const Head = () => {
           {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
+            "url": "${useSiteMetadata().siteUrl}/news/tahoe-daily-tribune/",
             "headline": "Tahoe Daily Tribune Article",
             "image": "https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-tahoe_daily_tribune-og_image-fs8.png"
             ],
+            "articleBody": "Check out our business feature in the Tribune",
             "datePublished": "2023-08-11T08:00:00+08:00",
             "publisher": {
               "@type": "Organization",
