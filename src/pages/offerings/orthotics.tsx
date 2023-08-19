@@ -5,8 +5,6 @@ import { SEO } from "../../components/seo";
 import { useSiteMetadata } from "../../hooks/use-site-metadata"
 import Header from "../../components/header"
 import SlimFooter from "../../components/slim-footer"
-import Title from "../../components/title"
-import Scope from "../../components/scope"
 
 function OrthoticsImage() {
   return <StaticImage
@@ -35,6 +33,7 @@ const AboutPage = () => {
 
       <hr />
 
+      {/* // TODO: move the itemscope to the head */}
       <main itemScope itemType="https://schema.org/Article">
         <div className="two-fold">
           <OrthoticsImage />
@@ -74,24 +73,35 @@ export const Head = () => {
   return (
     <SEO
       title={`Orthotics | ${useSiteMetadata().title}`}
-      description="Suffer from foot, knee, or hip pain?Custom orthotics might be right for you!"
+      description="Suffer from foot, knee, or hip pain? Custom orthotics might be right for you!"
     >
+      {/* // TODO: add variables in here */}
       <Script type="application/ld+json">
         {`
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "itemListElement": [{
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Offerings",
-              "item": "https://emeraldbay.physio/offerings"
-            },{
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Orthotics",
-              "item": "https://emeraldbay.physio/offerings/orthotics"
-            }]
+            "itemListElement":
+            [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item":
+                {
+                  "name": "Offerings",
+                  "@id": "https://emeraldbay.physio/offerings"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item":
+                {
+                  "name": "Orthotics",
+                  "@id": "https://emeraldbay.physio/offerings/orthotics"
+                }
+              }
+            ]
           }
         `}
       </Script>
