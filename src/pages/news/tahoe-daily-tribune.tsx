@@ -65,23 +65,7 @@ export const Head = () => {
     >
       <Script type="application/ld+json">
         {`
-          {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "news",
-                "item": "${useSiteMetadata().siteUrl}/news/"
-              },{
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Tahoe Daily Tribune Article",
-                "item": "${useSiteMetadata().siteUrl}}/news/tahoe-daily-tribune/"
-              }
-            ]
-          },
+
 
           {
             "@context": "https://schema.org",
@@ -103,3 +87,23 @@ export const Head = () => {
     </SEO>
   )
 };
+
+/* 
+TODO: removed for testing
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "news",
+      "item": "${useSiteMetadata().siteUrl}/news/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tahoe Daily Tribune Article",
+      "item": "${useSiteMetadata().siteUrl}}/news/tahoe-daily-tribune/"
+    }
+  ]
+}, */
