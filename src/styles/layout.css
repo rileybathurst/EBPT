@@ -9,6 +9,11 @@ body {
   margin-bottom: -1rem;
 }
 
+.pelican {
+  max-width: var(--pelican);
+  margin-inline: auto;
+}
+
 .measured {
   max-width: 40rem;
   /* lets the top and bottom be defaults */
@@ -179,11 +184,13 @@ body {
 
   > li {
     /* this is the line height of the text */
-    margin-bottom: 1.563rem;
+    padding-block-end: 1.563rem;
+    margin-block-end: 1.563rem;
     /* keeps the vertical rythm */
     /* guess and check */
     flex: 1 1 23rem;
 
+    
     > ul {
       /* reset */
       padding-left: 0;
@@ -195,14 +202,87 @@ body {
         font-size: 1.25rem;
         list-style: none;
         color: var(--onyx);
+
+        @media (prefers-color-scheme: dark) {
+          color: var(--pearl);
+        }
       }
     }
   }
+
+  > li:has(.gatsby-image-wrapper) {
+    display: grid;
+    grid-template-columns: 1fr 1.67fr;
+    column-gap: 1rem;
+
+    > h3 {
+      grid-column: 2;
+    }
+
+    .gatsby-image-wrapper {
+      grid-row: 1/4;
+      grid-column: 1;
+      mix-blend-mode: darken;
+      aspect-ratio: 1;
+      margin-block-start: 1rem;
+
+      @media (prefers-color-scheme: dark) {
+        mix-blend-mode: lighten;
+        border-radius: 50%;
+        margin: 1rem;
+        opacity: 0.9;
+      }
+    }
+
+    p {
+      grid-column: 2;
+    }
+
+    a {
+      grid-column: 2;
+    }
+  }
+
+  a {
+    font-weight: 700;
+  }
+
+  li:has(ul) {
+    border: none;
+    background-color: transparent;
+
+    li {
+      font-size: 2rem;
+      margin-block-end: 1rem;
+    }
+  }
+
+  a {
+    color: var(--pearl);
+  }
 }
 
-#intake-forms {
-  /* this might be too heavy handed */
+.catalog-wide > * {
+  flex: 1 1 60rem !important; /* TODO get past the important */
+  border-block-end: 0;
+  border-radius: 1rem;
+  padding-inline: 1rem;
+  background-color: hsl(var(--emerald__base), var(--brilliant));
+  border: 1px solid hsl(var(--emerald__base), var(--light));
 
+@media (prefers-color-scheme: dark) {
+  background-color: hsl(var(--emerald__base), 5%);
+  border-color: hsl(var(--emerald__base), var(--dark));
+  color: whitesmoke;
+  }
+}
+
+/*------------------------------------*/
+/* #INTAKE FORMS */
+/*------------------------------------*/
+
+
+#intake-forms {
   & ul {
     list-style: none;
     /* reset */

@@ -21,12 +21,8 @@ const OfferingsPage = () => {
     <>
       <Header />
 
-      <main className="measured">
+      <main className="pelican">
         <h1>Our Physical Therapy and Wellness Offerings</h1>
-
-        <div className="slender-image">
-          <Kiley2 />
-        </div>
 
         <OfferingsList />
       </main>
@@ -38,6 +34,8 @@ const OfferingsPage = () => {
 };
 
 export default OfferingsPage;
+
+// TODO add all the offerings here
 
 export const Head = () => {
   return (

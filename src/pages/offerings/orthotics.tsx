@@ -17,7 +17,7 @@ function OrthoticsImage() {
 }
 
 
-const AboutPage = () => {
+const OrthoticsPage = () => {
   return (
     <>
       <Header />
@@ -38,9 +38,14 @@ const AboutPage = () => {
         <div className="two-fold">
           <OrthoticsImage />
           <div className="two-fold-content">
+            <StaticImage
+              src="https://ebpt.s3.us-west-1.amazonaws.com/images/firefly/Firefly+corporate+illustration+of+orthotics+over+a+flat+emerald+green+circle+with+texture+on+a+white.jpg"
+              alt="icon symbolizing aquatic therapy"
+              className="offering-icon"
+            />
             <hgroup>
               {/* // TODO needs flex organization */}
-              <h4>Offerings</h4>
+              {/* <h4>Offerings</h4> */}
               <h1 className="h1__clamped" itemProp="name">Orthotics</h1>
             </hgroup>
             <section itemProp="description">
@@ -67,7 +72,7 @@ const AboutPage = () => {
   )
 }
 
-export default AboutPage
+export default OrthoticsPage
 
 export const Head = () => {
   return (

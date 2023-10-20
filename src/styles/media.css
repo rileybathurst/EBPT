@@ -249,3 +249,23 @@ header a svg:hover {
     transform: rotate(270deg);
   }
 }
+
+/*------------------------------------*/
+  /* #OFFERINGS */
+/*------------------------------------*/
+
+.offering-image {
+  mix-blend-mode: darken;
+  max-width: 50% !important; /* TODO: the two-fold is overwriting this */
+
+  @media (prefers-color-scheme: dark) {
+    mix-blend-mode: lighten;
+    border-radius: 50%;
+    opacity: 0.9;
+  }
+}
+
+.offering-icon {
+  mix-blend-mode: darken;
+  max-width: 10rem;
+}
