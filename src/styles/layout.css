@@ -257,8 +257,10 @@ body {
     }
   }
 
-  a {
-    color: var(--pearl);
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: var(--pearl);
+    }
   }
 }
 
