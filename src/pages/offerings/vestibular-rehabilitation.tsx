@@ -54,11 +54,12 @@ const VestibularRehabilitationPage = () => {
 
 export default VestibularRehabilitationPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Vestibular Rehabilitation | ${useSiteMetadata().title}`}
       description="If you suffer from dizziness or balance problems, vestibular rehabilitation may offer the help you need. In addition, dizziness and balance issues can lead to headaches and / or muscle fatigue"
+      url={location.pathname}
     >
       {/* // TODO: add variables in here */}
       <Script type="application/ld+json">

@@ -267,13 +267,14 @@ const ServicesPage = () => {
 
 export default ServicesPage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Services | ${useSiteMetadata().title}`}
       description="This service is a form of rehabilitation for those who have medical
       problems or other health-related conditions that may limit their
       ability to move and function in their daily lives."
+      url={location.pathname}
     />
   )
 };

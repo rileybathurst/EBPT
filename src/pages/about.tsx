@@ -44,11 +44,12 @@ const AboutPage = () => {
 
 export default AboutPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`About Us | ${useSiteMetadata().title}`}
       description="Emerald Bay Physical Therapy is a comprehensive center for orthopedic and manual physical therapy"
+      url={location.pathname}
     />
   );
 }

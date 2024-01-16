@@ -104,11 +104,12 @@ const PelvicHealthPage = () => {
 
 export default PelvicHealthPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Pelvic Health | ${useSiteMetadata().title}`}
       description="Do you have pain in the pelvis, low back or hips that is associated with sitting, walking, urination, or intercourse?"
+      url={location.pathname}
     >
       <Script type="application/ld+json">
         {`

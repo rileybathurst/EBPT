@@ -37,16 +37,14 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`404 | ${useSiteMetadata().title}`}
       description="Sorry we couldn’t find what you were looking for"
-    // itemScope='true'
-    // pathname=''
-    >
-      {/* <script type="application/ld+json">{JSON.stringify({})}</script> */}
-    </SEO >
+      // itemScope='true'
+      url={location.pathname}
+    />
   ); // TODO: Make this everywhere // it possibly needs variables etc
   // TODO add the rest of this
 }

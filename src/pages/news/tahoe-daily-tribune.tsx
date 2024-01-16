@@ -53,14 +53,14 @@ const TahoeDailyTribunePage = () => {
 
 export default TahoeDailyTribunePage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       // TODO: bring in the name as a prop
       title={`Tahoe Daily Tribune Article | ${useSiteMetadata().title}`}
       description="Happenings from around the clinic."
       image="https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-tahoe_daily_tribune-og_image-fs8.png"
-
+      url={location.pathname}
     // TODO: article
     >
       <Script type="application/ld+json">

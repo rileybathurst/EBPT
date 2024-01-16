@@ -43,11 +43,12 @@ const FormsPage = () => {
 
 export default FormsPage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Patient Intake Forms | ${useSiteMetadata().title}`}
       description="Fill in forms online"
+      url={location.pathname}
     />
   );
 }

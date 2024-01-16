@@ -286,10 +286,11 @@ const QuestionsPage = () => {
 
 export default QuestionsPage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Questions | ${useSiteMetadata().title}`}
+      url={location.pathname}
     >
       <Script type="application /ld + json">
         {

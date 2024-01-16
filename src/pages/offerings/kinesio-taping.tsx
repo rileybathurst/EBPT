@@ -52,11 +52,12 @@ const KinessioTherapyPage = () => {
 
 export default KinessioTherapyPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Kinessio Therapy | ${useSiteMetadata().title}`}
       description="Kinesiology Tape is made from a stretchy fabric with adhesive applied in a wavelike pattern on the back"
+      url={location.pathname}
     >
       {/* // TODO: add variables in here */}
       <Script type="application/ld+json">

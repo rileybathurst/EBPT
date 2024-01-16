@@ -188,11 +188,12 @@ export default TeamPage;
 
 // TODO this isnt the way to do it making a new local business not working on the usual either add it to all or not at all?
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Team | ${useSiteMetadata().title}`}
       description="Meet Our Team"
+      url={location.pathname}
     />
   );
 }

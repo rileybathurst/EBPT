@@ -20,7 +20,8 @@ export const SEO = ({
   title,
   description,
   pathname,
-  children
+  children,
+  url
 }) => {
 
   // these are what I grab from the siteMetadata
@@ -29,7 +30,6 @@ export const SEO = ({
     title: defaultTitle,
     description: defaultDescription,
     name,
-    url,
     siteUrl,
     image,
     ogImage,
@@ -54,9 +54,9 @@ export const SEO = ({
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image}`,
-    twitterImage: `${siteUrl}${image}`,
-    url: `${siteUrl}${pathname || ``}`,
+    image: `${siteUrl}/${image}`,
+    twitterImage: `${siteUrl}/${image}`,
+    url: `${siteUrl}${url || ``}`,
   }
 
   // console.log('location', location);
@@ -68,7 +68,13 @@ export const SEO = ({
       {/* // TODO I think I can do more moving these away from meta tags */}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
+      <meta property='og:title' content={seo.title} />
+
+      <link rel='canonical' href={seo.url} />
+      <meta property='og:url' content={seo.url} />
+
       <meta name="image" content={seo.image} />
+
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

@@ -37,11 +37,12 @@ export default OfferingsPage;
 
 // TODO add all the offerings here
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Offerings | ${useSiteMetadata().title}`}
       description="Our Physical Therapy and Wellness Offerings."
+      url={location.pathname}
     >
       <script type="application/ld+json">
         {`

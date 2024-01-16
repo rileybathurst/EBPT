@@ -50,11 +50,12 @@ const AquaticTherapyPage = () => {
 
 export default AquaticTherapyPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Aquatic Therapy | ${useSiteMetadata().title}`}
       description="Aquatic therapy is conducted in a swimming pool that is temperature controlled. It can allow a person to perform movements at an earlier stage of rehabilitation due to reduced weight-bearing from the buoyancy of the water"
+      url={location.pathname}
     >
       {/* // TODO: add variables in here */}
       <Script type="application/ld+json">

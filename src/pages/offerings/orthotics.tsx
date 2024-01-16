@@ -74,11 +74,12 @@ const OrthoticsPage = () => {
 
 export default OrthoticsPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`Orthotics | ${useSiteMetadata().title}`}
       description="Suffer from foot, knee, or hip pain? Custom orthotics might be right for you!"
+      url={location.pathname}
     >
       {/* // TODO: add variables in here */}
       <Script type="application/ld+json">

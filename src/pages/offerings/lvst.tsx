@@ -53,11 +53,12 @@ const VestibularRehabilitationPage = () => {
 
 export default VestibularRehabilitationPage
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`LSVT BIG Treatment for Parkinson’s Disease | ${useSiteMetadata().title}`}
       description="LSVT BIG trains people with Parkinson’s to move their bodies normally. As the disease progresses, movements get smaller and slower, yet feel normal to the involved person"
+      url={location.pathname}
     >
       {/* // TODO: add variables in here */}
       <Script type="application/ld+json">

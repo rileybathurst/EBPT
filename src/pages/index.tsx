@@ -197,9 +197,10 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
+
     // stay gold
     />
   );

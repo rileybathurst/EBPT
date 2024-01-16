@@ -37,11 +37,12 @@ const NewsPage = () => {
 
 export default NewsPage;
 
-export const Head = () => {
+export const Head = ({ location }) => {
   return (
     <SEO
       title={`News | ${useSiteMetadata().title}`}
       description="Happenings from around the clinic"
+      url={location.pathname}
     />
   )
 };
