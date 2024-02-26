@@ -1613,7 +1613,7 @@ type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allImageSharp: ImageSharpConnection;
-  readonly allMarkdownRemark: MarkdownRemarkConnection;
+  // readonly allMarkdownRemark: MarkdownRemarkConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly allSiteFunction: SiteFunctionConnection;
@@ -1655,12 +1655,12 @@ type Query_allImageSharpArgs = {
 };
 
 
-type Query_allMarkdownRemarkArgs = {
+/* type Query_allMarkdownRemarkArgs = {
   filter: InputMaybe<MarkdownRemarkFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<MarkdownRemarkSortInput>>>;
-};
+}; */
 
 
 type Query_allSiteArgs = {
