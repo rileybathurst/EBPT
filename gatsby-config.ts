@@ -105,7 +105,8 @@ const config: GatsbyConfig = {
       },
     },
     // helps with the CSP in a substatial way
-    "gatsby-plugin-netlify",
+    // netlify asked to turn it off check the observatory score
+    // "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

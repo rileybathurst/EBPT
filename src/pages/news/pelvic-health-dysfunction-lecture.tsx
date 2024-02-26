@@ -80,7 +80,7 @@ export const Head = ({ location }) => {
               },{
                 "@type": "ListItem",
                 "position": 2,
-                "name": ${title},
+                "name": "${title}",
                 "item": "${useSiteMetadata().siteUrl}}/news/pelvic-health-dysfunction-lecture/"
               }
             ]
@@ -90,17 +90,38 @@ export const Head = ({ location }) => {
 
       <Script type="application/ld+json">
         {`
-          {
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            "url": "${useSiteMetadata().siteUrl}/news/pelvic-health-dysfunction-lecture/",
-            "headline": ${title},
-            "image": "https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-flyer.jpg",
-            "articleBody": "Brief lecture and exercise instruction",
-            "datePublished": "2024-03-25T16:30"
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": "${title}",
+          "startDate": "2024-03-25T16:30",
+          "endDate": "2024-03-25T17:30",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "${useSiteMetadata().name}",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "${useSiteMetadata().location.address.streetAddress}",
+              "addressLocality": "${useSiteMetadata().location.address.addressLocality}",
+              "addressRegion": "${useSiteMetadata().location.address.addressRegion}",
+              "postalCode": "${useSiteMetadata().location.address.postalCode}"
+            },
+          },
+          "image": "https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-flyer.jpg",
+          "description": "Brief lecture and exercise instruction.",
+          "performer": {
+            "@type": "Person",
+            "name": "Raven Osika SPT"
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "${useSiteMetadata().name}",
+            "url": "${useSiteMetadata().url}"
           }
-      `}
+        `}
       </Script>
+
 
     </SEO>
   )
