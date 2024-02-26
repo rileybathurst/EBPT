@@ -11,6 +11,7 @@ a {
 
 a:hover, a.active {
   color: var(--moldavite);
+  text-decoration: none;
 }
 
 /*------------------------------------*/

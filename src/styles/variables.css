@@ -36,18 +36,18 @@
   --kingly-cloud: hsl(0, 0%, 87.5%);
   --brilliance: hsl(0, 0%, 97.5%);
 
-    /* Color Bases */
-    --pitch: 2.5%;
-    --dark: 12.5%;
-    --dull: 25%;
-    --dim: 37.5%;
-    --mid: 50%;
-    --glow: 62.5%;
-    --light: 75%;
-    --bright: 87.5%;
-    --brilliant: 97.5%;
-  
-    --pearl-l: 97.3%;
+  /* Color Bases */
+  --pitch: 2.5%;
+  --dark: 12.5%;
+  --dull: 25%;
+  --dim: 37.5%;
+  --mid: 50%;
+  --glow: 62.5%;
+  --light: 75%;
+  --bright: 87.5%;
+  --brilliant: 97.5%;
+
+  --pearl-l: 97.3%;
 
   /*------------------------------------*/
     /* #WIDTHS */

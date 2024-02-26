@@ -5,7 +5,7 @@ const FormList = () => (
     <section>
       {/* should this class name to be to do with an error or its just secondary color */}
       <h3 className="vigilant h-line h4">Required</h3>
-      <ul className="">
+      <ul className="form-list">
         <li>
           <h4 className="h5">
             {/* date 6/15/21 */}
@@ -52,7 +52,7 @@ const FormList = () => (
 
     <section>
       <h3 className="vigilant h-line h4">Choose One:</h3>
-      <ul>
+      <ul className="form-list">
         <li>
           {/* link to back doesnt feel very readable */}
           <h4 className="h5">

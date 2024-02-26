@@ -1,5 +1,16 @@
 /*------------------------------------*/
-  /* #LISTS */
+/* #LISTS */
+/*------------------------------------*/
+
+ul li {
+  line-height: 2;
+
+  a {
+    padding-block: 0.25lh;
+    display: block;
+  }
+}
+
 /*------------------------------------*/
 
 .breadcrumbs {
@@ -11,5 +22,36 @@
 
   > li {
     padding-inline-start: 0;
+  }
+}
+
+/*------------------------------------*/
+/* #INTAKE FORMS */
+/*------------------------------------*/
+
+#intake-forms {
+  ul {
+    list-style: none;
+    /* reset */
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1em;
+
+      h4 {
+        /* specifically small */
+        margin-bottom: 0;
+      }
+
+      h5 {
+        /* specifically small */
+        margin-bottom: 1rem;
+      }
+
+      p {
+        /* I might take this site wide it's currently running default */
+        margin-top: 0;
+      }
+    }
   }
 }

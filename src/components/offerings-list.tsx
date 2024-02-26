@@ -2,17 +2,15 @@ import React from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-// import { SEO } from "./seo";
-
 const OfferingsList = () => (
   <ul className="catalog catalog-wide">
 
     <li>
-      <h3><Link to="/offerings/aquatic-therapy">Aquatic Therapy</Link></h3>
       <StaticImage
         src="https://ebpt.s3.us-west-1.amazonaws.com/images/firefly/Firefly+corporate+illustration+of+aquatic+therapy+over+a+flat+emerald+green+circle+with+texture+on+a.jpg"
         alt="an icon symbolizing aquatic therapy"
       />
+      <h3><Link to="/offerings/aquatic-therapy">Aquatic Therapy</Link></h3>
       <p>Aquatic therapy is conducted in a swimming pool that is temperature controlled. It can allow a person to perform movements at an earlier stage of rehabilitation due to reduced weight-bearing from the buoyancy of the water.</p>
       <Link to="/offerings/aquatic-therapy">Learn more about Aquatic Therapy</Link>
     </li>
@@ -74,8 +72,8 @@ const OfferingsList = () => (
     </li>
 
     <li>
-      More Offerings
-      <ul>
+      <h3>More Offerings</h3>
+      <ul className="more">
         <li>
           Post-surgical rehabilitation
         </li>
@@ -110,40 +108,3 @@ const OfferingsList = () => (
 );
 
 export default OfferingsList;
-
-/* // ? this doesnt seem to be able to be part of a component which is kind of fair enough
-export const Head = () => (
-  <SEO>
-    <script type="application/ld+json">
-      {`
-        "@context": "https://schema.org/",
-        "@type": "Service",
-        "serviceType": "Physical Therapy",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Emerald Bay Physical Therapy"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Physical Therapy",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Aquatic therapy"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Post-surgical rehabilitation"
-              }
-            },
-          ]
-        }
-      `}
-    </script>
-  </SEO>
-) */
