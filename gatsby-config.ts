@@ -1,5 +1,13 @@
 import type { GatsbyConfig } from "gatsby";
 require("dotenv").config();
+const adapter = require("gatsby-adapter-netlify");
+
+module.exports = {
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+    imageCDN: false,
+  }),
+};
 
 const config: GatsbyConfig = {
   siteMetadata: {
