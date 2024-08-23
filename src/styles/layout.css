@@ -322,7 +322,7 @@ body {
       margin: 1rem;
       text-align: center;
 
-      & a {
+      a {
         /* ! making this up */
         padding: 0.25rem 0.5rem;
         border-radius: var(--chamfer);
@@ -330,8 +330,15 @@ body {
       }
 
       /* ! this is wrong on small sizes */
-      & a:hover {
+      a:hover {
         /* its pretty subtle but i do like it maybe it should be more there */
+        background: hsl(0, 0%, calc(var(--pearl-l) - 5%));
+        @media (prefers-color-scheme: dark) {
+          background: hsl(0, 0%, 15%);
+        }
+      }
+
+      a.active {
         background: hsl(0, 0%, calc(var(--pearl-l) - 5%));
         @media (prefers-color-scheme: dark) {
           background: hsl(0, 0%, 15%);

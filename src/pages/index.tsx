@@ -11,6 +11,7 @@ import FormList from "../components/form-list";
 import OfferingsList from "../components/offerings-list";
 
 import Kiley2 from "../components/kiley2io";
+import BestOfTahoe from "../images/best-of-tahoe";
 import GymImage from "../components/gymImageVanilla";
 import Treating from "../components/treating-io";
 import NancyImage from "../components/nancyImage-io";
@@ -76,9 +77,8 @@ const IndexPage = () => {
             </h2>
           </div>
 
-          <div className="two-fold">
-            <OfferingsList />
-          </div>
+
+          <OfferingsList className="two-fold" best />
         </section>
 
         <hr />

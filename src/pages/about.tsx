@@ -1,17 +1,17 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 import { SEO } from "../components/seo";
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import Header from "../components/header"
 import SlimFooter from "../components/slim-footer"
 import TeamHeads from "../components/team-heads"
+import BestOfTahoe from "../images/best-of-tahoe"
 
-function SnowyBuildingFrontImage() {
+/* function SnowyBuildingFrontImage() {
   return <StaticImage src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg"
     alt="Winter at the Emerald Bay Physical Therapy Offices in South Lake Tahoe, California" />
-}
-
+} */
 
 const AboutPage = () => {
   return (
@@ -20,7 +20,8 @@ const AboutPage = () => {
 
       <main>
         <div className="two-fold">
-          <SnowyBuildingFrontImage />
+          {/* <SnowyBuildingFrontImage /> */}
+          <BestOfTahoe />
           <div className="two-fold-content">
             <h1>About Us</h1>
             <section>

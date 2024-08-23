@@ -26,23 +26,21 @@ function Menu() {
         <button onClick={toggleMenu} className="close-button">Close Menu</button>
       </nav>
     );
-  } else {
-    // return null;
-    // were doing more to get a slide
-    return (
-      <nav id="veiled" className="inactive">
-        <ul className="veiled__header">
-          <li>
-            <Link to="/" title="to the front page">
-              <Logo />
-            </Link>
-          </li>
-        </ul>
-        <MenuList />
-        <button onClick={toggleMenu} className="close-button">Close Menu</button>
-      </nav>
-    );
   }
+
+  return (
+    <nav id="veiled" className="inactive">
+      <ul className="veiled__header">
+        <li>
+          <Link to="/" title="to the front page">
+            <Logo />
+          </Link>
+        </li>
+      </ul>
+      <MenuList />
+      <button onClick={toggleMenu} className="close-button">Close Menu</button>
+    </nav>
+  );
 }
 
 function MenuChanger() {
@@ -50,10 +48,14 @@ function MenuChanger() {
 
   return (
     <div id="menu__toggle" className={menu}>
-      <button onClick={toggleMenu} className={`veil-button small_menu--opener ${menu}`}>Menu</button>
+      <button
+        onClick={toggleMenu}
+        className={`veil-button small_menu--opener ${menu}`}
+        type="button"
+      >Menu</button>
       <div className="small_menu--icon">
-        <span className="small_menu--icon-topline"></span>
-        <span className="small_menu--icon-bottomline"></span>
+        <span className="small_menu--icon-topline" />
+        <span className="small_menu--icon-bottomline" />
       </div>
     </div>
   );
@@ -88,7 +90,7 @@ export function useMediaQuery(query) {
 }
 
 function HeroImage() {
-  let isSiteDark = useMediaQuery("(prefers-color-scheme: dark)");
+  const isSiteDark = useMediaQuery("(prefers-color-scheme: dark)");
 
   return (
     <>
@@ -138,7 +140,7 @@ function Header() {
           <div className="menu-lines">
             <section id="call">
               <div className="buttoned">
-                <a href="tel:530542-2662" className="">
+                <a href="tel:5305422662">
                   (530) 542-2662
                 </a>
               </div> {/* .buttoned */}
