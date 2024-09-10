@@ -29,6 +29,7 @@ const AquaticTherapyPage = () => {
             src="https://ebpt.s3.us-west-1.amazonaws.com/images/Firefly+corporate+illustration+of+very+stylized+monitoring+therapy+over+a+flat+emerald+green+circle+.webp"
             alt="an icon symbolizing Remote Therapeutic Monitoring"
             className="offering-image"
+            // I think this has something to do with no padding on the image file vs the other images
             style={{ height: '100%' }}
           />
           <div className="two-fold-content">

@@ -29,7 +29,7 @@ const News = () => {
   return (
     <ul>
       {allSitePage.nodes.map((page) => (
-        <li>
+        <li key={page.path}>
           <Link
             to={page.path}
             activeClassName="active"

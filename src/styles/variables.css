@@ -4,6 +4,8 @@
 
 :root {
   /* Brand Colors */
+
+  /* TODO: move these to -100 -200 etc */
   --emerald: hsl(169.4, 36.8%, 45.3%);
   --moldavite: hsl(160.6, 34.8%, 36.7%);
   --moss: hsl(173.6, 33.8%, 27.3%);
@@ -50,10 +52,10 @@
   --pearl-l: 97.3%;
 
   /*------------------------------------*/
-    /* #WIDTHS */
-    /* https://en.wikipedia.org/wiki/Largest_living_flying_birds_by_wingspan */
+  /* #WIDTHS */
+  /* https://en.wikipedia.org/wiki/Largest_living_flying_birds_by_wingspan */
   /*------------------------------------*/
-  
+
   --swan: 20rem;
   --vulture: 30rem;
   --stork: 40rem;
@@ -62,9 +64,9 @@
   --albatross: 80rem;
 
   /*------------------------------------*/
-    /* #SHADOWS */
+  /* #SHADOWS */
   /*------------------------------------*/
-  
+
   --shade: hsla(0, 0%, 5.9%, 0.2);
   --dark-shade: hsla(0, 0%, 90%, 0.2);
 
@@ -82,7 +84,7 @@
   --penumbra: 0 3px 6px hsla(0, 0%, 0%, 0.12), 0 2px 4px hsla(0, 0%, 0%, 0.1);
 
   /*------------------------------------*/
-    /* #UTILITIES */
+  /* #UTILITIES */
   /*------------------------------------*/
 
   --chamfer: 0.25rem;

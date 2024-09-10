@@ -1,4 +1,5 @@
 // TODO: Figure out how to query for the image
+// TODO: variable array of news items
 
 import * as React from "react";
 import { SEO } from "../components/seo";
@@ -19,14 +20,14 @@ const NewsPage = () => {
 
         <ul className="deck">
 
-          <li className="card">
+          <li key="pelvic-health-dysfunction-lecture" className="card">
             <Link to="/news/pelvic-health-dysfunction-lecture">
               <FlyerImage />
               <h2 className="h4">Pelvic Health Dysfunction Brief lecture and exercise instruction</h2>
             </Link>
           </li>
 
-          <li className="card">
+          <li key="tahoe-daily-tribune" className="card">
             <Link to="/news/tahoe-daily-tribune">
               <TribuneImage />
               <h2 className="h4">Tahoe Daily Tribune Article</h2>
