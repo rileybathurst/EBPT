@@ -1,3 +1,5 @@
+// TODO: use an array to combine the double up question answers
+
 import * as React from "react";
 import { Link, Script } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
@@ -252,8 +254,8 @@ const QuestionsPage = () => {
           <h2>Cash Pricing</h2>
           <p>For those without or not wanting to use insurance.</p>
           <ul>
-            <li>Evaluation (first appointment) $125</li>
-            <li>follow up appointments $100</li>
+            <li>Evaluation (first appointment) $150</li>
+            <li>follow up appointments $115</li>
           </ul>
         </section>
         {/* #cash-pricing */}
