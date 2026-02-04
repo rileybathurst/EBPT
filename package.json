@@ -16,7 +16,7 @@
   },
   "scripts": {
     "develop": "gatsby develop",
-    "start": "blc http://emeraldbay.physio --exclude '*yelp*' && gatsby develop",
+    "start": "blc http://emeraldbay.physio --exclude '*yelp*' && pa11y http://emeraldbay.physio && gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
