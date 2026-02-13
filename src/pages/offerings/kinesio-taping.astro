@@ -19,23 +19,27 @@ const breadcrumbJson = {
       position: 1,
       item: {
         name: "Offerings",
-        "@id": "https://emeraldbay.physio/offerings"
-      }
+        "@id": "https://emeraldbay.physio/offerings",
+      },
     },
     {
       "@type": "ListItem",
       position: 2,
       item: {
         name: title,
-        "@id": "https://emeraldbay.physio/offerings/kinesio-taping"
-      }
-    }
-  ]
+        "@id": "https://emeraldbay.physio/offerings/kinesio-taping",
+      },
+    },
+  ],
 };
 ---
+
 <BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
   <Fragment slot="seo">
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
   </Fragment>
 
   <Header currentPath={currentPath} client:load />

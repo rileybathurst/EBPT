@@ -18,15 +18,15 @@ const breadcrumbJson = {
       "@type": "ListItem",
       position: 1,
       name: "news",
-      item: `${siteMetadata.siteUrl}news/`
+      item: `${siteMetadata.siteUrl}news/`,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: title,
-      item: `${siteMetadata.siteUrl}news/pelvic-health-dysfunction-lecture/`
-    }
-  ]
+      item: `${siteMetadata.siteUrl}news/pelvic-health-dysfunction-lecture/`,
+    },
+  ],
 };
 
 const eventJson = {
@@ -45,26 +45,35 @@ const eventJson = {
       streetAddress: siteMetadata.location.address.streetAddress,
       addressLocality: siteMetadata.location.address.addressLocality,
       addressRegion: siteMetadata.location.address.addressRegion,
-      postalCode: siteMetadata.location.address.postalCode
-    }
+      postalCode: siteMetadata.location.address.postalCode,
+    },
   },
   image: "https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-flyer.jpg",
   description: "Brief lecture and exercise instruction.",
   performer: {
     "@type": "Person",
-    name: "Raven Osika SPT"
+    name: "Raven Osika SPT",
   },
   organizer: {
     "@type": "Organization",
     name: siteMetadata.name,
-    url: siteMetadata.url
-  }
+    url: siteMetadata.url,
+  },
 };
 ---
-<BaseLayout title={pageTitle} description={pageDescription} url={currentPath} image="https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-flyer.jpg">
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  url={currentPath}
+  image="https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-flyer.jpg"
+>
   <Fragment slot="seo">
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(eventJson)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(eventJson)} />
   </Fragment>
 
   <Header currentPath={currentPath} client:load />
@@ -94,8 +103,8 @@ const eventJson = {
       <h1>{title}</h1>
       <h2>Brief lecture and exercise instruction</h2>
       <p class="h5">
-        <time dateTime="2024-03-25T16:30">March 25, 2024 - 4:30pm</time> -
-        <time dateTime="2024-03-25T17:30"> 5:30pm</time>
+        <time datetime="2024-03-25T16:30">March 25, 2024 - 4:30pm</time> -
+        <time datetime="2024-03-25T17:30"> 5:30pm</time>
       </p>
 
       <p>Hosted by Raven Osika SPT from USC</p>

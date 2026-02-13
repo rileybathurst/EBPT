@@ -18,20 +18,24 @@ const breadcrumbJson = {
       "@type": "ListItem",
       position: 1,
       name: "Offerings",
-      item: "https://emeraldbay.physio/offerings"
+      item: "https://emeraldbay.physio/offerings",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Outpatient: Pelvic Floor Rehabilitation",
-      item: "https://emeraldbay.physio/offerings/pelvic-health"
-    }
-  ]
+      item: "https://emeraldbay.physio/offerings/pelvic-health",
+    },
+  ],
 };
 ---
+
 <BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
   <Fragment slot="seo">
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
   </Fragment>
 
   <Header currentPath={currentPath} client:load />
@@ -74,7 +78,10 @@ const breadcrumbJson = {
             Have you experienced leaking of urine or feces when coughing,
             sneezing, or laughing?
           </p>
-          <p>These are conditions that are common with pelvic floor muscle dysfunction.</p>
+          <p>
+            These are conditions that are common with pelvic floor muscle
+            dysfunction.
+          </p>
           <hr class="inline__hr" />
         </section>
 
@@ -140,8 +147,12 @@ const breadcrumbJson = {
             urinary/fecal incontinence, pelvic prolapse, or pain.
           </h2>
           <p><i>52% of female athletes experience incontinence.</i></p>
-          <p><i>49% of chronic low back pain patients have urinary incontinence.</i></p>
-          <p><i>43% of women and 31% of men experience sexual dysfunction or pain with intercourse.</i></p>
+          <p>
+            <i>49% of chronic low back pain patients have urinary incontinence.</i>
+          </p>
+          <p>
+            <i>43% of women and 31% of men experience sexual dysfunction or pain with intercourse.</i>
+          </p>
           <p><i>Kegels are not always the best choice!</i></p>
         </section>
       </div>

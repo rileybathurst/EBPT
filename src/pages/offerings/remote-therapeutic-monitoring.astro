@@ -19,23 +19,28 @@ const breadcrumbJson = {
       position: 1,
       item: {
         name: "Offerings",
-        "@id": "https://emeraldbay.physio/offerings"
-      }
+        "@id": "https://emeraldbay.physio/offerings",
+      },
     },
     {
       "@type": "ListItem",
       position: 2,
       item: {
         name: title,
-        "@id": "https://emeraldbay.physio/offerings/remote-therapeutic-monitoring"
-      }
-    }
-  ]
+        "@id":
+          "https://emeraldbay.physio/offerings/remote-therapeutic-monitoring",
+      },
+    },
+  ],
 };
 ---
+
 <BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
   <Fragment slot="seo">
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
   </Fragment>
 
   <Header currentPath={currentPath} client:load />
@@ -66,13 +71,12 @@ const breadcrumbJson = {
         <section itemprop="description">
           Remote Therapeutic Monitoring (RTM) is a service to provide patient
           treatment and monitoring by remote means. Once enrolled, patients will
-          be emailed a link from Exercise Pro Live to download the &apos;Exercise
-          Now&apos; app or continue in the web based portal. The system will provide
-          access to a detailed home exercise program where the patient can enter
-          their sets, repetitions, and weight. The patient can also comment on
-          pain levels, difficulty of the exercise, as well as directly message
-          their therapist.
-          Benefits of RTM:
+          be emailed a link from Exercise Pro Live to download the
+          &apos;Exercise Now&apos; app or continue in the web based portal. The
+          system will provide access to a detailed home exercise program where
+          the patient can enter their sets, repetitions, and weight. The patient
+          can also comment on pain levels, difficulty of the exercise, as well
+          as directly message their therapist. Benefits of RTM:
           <ul>
             <li>Increased patient engagement and adherence to treatment</li>
             <li>Reduced number of trips to the clinic</li>

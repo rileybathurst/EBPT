@@ -19,23 +19,27 @@ const breadcrumbJson = {
       position: 1,
       item: {
         name: "Offerings",
-        "@id": "https://emeraldbay.physio/offerings"
-      }
+        "@id": "https://emeraldbay.physio/offerings",
+      },
     },
     {
       "@type": "ListItem",
       position: 2,
       item: {
         name: title,
-        "@id": "https://emeraldbay.physio/offerings/orthotics"
-      }
-    }
-  ]
+        "@id": "https://emeraldbay.physio/offerings/orthotics",
+      },
+    },
+  ],
 };
 ---
+
 <BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
   <Fragment slot="seo">
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
   </Fragment>
 
   <Header currentPath={currentPath} client:load />
@@ -80,12 +84,12 @@ const breadcrumbJson = {
 
           <p>
             Custom orthotics work by supporting our foundation - the feet.
-            Custom orthotics will specifically help to correct any
-            misalignments and provide support throughout the entire surface of
-            your foot. Research supports using custom orthotics in the
-            treatment of patellofemoral pain (knee pain), plantar fasciitis, and
-            medial tibial stress syndrome (shin splints). Custom orthotics are
-            also effective at increasing postural control and balance.
+            Custom orthotics will specifically help to correct any misalignments
+            and provide support throughout the entire surface of your foot.
+            Research supports using custom orthotics in the treatment of
+            patellofemoral pain (knee pain), plantar fasciitis, and medial
+            tibial stress syndrome (shin splints). Custom orthotics are also
+            effective at increasing postural control and balance.
           </p>
           <hr class="inline__hr" />
           <h2 class="h4">

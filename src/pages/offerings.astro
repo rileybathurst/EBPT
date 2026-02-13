@@ -15,7 +15,7 @@ const offerCatalogJson = {
   serviceType: "Physical Therapy",
   provider: {
     "@type": "LocalBusiness",
-    name: "Emerald Bay Physical Therapy"
+    name: "Emerald Bay Physical Therapy",
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -25,23 +25,27 @@ const offerCatalogJson = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Aquatic therapy"
-        }
+          name: "Aquatic therapy",
+        },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Post-surgical rehabilitation"
-        }
-      }
-    ]
-  }
+          name: "Post-surgical rehabilitation",
+        },
+      },
+    ],
+  },
 };
 ---
+
 <BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
   <Fragment slot="seo">
-    <script type="application/ld+json" set:html={JSON.stringify(offerCatalogJson)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(offerCatalogJson)}
+    />
   </Fragment>
 
   <Header currentPath={currentPath} client:load />
