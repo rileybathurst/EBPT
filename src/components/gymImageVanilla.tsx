@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StaticImage } from "gatsby-plugin-image";
 
-function GymImage(props) {
-  const gymImage = useRef();
+function GymImage() {
+  const gymImage = useRef<HTMLDivElement | null>(null);
   // console.log(gymImage);
 
   useEffect(() => {
     const gym = gymImage.current;
-    createObserver();
+    if (!gym) {
+      return undefined;
+    }
 
     let prevRatio = 0.0;
+    let observer: IntersectionObserver | null = null;
 
     function createObserver() {
-      let observer;
-
-      let options = {
+      const options = {
         threshold: buildThresholdList()
       };
 
@@ -36,7 +36,7 @@ function GymImage(props) {
       return thresholds;
     }
 
-    function handleIntersect(entries) {
+    function handleIntersect(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
         // when going out fo frame
         if (entry.intersectionRatio > prevRatio) {
@@ -50,7 +50,13 @@ function GymImage(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  });
+
+    createObserver();
+
+    return () => {
+      observer?.disconnect();
+    };
+  }, []);
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
@@ -64,9 +70,11 @@ function GymImage(props) {
 
   return (
     <div id="gymImage" style={gymStyle} ref={gymImage}> {/* needs this to load quick enough */}
-      <StaticImage
+      <img
         src="https://ebpt.s3.us-west-1.amazonaws.com/images/emerald_bay_physcal_therapy-in_action-crop.jpg"
         alt="emerald bay physical therapy gym in action"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );

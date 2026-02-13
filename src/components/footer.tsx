@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import FooterSocial from "./footer-social";
 import News from "./news";
@@ -18,9 +17,7 @@ const Footer = () => (
         <hr className="hide-above-40 two-fold__hr" />
 
         <h5>
-          <Link to="/news">
-            News
-          </Link>
+          <a href="/news">News</a>
         </h5>
         <News />
       </section>

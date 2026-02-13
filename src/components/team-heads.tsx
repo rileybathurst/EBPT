@@ -1,37 +1,43 @@
 import React from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 function JessicaProfile() {
   return (
-    <StaticImage
+    <img
       src="https://ebpt.s3-us-west-1.amazonaws.com/images/jessica-profile.jpg"
       alt="Jessica"
+      loading="lazy"
+      decoding="async"
     />
   );
 }
 function KileyProfile() {
   return (
-    <StaticImage
+    <img
       src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-profile.jpg"
       alt="Kiley"
+      loading="lazy"
+      decoding="async"
     />
   );
 }
 function TinaHead() {
   return (
-    <StaticImage
+    <img
       src="https://ebpt.s3.us-west-1.amazonaws.com/images/tina-team_head.jpg"
       alt="tina"
+      loading="lazy"
+      decoding="async"
     />
   );
 }
 
 function NancyHead() {
   return (
-    <StaticImage
+    <img
       src="https://ebpt.s3.us-west-1.amazonaws.com/images/nancy-team.jpg"
       alt="nancy"
+      loading="lazy"
+      decoding="async"
     />
   );
 }
@@ -40,31 +46,31 @@ const TeamHeads = () => (
   <div className="team-heads spin">
     {/* depending on the CSS I might just make square images for here */}
     <div>
-      <Link to="/team#jessica">
+      <a href="/team#jessica">
         <JessicaProfile />
         <p>Jessica, PT.</p>
-      </Link>
+      </a>
     </div>
 
     <div>
-      <Link to="/team#nancy">
+      <a href="/team#nancy">
         <NancyHead />
         <p>Nancy, DPT.</p>
-      </Link>
+      </a>
     </div>
 
     <div>
-      <Link to="/team#kiley">
+      <a href="/team#kiley">
         <KileyProfile />
         <p>Kiley</p>
-      </Link>
+      </a>
     </div>
 
     <div>
-      <Link to="/team#tina">
+      <a href="/team#tina">
         <TinaHead />
         <p>Tina</p>
-      </Link>
+      </a>
     </div>
 
     {/* <button class="spin">Spin Circle</button> */}

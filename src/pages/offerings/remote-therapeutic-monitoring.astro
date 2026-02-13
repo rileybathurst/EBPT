@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import SlimFooter from "../../components/slim-footer";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "Remote Therapeutic Monitoring";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription =
+  "Remote Therapeutic Monitoring (RTM) is a service to provide patient treatment and monitoring by remote means.";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        name: "Offerings",
+        "@id": "https://emeraldbay.physio/offerings"
+      }
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        name: title,
+        "@id": "https://emeraldbay.physio/offerings/remote-therapeutic-monitoring"
+      }
+    }
+  ]
+};
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/offerings/">Offerings</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main itemscope itemtype="https://schema.org/Article">
+    <div class="two-fold">
+      <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/Firefly+corporate+illustration+of+very+stylized+monitoring+therapy+over+a+flat+emerald+green+circle+.webp"
+        alt="an icon symbolizing Remote Therapeutic Monitoring"
+        class="offering-image"
+        style="height: 100%;"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="two-fold-content">
+        <h1 class="h1__clamped" itemprop="name">{title}</h1>
+        <section itemprop="description">
+          Remote Therapeutic Monitoring (RTM) is a service to provide patient
+          treatment and monitoring by remote means. Once enrolled, patients will
+          be emailed a link from Exercise Pro Live to download the &apos;Exercise
+          Now&apos; app or continue in the web based portal. The system will provide
+          access to a detailed home exercise program where the patient can enter
+          their sets, repetitions, and weight. The patient can also comment on
+          pain levels, difficulty of the exercise, as well as directly message
+          their therapist.
+          Benefits of RTM:
+          <ul>
+            <li>Increased patient engagement and adherence to treatment</li>
+            <li>Reduced number of trips to the clinic</li>
+            <li>
+              Therapist can better understand the patient&apos;s response to
+              treatment and adjust accordingly
+            </li>
+            <li>Easy communication between the therapist and patient</li>
+            <li>Medicare approved</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

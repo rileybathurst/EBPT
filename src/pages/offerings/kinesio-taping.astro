@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import SlimFooter from "../../components/slim-footer";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "Kinesio Taping";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription =
+  "Kinesiology Tape is made from a stretchy fabric with adhesive applied in a wavelike pattern on the back";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        name: "Offerings",
+        "@id": "https://emeraldbay.physio/offerings"
+      }
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        name: title,
+        "@id": "https://emeraldbay.physio/offerings/kinesio-taping"
+      }
+    }
+  ]
+};
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/offerings/">Offerings</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main itemscope itemtype="https://schema.org/Article">
+    <div class="two-fold">
+      <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/firefly/Firefly+corporate+illustration+of+aquatic+therapy+over+a+flat+emerald+green+circle+with+texture+on+a.jpg"
+        alt="an icon symbolizing Kinesio Taping"
+        class="offering-image"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="two-fold-content">
+        <h1 class="h1__clamped" itemprop="name">{title}</h1>
+        <section itemprop="description">
+          <p>
+            Kinesiology Tape is made from a stretchy fabric with adhesive
+            applied in a wavelike pattern on the back. When applied, the tape
+            decompresses by gently lifting the skin underneath it, creating more
+            space between the layers of skin and fascia and allowing for
+            increased circulation. The tension from the tape increases the
+            brain&apos;s awareness of the area that is taped due to heightened
+            sensitivity.
+          </p>
+
+          <p>
+            Taping can be placed with the purpose of reducing swelling,
+            inhibiting muscles that are overused, stimulating muscles that are
+            not being used, encouraging a change in posture, reducing pain, or
+            assisting in support of a joint that is injured.
+          </p>
+
+          <p>
+            Our PTs are certified in the use of RockTape kinesiology tape and
+            would be happy to work with you to find out if taping works for you,
+            which method works best, and how to apply it yourself if it is
+            helpful.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

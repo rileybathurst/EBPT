@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import SlimFooter from "../../components/slim-footer";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "Aquatic Therapy";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription =
+  "Aquatic therapy is conducted in a swimming pool that is temperature controlled. It can allow a person to perform movements at an earlier stage of rehabilitation due to reduced weight-bearing from the buoyancy of the water";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        name: "Offerings",
+        "@id": "https://emeraldbay.physio/offerings"
+      }
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        name: title,
+        "@id": "https://emeraldbay.physio/offerings/aquatic-therapy"
+      }
+    }
+  ]
+};
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/offerings/">Offerings</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main itemscope itemtype="https://schema.org/Article">
+    <div class="two-fold">
+      <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/firefly/Firefly+corporate+illustration+of+Kinesio+taping+over+a+flat+emerald+green+circle+with+texture+on+a+.jpg"
+        alt="an icon symbolizing aquatic therapy"
+        class="offering-image"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="two-fold-content">
+        <h1 class="h1__clamped" itemprop="name">{title}</h1>
+        <section itemprop="description">
+          <p>
+            Aquatic therapy is conducted in a swimming pool that is temperature
+            controlled. It can allow a person to perform movements at an earlier
+            stage of rehabilitation due to reduced weight-bearing from the
+            buoyancy of the water. There is resistance in every direction from
+            moving through the water, while the warmth and compression encourage
+            circulation and increase the comfort level for movement.
+          </p>
+          <hr class="inline__hr" />
+          <p>
+            Activities can include cardiovascular, conditioning, and
+            strengthening exercises using the current, paddles, or other
+            available tools to increase resistance.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

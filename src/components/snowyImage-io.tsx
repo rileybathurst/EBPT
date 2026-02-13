@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StaticImage } from "gatsby-plugin-image";
 
-function SnowyBuildingFrontImage(props) {
+function SnowyBuildingFrontImage() {
 
-  const image = useRef();
+  const image = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const img = image.current;
-    createObserver();
+    if (!img) {
+      return undefined;
+    }
 
     let prevRatio = 0.0;
+    let observer: IntersectionObserver | null = null;
 
     function createObserver() {
-      let observer;
-
-      let options = {
+      const options = {
         threshold: buildThresholdList()
       };
 
@@ -36,7 +36,7 @@ function SnowyBuildingFrontImage(props) {
       return thresholds;
     }
 
-    function handleIntersect(entries, observer) {
+    function handleIntersect(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
 
         if (entry.intersectionRatio > prevRatio) {
@@ -51,7 +51,13 @@ function SnowyBuildingFrontImage(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  });
+
+    createObserver();
+
+    return () => {
+      observer?.disconnect();
+    };
+  }, []);
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
@@ -64,9 +70,11 @@ function SnowyBuildingFrontImage(props) {
 
   return (
     <div id="snowyImage" style={treatingStyle} ref={image}> {/* needs this to load quick enough */}
-      <StaticImage
+      <img
         src="https://ebpt.s3-us-west-1.amazonaws.com/images/snowy-building-front.jpg"
         alt="clinic"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );

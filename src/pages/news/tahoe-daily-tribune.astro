@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
+import TribuneImage from "../../images/tribune";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "Tahoe Daily Tribune Article";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription = "Happenings from around the clinic.";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "news",
+      item: `${siteMetadata.siteUrl}news/`
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: title,
+      item: `${siteMetadata.siteUrl}news/tahoe-daily-tribune/`
+    }
+  ]
+};
+
+const articleJson = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  url: `${siteMetadata.siteUrl}news/tahoe-daily-tribune/`,
+  headline: title,
+  image:
+    "https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-tahoe_daily_tribune-og_image-fs8.png",
+  articleBody: "Check out our business feature in the Tribune",
+  datePublished: "2023-08-11T08:00:00+08:00"
+};
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath} image="https://ebpt.s3.us-west-1.amazonaws.com/images/news/ebpt-tahoe_daily_tribune-og_image-fs8.png">
+  <Fragment slot="seo">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(articleJson)}></script>
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li itemprop="itemListElement">
+        <a href="/news/">News</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main class="two-fold">
+    <div class="two-fold-content">
+      <a
+        href="https://www.tahoedailytribune.com/news/emerald-bay-physical-therapy-a-center-for-health-wellness-in-south-lake-tahoe/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title={title}
+      >
+        <TribuneImage />
+      </a>
+    </div>
+    <div class="two-fold-content">
+      <h1>{title}</h1>
+      <p class="h5"><time dateTime="2023-08-11">Aug 11, 2023</time></p>
+      <p>
+        <a
+          href="https://www.tahoedailytribune.com/news/emerald-bay-physical-therapy-a-center-for-health-wellness-in-south-lake-tahoe/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check out our business feature in the Tribune
+        </a>
+      </p>
+    </div>
+  </main>
+  <hr />
+  <Footer />
+</BaseLayout>

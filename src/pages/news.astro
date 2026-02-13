@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import TribuneImage from "../images/tribune";
+import FlyerImage from "../images/flyer";
+import { siteMetadata } from "../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const pageTitle = `News | ${siteMetadata.title}`;
+const pageDescription = "Happenings from around the clinic";
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Header currentPath={currentPath} client:load />
+  <main>
+    <h1 class="two-fold">News</h1>
+    <hr />
+
+    <ul class="deck">
+      <li class="card">
+        <a href="/news/pelvic-health-dysfunction-lecture">
+          <FlyerImage />
+          <h2 class="h4">Pelvic Health Dysfunction Brief lecture and exercise instruction</h2>
+        </a>
+      </li>
+
+      <li class="card">
+        <a href="/news/tahoe-daily-tribune">
+          <TribuneImage />
+          <h2 class="h4">Tahoe Daily Tribune Article</h2>
+          <p>Read The Article</p>
+        </a>
+      </li>
+    </ul>
+
+    <hr />
+  </main>
+  <Footer />
+</BaseLayout>

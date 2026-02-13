@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/header";
+import SlimFooter from "../components/slim-footer";
+import FormList from "../components/form-list";
+import { siteMetadata } from "../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const pageTitle = `Patient Intake Forms | ${siteMetadata.title}`;
+const pageDescription = "Fill in forms online";
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Header currentPath={currentPath} client:load />
+
+  <main class="measured">
+    <h2>Intake Forms</h2>
+
+    <div class="slender-image">
+      <img
+        src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg"
+        alt="Kiley"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <section id="intake-forms" class="measured">
+      <FormList />
+    </section>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

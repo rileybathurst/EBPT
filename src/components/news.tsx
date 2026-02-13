@@ -1,7 +1,11 @@
 import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { newsItems } from "../data/news";
 
-function ProcessUrl({ url }) {
+type ProcessUrlProps = {
+  url: string;
+};
+
+function ProcessUrl({ url }: ProcessUrlProps) {
 
   url = url.replace(/\/news\//g, '');  // Remove '/news/'
   url = url.replace(/-/g, ' ');  // Replace hyphens with spaces
@@ -14,32 +18,16 @@ function ProcessUrl({ url }) {
 
 }
 
-const News = () => {
-
-  const { allSitePage } = useStaticQuery(graphql`
-    query NewsQuery {
-      allSitePage(filter: {path: {glob: "/news/*"}}) {
-        nodes {
-          path
-        }
-      }
-    }
-  `);
-
-  return (
-    <ul>
-      {allSitePage.nodes.map((page) => (
-        <li key={page.path}>
-          <Link
-            to={page.path}
-            activeClassName="active"
-          >
-            <ProcessUrl url={page.path} />
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
+const News = () => (
+  <ul>
+    {newsItems.map((item) => (
+      <li key={item.slug}>
+        <a href={item.slug}>
+          <ProcessUrl url={item.slug} />
+        </a>
+      </li>
+    ))}
+  </ul>
+);
 
 export default News;

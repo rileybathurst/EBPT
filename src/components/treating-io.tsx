@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StaticImage } from "gatsby-plugin-image";
 
-function Treating(props) {
-  const image = useRef();
+function Treating() {
+  const image = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const img = image.current;
-    createObserver();
+    if (!img) {
+      return undefined;
+    }
 
     let prevRatio = 0.0;
+    let observer: IntersectionObserver | null = null;
 
     function createObserver() {
-      let observer;
-
-      let options = {
+      const options = {
         threshold: buildThresholdList()
       };
 
@@ -35,7 +35,7 @@ function Treating(props) {
       return thresholds;
     }
 
-    function handleIntersect(entries, observer) {
+    function handleIntersect(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
 
         if (entry.intersectionRatio > prevRatio) {
@@ -50,7 +50,13 @@ function Treating(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  });
+
+    createObserver();
+
+    return () => {
+      observer?.disconnect();
+    };
+  }, []);
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
@@ -63,9 +69,11 @@ function Treating(props) {
 
   return (
     <div id="treatingImage" style={treatingStyle} ref={image}> {/* needs this to load quick enough */}
-      <StaticImage
+      <img
         src="https://ebpt.s3-us-west-1.amazonaws.com/images/treating.jpg"
         alt="Jessica providing treatment to a patient"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );

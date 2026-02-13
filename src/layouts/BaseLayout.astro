@@ -1,0 +1,19 @@
+---
+import Seo from "../components/Seo.astro";
+import "../styles/app.css";
+
+const { title, description, url, image } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Seo title={title} description={description} url={url} image={image}>
+      <slot name="seo" />
+    </Seo>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

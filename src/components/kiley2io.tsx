@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StaticImage } from "gatsby-plugin-image";
 
-function Kiley2(props) {
-  const image = useRef();
+function Kiley2() {
+  const image = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const img = image.current;
-    createObserver();
+    if (!img) {
+      return undefined;
+    }
 
     let prevRatio = 0.0;
+    let observer: IntersectionObserver | null = null;
 
     function createObserver() {
-      let observer;
-
-      let options = {
+      const options = {
         threshold: buildThresholdList()
       };
-    
+
       observer = new IntersectionObserver(handleIntersect, options);
       observer.observe(img);
     }
@@ -35,7 +35,7 @@ function Kiley2(props) {
       return thresholds;
     }
 
-    function handleIntersect(entries, observer) {
+    function handleIntersect(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
         // when going out fo frame
         if (entry.intersectionRatio > prevRatio) {
@@ -49,7 +49,13 @@ function Kiley2(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  });
+
+    createObserver();
+
+    return () => {
+      observer?.disconnect();
+    };
+  }, []);
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
@@ -64,9 +70,11 @@ function Kiley2(props) {
 
   return (
       <div id="kileyImage" style={gymStyle} ref={image}> {/* needs this to load quick enough */}
-        <StaticImage
+        <img
           src="https://ebpt.s3-us-west-1.amazonaws.com/images/kiley-2.jpg"
           alt="Kiley"
+          loading="lazy"
+          decoding="async"
         />
       </div>
   );

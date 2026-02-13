@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import SlimFooter from "../../components/slim-footer";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "LSVT BIG Treatment for Parkinson's Disease";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription =
+  "LSVT BIG trains people with Parkinson's to move their bodies normally. As the disease progresses, movements get smaller and slower, yet feel normal to the involved person";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        name: "Offerings",
+        "@id": "https://emeraldbay.physio/offerings"
+      }
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        name: title,
+        "@id": "https://emeraldbay.physio/offerings/lvst"
+      }
+    }
+  ]
+};
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJson)}></script>
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/offerings/">Offerings</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main itemscope itemtype="https://schema.org/Article">
+    <div class="two-fold">
+      <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/firefly/Firefly+corporate+illustration+of+Parkinson's+Disease+over+a+flat+emerald+green+circle+with+texture+.jpg"
+        alt="an icon symbolizing LSVT BIG Treatment"
+        class="offering-image"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="two-fold-content">
+        <h1 class="h1__clamped" itemprop="name">{title}</h1>
+        <section itemprop="description">
+          <p>
+            LSVT BIG trains people with Parkinson&apos;s to move their bodies
+            normally. As the disease progresses, movements get smaller and
+            slower, yet feel normal to the involved person. This causes problems
+            with dressing and other tasks for self-care, usual household chores,
+            and walking. The program focuses on recalibrating the brain to
+            understand what normal movement is.
+          </p>
+
+          <p>
+            The treatment involves 4 consecutive weeks of attending PT 4 days a
+            week to develop a habit of performing a series of exercises with the
+            aim of improving a person&apos;s ability to move in and out of bed,
+            stand up and sit down, get in and out of cars and buildings, and
+            walk, as well as improving fine motor skills such as tying shoelaces
+            or buttoning a shirt.
+          </p>
+
+          <p>
+            Studies have shown the LSVT BIG system consistently drives
+            improvement for people at all stages of Parkinson&apos;s Disease.
+            Quality of life is improved by allowing people to function more
+            independently. Come see us and find out if this treatment is
+            appropriate for you!
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

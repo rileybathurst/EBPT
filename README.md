@@ -1,5 +1,5 @@
 # Emerald Bay Physical Therapy
 
-Gatsby to Netlify build
+Astro site deployed to Netlify
 
 The intake forms and images are hosted on AWS S3

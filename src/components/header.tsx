@@ -1,28 +1,41 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import MenuList from "./menu-list";
 import Logo from "./logo";
 
-const ThemeContext = createContext(null);
+type ThemeContextValue = {
+  menu: string;
+  toggleMenu: () => void;
+};
 
-function Menu() {
-  const { menu, toggleMenu } = useContext(
-    ThemeContext
-  );
+const ThemeContext = createContext<ThemeContextValue | null>(null);
+
+const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("ThemeContext is missing");
+  }
+  return context;
+};
+
+type MenuProps = {
+  currentPath?: string;
+};
+
+function Menu({ currentPath }: MenuProps) {
+  const { menu, toggleMenu } = useThemeContext();
 
   if (menu === 'open') {
     return (
       <nav id="veiled" className="active">
         <ul className="veiled__header">
           <li>
-            <Link to="/" title="to the front page">
+            <a href="/" title="to the front page">
               <Logo />
-            </Link>
+            </a>
           </li>
         </ul>
-        <MenuList />
+        <MenuList currentPath={currentPath} />
         <button onClick={toggleMenu} className="close-button">Close Menu</button>
       </nav>
     );
@@ -32,19 +45,19 @@ function Menu() {
     <nav id="veiled" className="inactive">
       <ul className="veiled__header">
         <li>
-          <Link to="/" title="to the front page">
+          <a href="/" title="to the front page">
             <Logo />
-          </Link>
+          </a>
         </li>
       </ul>
-      <MenuList />
+      <MenuList currentPath={currentPath} />
       <button onClick={toggleMenu} className="close-button">Close Menu</button>
     </nav>
   );
 }
 
 function MenuChanger() {
-  const { menu, toggleMenu } = useContext(ThemeContext);
+  const { menu, toggleMenu } = useThemeContext();
 
   return (
     <div id="menu__toggle" className={menu}>
@@ -62,21 +75,29 @@ function MenuChanger() {
 }
 
 function DarkHero() {
-  return <StaticImage
-    src="https://ebpt.s3.us-west-1.amazonaws.com/images/levi-bare-jdIb2v4L2Sg-unsplash.jpg"
-    alt="emerald bay at night"
-  />;
+  return (
+    <img
+      src="https://ebpt.s3.us-west-1.amazonaws.com/images/levi-bare-jdIb2v4L2Sg-unsplash.jpg"
+      alt="emerald bay at night"
+      loading="lazy"
+      decoding="async"
+    />
+  );
 }
 
 function LightHero() {
-  return <StaticImage
-    src="https://ebpt.s3.us-west-1.amazonaws.com/images/parker-ulry-qxLl7yfxReM-unsplash.jpg"
-    alt="emerald bay during the day"
-  />;
+  return (
+    <img
+      src="https://ebpt.s3.us-west-1.amazonaws.com/images/parker-ulry-qxLl7yfxReM-unsplash.jpg"
+      alt="emerald bay during the day"
+      loading="lazy"
+      decoding="async"
+    />
+  );
 }
 
 // light to dark switch
-export function useMediaQuery(query) {
+export function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
@@ -100,7 +121,11 @@ function HeroImage() {
   );
 }
 
-function Header() {
+type HeaderProps = {
+  currentPath?: string;
+};
+
+function Header({ currentPath }: HeaderProps) {
 
   const [menu, setmenu] = useState("closed");
 
@@ -112,7 +137,7 @@ function Header() {
     <ThemeContext.Provider
       value={{ menu, toggleMenu }}
     >
-      <Menu />
+      <Menu currentPath={currentPath} />
 
       <header>
         <h1 className="sr-only">Emerald Bay Physical Therapy</h1>
@@ -124,14 +149,10 @@ function Header() {
           <div id="logo__border">{/* stay gold */}</div>
 
           <div id="logo">
-            <Link to="/" title="to the front page">
+            <a href="/" title="to the front page">
               <Logo />
-            </Link>
+            </a>
           </div>
-
-          {/* I think this is needed for the site map but testing that */}
-          <title>Emerald Bay Physical Therapy</title>
-          <link rel="canonical" href="https://emeraldbay.physio" />
         </div>
         {/* #hero */}
 
@@ -147,7 +168,7 @@ function Header() {
             </section>
 
             <nav id="overt">
-              <MenuList />
+              <MenuList currentPath={currentPath} />
             </nav>
             <MenuChanger />
           </div>

@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/header";
+import SlimFooter from "../components/slim-footer";
+import OfferingsList from "../components/offerings-list";
+import { siteMetadata } from "../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const pageTitle = `Offerings | ${siteMetadata.title}`;
+const pageDescription = "Our Physical Therapy and Wellness Offerings.";
+
+const offerCatalogJson = {
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  serviceType: "Physical Therapy",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Bay Physical Therapy"
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Physical Therapy",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Aquatic therapy"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Post-surgical rehabilitation"
+        }
+      }
+    ]
+  }
+};
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script type="application/ld+json" set:html={JSON.stringify(offerCatalogJson)}></script>
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <main class="pelican">
+    <h1>Our Physical Therapy and Wellness Offerings</h1>
+
+    <OfferingsList />
+  </main>
+
+  <hr />
+  <SlimFooter />
+</BaseLayout>

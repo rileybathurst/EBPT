@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StaticImage } from "gatsby-plugin-image";
 
-function NancyImage(props) {
+function NancyImage() {
 
-  const image = useRef();
+  const image = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const img = image.current;
-    createObserver();
+    if (!img) {
+      return undefined;
+    }
 
     let prevRatio = 0.0;
+    let observer: IntersectionObserver | null = null;
 
     function createObserver() {
-      let observer;
-
-      let options = {
+      const options = {
         threshold: buildThresholdList()
       };
 
@@ -36,7 +36,7 @@ function NancyImage(props) {
       return thresholds;
     }
 
-    function handleIntersect(entries, observer) {
+    function handleIntersect(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
 
         if (entry.intersectionRatio > prevRatio) {
@@ -51,7 +51,13 @@ function NancyImage(props) {
         prevRatio = entry.intersectionRatio;
       });
     }
-  });
+
+    createObserver();
+
+    return () => {
+      observer?.disconnect();
+    };
+  }, []);
 
   const [ratio, setRatio] = useState(0);
   const [less, setLess] = useState(0);
@@ -64,9 +70,11 @@ function NancyImage(props) {
 
   return (
     <div id="snowyImage" style={treatingStyle} ref={image}> {/* needs this to load quick enough */}
-      <StaticImage
+      <img
         src="https://ebpt.s3.us-west-1.amazonaws.com/images/nancy-working.jpg"
         alt="nancy working with a patient at emerald bay physical therapy in south lake tahoe california"
+        loading="lazy"
+        decoding="async"
       />
     </div>
   );

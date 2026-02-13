@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/header";
+import SlimFooter from "../components/slim-footer";
+import { siteMetadata } from "../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const pageTitle = `404 | ${siteMetadata.title}`;
+const pageDescription = "Sorry we could not find what you were looking for";
+---
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Header currentPath={currentPath} client:load />
+
+  <main class="measured">
+    <h1>Page not found</h1>
+    <p class="justified-40">
+      Sorry we could not find what you were looking for.
+      <br />
+      <a href="/" title="to the front page">Go home</a>.
+    </p>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 
 const FooterSocial = () => (
   <section id="footer-social">
@@ -111,9 +110,9 @@ const FooterSocial = () => (
 
     {/* I need to add this to an auto update */}
     <h4 className="h5 h-center">
-      <Link to="/" title="to the front page">
+      <a href="/" title="to the front page">
         Emerald Bay Physical Therapy {Date().slice(11, 15)}
-      </Link>
+      </a>
     </h4>
   </section>
 );
