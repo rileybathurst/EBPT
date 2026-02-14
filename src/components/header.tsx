@@ -142,7 +142,9 @@ function Header({ currentPath }: HeaderProps) {
       <header>
         <h1 className="sr-only">Emerald Bay Physical Therapy</h1>
         <div id="hero">
-          <HeroImage />
+          <div className="image-wrap">
+            <HeroImage />
+          </div>
 
           <div id="logo__backer">{/* stay gold */}</div>
 
@@ -154,7 +156,6 @@ function Header({ currentPath }: HeaderProps) {
             </a>
           </div>
         </div>
-        {/* #hero */}
 
         <div id="scrollarea" className="associate">
           <hr className="io-line" />

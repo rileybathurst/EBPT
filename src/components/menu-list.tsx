@@ -1,3 +1,5 @@
+// TODO: use the astro menu
+
 import React from "react";
 
 type MenuListProps = {

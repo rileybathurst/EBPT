@@ -1,3 +1,5 @@
+// TODO: this page can be astro
+
 import React from "react";
 
 const FormList = () => (

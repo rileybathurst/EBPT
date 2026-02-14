@@ -1,3 +1,5 @@
+// TODO: this page can be astro
+
 import * as React from "react";
 
 const Logo = () => {

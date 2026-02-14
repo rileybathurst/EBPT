@@ -1,3 +1,5 @@
+// TODO: this page can be astro
+
 import React from "react";
 
 import FooterSocial from "./footer-social";

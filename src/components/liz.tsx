@@ -5,6 +5,7 @@ const Liz = () => (
     <h3>
       For more information or to schedule swim lessons / aquatic exercise,
       please contact Liz Terzian at 530-721-5481 or
+      {/* // TODO: update email link in strapi */}
       <a href="mailto:iswim@gmail.com?cc=ebpt.laketahoe@gmail.com?subject=Swim Inquiry from Emerald Bay Physio Therapy">
         iswim@gmail.com
       </a>

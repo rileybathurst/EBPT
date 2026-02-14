@@ -1,3 +1,5 @@
+// TODO: this page can be astro
+
 import React from "react";
 
 const FooterSocial = () => (
@@ -111,7 +113,7 @@ const FooterSocial = () => (
     {/* I need to add this to an auto update */}
     <h4 className="h5 h-center">
       <a href="/" title="to the front page">
-        Emerald Bay Physical Therapy {Date().slice(11, 15)}
+        Emerald Bay Physical Therapy {new Date().getFullYear()}
       </a>
     </h4>
   </section>
