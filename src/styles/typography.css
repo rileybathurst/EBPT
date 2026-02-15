@@ -3,6 +3,7 @@
 /*------------------------------------*/
 
 html {
+  /* TODO: need to relink this back in astro */
   font-family: "brandon-grotesque", sans-serif;
   /* https://fonts.adobe.com/fonts/brandon-grotesque */
 }
@@ -24,7 +25,6 @@ body {
     color: var(--pearl);
   }
 }
-
 
 h1,
 .h1 {
@@ -121,6 +121,34 @@ p {
   margin-bottom: 0.625rem;
 }
 
+hr {
+  border: none;
+  /* h5 */
+  margin: 1.25rem auto;
+  width: 50vw;
+  margin-right: 50vw;
+  /* check its working by sizing up the border */
+  border-radius: var(--chamfer);
+  border-bottom: 2px solid var(--emerald);
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--moss);
+  }
+}
+
+::selection {
+  /* TODO look at taking this to orange */
+  /* 3:1 contrast ratio on pearl is fine fo UI */
+  background-color: var(--emerald);
+  border-radius: 1rem;
+}
+/* this has problems when it's in the .two-fold the smallest gets a lot of stretch */
+/* container queries would be the way to fix that but it's never happened */
+.justified-40 {
+  @media (min-width: 40rem) {
+    text-align: justify;
+  }
+}
+
 /* TODO: this is only used on h2 that needs to be documented */
 .forty-h3 {
   font-size: 2rem;
@@ -133,7 +161,12 @@ p {
   }
 }
 
-/*------------------------------------*/
+/* this doesn't want to be the block of the p */
+.h-center {
+  text-align: center;
+}
 
-/* .catalog {
-} */
+.h-line {
+  /* TODO: I dont like this name */
+  display: inline;
+}

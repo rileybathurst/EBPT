@@ -16,38 +16,40 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "start": "astro check && blc http://emeraldbay.physio --exclude '*yelp*' && pa11y http://emeraldbay.physio && astro dev",
+    "start": "astro check && stay-gold && blc http://emeraldbay.physio --exclude '*yelp*' && pa11y http://emeraldbay.physio && astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "blc": "blc http://emeraldbay.physio --exclude '*yelp*'",
     "typecheck": "astro check",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "gold": "stay-gold"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "astro": "^5.17.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "stay-gold": "^1.1.8"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
+    "@chromatic-com/storybook": "^5.0.1",
+    "@storybook/addon-a11y": "^10.2.8",
+    "@storybook/addon-docs": "^10.2.8",
+    "@storybook/addon-vitest": "^10.2.8",
+    "@storybook/react-vite": "^10.2.8",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.4.20",
+    "playwright": "^1.58.2",
     "postcss": "^8.5.1",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^7.0.2",
-    "typescript": "^5.9.3",
     "storybook": "^10.2.8",
-    "@storybook/react-vite": "^10.2.8",
-    "@chromatic-com/storybook": "^5.0.1",
-    "@storybook/addon-vitest": "^10.2.8",
-    "@storybook/addon-a11y": "^10.2.8",
-    "@storybook/addon-docs": "^10.2.8",
-    "vitest": "^4.0.18",
-    "playwright": "^1.58.2",
-    "@vitest/browser-playwright": "^4.0.18",
-    "@vitest/coverage-v8": "^4.0.18"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }

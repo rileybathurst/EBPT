@@ -32,10 +32,11 @@ button,
   /* browser reset */
   border: none;
   color: var(--pearl);
-  padding: 8px 16px;
   box-shadow: var(--shade);
   text-decoration: none;
+  padding: 0.25rem 0.5rem;
   border-radius: var(--chamfer);
+  transition: 0.25s ease;
 }
 
 button:hover,

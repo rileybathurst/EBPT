@@ -318,18 +318,16 @@ body {
     list-style: none;
 
     > li {
-      /* ! this is wrong but its better than not having a drop */
-      margin: 1rem;
       text-align: center;
 
       a {
-        /* ! making this up */
+        /* * same as button */
         padding: 0.25rem 0.5rem;
         border-radius: var(--chamfer);
         transition: 0.25s ease;
       }
 
-      /* ! this is wrong on small sizes */
+      /* TODO: work with this in storybook and variables */
       a:hover {
         /* its pretty subtle but i do like it maybe it should be more there */
         background: hsl(0, 0%, calc(var(--pearl-l) - 5%));
@@ -465,7 +463,7 @@ body {
   border-top: 1rem solid var(--emerald);
   background: var(--moss);
   color: var(--pearl);
-  /* ! why this number */
+  /* TODO: variables */
   padding: 1.953rem;
 
   & a {
@@ -537,4 +535,85 @@ body {
     /* theres a padding on the border */
     margin-block: 0;
   }
+}
+
+/*------------------------------------*/
+
+.hide-above-40 {
+  @media (min-width: 40rem) {
+    display: none;
+  }
+}
+
+.over-none {
+  margin-top: 0;
+}
+
+.under-less {
+  margin-bottom: 0.8rem;
+}
+
+.associate {
+  display: flex;
+  flex-direction: column;
+
+  & button {
+    font-size: 1rem;
+    line-height: 1.563rem;
+    padding: 8px 16px;
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 3px 0 0 3px;
+    margin: 0;
+  }
+
+  .buttoned {
+    margin: 0;
+
+    > a {
+      /* top-left | top-right | bottom-right | bottom-left */
+      border-radius: 0 3px 3px 0;
+      display: inline-block;
+      box-shadow: var(--penumbra);
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    > a:where(:hover, :focus) {
+      box-shadow: var(--antumbra);
+    }
+
+    > a:focus {
+      box-shadow: var(--umbra);
+    }
+  }
+}
+
+.menu-lines {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  align-content: stretch;
+
+  @media (min-width: 70rem) {
+    align-content: stretch;
+  }
+  
+  > nav {
+    display: none;
+
+    @media (min-width: 70rem) {
+      display: block;
+      flex: 2;
+    }
+  }
+}
+
+.two-fold__hr {
+  margin-left: -1rem;
+}
+
+.inline__hr {
+  width: auto;
+  margin-right: auto;
 }

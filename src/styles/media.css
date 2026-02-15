@@ -269,3 +269,16 @@ header a svg:hover {
   mix-blend-mode: darken;
   max-width: 10rem;
 }
+
+/*------------------------------------*/
+
+header a svg {
+  max-width: 6rem;
+  max-height: 6rem;
+  margin: 1rem;
+  fill: var(--moss);
+
+  @media (prefers-color-scheme: dark) {
+    fill: var(--emerald);
+  }
+}

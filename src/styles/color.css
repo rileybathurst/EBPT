@@ -39,3 +39,10 @@ footer h3 a {
     background-color: var(--ember);
   }
 }
+
+.distracted {
+  color: var(--stone);
+  @media (prefers-color-scheme: dark) {
+    color: var(--hematite);
+  }
+}
