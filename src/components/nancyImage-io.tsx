@@ -19,7 +19,7 @@ function NancyImage() {
       };
 
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(img);
+      observer.observe(img as Element);
     }
 
     // trust the math

@@ -19,7 +19,7 @@ function GymImage() {
       };
 
       observer = new IntersectionObserver(handleIntersect, options);
-      observer.observe(gym);
+      observer.observe(gym as Element);
     }
 
     // trust the math

@@ -16,6 +16,7 @@ const pageTitle = siteMetadata.title;
 const pageDescription = siteMetadata.description;
 const currentPath = Astro.url.pathname;
 ---
+
 <BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
   <Header currentPath={currentPath} client:load />
 
@@ -30,9 +31,9 @@ const currentPath = Astro.url.pathname;
           </h2>
           <p>
             We specialize in hands-on, one-on-one treatments that are specific
-            to each patient&apos;s goals. At EBPT, we are committed to health and
-            wellness no matter your age, lifestyle, or athletic abilities. Our
-            highly individualized programs are designed to promote complete
+            to each patient&apos;s goals. At EBPT, we are committed to health
+            and wellness no matter your age, lifestyle, or athletic abilities.
+            Our highly individualized programs are designed to promote complete
             recovery from injury and continue into healthy work and recreational
             activities.
           </p>
@@ -70,21 +71,61 @@ const currentPath = Astro.url.pathname;
     <hr />
 
     <section id="gallery" class="single-fold image-stack">
-      <div>
+      <!-- TODO: remove the divs to get the flex in -->
+      <!-- <div> -->
         <img
           src="https://ebpt.s3.us-west-1.amazonaws.com/images/gym.jpg"
           alt="the emerald bay physical therapy gym in south lake tahoe california"
           loading="lazy"
           decoding="async"
         />
-        <Treating client:load />
-      </div>
+        <!-- TODO: I remove the animation to get it running -->
+        <!-- <Treating client:load /> -->
+        <img
+          src="https://ebpt.s3-us-west-1.amazonaws.com/images/treating.jpg"
+          alt="Jessica providing treatment to a patient"
+          loading="lazy"
+          decoding="async"
+        />
+      <!-- </div> -->
 
-      <div>
-        <PoolImage client:load />
-        <NancyImage client:load />
-      </div>
+      <!-- <div> -->
+        <!-- <PoolImage client:load /> -->
+        <img
+          src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg"
+          alt="pool"
+          loading="lazy"
+          decoding="async"
+        />
+        <!-- <NancyImage client:load /> -->
+        <img
+          src="https://ebpt.s3.us-west-1.amazonaws.com/images/nancy-working.jpg"
+          alt="nancy working with a patient at emerald bay physical therapy in south lake tahoe california"
+          loading="lazy"
+          decoding="async"
+        />
+      <!-- </div> -->
     </section>
+
+<!-- ! testing -->
+
+    <hr />
+
+    <div class="single-fold image-stack">
+      <!-- <div class="box"/> -->
+
+      <!-- ? this works better but not good? -->
+       <img
+          src="https://ebpt.s3.us-west-1.amazonaws.com/images/gym.jpg"
+          alt="the emerald bay physical therapy gym in south lake tahoe california"
+          loading="lazy"
+          decoding="async"
+          class="box"
+        />
+      <div class="box"/>
+      <div class="box"/>
+      <div class="box"/>
+    </div>
 
     <hr />
 

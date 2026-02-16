@@ -99,17 +99,34 @@ a svg:hover {
 .image-stack {
   display: flex;
   flex-flow: row wrap;
-  gap: 1.563rem;
+  gap: 1.563rem; /* TODO: variable */
+
+  /* TODO: working */
+  img {
+    width: 100%;
+    flex: 8rem;
+    min-height: 2rem;
+    /* height: auto; */
+    /* max-width: 16rem; ? I shouldnt need something like this why are my flexes breaking? */
+  }
 
   > div {
     display: flex;
     flex-flow: row wrap;
-    gap: 1.563rem;
+    gap: 1.563rem; /* TODO: variable */
+    /* ? this seems pretty small is there a better way to do it */
+    /* flex: 1 1 8rem; */
     flex: 1 1 8rem;
 
     > * {
       flex: 1 1 8rem;
     }
+  }
+
+  /* ? this atleast folds */
+  .box {
+    background: var(--moss);
+    min-width: 2rem;
   }
 }
 
@@ -200,7 +217,8 @@ header a svg:hover {
   border: 0;
   border-radius: 100%;
   box-shadow: none;
-  overflow: unset;
+  /* TODO: this was breaking the border-radius */
+  /* overflow: unset; */
 
   /* Required, since we're setting absolute on pseudo-elements */
   position: relative;
@@ -233,6 +251,7 @@ header a svg:hover {
     border: 2px solid transparent;
   }
 
+  /* TODO: this is broken */
   &:hover::before {
     border-color: var(--emerald);
     border-left-color: transparent;
