@@ -1,5 +1,6 @@
 import React from "react";
 // ! the images are not using the radius
+// ! add jen
 
 function JessicaProfile() {
   return (
