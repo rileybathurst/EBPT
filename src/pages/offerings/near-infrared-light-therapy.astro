@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import SlimFooter from "../../components/slim-footer";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "Near Infrared Light Therapy";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription =
+  "Near infrared light (NIR) is a non-invasive treatment that uses low-intensity light wavelengths that penetrate deeper tissues and muscles to stimulate cellular repair mechanisms. This modality works by increasing blood flow, promoting tissue repair, and reducing inflammation. NIR is beneficial for pain management, muscle relaxation, musculoskeletal conditions, and wound healing.";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        name: "Offerings",
+        "@id": "https://emeraldbay.physio/offerings",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        name: title,
+        "@id": "https://emeraldbay.physio/offerings/craniosacral-therapy",
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/offerings/">Offerings</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main itemscope itemtype="https://schema.org/Article">
+    <div class="two-fold">
+      <!-- <div> -->
+
+        <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/infared-light-metaphor.webp"
+        alt="an icon symbolizing near infrared light therapy"
+        class="offering-image square"
+        loading="lazy"
+        decoding="async"
+        />
+      <!-- </div> -->
+      <div class="two-fold-content">
+        <h1 class="h1__clamped" itemprop="name">{title}</h1>
+        <section itemprop="description">
+          <p>
+            Near infrared light (NIR) is a non-invasive treatment that uses low-intensity light wavelengths that penetrate deeper tissues and muscles to stimulate cellular repair mechanisms. This modality works by increasing blood flow, promoting tissue repair, and reducing inflammation. NIR is beneficial for pain management, muscle relaxation, musculoskeletal conditions, and wound healing.
+          </p>
+
+          <hr class="inline__hr" />
+          
+          <p>Near Infrared Light Therapy can assist in the management of:</p>
+          <ul>
+            <li>Osteoarthritis</li>
+            <li>Rheumatoid arthritis</li>
+            <li>Ankylosing spondylitis</li>
+            <li>Fibromyalgia</li>
+            <li>Capsulitis</li>
+            <li>Skin conditions (Psoriasis, acne, wrinkles)</li>
+            <li>Wound healing</li>
+            <li>Joint stiffness</li>
+            <li>Edema</li>
+            <li>Pain</li>
+            <li>Muscle spasms</li>
+            <li>Muscle recovery</li>
+            <li>Tissue repair</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

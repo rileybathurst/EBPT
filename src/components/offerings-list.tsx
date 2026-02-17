@@ -103,6 +103,36 @@ const OfferingsList = ({ className, best }: OfferingsListTypes) => (
           <a href="/offerings/remote-therapeutic-monitoring">Learn more about Remote Therapeutic Monitoring (RTM)</a>
         </li>
 
+        <li>
+          <h3><a href="/offerings/craniosacral-therapy">
+            Craniosacral Therapy
+          </a></h3>
+          <img
+            src="https://ebpt.s3.us-west-1.amazonaws.com/images/craniosacral-metaphor.webp"
+            alt="an icon symbolizing Craniosacral Therapy"
+            style={{ scale: 0.9 }}
+            loading="lazy"
+            decoding="async"
+          />
+          <p>Craniosacral therapy is a gentle, holistic, hands-on technique that focuses on the nervous system and the fascia.  By using light touch, practitioners help release tension and restrictions, promoting relaxation and supporting the body’s natural healing process.</p>
+          <a href="/offerings/craniosacral-therapy">Learn more about Craniosacral Therapy</a>
+        </li>
+
+        <li>
+          <h3><a href="/offerings/near-infrared-light-therapy">
+            Near Infrared Light Therapy
+          </a></h3>
+          <img
+            src="https://ebpt.s3.us-west-1.amazonaws.com/images/infared-light-metaphor.webp"
+            alt="an icon symbolizing Near Infrared Light Therapy"
+            style={{ scale: 0.9 }}
+            loading="lazy"
+            decoding="async"
+          />
+          <p>Near infrared light (NIR) is a non-invasive treatment that uses low-intensity light wavelengths that penetrate deeper tissues and muscles to stimulate cellular repair mechanisms. This modality works by increasing blood flow, promoting tissue repair, and reducing inflammation. NIR is beneficial for pain management, muscle relaxation, musculoskeletal conditions, and wound healing.</p>
+          <a href="/offerings/near-infrared-light-therapy">Learn more about Near Infrared Light Therapy</a>
+        </li>
+
       </ul>
     </section>
 

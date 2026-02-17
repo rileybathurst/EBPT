@@ -2,6 +2,10 @@
   /* #IMAGES */
 /*------------------------------------*/
 
+img {
+  max-width: 100%;
+}
+
 svg {
   width: 100%;
   max-width: 4rem;
@@ -124,8 +128,9 @@ a svg:hover {
   }
 
   /* ? this atleast folds */
+  /* TODO: this is needed on some images */
   .box {
-    background: var(--moss);
+    /* background: var(--moss); */
     min-width: 2rem;
   }
 }
@@ -287,6 +292,10 @@ header a svg:hover {
 .offering-icon {
   mix-blend-mode: darken;
   max-width: 10rem;
+}
+
+.square {
+  height: max-content;
 }
 
 /*------------------------------------*/

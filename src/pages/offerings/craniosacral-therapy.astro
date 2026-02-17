@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/header";
+import SlimFooter from "../../components/slim-footer";
+import { siteMetadata } from "../../data/siteMetadata";
+
+const currentPath = Astro.url.pathname;
+const title = "Craniosacral Therapy";
+const pageTitle = `${title} | ${siteMetadata.title}`;
+const pageDescription =
+  "Craniosacral therapy is a gentle, holistic, hands-on technique that focuses on the nervous system and the fascia.  By using light touch, practitioners help release tension and restrictions, promoting relaxation and supporting the body’s natural healing process.";
+
+const breadcrumbJson = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        name: "Offerings",
+        "@id": "https://emeraldbay.physio/offerings",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        name: title,
+        "@id": "https://emeraldbay.physio/offerings/craniosacral-therapy",
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} url={currentPath}>
+  <Fragment slot="seo">
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbJson)}
+    />
+  </Fragment>
+
+  <Header currentPath={currentPath} client:load />
+
+  <div class="single-fold">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/offerings/">Offerings</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+      </li>
+      <li>{title}</li>
+    </ol>
+  </div>
+
+  <hr />
+
+  <main itemscope itemtype="https://schema.org/Article">
+    <div class="two-fold">
+      <!-- <div> -->
+
+        <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/craniosacral-metaphor.webp"
+        alt="an icon symbolizing craniosacral therapy"
+        class="offering-image square"
+        loading="lazy"
+        decoding="async"
+        />
+      <!-- </div> -->
+      <div class="two-fold-content">
+        <h1 class="h1__clamped" itemprop="name">{title}</h1>
+        <section itemprop="description">
+          <p>
+            Craniosacral therapy is a gentle, holistic, hands-on technique that focuses on the nervous system and the fascia.  By using light touch, practitioners help release tension and restrictions, promoting relaxation and supporting the body’s natural healing process.
+          </p>
+          <hr class="inline__hr" />
+          <p>
+            This approach can alleviate a variety of conditions, including headaches, neck pain, stress, and chronic pain, while improving overall well-being.
+          </p>
+          <ul>
+            <li>Focus: The craniosacral system (skull, spine, pelvis, membranes, and cerebrospinal fluid).</li>
+            <li>Technique: 75 minutes of gentle, subtle touch, not forceful manipulation, assessing rhythmic movements in the fluid.</li>
+            <li>Goal: To release restrictions, improve nervous system function, and support the body's healing.</li>
+            <li>Experience: Deep relaxation, calm, and a sense of well-being.</li>
+          </ul>
+
+                              <hr class="inline__hr" />
+          <p>Potential benefits:</p>
+          <ul>
+            <li>Relief from chronic pain, migraines, and stress.</li>
+            <li>Improved sleep and stress management.</li>
+            <li>Support for conditions like anxiety, PTSD, and musculoskeletal issues.</li>
+          </ul>
+
+                    <hr class="inline__hr" />
+          <p>Craniosacral therapy may help you manage symptoms of the following conditions:</p>
+          <ul>
+            <li>Chronic pain</li>
+            <li>Complex regional pain syndrome</li>
+            <li>Fibromyalgia</li>
+            <li>Headaches like migraines</li>
+            <li>Neuralgia</li>
+            <li>Post-concussion syndrome</li>
+            <li>Scoliosis</li>
+            <li>Stroke</li>
+            <li>Temporomandibular joint syndrome</li>
+          </ul>
+
+        </section>
+      </div>
+    </div>
+
+    <hr />
+
+        <article id="jen" class="two-fold">
+      <div>
+      <img
+        src="https://ebpt.s3.us-west-1.amazonaws.com/images/jen-profile.jpeg"
+        alt="jen"
+        loading="lazy"
+        decoding="async"
+      />
+      </div>
+      <div class="content">
+        <h2>Craniosacral Therapy and Massage Therapy with Jen Hammer, PT, CMT, CST-C </h2>
+        <p class="justified-40">
+          My journey as a healer started over twenty years ago when a Reiki Master asked me how I was using the energy coming out of my hands. Up until that point I had worked many different jobs and hadn't found my calling. He encouraged me to explore the healing arts. I attended Phillip's School of Massage in 2002 where I learned the foundation of the work I do. From there, I have kept learning. My studies include Deep Tissue, Oriental Body Therapy (Shiatsu, Tui Na, Thai), Reiki, Physical Therapy, herbal studies, Craniosacral Therapy and traditional healing energy techniques. My goal is to be able to combine my skills and knowledge to help you with your healing needs.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <hr />
+
+  <SlimFooter />
+</BaseLayout>

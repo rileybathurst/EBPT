@@ -72,12 +72,13 @@ const currentPath = Astro.url.pathname;
 
     <section id="gallery" class="single-fold image-stack">
       <!-- TODO: remove the divs to get the flex in -->
-      <!-- <div> -->
+      <div>
         <img
           src="https://ebpt.s3.us-west-1.amazonaws.com/images/gym.jpg"
           alt="the emerald bay physical therapy gym in south lake tahoe california"
           loading="lazy"
           decoding="async"
+            class="box"
         />
         <!-- TODO: I remove the animation to get it running -->
         <!-- <Treating client:load /> -->
@@ -86,16 +87,19 @@ const currentPath = Astro.url.pathname;
           alt="Jessica providing treatment to a patient"
           loading="lazy"
           decoding="async"
+            class="box"
         />
-      <!-- </div> -->
+      </div>
 
-      <!-- <div> -->
+      <div>
         <!-- <PoolImage client:load /> -->
         <img
           src="https://ebpt.s3-us-west-1.amazonaws.com/images/pool.jpg"
           alt="pool"
           loading="lazy"
           decoding="async"
+                    class="box"
+
         />
         <!-- <NancyImage client:load /> -->
         <img
@@ -103,29 +107,11 @@ const currentPath = Astro.url.pathname;
           alt="nancy working with a patient at emerald bay physical therapy in south lake tahoe california"
           loading="lazy"
           decoding="async"
+                    class="box"
+
         />
-      <!-- </div> -->
+      </div>
     </section>
-
-<!-- ! testing -->
-
-    <hr />
-
-    <div class="single-fold image-stack">
-      <!-- <div class="box"/> -->
-
-      <!-- ? this works better but not good? -->
-       <img
-          src="https://ebpt.s3.us-west-1.amazonaws.com/images/gym.jpg"
-          alt="the emerald bay physical therapy gym in south lake tahoe california"
-          loading="lazy"
-          decoding="async"
-          class="box"
-        />
-      <div class="box"/>
-      <div class="box"/>
-      <div class="box"/>
-    </div>
 
     <hr />
 
