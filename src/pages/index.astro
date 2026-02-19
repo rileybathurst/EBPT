@@ -7,9 +7,9 @@ import FormList from "../components/form-list";
 import OfferingsList from "../components/offerings-list";
 import Kiley2 from "../components/kiley2io";
 import GymImage from "../components/gymImageVanilla";
-import Treating from "../components/treating-io";
-import NancyImage from "../components/nancyImage-io";
-import PoolImage from "../components/poolImage-io";
+// import Treating from "../components/treating-io";
+// import NancyImage from "../components/nancyImage-io";
+// import PoolImage from "../components/poolImage-io";
 import { siteMetadata } from "../data/siteMetadata";
 
 const pageTitle = siteMetadata.title;
@@ -78,7 +78,7 @@ const currentPath = Astro.url.pathname;
           alt="the emerald bay physical therapy gym in south lake tahoe california"
           loading="lazy"
           decoding="async"
-            class="box"
+          class="box"
         />
         <!-- TODO: I remove the animation to get it running -->
         <!-- <Treating client:load /> -->
@@ -87,7 +87,7 @@ const currentPath = Astro.url.pathname;
           alt="Jessica providing treatment to a patient"
           loading="lazy"
           decoding="async"
-            class="box"
+          class="box"
         />
       </div>
 
@@ -98,8 +98,7 @@ const currentPath = Astro.url.pathname;
           alt="pool"
           loading="lazy"
           decoding="async"
-                    class="box"
-
+          class="box"
         />
         <!-- <NancyImage client:load /> -->
         <img
@@ -107,8 +106,7 @@ const currentPath = Astro.url.pathname;
           alt="nancy working with a patient at emerald bay physical therapy in south lake tahoe california"
           loading="lazy"
           decoding="async"
-                    class="box"
-
+          class="box"
         />
       </div>
     </section>

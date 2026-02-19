@@ -114,7 +114,7 @@ const OfferingsList = ({ className, best }: OfferingsListTypes) => (
             loading="lazy"
             decoding="async"
           />
-          <p>Craniosacral therapy is a gentle, holistic, hands-on technique that focuses on the nervous system and the fascia.  By using light touch, practitioners help release tension and restrictions, promoting relaxation and supporting the body’s natural healing process.</p>
+          <p>Craniosacral therapy is a gentle, holistic, hands-on technique that focuses on the nervous system and the fascia. By using light touch, practitioners help release tension and restrictions, promoting relaxation and supporting the body&apos;s natural healing process.</p>
           <a href="/offerings/craniosacral-therapy">Learn more about Craniosacral Therapy</a>
         </li>
 
