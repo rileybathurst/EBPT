@@ -14,12 +14,14 @@ html {
 body {
   font-size: 16px;
   /* ? why is this not the same as h tags */
-  line-height: 1.563rem; /* 25px */
+  line-height: 1.563rem;
+  /* 25px */
   font-style: normal;
   /* regular weight brandon grotesque */
   font-weight: 400;
   background: var(--pearl);
   color: var(--onyx);
+
   @media (prefers-color-scheme: dark) {
     background: var(--onyx);
     color: var(--pearl);
@@ -101,15 +103,16 @@ h6,
   margin-block-start: 0;
 }
 
-:is(h1, h2, h3, h4, h5, h6)a {
+:is(h1, h2, h3, h4, h5, h6) a {
   /* take back the spacing */
   margin-left: -0.25rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--chamfer);
 }
 
-:is(h1, h2, h3, h4, h5, h6)a:hover {
+:is(h1, h2, h3, h4, h5, h6) a:hover {
   background: hsl(0, 0%, calc(var(--pearl-l) - 5%));
+
   @media (prefers-color-scheme: dark) {
     background: hsl(0, 0%, 15%);
   }
@@ -130,6 +133,7 @@ hr {
   /* check its working by sizing up the border */
   border-radius: var(--chamfer);
   border-bottom: 2px solid var(--emerald);
+
   @media (prefers-color-scheme: dark) {
     border-color: var(--moss);
   }
@@ -141,6 +145,7 @@ hr {
   background-color: var(--emerald);
   border-radius: 1rem;
 }
+
 /* this has problems when it's in the .two-fold the smallest gets a lot of stretch */
 /* container queries would be the way to fix that but it's never happened */
 .justified-40 {
